@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+
+<body>
+	<ui:composition template="./../WEB-INF/template/plantilla.xhtml">
+		<ui:define name="content">
+
+			<h:form id="idFormPaciente">
+
+				<h1></h1>
+
+				<p:fieldset legend="Datos Personales">
+					<h:panelGrid id="pgDatos" columns="3">
+
+						<p:outputLabel style="font-weight:bold" for="txtCedula"
+							value="Número Cédula" />
+						<p:outputLabel id="txtCedula" disabled="true"
+							requiredMessage="Campo Requerido" />
+						<p:message for="txtCedula" />
+
+						<p:outputLabel style="font-weight:bold" for="txtNombres"
+							value="Nombres" />
+						<p:outputLabel id="txtNombres" disabled="true"
+							requiredMessage="Campo Requerido" />
+						<p:message for="txtNombres" />
+
+						<p:outputLabel style="font-weight:bold" for="txtApellidos"
+							value="Apellidos" />
+						<p:outputLabel id="txtApellidos" disabled="true" />
+						<p:message for="txtApellidos" />
+
+						<p:outputLabel style="font-weight:bold" for="rdbSexo" value="Sexo" />
+						<p:selectOneRadio id="rdbSexo" disabled="true">
+							<f:selectItem itemValue="M" itemLabel="Masculino" />
+							<f:selectItem itemValue="F" itemLabel="Femenino" />
+						</p:selectOneRadio>
+						<p:message for="rdbSexo" />
+
+						<p:outputLabel style="font-weight:bold" for="txtFechaNacimiento"
+							value="Fec. Nacimiento" />
+						<p:outputLabel id="txtFechaNacimiento" locale="es" disabled="true" />
+						<p:message for="txtFechaNacimiento" />
+
+					</h:panelGrid>
+				</p:fieldset>
+			</h:form>
+
+
+			<h:form>
+				<p:clock></p:clock>
+				<h1>BACTERIOLOGÍA</h1>
+
+				<table class="formulario" border="0">
+					<tr>
+						<td><p:outputLabel style="font-weight: bold">SECRECIÓN : </p:outputLabel></td>
+						<td><p:inputText></p:inputText></td>
+					</tr>
+					<tr>
+						<td><p:outputLabel style="font-weight: bold">FRESCO : </p:outputLabel></td>
+						<td><p:inputText></p:inputText></td>
+					</tr>
+					<tr>
+						<td><p:outputLabel style="font-weight: bold">GRAM : </p:outputLabel></td>
+						<td><p:inputText></p:inputText></td>
+					</tr>
+					<tr>
+						<td><p:outputLabel style="font-weight: bold">KOH : </p:outputLabel></td>
+						<td><p:inputText></p:inputText></td>
+					</tr>
+					<tr>
+						<td><p:outputLabel style="font-weight: bold">ZHIEL : </p:outputLabel></td>
+						<td><p:inputText></p:inputText></td>
+					</tr>
+					<tr>
+						<td><p:outputLabel style="font-weight: bold">EOSINOFILOS EN MOCO NASAL : </p:outputLabel></td>
+						<td><p:inputText></p:inputText></td>
+					</tr>
+					
+
+				</table>
+				<br></br>
+				<p:commandButton icon="ui-icon-play" value="Generar"></p:commandButton>
+
+			</h:form>
+
+		</ui:define>
+	</ui:composition>
+
+
+
+
+
+</body>
+</html>

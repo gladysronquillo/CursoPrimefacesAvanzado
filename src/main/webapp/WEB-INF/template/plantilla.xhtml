@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+	<style type="text/css">
+.ui-widget, .ui-widget .ui-widget {
+	font-size: 100% !important;
+}
+</style>
+
+	<meta http-equiv="Content-Type" content="text/xhtml; charset=UTF-8" />
+	<title>kodigo</title>
+	<f:event type="preRenderView"
+		listener="#{plantillaController.verificarSesion()}"></f:event>
+</h:head>
+
+<h:body>
+
+	<div id="top">
+		<ui:insert name="top"></ui:insert>
+		<h:form>
+
+			<p:menubar>
+				<p:submenu label="Paciente" icon="ui-icon-home">
+					<p:menuitem value="Nuevo" icon="ui-icon-document"
+						action="#{pacienteController.linkPaciente()}" />
+				</p:submenu>
+				<p:submenu label="Ordenes" icon="ui-icon-pencil">
+					<p:menuitem value="Orden"
+						action="#{agendarController.linkAgendar()}" />
+				</p:submenu>
+				<p:submenu label="Reportes" icon="ui-icon-circle-zoomin">
+					<p:menuitem value="Reporte" />
+				</p:submenu>
+				<p:submenu label="Ayuda" icon="ui-icon-circle-plus">
+					<p:menuitem value="Contactos" />
+				</p:submenu>
+
+			</p:menubar>
+		</h:form>
+
+
+	</div>
+
+	<div id="content" class="center_content">
+		<ui:insert name="content"></ui:insert>
+	</div>
+
+	<div id="bottom">
+		<ui:insert name="bottom"></ui:insert>
+	</div>
+
+
+</h:body>
+
+</html>

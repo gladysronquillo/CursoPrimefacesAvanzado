@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<body>
+	<ui:composition template="./../WEB-INF/template/plantilla.xhtml">
+		<ui:define name="content">
+			<f:event listener="#{pacienteController.listar() }"
+				type="preRenderView"></f:event>
+			<h:form id="idFormPaciente">
+
+				<h1></h1>
+				<p:commandButton icon="ui-icon-search" value="Paciente"
+					oncomplete="PF('wdlgDatosSelecionarPaciente').show();"
+					update=":idDatosSelecionarPaciente"></p:commandButton>
+				<h1></h1>
+
+				<p:fieldset legend="Datos Personales">
+					<h:panelGrid id="pgDatos" columns="3">
+
+						<p:outputLabel style="font-weight:bold" for="txtCedula"
+							value="Número Cédula" />
+						<p:outputLabel id="txtCedula"
+							value="#{pacienteController.paciente.cedula}" disabled="true"
+							requiredMessage="Campo Requerido" />
+						<p:message for="txtCedula" />
+
+						<p:outputLabel style="font-weight:bold" for="txtNombres"
+							value="Nombres" />
+						<p:outputLabel id="txtNombres"
+							value="#{pacienteController.paciente.nombres}" disabled="true"
+							requiredMessage="Campo Requerido" />
+						<p:message for="txtNombres" />
+
+						<p:outputLabel style="font-weight:bold" for="txtApellidos"
+							value="Apellidos" />
+						<p:outputLabel id="txtApellidos"
+							value="#{pacienteController.paciente.apellidos}" disabled="true" />
+						<p:message for="txtApellidos" />
+
+						<p:outputLabel style="font-weight:bold" for="rdbSexo" value="Sexo" />
+						<p:selectOneRadio id="rdbSexo"
+							value="#{pacienteController.paciente.sexo}" disabled="true">
+							<f:selectItem itemValue="M" itemLabel="Masculino" />
+							<f:selectItem itemValue="F" itemLabel="Femenino" />
+						</p:selectOneRadio>
+						<p:message for="rdbSexo" />
+
+						<p:outputLabel style="font-weight:bold" for="txtFechaNacimiento"
+							value="Fec. Nacimiento" />
+						<p:outputLabel id="txtFechaNacimiento"
+							value="#{pacienteController.paciente.fechaNacimiento}"
+							locale="es" disabled="true" />
+						<p:message for="txtFechaNacimiento" />
+
+					</h:panelGrid>
+				</p:fieldset>
+
+				<h1></h1>
+				<p:commandButton icon="ui-icon-search" value="Examen"
+					oncomplete="PF('wdlgExamenesSelecionados').show();"></p:commandButton>
+				<h1></h1>
+
+
+				<h1></h1>
+				<p:dataTable id="idExamenesSeleccionados"
+					value="#{tipoExamenController.listaTipoExamenSelecionadosTablaDinamica}"
+					var="seleccionados">
+					<p:column headerText="Examen">
+						<p:commandLink value="#{seleccionados.nombre}" action="#{tipoExamenController.link(seleccionados)}"></p:commandLink>
+					</p:column>
+				</p:dataTable>
+
+			</h:form>
+
+			<p:dialog header="DatosSelecionarPaciente"
+				widgetVar="wdlgDatosSelecionarPaciente"
+				id="idDatosSelecionarPaciente" width="900" height="200">
+				<h:form>
+					<p:dataTable id="dataListaPaciente"
+						value="#{pacienteController.listaPaciente}" var="paciente">
+						<p:column>
+							<p:commandButton icon="ui-icon-check"
+								actionListener="#{pacienteController.leerId(paciente)}"
+								oncomplete="PF('wdlgDatosSelecionarPaciente').hide();"
+								update=":idFormPaciente:pgDatos"></p:commandButton>
+						</p:column>
+						<p:column headerText="Cédula" filterBy="#{paciente.cedula}">
+							<p:outputLabel value="#{paciente.cedula}"></p:outputLabel>
+						</p:column>
+						<p:column headerText="Apellidos">
+							<p:outputLabel value="#{paciente.apellidos}"></p:outputLabel>
+						</p:column>
+						<p:column headerText="Nombres">
+							<p:outputLabel value="#{paciente.nombres}"></p:outputLabel>
+						</p:column>
+						<p:column headerText="Fecha Nacimiento">
+							<p:outputLabel value="#{paciente.fechaNacimiento}"></p:outputLabel>
+						</p:column>
+						<p:column headerText="Sexo">
+							<p:outputLabel value="#{paciente.sexo}">
+								<f:converter converterId="sexoConverter"></f:converter>
+							</p:outputLabel>
+						</p:column>
+					</p:dataTable>
+
+				</h:form>
+			</p:dialog>
+
+			<p:dialog header="Examenes Selecionados"
+				widgetVar="wdlgExamenesSelecionados" id="idExamenesSelecionados" width="900" height="200">
+				<h:form>
+
+					<h1></h1>
+					<p:selectManyCheckbox id="idTipoListaTipoExamenSeleccionados"
+						value="#{tipoExamenController.listaTipoExamenSeleccionados}"
+						layout="responsive" columns="4">
+						<f:selectItems value="#{tipoExamenController.listaTipoExamen}"
+							var="tipoExamen" itemLabel="#{tipoExamen.nombre}"
+							itemValue="#{tipoExamen.id_tipo_examen}" />
+					</p:selectManyCheckbox>
+					<h1></h1>
+					<p:commandButton icon="ui-icon-extlink" value="Generar"
+						action="#{tipoExamenController.registrarExamenesSelecionados(pacienteController.paciente.id_paciente,tipoExamenController.listaTipoExamenSeleccionados)}"
+						update="idFormPaciente:idExamenesSeleccionados"
+						oncomplete="PF('wdlgExamenesSelecionados').hide();"></p:commandButton>
+				
+
+
+				</h:form>
+			</p:dialog>
+
+
+		</ui:define>
+	</ui:composition>
+</body>
+</html>
