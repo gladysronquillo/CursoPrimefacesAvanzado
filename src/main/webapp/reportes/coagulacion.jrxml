@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="397"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="589"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT cgl.*, CONCAT(apellidos, " ", nombres) paciente from coagulacion cgl 
+join paciente pa on pa.codigo = cgl.codigo_paciente
+where cgl.codigo_paciente = 1]]>
+	</queryString>
+	<field name="codigo_cgl" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="codigo_cgl"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="coagulacion"/>
+	</field>
+	<field name="codigo_paciente" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="codigo_paciente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="coagulacion"/>
+	</field>
+	<field name="fecha" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="coagulacion"/>
+	</field>
+	<field name="plaquetas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="plaquetas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="coagulacion"/>
+	</field>
+	<field name="t_hemorragia" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="t_hemorragia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="coagulacion"/>
+	</field>
+	<field name="t_coagulacion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="t_coagulacion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="coagulacion"/>
+	</field>
+	<field name="t_trombina" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="t_trombina"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="coagulacion"/>
+	</field>
+	<field name="fibrinogeno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="fibrinogeno"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="coagulacion"/>
+	</field>
+	<field name="retraccion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="retraccion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="coagulacion"/>
+	</field>
+	<field name="tp" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tp"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="coagulacion"/>
+	</field>
+	<field name="actividad" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="actividad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="coagulacion"/>
+	</field>
+	<field name="inr" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="inr"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="coagulacion"/>
+	</field>
+	<field name="ttp" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ttp"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="coagulacion"/>
+	</field>
+	<field name="anti_lupico" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="anti_lupico"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="coagulacion"/>
+	</field>
+	<field name="paciente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="paciente"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="173" y="60" width="193" height="20" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COAGULACIÓN]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="19" width="159" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{paciente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="250" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="40" y="30" width="150" height="20" uuid="4ff6da2a-47f9-40f0-964c-af6cd04d9d46"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PLAQUETAS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="39" y="50" width="150" height="20" uuid="3043e070-2074-48f0-a726-e06177cdc520"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[T. HEMORRAGIA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="39" y="70" width="150" height="20" uuid="4f426558-7c7a-43f1-a8f3-70d81e03c5fa"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[T. COAGULACIÓN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="40" y="90" width="150" height="20" uuid="a23e6df5-07f7-40f9-a70d-b7d9a422b2fe"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[T. TROMBINA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="39" y="110" width="150" height="20" uuid="a04ab28c-4c1d-493e-9846-4561b2301452"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIBRINOGENO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="39" y="130" width="150" height="20" uuid="553e2fd1-5d52-49ed-8c4c-96ea92099878"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RETRACCIÓN DEL COAGULO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="40" y="150" width="150" height="20" uuid="52c7c907-c690-44ea-b1f2-a63bcff08930"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TP:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="39" y="170" width="150" height="20" uuid="5d364772-fc40-4aa0-9e81-96b7468e320e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ACTIVIDAD:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="39" y="190" width="150" height="20" uuid="1754cc67-4851-43b8-94f0-a4e4ea0f2133"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[INR:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="40" y="210" width="150" height="20" uuid="b6ba0318-6dff-472d-93b8-f529bc688f4b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TTP:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="39" y="230" width="150" height="20" uuid="a2b03ec3-d988-439e-9b7a-071bf524876f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ANTICUAGU. LUPICO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="10" width="130" height="20" uuid="3c21e086-0f8d-4859-92b8-7a5d0eec2527"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valores normales]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="30" width="130" height="20" uuid="c52ffd12-e467-4587-8578-c48048b6231f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[150.000 - 300.000 / mm3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="349" y="50" width="130" height="20" uuid="d20dca65-e705-407f-9156-3f354ebd4e18"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[1 - 3 minutos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="349" y="70" width="130" height="20" uuid="116e2f39-6dc6-4ce0-a645-835031579139"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[5 - 10 minutos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="90" width="130" height="20" uuid="bc7f1563-9683-4902-bc22-8ca2bd829b24"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[19 - 23 segundos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="349" y="110" width="130" height="20" uuid="ac1896de-b391-4380-a5a6-76f686bc2809"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[250 - 400 mg/dl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="349" y="130" width="130" height="20" uuid="baf0abb9-6f9e-465c-9c71-18d65a114ff8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[5 - 10 minutos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="150" width="130" height="20" uuid="9c63f8f2-0b05-4fb7-a62c-7dd95ec3a4a8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[11 - 14 segundos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="349" y="170" width="130" height="20" uuid="8c82c179-98f6-456d-b418-ddab42853a27"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[61 - 100 %]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="349" y="190" width="130" height="20" uuid="a6b04017-282c-473e-9dd0-1f6f0b7a56bf"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[1.00 - 1.38]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="210" width="130" height="20" uuid="def984ea-2165-4c51-b9bf-10348ce87f95"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[30 - 50 segundos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="349" y="230" width="130" height="20" uuid="93b933ae-75e4-4ec6-a194-e1e16c6220cf"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[31 - 44 segundos]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="30" width="159" height="20" uuid="c9730029-46a1-424c-8aeb-94fc28fef4b4"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{plaquetas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="50" width="159" height="20" uuid="c74c62b3-646d-4623-8932-3391c26ae9af"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{t_hemorragia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="70" width="159" height="20" uuid="1d8e05ae-7452-4ba6-a552-7232e59b722e"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{t_coagulacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="90" width="159" height="20" uuid="ab9f10bd-bae5-42f9-8b51-a3404b366947"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{t_trombina}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="110" width="159" height="20" uuid="117f5c76-824c-49dc-8320-d80abfc356ef"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{fibrinogeno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="130" width="159" height="20" uuid="fc88ac40-b75f-45f4-b7cd-69be07cb5fb4"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{retraccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="150" width="159" height="20" uuid="f01a479a-960d-487b-961e-b5dd15b5daf2"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{tp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="170" width="159" height="20" uuid="ccddc4f4-9ba3-4ae7-94fd-f9f99e7ce452"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{actividad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="190" width="159" height="20" uuid="1d4fe732-9135-4d29-bc1a-34a77ed69b0f"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{inr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="210" width="159" height="20" uuid="4cea570e-6e85-4553-8380-fca02a2db722"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{ttp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="230" width="159" height="20" uuid="9b868e10-b977-4964-8819-6eaa10e5bd4c"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{anti_lupico}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="50">
+			<textField>
+				<reportElement x="130" y="10" width="100" height="20" uuid="79008dc6-6bdb-4879-8d11-0d9625c6d2b3"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>
