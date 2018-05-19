@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="397"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="589"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT mtm.*, CONCAT(apellidos, " ", nombres) paciente from marcadores_tumorales mtm 
+join paciente pa on pa.codigo = mtm.codigo_paciente
+where mtm.codigo_paciente = 1]]>
+	</queryString>
+	<field name="codigo_mtm" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="codigo_mtm"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="marcadores_tumorales"/>
+	</field>
+	<field name="codigo_paciente" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="codigo_paciente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="marcadores_tumorales"/>
+	</field>
+	<field name="fecha" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="marcadores_tumorales"/>
+	</field>
+	<field name="cea" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cea"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="marcadores_tumorales"/>
+	</field>
+	<field name="afp" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="afp"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="marcadores_tumorales"/>
+	</field>
+	<field name="ca_ovarios" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ca_ovarios"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="marcadores_tumorales"/>
+	</field>
+	<field name="ca_mama" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ca_mama"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="marcadores_tumorales"/>
+	</field>
+	<field name="ca_gastrico" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ca_gastrico"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="marcadores_tumorales"/>
+	</field>
+	<field name="psa_total" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="psa_total"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="marcadores_tumorales"/>
+	</field>
+	<field name="psa_libre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="psa_libre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="marcadores_tumorales"/>
+	</field>
+	<field name="paciente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="paciente"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="99" splitType="Stretch">
+			<staticText>
+				<reportElement x="173" y="60" width="193" height="20" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MARCADORES TUMORALES]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="19" width="159" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{paciente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="331" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="30" width="130" height="20" uuid="624fb91d-1838-4256-966f-908decd6ae95"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CEA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="70" width="130" height="20" uuid="2f5028a8-abdf-4949-a589-01afd0b40fac"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[AFP:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="210" width="130" height="20" uuid="b59e9ea2-f46c-4ff8-9734-50bb9f7d5dea"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CA 125 (Ovarios):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="61" y="230" width="130" height="20" uuid="d36e14fe-5540-46f6-a31d-54093d5238c3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CA 15.3 (Mama):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="250" width="130" height="20" uuid="d57585cf-96be-4f9f-9b6b-905a21c191ee"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CA 19.9 (Gastrico):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="270" width="130" height="20" uuid="162a80c6-38e2-4e76-8b20-cdab0166c361"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PSA Total:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="61" y="290" width="130" height="20" uuid="b87532bb-7bc2-4920-ba35-111f683e7662"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PSA Libre:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="10" width="130" height="20" uuid="b1e7b5ab-0811-41ef-9f01-155e2cf4b7f0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valores normales]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="30" width="130" height="20" uuid="103871b0-087d-41b8-8eab-25ec23ea0153"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[0 - 3.4 ng/ml]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="349" y="50" width="130" height="20" uuid="20dcaac3-ee22-4685-a5f1-b281e876137f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[fumadores: 0 - 4.3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="210" width="130" height="20" uuid="101a0471-2f40-4be0-950a-71e76803d2be"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[0 - 35 U/ml]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="351" y="230" width="130" height="20" uuid="e055a1da-5ea0-423b-bde7-bed727c1ef3b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[0 - 25 U/ml]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="250" width="130" height="20" uuid="8bde2193-f2b1-496d-8b00-fff4e33f34de"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[0 - 34 U/ml]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="270" width="130" height="20" uuid="fe6023ca-77dd-4e55-b74b-d0dc929aaab2"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[0 - 4.0 ng/ml]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="351" y="290" width="130" height="20" uuid="1d505da8-e982-44f6-8b6c-598234e56d70"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[0 - 0.4 ng/ml]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="30" width="159" height="20" uuid="5fee87c5-96e7-41aa-a600-e8388c2bcd12"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{cea}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="70" width="159" height="20" uuid="dc367007-1fb7-45db-8f28-4ac6cee6a0bf"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{afp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="210" width="159" height="20" uuid="adf40098-512b-4649-8a6c-091366fcb293"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{ca_ovarios}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="230" width="159" height="20" uuid="3df16653-1d53-409b-bba9-fa39379bc985"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{ca_mama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="250" width="159" height="20" uuid="ba986dd1-217d-4834-8e2e-ec9f646d8c01"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{ca_gastrico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="270" width="159" height="20" uuid="5b2f95c2-a215-4aeb-9179-5e26e7ac1533"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{psa_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="193" y="290" width="159" height="20" uuid="3eee7224-a97a-419a-b10c-b1501d21908b"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{psa_libre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="349" y="70" width="130" height="20" uuid="6d1cb9d3-29fe-4ef0-a7ee-2f4f41a21e1c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[0 - 7.02 ng/ml]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="90" width="130" height="20" uuid="2282a4c0-df8b-45e6-8527-3765fdd19bca"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[15 semanas: 10-50
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="349" y="110" width="130" height="20" uuid="e5ce37a0-3074-416a-93e9-3ac28c405f12"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[16 semanas: 10-60]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="349" y="130" width="130" height="20" uuid="538fa7f3-af76-4b5c-a0ac-1ec923d4d743"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[17 semanas: 15-75]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="150" width="130" height="20" uuid="87b194dd-0e86-4101-a0da-04b33304d135"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[18 semanas: 18-95]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="349" y="170" width="130" height="20" uuid="49dabc1e-b390-4401-9f31-20c7a8ddf97b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[19 semanas: 20-120]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="190" width="130" height="20" uuid="add4ddfc-e305-4b52-9b53-1b24cb78770d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[20 semanas: 30-130]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="50">
+			<textField>
+				<reportElement x="130" y="10" width="100" height="20" uuid="79008dc6-6bdb-4879-8d11-0d9625c6d2b3"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>
