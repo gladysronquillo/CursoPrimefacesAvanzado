@@ -1,21 +1,35 @@
 package com.kodigo.reportes;
 
-import java.io.File;
-import java.io.Serializable;
+import java.io.*;
+import java.util.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.design.JRDesignQuery;
+import org.eclipse.jdt.internal.compiler.batch.Main;
+
+import com.ibm.icu.text.DateFormat;
+import com.ibm.icu.text.SimpleDateFormat;
+import com.kodigo.model.Paciente;
+
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.engine.data.JsonDataSource;
 import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.export.JRPdfExporter;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.export.SimpleExporterInput;
+import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
+import net.sf.jasperreports.export.SimplePdfExporterConfiguration;
 import net.sf.jasperreports.view.JasperViewer;
 
 @Named
@@ -40,31 +54,46 @@ public class ReporteSerologia implements Serializable {
 
 	}
 
-	public void runReporte() {
-
+	public void exportarPDF(Paciente paciente) {
 		try {
+			if (!paciente.equals(null)) {
+				// Fecha
+				DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+				Date date = new Date();
+				String fecha = dateFormat.format(date);
+				// Se obtiene nombre del paciente
+				String patientname = paciente.getApellidos() + "_" + paciente.getNombres();
 
-			String fileName = "C://workspace//CursoPrimefacesAvanzado//src//main//webapp//reportes//serologia.jrxml";
+				// Parámetros a enviarse al reporte jasper
+				Map<String, Object> parametros = new HashMap<String, Object>();
+				parametros.put("id_paciente", paciente.getId_paciente());
+				// Nombre del archivo jrxml con el template del reporte
+				String filename = "serologia";
+				// Dirección física del archivo
+				String jrxmlReport = "E:\\workspace\\CursoPrimefacesAvanzado\\src\\main\\webapp\\reportes\\" + filename
+						+ ".jrxml";
+				// Lectura y compilación del archivo jrxml a .jasper
+				InputStream input = new FileInputStream(new File(jrxmlReport));
+				JasperDesign design = JRXmlLoader.load(input);
+				JasperReport report = JasperCompileManager.compileReport(design);
+				// Se envia la conexión y parámetro id_cliente al reporte
+				JasperPrint jasperPrint = JasperFillManager.fillReport(report, parametros, conn);
 
-			File theFile = new File(fileName);
-			JRDesignQuery newQuery = new JRDesignQuery();
-			JasperDesign jasperDesign = JRXmlLoader.load(theFile);
-			String theQuery = "";
-			newQuery.setText(theQuery);
-			jasperDesign.setQuery(newQuery);
+				// Se prepara para exportar el reporte en el navegador
+				HttpServletResponse response = (HttpServletResponse) FacesContext.getCurrentInstance()
+						.getExternalContext().getResponse();
+				response.addHeader("Content-disposition",
+						"attachment; filename=" + filename + "_" + patientname + "_" + fecha + ".pdf");
+				ServletOutputStream outputStream = response.getOutputStream();
 
-			JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
-			JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, conn);
-			JasperViewer jviewer = new JasperViewer(jasperPrint, false);
-			jviewer.setTitle("Sistema de gestión de Cartera");
-			jviewer.setVisible(true);
-
+				JasperExportManager.exportReportToPdfStream(jasperPrint, outputStream);
+				FacesContext.getCurrentInstance().responseComplete();
+			}
 		}
 
-		catch (Exception j) {
-			System.out.println("Mensaje de Error:" + j.getMessage());
+		catch (Exception ex) {
+			System.out.println("Mensaje de Error:" + ex.getMessage());
 		}
-
 	}
 
 	public void cerrar() {
