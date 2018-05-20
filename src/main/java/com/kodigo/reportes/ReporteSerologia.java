@@ -9,28 +9,14 @@ import java.sql.SQLException;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletOutputStream;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.eclipse.jdt.internal.compiler.batch.Main;
-
 import com.ibm.icu.text.DateFormat;
 import com.ibm.icu.text.SimpleDateFormat;
 import com.kodigo.model.Paciente;
-
 import net.sf.jasperreports.engine.*;
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import net.sf.jasperreports.engine.data.JsonDataSource;
 import net.sf.jasperreports.engine.design.JasperDesign;
-import net.sf.jasperreports.engine.export.JRPdfExporter;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
-import net.sf.jasperreports.export.SimpleExporterInput;
-import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
-import net.sf.jasperreports.export.SimplePdfExporterConfiguration;
-import net.sf.jasperreports.view.JasperViewer;
 
 @Named
 @SessionScoped
