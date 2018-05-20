@@ -2,22 +2,22 @@
 <!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySql"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="397"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="589"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT srl.*, CONCAT(apellidos, " ", nombres) paciente from serologia srl 
-join paciente pa on pa.codigo = srl.codigo_paciente
-where srl.codigo_paciente = 1]]>
+join paciente pa on pa.id_paciente = srl.id_paciente
+where srl.id_serologia = (select id_serologia from laboratorio.serologia order by id_serologia desc limit 1)]]>
 	</queryString>
-	<field name="codigo_srl" class="java.lang.Integer">
-		<property name="com.jaspersoft.studio.field.label" value="codigo_srl"/>
+	<field name="id_serologia" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_serologia"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="serologia"/>
 	</field>
-	<field name="codigo_paciente" class="java.lang.Integer">
-		<property name="com.jaspersoft.studio.field.label" value="codigo_paciente"/>
+	<field name="id_paciente" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_paciente"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="serologia"/>
 	</field>
 	<field name="fecha" class="java.sql.Date">
@@ -344,9 +344,9 @@ where srl.codigo_paciente = 1]]>
 	</detail>
 	<lastPageFooter>
 		<band height="50">
-			<textField>
-				<reportElement x="130" y="10" width="100" height="20" uuid="79008dc6-6bdb-4879-8d11-0d9625c6d2b3"/>
-				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="130" y="12" width="100" height="20" uuid="0cf797d5-2f75-4d13-abae-ff5d0a33db06"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 		</band>
 	</lastPageFooter>
