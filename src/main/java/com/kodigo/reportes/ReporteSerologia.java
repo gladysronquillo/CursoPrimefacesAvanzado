@@ -1,20 +1,28 @@
 package com.kodigo.reportes;
 
-import java.io.*;
-import java.util.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.Serializable;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
+
 import com.ibm.icu.text.DateFormat;
 import com.ibm.icu.text.SimpleDateFormat;
 import com.kodigo.model.Paciente;
-import net.sf.jasperreports.engine.*;
+
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 
@@ -22,24 +30,8 @@ import net.sf.jasperreports.engine.xml.JRXmlLoader;
 @SessionScoped
 public class ReporteSerologia implements Serializable {
 	private static final long serialVersionUID = 2072950384835762455L;
-
-	private Connection conn;
-	private final String login = "root"; // usuario de acceso a MySQL
-	private final String password = "admin"; // contraseña de usuario
-	private String url = "jdbc:mysql://localhost/laboratorio";
-
-	public ReporteSerologia() {
-		try {
-			Class.forName("com.mysql.jdbc.Driver"); // se carga el driver
-			conn = DriverManager.getConnection(url, login, password);
-		} catch (ClassNotFoundException ex) {
-			ex.printStackTrace();
-		} catch (SQLException ex) {
-			ex.printStackTrace();
-		}
-
-	}
-
+	Conexion conn = new Conexion();
+	
 	public void exportarPDF(Paciente paciente) {
 		try {
 			if (!paciente.equals(null)) {
@@ -56,14 +48,14 @@ public class ReporteSerologia implements Serializable {
 				// Nombre del archivo jrxml con el template del reporte
 				String filename = "serologia";
 				// Dirección física del archivo
-				String jrxmlReport = "E:\\workspace\\CursoPrimefacesAvanzado\\src\\main\\webapp\\reportes\\" + filename
+				String jrxmlReport = "C:\\workspace\\CursoPrimefacesAvanzado\\src\\main\\webapp\\reportes\\" + filename
 						+ ".jrxml";
 				// Lectura y compilación del archivo jrxml a .jasper
 				InputStream input = new FileInputStream(new File(jrxmlReport));
 				JasperDesign design = JRXmlLoader.load(input);
 				JasperReport report = JasperCompileManager.compileReport(design);
 				// Se envia la conexión y parámetro id_cliente al reporte
-				JasperPrint jasperPrint = JasperFillManager.fillReport(report, parametros, conn);
+				JasperPrint jasperPrint = JasperFillManager.fillReport(report, parametros, conn.abirConexion());
 
 				// Se prepara para exportar el reporte en el navegador
 				HttpServletResponse response = (HttpServletResponse) FacesContext.getCurrentInstance()
@@ -74,6 +66,8 @@ public class ReporteSerologia implements Serializable {
 
 				JasperExportManager.exportReportToPdfStream(jasperPrint, outputStream);
 				FacesContext.getCurrentInstance().responseComplete();
+				
+				conn.cerrar();
 			}
 		}
 
@@ -81,13 +75,6 @@ public class ReporteSerologia implements Serializable {
 			System.out.println("Mensaje de Error:" + ex.getMessage());
 		}
 	}
-
-	public void cerrar() {
-		try {
-			conn.close();
-		} catch (SQLException ex) {
-			ex.printStackTrace();
-		}
-	}
+     
 
 }

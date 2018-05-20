@@ -18,15 +18,21 @@
 			<h:form id="idFormPaciente">
 
 				<h1></h1>
-			
-
-				<p:commandLink oncomplete="PF('wdlgDatosSelecionarPaciente').show();" update=":idDatosSelecionarPaciente">
-					<h:graphicImage value="/resources/images/paciente.png" border="0" width="75" height="75"/>
+				<p:commandLink
+					oncomplete="PF('wdlgDatosSelecionarPaciente').show();"
+					update=":idDatosSelecionarPaciente">
+					<h:graphicImage value="/resources/images/paciente.png" border="0"
+						width="75" height="75" />
 				</p:commandLink>
-
 				<h1></h1>
 
-				<p:fieldset legend="Datos Personales" >
+
+
+				
+
+
+
+				<p:fieldset legend="Datos Personales">
 					<h:panelGrid id="pgDatos" columns="3">
 
 						<p:outputLabel style="font-weight:bold" for="txtCedula"
@@ -68,11 +74,14 @@
 				</p:fieldset>
 
 				<h1></h1>
-					
-				<p:commandLink oncomplete="PF('wdlgExamenesSelecionados').show();" update=":idDatosSelecionarPaciente">
-					<h:graphicImage value="/resources/images/tipoExamen.png" border="0" width="75" height="75"/>
+
+				<p:commandLink id="dd" disabled="false"
+					oncomplete="PF('wdlgExamenesSelecionados').show();"
+					update=":idDatosSelecionarPaciente">
+					<h:graphicImage value="/resources/images/tipoExamen.png" border="0"
+						width="75" height="75" />
 				</p:commandLink>
-					
+
 				<h1></h1>
 
 

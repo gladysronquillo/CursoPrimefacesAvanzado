@@ -109,10 +109,6 @@ order by id_serologia desc limit 1]]>
 				<textElement textAlignment="Left"/>
 				<textFieldExpression><![CDATA[$F{paciente}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="279" y="52" width="100" height="30" uuid="8897c345-372e-49bc-ba8d-18b45b615bc4"/>
-				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
-			</textField>
 		</band>
 	</pageHeader>
 	<detail>
