@@ -88,21 +88,17 @@
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">COCAÍNA : </p:outputLabel></td>
-						<td align="right">
-							<p:selectOneRadio>
+						<td align="right"><p:selectOneRadio>
 								<f:selectItem itemValue="P" itemLabel="POSITIVO" />
 								<f:selectItem itemValue="N" itemLabel="NEGATIVO" />
-							</p:selectOneRadio>
-						</td>
+							</p:selectOneRadio></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">MARIHUANA : </p:outputLabel></td>
-						<td align="right">
-							<p:selectOneRadio>
+						<td align="right"><p:selectOneRadio>
 								<f:selectItem itemValue="P" itemLabel="POSITIVO" />
 								<f:selectItem itemValue="N" itemLabel="NEGATIVO" />
-							</p:selectOneRadio>
-						</td>
+							</p:selectOneRadio></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">ALCOHOL SÉRICO : </p:outputLabel></td>
@@ -111,18 +107,19 @@
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">AFETAMINAS : </p:outputLabel></td>
-						<td align="right">
-							<p:selectOneRadio>
+						<td align="right"><p:selectOneRadio>
 								<f:selectItem itemValue="P" itemLabel="POSITIVO" />
 								<f:selectItem itemValue="N" itemLabel="NEGATIVO" />
-							</p:selectOneRadio>
-						</td>
+							</p:selectOneRadio></td>
 					</tr>
 
 
 				</table>
 				<br></br>
 				<p:commandButton icon="ui-icon-play" value="Generar"></p:commandButton>
+				<p:commandButton value="Generar PDF" ajax="false"
+					action="#{reportesLaboratorio.exportarDrogasPDF(pacienteController.paciente)}">
+				</p:commandButton>
 
 			</h:form>
 

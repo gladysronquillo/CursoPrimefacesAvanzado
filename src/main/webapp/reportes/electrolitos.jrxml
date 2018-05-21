@@ -7,17 +7,19 @@
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="397"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="589"/>
+	<parameter name="id_paciente" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT elc.*, CONCAT(apellidos, " ", nombres) paciente from electrolitos elc 
-join paciente pa on pa.codigo = elc.codigo_paciente
-where elc.codigo_paciente = 1]]>
+join paciente pa on pa.id_paciente = elc.id_paciente
+where  pa.id_paciente = $P{id_paciente}
+order by id_electrolitos desc limit 1]]>
 	</queryString>
-	<field name="codigo_elc" class="java.lang.Integer">
-		<property name="com.jaspersoft.studio.field.label" value="codigo_elc"/>
+	<field name="id_electrolitos" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_electrolitos"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="electrolitos"/>
 	</field>
-	<field name="codigo_paciente" class="java.lang.Integer">
-		<property name="com.jaspersoft.studio.field.label" value="codigo_paciente"/>
+	<field name="id_paciente" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_paciente"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="electrolitos"/>
 	</field>
 	<field name="fecha" class="java.sql.Date">

@@ -7,17 +7,19 @@
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="397"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="589"/>
+	<parameter name="id_paciente" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT hrm.*, CONCAT(apellidos, " ", nombres) paciente from hormonas hrm 
-join paciente pa on pa.codigo = hrm.codigo_paciente
-where hrm.codigo_paciente = 1]]>
+join paciente pa on pa.id_paciente = hrm.id_paciente
+where  pa.id_paciente = $P{id_paciente}
+order by id_hormonas desc limit 1]]>
 	</queryString>
-	<field name="codigo_hrm" class="java.lang.Integer">
-		<property name="com.jaspersoft.studio.field.label" value="codigo_hrm"/>
+	<field name="id_hormonas" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_hormonas"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
 	</field>
-	<field name="codigo_paciente" class="java.lang.Integer">
-		<property name="com.jaspersoft.studio.field.label" value="codigo_paciente"/>
+	<field name="id_paciente" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_paciente"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
 	</field>
 	<field name="fecha" class="java.sql.Date">

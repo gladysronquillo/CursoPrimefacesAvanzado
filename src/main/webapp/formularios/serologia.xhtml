@@ -199,8 +199,8 @@
 					update=":idFormPaciente:mensaje , serologia"
 					oncomplete="PF('wdlgReporte').show();"></p:commandButton>
 
-				<p:commandButton value="Download" ajax="false"
-					action="#{reporteSerologia.exportarPDF(pacienteController.paciente)}">
+				<p:commandButton value="Generar PDF" ajax="false"
+					action="#{reportesLaboratorio.exportarSerologiaPDF(pacienteController.paciente)}">
 				</p:commandButton>
 
 			</h:form>
@@ -210,7 +210,7 @@
 				<h:form>
 					<p:commandButton icon="ui-icon-extlink" value="Imprimir"
 						ajax="false"
-						action="#{reporteSerologia.exportarPDF(pacienteController.paciente)}"
+						action="#{reportesLaboratorio.exportarSerologiaPDF(pacienteController.paciente)}"
 						oncomplete="PF('wdlgReporte').hide();"></p:commandButton>
 				</h:form>
 			</p:dialog>
