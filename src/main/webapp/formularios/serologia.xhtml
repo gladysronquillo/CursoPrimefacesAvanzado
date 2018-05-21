@@ -18,7 +18,7 @@
 			<h:form id="idFormPaciente">
 
 				<p:growl id="mensaje" autoUpdate="false" severity="info, fatal"
-					showSummary="true" showDetail="true" /> 
+					showSummary="true" showDetail="true" />
 
 				<h1></h1>
 
@@ -194,39 +194,29 @@
 
 				</table>
 				<br></br>
-				<p:commandButton icon="ui-icon-play"
-					value="Grabar"
+				<p:commandButton icon="ui-icon-play" value="Grabar"
 					actionListener="#{serologiaController.registrar(pacienteController.paciente.id_paciente)}"
-					update=":idFormPaciente:mensaje , serologia" oncomplete="PF('wdlgReporte').show();"></p:commandButton>
+					update=":idFormPaciente:mensaje , serologia"
+					oncomplete="PF('wdlgReporte').show();"></p:commandButton>
+
+				<p:commandButton value="Generar PDF" ajax="false"
+					action="#{reportesLaboratorio.exportarSerologiaPDF(pacienteController.paciente)}">
+				</p:commandButton>
 
 			</h:form>
-			
-			
-			
-			
-			<p:dialog header="Reporte"
-				widgetVar="wdlgReporte" id="idReporte" width="900" height="200">
+
+			<p:dialog header="Reporte" widgetVar="wdlgReporte" id="idReporte"
+				width="900" height="200">
 				<h:form>
-
-					
 					<p:commandButton icon="ui-icon-extlink" value="Imprimir"
-					
+						ajax="false"
+						action="#{reportesLaboratorio.exportarSerologiaPDF(pacienteController.paciente)}"
 						oncomplete="PF('wdlgReporte').hide();"></p:commandButton>
-				
-
-
 				</h:form>
 			</p:dialog>
-			
-			
-			
 
 		</ui:define>
 	</ui:composition>
-
-
-
-
 
 </body>
 </html>

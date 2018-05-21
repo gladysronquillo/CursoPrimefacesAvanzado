@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="397"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="589"/>
+	<parameter name="id_paciente" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT sa.*, CONCAT(apellidos, " ", nombres) paciente from bioquimica_sanguinea sa 
+join paciente pa on pa.id_paciente = sa.id_paciente
+where  pa.id_paciente = $P{id_paciente}
+order by id_bioquimica_sanguinea desc limit 1]]>
+	</queryString>
+	<field name="id_bioquimica_sanguinea" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_bioquimica_sanguinea"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="id_paciente" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_paciente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="fecha" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="fosfolipidos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="fosfolipidos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="esteres_colest" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="esteres_colest"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="apo_a1" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="apo_a1"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="apo_b100" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="apo_b100"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="hierro_serico" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="hierro_serico"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="ferritina" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ferritina"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="cap_transferrina" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cap_transferrina"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="sat_transferrina" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sat_transferrina"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="acido_folico" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="acido_folico"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="vitamina_b12" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="vitamina_b12"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="glucosa_sullivan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="glucosa_sullivan"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="aldolasa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="aldolasa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="colinesterasa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="colinesterasa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="glucosa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="glucosa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="urea" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="urea"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="creatinina" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="creatinina"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="colesterol" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="colesterol"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="trigliceridos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="trigliceridos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="hdl_colesterol" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="hdl_colesterol"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="ldl_colesterol" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ldl_colesterol"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="lipidos_totales" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="lipidos_totales"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="acido_urico" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="acido_urico"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="bil_total" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bil_total"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="bil_directa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bil_directa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="bil_indirecta" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bil_indirecta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="sgot" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sgot"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="sgpt" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sgpt"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="fosfatasa_alcalina" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="fosfatasa_alcalina"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="fosfatasa_acida" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="fosfatasa_acida"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="fosfatasa_ac_prost" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="fosfatasa_ac_prost"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="gamma" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="gamma"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="amilasa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="amilasa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="lipasa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="lipasa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="proteinas_totales" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="proteinas_totales"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="albumina" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="albumina"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="globulina" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="globulina"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="ldh" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ldh"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="cpk" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cpk"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="ck_mb" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ck_mb"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="troponina" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="troponina"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="n_ureico" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="n_ureico"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="vldl" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="vldl"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="glucosa_post" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="glucosa_post"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="hba1c" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="hba1c"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="glucosa_ayunas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="glucosa_ayunas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="glucosa_ayunas_1h" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="glucosa_ayunas_1h"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="glucosa_ayunas_2h" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="glucosa_ayunas_2h"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="glucosa_ayunas_3h" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="glucosa_ayunas_3h"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="glucosa_ayunas_4h" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="glucosa_ayunas_4h"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="glucosa_ayunas_5h" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="glucosa_ayunas_5h"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="fructosamina" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="fructosamina"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bioquimica_sanguinea"/>
+	</field>
+	<field name="paciente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="paciente"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="99" splitType="Stretch">
+			<staticText>
+				<reportElement x="173" y="60" width="193" height="20" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BIOQUÍMICA SANGUINEA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="19" width="159" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{paciente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="420" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="30" width="130" height="20" uuid="4ff6da2a-47f9-40f0-964c-af6cd04d9d46"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[GLUCOSA:	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="50" width="130" height="20" uuid="3043e070-2074-48f0-a726-e06177cdc520"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ÚREA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="70" width="130" height="20" uuid="4f426558-7c7a-43f1-a8f3-70d81e03c5fa"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CREATININA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="90" width="130" height="20" uuid="a23e6df5-07f7-40f9-a70d-b7d9a422b2fe"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[COLESTEROL:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="110" width="130" height="20" uuid="a04ab28c-4c1d-493e-9846-4561b2301452"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TRIGICERIDOS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="130" width="130" height="20" uuid="553e2fd1-5d52-49ed-8c4c-96ea92099878"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[HDL. COLESTEROL:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="150" width="130" height="20" uuid="52c7c907-c690-44ea-b1f2-a63bcff08930"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[LDL. COLESTEROL:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="170" width="130" height="20" uuid="5d364772-fc40-4aa0-9e81-96b7468e320e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[LÍPIDOS TOTALES:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="190" width="130" height="20" uuid="1754cc67-4851-43b8-94f0-a4e4ea0f2133"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ÁCIDO ÚRICO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="210" width="130" height="20" uuid="b6ba0318-6dff-472d-93b8-f529bc688f4b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[BIL. TOTAL:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="230" width="130" height="20" uuid="a2b03ec3-d988-439e-9b7a-071bf524876f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[BIL. DIRECTA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="250" width="130" height="20" uuid="6b3ec844-d2cd-4d9e-90f2-cae211b7c687"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[BIL. INDIRECTA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="270" width="130" height="20" uuid="7f73bf1c-75d1-4b6c-9298-988f197493eb"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SGOT:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="10" width="130" height="20" uuid="3c21e086-0f8d-4859-92b8-7a5d0eec2527"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valores normales]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="30" width="130" height="20" uuid="c52ffd12-e467-4587-8578-c48048b6231f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[70 - 110 mg/dl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="349" y="50" width="130" height="20" uuid="d20dca65-e705-407f-9156-3f354ebd4e18"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[10 - 40 mg/dl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="349" y="70" width="130" height="20" uuid="116e2f39-6dc6-4ce0-a645-835031579139"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[0.8 - 1.4 mg/dl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="90" width="130" height="20" uuid="bc7f1563-9683-4902-bc22-8ca2bd829b24"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[150 - 220 mg/dl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="349" y="110" width="130" height="20" uuid="ac1896de-b391-4380-a5a6-76f686bc2809"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[10 - 160 mg/dl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="349" y="130" width="130" height="20" uuid="baf0abb9-6f9e-465c-9c71-18d65a114ff8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[H:>65 M:>55 mg/dl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="150" width="130" height="20" uuid="9c63f8f2-0b05-4fb7-a62c-7dd95ec3a4a8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[< 150 mg/dl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="349" y="170" width="130" height="20" uuid="8c82c179-98f6-456d-b418-ddab42853a27"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[400 - 800 mg/dl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="349" y="190" width="130" height="20" uuid="a6b04017-282c-473e-9dd0-1f6f0b7a56bf"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[H: 3.5-7.0  M: 2.5-6.0]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="210" width="130" height="20" uuid="def984ea-2165-4c51-b9bf-10348ce87f95"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[hasta 1.0 mg/dl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="349" y="230" width="130" height="20" uuid="93b933ae-75e4-4ec6-a194-e1e16c6220cf"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[hasta 0.2 mg/dl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="349" y="250" width="130" height="20" uuid="fe5a65dc-f947-46d3-b5ab-91a85bce86a9"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[hasta 0.8 mg/dl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="349" y="270" width="130" height="20" uuid="21f35f66-40c1-4966-bf2d-cafca7538bc9"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[hasta 40 U/I]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="30" width="159" height="20" uuid="c9730029-46a1-424c-8aeb-94fc28fef4b4"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{glucosa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="50" width="159" height="20" uuid="c74c62b3-646d-4623-8932-3391c26ae9af"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{urea}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="70" width="159" height="20" uuid="1d8e05ae-7452-4ba6-a552-7232e59b722e"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{creatinina}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="90" width="159" height="20" uuid="ab9f10bd-bae5-42f9-8b51-a3404b366947"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{colesterol}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="110" width="159" height="20" uuid="117f5c76-824c-49dc-8320-d80abfc356ef"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{trigliceridos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="130" width="159" height="20" uuid="fc88ac40-b75f-45f4-b7cd-69be07cb5fb4"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{hdl_colesterol}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="150" width="159" height="20" uuid="f01a479a-960d-487b-961e-b5dd15b5daf2"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{ldl_colesterol}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="170" width="159" height="20" uuid="ccddc4f4-9ba3-4ae7-94fd-f9f99e7ce452"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{lipidos_totales}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="190" width="159" height="20" uuid="1d4fe732-9135-4d29-bc1a-34a77ed69b0f"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{acido_urico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="210" width="159" height="20" uuid="4cea570e-6e85-4553-8380-fca02a2db722"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{bil_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="230" width="159" height="20" uuid="9b868e10-b977-4964-8819-6eaa10e5bd4c"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{bil_directa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="250" width="159" height="20" uuid="fb39796d-6f77-465b-8f62-c3f0bf72d268"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{bil_indirecta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="270" width="159" height="20" uuid="67ec4dfc-532b-4d14-98c8-13281b47e969"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{sgot}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="290" width="130" height="20" uuid="e9a6db6e-f318-4286-a57f-abd41a7a891f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SGPT:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="310" width="130" height="20" uuid="d666cb9e-7e81-437c-9d70-eefee2b0159c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FOSFATASA ALCALINA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="61" y="330" width="130" height="20" uuid="683eec5b-a200-48e4-9643-8de08e168347"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FOSFATASA ÁCIDA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="350" width="130" height="20" uuid="580b2cdf-b951-42b4-9a5f-3b295ebf0240"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FOSFATASA AC. PROST.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="370" width="130" height="20" uuid="a4a9f5b9-bfe7-416f-b0e9-0d704d54ff86"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[GAMMA G.T.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="390" width="130" height="20" uuid="3b7775a2-f144-48a5-a7b3-135a091a61c5"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[AMILASA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="290" width="130" height="20" uuid="5c6423e4-17f4-42f2-95d7-83f7f878705c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[hasta 40 U/I]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="310" width="130" height="20" uuid="524af859-6e9e-415e-95f7-0d931dfffcb7"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[A: 68-240  N:100-400 U/I]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="351" y="330" width="130" height="20" uuid="fd490cef-3f58-4b14-938b-7f8cc4668fbe"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[hasta 11  U/I]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="350" width="130" height="20" uuid="534272ae-a107-4e04-bfc9-1539ea46510c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[hasta 4 U/I]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="370" width="130" height="20" uuid="7b765510-f07e-4fb4-8a20-5cface8eacd4"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[H: 11-50  M: 7-32 U/I]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="350" y="390" width="130" height="20" uuid="0ccb55eb-f4c2-4b7b-ae67-7d9a206cc538"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[hasta 120 UA/dl]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="192" y="290" width="159" height="20" uuid="d40aecd7-19c3-42ff-96ee-097319b38aed"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{sgpt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="193" y="310" width="159" height="20" uuid="8da50081-780b-4749-b50d-405c3bc490e7"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{fosfatasa_alcalina}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="330" width="159" height="20" uuid="769b04f8-f222-402c-9e1f-8ae7689f2f71"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{fosfatasa_acida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="350" width="159" height="20" uuid="689ea044-cfb1-4ef2-8c0f-328d806f9931"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{fosfatasa_ac_prost}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="370" width="159" height="20" uuid="eb6757dd-daa2-4f2f-832f-3ace8602b6e9"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{gamma}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="390" width="159" height="20" uuid="989fab28-fba3-41ae-bf37-8174ec1895a1"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{amilasa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="50">
+			<textField>
+				<reportElement x="130" y="10" width="100" height="20" uuid="79008dc6-6bdb-4879-8d11-0d9625c6d2b3"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="397"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="589"/>
+	<parameter name="id_paciente" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT hrm.*, CONCAT(apellidos, " ", nombres) paciente from hormonas hrm 
+join paciente pa on pa.id_paciente = hrm.id_paciente
+where  pa.id_paciente = $P{id_paciente}
+order by id_hormonas desc limit 1]]>
+	</queryString>
+	<field name="id_hormonas" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_hormonas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="id_paciente" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_paciente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="fecha" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="prueba_embarazo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="prueba_embarazo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="hcgb" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="hcgb"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="t3" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="t3"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="t4" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="t4"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="tsh" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tsh"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="cortisol" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cortisol"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="dheas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dheas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="estrogenos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="estrogenos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="estradiol" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="estradiol"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="ft3" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ft3"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="ft4" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ft4"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="fsh" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="fsh"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="hgh" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="hgh"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="insulina" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="insulina"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="lh" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="lh"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="paratohormona" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="paratohormona"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="peptido_c" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="peptido_c"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="progesterona" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="progesterona"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="prolactina" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="prolactina"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="testosterona" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="testosterona"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hormonas"/>
+	</field>
+	<field name="paciente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="paciente"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="42" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="84" splitType="Stretch">
+			<staticText>
+				<reportElement x="181" y="50" width="193" height="20" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HORMONAS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="19" width="159" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{paciente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="580" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="20" width="130" height="40" uuid="3a1d5332-471f-4b14-be8d-a450c004fe02"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRUEBAS DE EMBARAZO (HCGB):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="60" width="130" height="20" uuid="a6ee6091-54b0-494d-9cb6-d7b2e681e7dc"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[HCGB Cuantitativa:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="200" width="130" height="30" uuid="1c807f1c-8ac6-4428-be6c-c510fe1ddc02"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[T3:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="340" y="20" width="138" height="20" uuid="0e78c9c9-ae10-41e4-9c47-a3d7bc549074"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valores normales]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="341" y="200" width="138" height="30" uuid="6396d718-c6ef-4c38-85b4-dd8ba4c8b71c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[niños: 0.8-2.9    ng/ml adultos: 0.8-2.0]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="20" width="148" height="40" uuid="6e9520fb-6dec-4e70-ad72-84e1eee5fcb1"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{prueba_embarazo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="60" width="148" height="20" uuid="61517123-9333-4060-8b4f-929920926f5b"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{hcgb}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="200" width="149" height="30" uuid="83e90a82-1a79-4d58-b190-652416cef88f"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{t3}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="341" y="60" width="138" height="130" uuid="3a941611-63e1-4f48-a618-83c33f422811"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO EMBARAZO: 0-5 mUI/ml
+3 semanas: 5.0-70.0
+4 semanas: 9.0-750
+5 semanas: 200-7000
+6 semanas: 150-30000
+7 semanas: 3000-160000
+8 semanas: 32000-150000
+9 semanas: 60000-150000
+10 semanas: 46000-180000
+12 semanas: 27000-210000]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="240" width="130" height="30" uuid="68df2f77-0fce-4964-9bcd-270f94fe8b92"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[T4:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="191" y="240" width="149" height="30" uuid="a05542e2-07b5-449f-8c08-31d0da8c5501"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{t4}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="342" y="240" width="138" height="30" uuid="bef164e0-9fa5-444b-bb1d-4e20ebb2706d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[niños: 6.2-15.1    ng/dl adultos: 5.1-14.1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="280" width="130" height="40" uuid="57b5585c-b45d-42ac-849a-dd1fbeb2cbf3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TSH:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="280" width="149" height="40" uuid="5c038acd-bd6b-4669-9bec-5a9fcdbc256a"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{tsh}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="341" y="280" width="138" height="40" uuid="fd4af869-feee-4257-94f0-640f5befe679"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[niños: 0.28-6.5    uU/ml adultos: 0.27-5.2                    > 60 años: 0.4-8.0]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="330" width="130" height="30" uuid="d831f1c6-e7df-4222-8338-2534305eec2a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CORTISOL:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="191" y="330" width="149" height="30" uuid="aa91f680-3c9a-445d-8b65-cbbfb6de3f5d"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{cortisol}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="342" y="330" width="138" height="30" uuid="ad4c34f5-8c63-4cb9-a8e1-51fbc612dc54"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[a.m.: 6.2-19.4        ug/dl              p.m.: 2.3-11.9]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="370" width="130" height="20" uuid="01095ba5-e629-422b-ab5e-8d1e171d6291"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DHEAS:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="191" y="370" width="149" height="20" uuid="3b58142d-ba5b-462c-a7c4-5715c8a24570"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{dheas}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="342" y="370" width="138" height="20" uuid="ef9482e1-7d8f-4a00-8c00-7372fa8fdec0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[100-300 ug/dl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="400" width="130" height="30" uuid="7e3c50c7-4cb6-4875-a7a2-e46ac5e99608"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTROGENOS:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="400" width="149" height="30" uuid="56116177-551c-4aa4-a80d-96eb2b7527f2"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{estrogenos}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="343" y="400" width="138" height="120" uuid="8e079b0c-5124-42cd-8d99-67144ddf7d0f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[fase folicular: 24-195 pg/ml   
+fase ovulatoria: 66.1-411.0
+fase lutea: 40.0-261.0
+post menopausia: 10.0-39.5
+1er trimestre: 786-4584
+2do trimestre: 801-5763
+3er trimestre: 1810-13890
+niños: 10-36
+hombres: 3.3-59.5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="530" width="130" height="30" uuid="ab15b819-f467-40c7-a80a-918e2af0a2ae"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FT3:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="530" width="149" height="30" uuid="ce3f1ad0-5e49-4862-9c6b-acd3301c5f85"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{ft3}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="341" y="530" width="138" height="30" uuid="4d2f6485-b3e1-4b61-80e9-8a650a7f1b2c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[niños: 0.25-0.56 ng/dl adultos: 0.18-0.46]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="560" width="130" height="20" uuid="1e571aa1-1042-4353-b927-bc3c47ef4275"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FT4:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="560" width="149" height="20" uuid="de30a9f6-89c0-472b-936a-6e9b3d9de066"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{ft4}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="341" y="560" width="138" height="20" uuid="c79dabff-886b-4bc7-bd3f-60536dc53985"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[0.9-1.7 ug/dl]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="36">
+			<textField>
+				<reportElement x="130" y="10" width="100" height="20" uuid="79008dc6-6bdb-4879-8d11-0d9625c6d2b3"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

@@ -31,17 +31,20 @@
 
 						<p:outputLabel style="font-weight:bold" for="txtNombres"
 							value="Nombres" />
-						<p:outputLabel id="txtNombres" disabled="true" value="#{pacienteController.paciente.nombres}"
+						<p:outputLabel id="txtNombres" disabled="true"
+							value="#{pacienteController.paciente.nombres}"
 							requiredMessage="Campo Requerido" />
 						<p:message for="txtNombres" />
 
 						<p:outputLabel style="font-weight:bold" for="txtApellidos"
 							value="Apellidos" />
-						<p:outputLabel id="txtApellidos" disabled="true" value="#{pacienteController.paciente.apellidos}"/>
+						<p:outputLabel id="txtApellidos" disabled="true"
+							value="#{pacienteController.paciente.apellidos}" />
 						<p:message for="txtApellidos" />
 
 						<p:outputLabel style="font-weight:bold" for="rdbSexo" value="Sexo" />
-						<p:selectOneRadio id="rdbSexo" disabled="true" value="#{pacienteController.paciente.sexo}">
+						<p:selectOneRadio id="rdbSexo" disabled="true"
+							value="#{pacienteController.paciente.sexo}">
 							<f:selectItem itemValue="M" itemLabel="Masculino" />
 							<f:selectItem itemValue="F" itemLabel="Femenino" />
 						</p:selectOneRadio>
@@ -49,7 +52,9 @@
 
 						<p:outputLabel style="font-weight:bold" for="txtFechaNacimiento"
 							value="Fec. Nacimiento" />
-						<p:outputLabel id="txtFechaNacimiento" value="#{pacienteController.paciente.fechaNacimiento}" locale="es" disabled="true" />
+						<p:outputLabel id="txtFechaNacimiento"
+							value="#{pacienteController.paciente.fechaNacimiento}"
+							locale="es" disabled="true" />
 						<p:message for="txtFechaNacimiento" />
 
 					</h:panelGrid>
@@ -259,16 +264,11 @@
 				</table>
 				<br></br>
 				<p:commandButton icon="ui-icon-play" value="Generar"></p:commandButton>
-
-
+				<p:commandButton value="Generar PDF" ajax="false"
+					action="#{reportesLaboratorio.exportarBioquimicaSanguineaPDF(pacienteController.paciente)}">
+				</p:commandButton>
 			</h:form>
-
 		</ui:define>
 	</ui:composition>
-
-
-
-
-
 </body>
 </html>

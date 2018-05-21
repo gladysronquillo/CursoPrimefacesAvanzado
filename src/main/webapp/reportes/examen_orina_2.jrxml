@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="397"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="589"/>
+	<parameter name="id_paciente" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT orn.*, CONCAT(apellidos, " ", nombres) paciente from examen_orina orn 
+join paciente pa on pa.id_paciente = orn.id_paciente
+where  pa.id_paciente = $P{id_paciente}
+order by id_examen_orina desc limit 1]]>
+	</queryString>
+	<field name="id_examen_orina" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_examen_orina"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="id_paciente" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_paciente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="fecha" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="fisico_color" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="fisico_color"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="fisico_aspecto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="fisico_aspecto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="fisico_densidad" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="fisico_densidad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="fisico_ph" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="fisico_ph"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="quimico_nitritos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="quimico_nitritos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="quimico_proteinas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="quimico_proteinas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="quimico_glucosa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="quimico_glucosa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="quimico_cetonico" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="quimico_cetonico"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="quimico_urobilinogeno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="quimico_urobilinogeno"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="quimico_bilirubinas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="quimico_bilirubinas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="quimico_sangre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="quimico_sangre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="quimico_leucocitos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="quimico_leucocitos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="celulas_epiteliales" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="celulas_epiteliales"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="celulas_redondas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="celulas_redondas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="bacterias" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bacterias"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="piocitos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="piocitos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="hematies" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="hematies"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="filamentos_mucosos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="filamentos_mucosos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="cristales" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cristales"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="cilindros" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cilindros"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="esporas_hongos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="esporas_hongos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="miscelios_hongos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="miscelios_hongos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="trichomonas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="trichomonas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="gota_fresca" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="gota_fresca"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="proteinuria_24" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="proteinuria_24"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="proteinuria_miccional" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="proteinuria_miccional"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="microalbuminuria" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="microalbuminuria"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="clearance_creatinina" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="clearance_creatinina"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="prueba_embarazo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="prueba_embarazo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="baar" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="baar"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="muestras" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="muestras"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_orina"/>
+	</field>
+	<field name="paciente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="paciente"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="84" splitType="Stretch">
+			<staticText>
+				<reportElement x="190" y="50" width="160" height="20" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="13" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[EXAMEN DE ORINA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="19" width="159" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{paciente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="265" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="110" width="190" height="20" uuid="99303fa5-3615-4e12-abb2-877d2ca80ec0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROTEINURIA 24 HORAS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="130" width="190" height="20" uuid="4b9cfd38-214c-49dc-ae10-aabb02d4bdf4"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROTEINURIA MICCIONAL:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="150" width="190" height="20" uuid="7e443234-79c2-41c4-b778-f5459a8c767a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[MICROALBUMINURIA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="170" width="190" height="20" uuid="141d0287-8e43-40d1-88f4-31f4199aff1e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CLEARANCE DE CREATININA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="380" y="110" width="131" height="20" uuid="c314da5f-d4e8-49d2-98e4-ca57b4730cf9"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[V.N: hasta 150 mg/24H]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="379" y="130" width="131" height="20" uuid="b0418bee-be61-4d10-abb9-b0578d199f1c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[hasta 12 mg/dl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="379" y="150" width="131" height="20" uuid="82206fed-c40e-42c8-af7f-2989cb0c399c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[0 - 20 mg/l]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="379" y="170" width="131" height="20" uuid="bc10a431-5623-427e-a4e0-1e8e862b339e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[80 - 120 mil/min.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="250" y="110" width="129" height="20" uuid="5653ae3b-9af5-40dd-8a88-f60384a2f001"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{proteinuria_24}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="130" width="129" height="20" uuid="f656ca7d-0c44-4d25-8940-fe36c87c0b51"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{proteinuria_miccional}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="150" width="129" height="20" uuid="daf0a14e-6756-461c-b271-2b75609589ac"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{microalbuminuria}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="170" width="129" height="20" uuid="c7d321da-07ed-41fe-8ea5-f12d81e2cd7e"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{clearance_creatinina}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="190" width="190" height="20" uuid="cc145c03-d5d2-45e7-baf2-afc56d13e175"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRUEBA DE EMBARAZO (HCGB):]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="250" y="190" width="129" height="20" uuid="317ae655-b6d1-4a16-aa5b-347cba4859b7"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{prueba_embarazo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="210" width="61" height="20" uuid="308bdffc-4204-4377-9b03-9bb813274a28"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[BAAR EN:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="249" y="210" width="129" height="20" uuid="0b14ffff-d923-4110-9f85-56f2d39f71ee"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{muestras}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="30" width="190" height="20" uuid="8bfca3f9-d2b0-4211-b711-20dd3c72f5ef"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Esporas de hongos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="50" width="190" height="20" uuid="6bc1e869-601e-48b1-b689-87d003219d65"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Miscelios de hongos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="70" width="190" height="20" uuid="00ab8493-c7df-455f-935b-fd8bb92c3115"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Trichomonas:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="90" width="190" height="20" uuid="ff0ef687-4435-4886-aed8-f8eca788c622"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[GOTA FRESCA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="250" y="30" width="260" height="20" uuid="a0aaa5f5-62a7-4d1b-ba05-3fc137065336"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{esporas_hongos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="50" width="260" height="20" uuid="ecf71996-1c2f-42b5-9b06-c3ce84921129"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{miscelios_hongos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="70" width="260" height="20" uuid="471ed0b8-7281-4653-a10b-c7038e9ef07f"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{trichomonas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="90" width="260" height="20" uuid="0a156360-6a1e-4f2c-9c77-22bd8cb54f9d"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{gota_fresca}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="169" y="210" width="80" height="20" uuid="3ae745fe-1830-4429-bd5b-53dbd9e4c75e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[MUESTRAS:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="210" width="49" height="20" uuid="27ca64fa-0a56-4c11-86ce-16e1f7873aaa"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{baar}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="50">
+			<textField>
+				<reportElement x="130" y="10" width="100" height="20" uuid="79008dc6-6bdb-4879-8d11-0d9625c6d2b3"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

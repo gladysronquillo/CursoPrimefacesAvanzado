@@ -58,77 +58,45 @@
 
 			<h:form>
 				<p:clock></p:clock>
-				<h1>DROGAS</h1>
+				<h1>CULTIVO Y ANTIBIOGRAMA</h1>
 
 				<table class="formulario" border="0">
 					<tr>
-						<td><p:outputLabel style="font-weight: bold">ÁCIDO VALPROICO : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
-						<td align="right"><p:outputLabel>50 - 100 ug/ml</p:outputLabel></td>
+						<td colspan="2"><p:outputLabel style="font-weight: bold">CULTIVO</p:outputLabel></td>
 					</tr>
 					<tr>
-						<td><p:outputLabel style="font-weight: bold">CARBAMAZEPINA : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
-						<td align="right"><p:outputLabel>4 - 12 ug/ml</p:outputLabel></td>
+						<td><p:outputLabel style="font-weight: bold">Cultivo de : </p:outputLabel></td>
+						<td><p:inputTextarea></p:inputTextarea></td>
 					</tr>
 					<tr>
-						<td><p:outputLabel style="font-weight: bold">DIFENILHIDANTOINA : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
-						<td align="right"><p:outputLabel>10 - 20 ug/ml</p:outputLabel></td>
+						<td><p:outputLabel style="font-weight: bold">Germen Identificado : </p:outputLabel></td>
+						<td><p:inputTextarea></p:inputTextarea></td>
 					</tr>
 					<tr>
-						<td><p:outputLabel style="font-weight: bold">DIGOXINA : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
-						<td align="right"><p:outputLabel>0.5 - 2.0 ug/ml</p:outputLabel></td>
+						<td colspan="2"><p:outputLabel style="font-weight: bold">ANTIBIOGRAMA</p:outputLabel></td>
 					</tr>
 					<tr>
-						<td><p:outputLabel style="font-weight: bold">FENOBARBITAL : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
-						<td align="right"><p:outputLabel>15 - 45 ug/ml</p:outputLabel></td>
+						<td><p:outputLabel style="font-weight: bold">Muy Sensible : </p:outputLabel></td>
+						<td><p:inputTextarea></p:inputTextarea></td>
 					</tr>
 					<tr>
-						<td><p:outputLabel style="font-weight: bold">COCAÍNA : </p:outputLabel></td>
-						<td align="right"><p:selectOneRadio>
-								<f:selectItem itemValue="P" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="N" itemLabel="NEGATIVO" />
-							</p:selectOneRadio></td>
+						<td><p:outputLabel style="font-weight: bold">Med. Sensible : </p:outputLabel></td>
+						<td><p:inputTextarea></p:inputTextarea></td>
 					</tr>
 					<tr>
-						<td><p:outputLabel style="font-weight: bold">MARIHUANA : </p:outputLabel></td>
-						<td align="right"><p:selectOneRadio>
-								<f:selectItem itemValue="P" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="N" itemLabel="NEGATIVO" />
-							</p:selectOneRadio></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">ALCOHOL SÉRICO : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
-						<td align="right"><p:outputLabel>0 - 10 mg/dl</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">AFETAMINAS : </p:outputLabel></td>
-						<td align="right"><p:selectOneRadio>
-								<f:selectItem itemValue="P" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="N" itemLabel="NEGATIVO" />
-							</p:selectOneRadio></td>
-					</tr>
-
-
+						<td><p:outputLabel style="font-weight: bold">Resistente : </p:outputLabel></td>
+						<td><p:inputTextarea></p:inputTextarea></td>
+					</tr>		
 				</table>
 				<br></br>
 				<p:commandButton icon="ui-icon-play" value="Generar"></p:commandButton>
 				<p:commandButton value="Generar PDF" ajax="false"
-					action="#{reportesLaboratorio.exportarDrogasPDF(pacienteController.paciente)}">
+					action="#{reportesLaboratorio.exportarCultivoAntibiogramaPDF(pacienteController.paciente)}">
 				</p:commandButton>
 
 			</h:form>
 
 		</ui:define>
 	</ui:composition>
-
-
-
-
-
 </body>
 </html>

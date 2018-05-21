@@ -7,17 +7,30 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 <body>
+
+
 	<ui:composition template="./../WEB-INF/template/plantilla.xhtml">
 		<ui:define name="content">
+
+
 			<f:event listener="#{pacienteController.listar() }"
 				type="preRenderView"></f:event>
 			<h:form id="idFormPaciente">
 
 				<h1></h1>
-				<p:commandButton icon="ui-icon-search" value="Paciente"
+				<p:commandLink
 					oncomplete="PF('wdlgDatosSelecionarPaciente').show();"
-					update=":idDatosSelecionarPaciente"></p:commandButton>
+					update=":idDatosSelecionarPaciente">
+					<h:graphicImage value="/resources/images/paciente.png" border="0"
+						width="75" height="75" />
+				</p:commandLink>
 				<h1></h1>
+
+
+
+				
+
+
 
 				<p:fieldset legend="Datos Personales">
 					<h:panelGrid id="pgDatos" columns="3">
@@ -61,19 +74,35 @@
 				</p:fieldset>
 
 				<h1></h1>
-				<p:commandButton icon="ui-icon-search" value="Examen"
-					oncomplete="PF('wdlgExamenesSelecionados').show();"></p:commandButton>
+
+				<p:commandLink id="dd" disabled="false"
+					oncomplete="PF('wdlgExamenesSelecionados').show();"
+					update=":idDatosSelecionarPaciente">
+					<h:graphicImage value="/resources/images/tipoExamen.png" border="0"
+						width="75" height="75" />
+				</p:commandLink>
+
 				<h1></h1>
 
 
 				<h1></h1>
 				<p:dataTable id="idExamenesSeleccionados"
 					value="#{tipoExamenController.listaTipoExamenSelecionadosTablaDinamica}"
-					var="seleccionados">
+					var="seleccionados" tableStyle="width:auto">
 					<p:column headerText="Examen">
-						<p:commandLink value="#{seleccionados.nombre}" action="#{tipoExamenController.link(seleccionados)}"></p:commandLink>
+						<h:commandLink
+							action="#{tipoExamenController.link(seleccionados)}">
+							<h:graphicImage value="/resources/images/reporte.png" border="0"
+								width="50" height="50" />
+						</h:commandLink>
+						<h:commandLink>
+							<h:graphicImage value="/resources/images/eliminar.png" border="0"
+								width="50" height="50" />
+						</h:commandLink>
+						<p:outputLabel value="#{seleccionados.nombre}"></p:outputLabel>
 					</p:column>
 				</p:dataTable>
+
 
 			</h:form>
 
@@ -111,10 +140,10 @@
 				</h:form>
 			</p:dialog>
 
-			<p:dialog header="Examenes Selecionados"
-				widgetVar="wdlgExamenesSelecionados" id="idExamenesSelecionados" width="900" height="200">
+			<p:dialog header="Seleccionar Examenen"
+				widgetVar="wdlgExamenesSelecionados" id="idExamenesSelecionados"
+				width="900" height="200">
 				<h:form>
-
 					<h1></h1>
 					<p:selectManyCheckbox id="idTipoListaTipoExamenSeleccionados"
 						value="#{tipoExamenController.listaTipoExamenSeleccionados}"
@@ -128,9 +157,6 @@
 						action="#{tipoExamenController.registrarExamenesSelecionados(pacienteController.paciente.id_paciente,tipoExamenController.listaTipoExamenSeleccionados)}"
 						update="idFormPaciente:idExamenesSeleccionados"
 						oncomplete="PF('wdlgExamenesSelecionados').hide();"></p:commandButton>
-				
-
-
 				</h:form>
 			</p:dialog>
 
