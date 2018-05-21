@@ -1,6 +1,7 @@
 package com.kodigo.controller;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -18,33 +19,30 @@ public class Paciente_TipoExamenController implements Serializable {
 	@EJB
 	private Paciente_TipoExamenFacadeLocal paciente_TipoExamenEjb;
 
-	private Paciente_TipoExamen paciente_TipoExamen;
+	private List<Paciente_TipoExamen> paciente_TipoExamen;
 	
 
 	@PostConstruct
 	public void init() {
 		
 	}
-
-	public void registrar(Integer id_paciente, Integer[] listaTipoExamenSeleccionados) {
+	
+	
+	public void listar(Integer id_paciente) {
 		try {
-			paciente_TipoExamen = new Paciente_TipoExamen();
-
-			for (Integer i : listaTipoExamenSeleccionados) {
-				paciente_TipoExamen.setId_paciente(id_paciente);
-				paciente_TipoExamen.setId_tipo_examen(i.intValue());
-
-				paciente_TipoExamenEjb.create(paciente_TipoExamen);
-				paciente_TipoExamen = new Paciente_TipoExamen();
-			}
-			
+			paciente_TipoExamen = paciente_TipoExamenEjb.buscarDisponibles(id_paciente);
 		} catch (Exception e) {
-			System.out.println("Error al registrar paciente_tipo_examen :" + e);
+			System.out.println("Error al listar lista de pacientes" + e);
 		}
 	}
 
-	
-	
-	
+
+	public List<Paciente_TipoExamen> getPaciente_TipoExamen() {
+		return paciente_TipoExamen;
+	}
+
+	public void setPaciente_TipoExamen(List<Paciente_TipoExamen> paciente_TipoExamen) {
+		this.paciente_TipoExamen = paciente_TipoExamen;
+	}
 
 }

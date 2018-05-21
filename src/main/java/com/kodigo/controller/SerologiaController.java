@@ -38,7 +38,7 @@ public class SerologiaController implements Serializable {
 			
 			serologia.setFecha(fecha);
 			serologiaEjb.create(serologia);
-			this.limpiar();
+		
 			
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se genero correctamente"));
@@ -48,11 +48,6 @@ public class SerologiaController implements Serializable {
 					new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso", "Por favor intente más tarde"));
 			System.out.println("Error al registrar examen Serología :" + e);
 		}
-	}
-
-	private void limpiar() {
-		serologia = null;
-		
 	}
 
 	public Serologia getSerologia() {

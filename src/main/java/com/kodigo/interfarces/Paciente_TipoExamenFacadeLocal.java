@@ -19,7 +19,7 @@ public interface Paciente_TipoExamenFacadeLocal {
 
 	List<Paciente_TipoExamen> findAll();
 	
-	List<Paciente_TipoExamen> buscarDisponibles();
+	List<Paciente_TipoExamen> buscarDisponibles(Integer id_paciente);
 
 	List<Paciente_TipoExamen> findRange(int[] range);
 

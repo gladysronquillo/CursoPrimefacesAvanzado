@@ -8,10 +8,8 @@
 	xmlns:p="http://primefaces.org/ui">
 <body>
 
-
 	<ui:composition template="./../WEB-INF/template/plantilla.xhtml">
 		<ui:define name="content">
-
 
 			<f:event listener="#{pacienteController.listar() }"
 				type="preRenderView"></f:event>
@@ -25,12 +23,6 @@
 						width="75" height="75" />
 				</p:commandLink>
 				<h1></h1>
-
-
-
-				
-
-
 
 				<p:fieldset legend="Datos Personales">
 					<h:panelGrid id="pgDatos" columns="3">
@@ -74,20 +66,17 @@
 				</p:fieldset>
 
 				<h1></h1>
-
-				<p:commandLink id="dd" disabled="false"
+				<p:commandLink id="seleccionarExamenes" disabled="#{pacienteController.desabilitado}"
 					oncomplete="PF('wdlgExamenesSelecionados').show();"
 					update=":idDatosSelecionarPaciente">
 					<h:graphicImage value="/resources/images/tipoExamen.png" border="0"
 						width="75" height="75" />
 				</p:commandLink>
-
 				<h1></h1>
-
 
 				<h1></h1>
 				<p:dataTable id="idExamenesSeleccionados"
-					value="#{tipoExamenController.listaTipoExamenSelecionadosTablaDinamica}"
+					value="#{pacienteController.listaTipoExamenPaciente}"
 					var="seleccionados" tableStyle="width:auto">
 					<p:column headerText="Examen">
 						<h:commandLink
@@ -103,7 +92,6 @@
 					</p:column>
 				</p:dataTable>
 
-
 			</h:form>
 
 			<p:dialog header="DatosSelecionarPaciente"
@@ -116,7 +104,7 @@
 							<p:commandButton icon="ui-icon-check"
 								actionListener="#{pacienteController.leerId(paciente)}"
 								oncomplete="PF('wdlgDatosSelecionarPaciente').hide();"
-								update=":idFormPaciente:pgDatos"></p:commandButton>
+								update=":idFormPaciente:pgDatos, :idFormPaciente:seleccionarExamenes , :idFormPaciente:idExamenesSeleccionados"></p:commandButton>
 						</p:column>
 						<p:column headerText="Cédula" filterBy="#{paciente.cedula}">
 							<p:outputLabel value="#{paciente.cedula}"></p:outputLabel>
@@ -159,7 +147,6 @@
 						oncomplete="PF('wdlgExamenesSelecionados').hide();"></p:commandButton>
 				</h:form>
 			</p:dialog>
-
 
 		</ui:define>
 	</ui:composition>
