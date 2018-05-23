@@ -1,7 +1,6 @@
 package com.kodigo.controller;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -37,7 +36,6 @@ public class PacienteController implements Serializable {
 	private String accion;
 	private boolean desabilitado = true;
 	private List<Paciente_TipoExamen> paciente_TipoExamen;
-	private TipoExamen tipoExamen;
 	private List<TipoExamen> listaTipoExamenPaciente;
 
 
@@ -129,21 +127,21 @@ public class PacienteController implements Serializable {
 	public void listarTipoExamen(Integer id_paciente) {
 		try {
 			paciente_TipoExamen = paciente_TipoExamenEjb.buscarDisponibles(id_paciente);
-			this.mostrarExamenPaciente(paciente_TipoExamen);
 		} catch (Exception e) {
 			System.out.println("Error al listar lista de pacientes" + e);
 		}
 	}
 	
-	public void mostrarExamenPaciente(List<Paciente_TipoExamen> lista) {
-		listaTipoExamenPaciente = new ArrayList<TipoExamen>();
-		for (Paciente_TipoExamen paciente_TipoExamen : lista) {
-			tipoExamen = new TipoExamen();
-			tipoExamen=tipoExamenEjb.find(paciente_TipoExamen.getId_tipo_examen());
-			listaTipoExamenPaciente.add(tipoExamen);
+	public void eliminarPacienteTipoExamen(Paciente_TipoExamen pacienteTipoExamen) {
+		try {
+			paciente_TipoExamenEjb.remove(pacienteTipoExamen);
+			this.listarTipoExamen(pacienteTipoExamen.getId_paciente());
+		} catch (Exception e) {
+			System.out.println("Error al eliminar Paciente tipo examen" + e);
 		}
-		
 	}
+	
+
 	
 	
 

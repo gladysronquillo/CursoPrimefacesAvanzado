@@ -24,4 +24,6 @@ public interface Paciente_TipoExamenFacadeLocal {
 	List<Paciente_TipoExamen> findRange(int[] range);
 
 	int count();
+
+	void eliminarPaciente(Integer id_paciente);
 }

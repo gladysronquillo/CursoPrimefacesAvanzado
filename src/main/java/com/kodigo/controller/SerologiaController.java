@@ -10,6 +10,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
+import com.kodigo.interfarces.Paciente_TipoExamenFacadeLocal;
 import com.kodigo.interfarces.SerologiaFacadeLocal;
 import com.kodigo.model.Serologia;
 
@@ -20,6 +21,9 @@ public class SerologiaController implements Serializable {
 
 	@EJB
 	private SerologiaFacadeLocal serologiaEjb;
+	
+	@EJB
+	private Paciente_TipoExamenFacadeLocal pacienteTipoExamenEJB;
 	
 	private Serologia serologia;
 
@@ -39,6 +43,7 @@ public class SerologiaController implements Serializable {
 			serologia.setFecha(fecha);
 			serologiaEjb.create(serologia);
 		
+			pacienteTipoExamenEJB.eliminarPaciente(id_paciente);
 			
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se genero correctamente"));
