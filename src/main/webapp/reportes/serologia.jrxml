@@ -265,11 +265,6 @@ order by id_serologia desc limit 1]]>
 				<textFieldExpression><![CDATA[$F{vdrl}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="211" y="130" width="159" height="20" uuid="fc88ac40-b75f-45f4-b7cd-69be07cb5fb4"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{aglutinaciones}]]></textFieldExpression>
-			</textField>
-			<textField>
 				<reportElement x="212" y="150" width="159" height="20" uuid="f01a479a-960d-487b-961e-b5dd15b5daf2"/>
 				<textElement textAlignment="Left"/>
 				<textFieldExpression><![CDATA[$F{paratifico_a}]]></textFieldExpression>
