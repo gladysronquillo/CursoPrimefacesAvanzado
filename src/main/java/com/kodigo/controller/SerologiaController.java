@@ -26,8 +26,7 @@ public class SerologiaController implements Serializable {
 	private Paciente_TipoExamenFacadeLocal pacienteTipoExamenEJB;
 	
 	private Serologia serologia;
-
-	
+	private boolean desabilitado = true;
 
 	@PostConstruct
 	public void init() {
@@ -36,6 +35,7 @@ public class SerologiaController implements Serializable {
 
 	public void registrar(Integer id_paciente) {
 		try {
+			serologia = new Serologia();
 			serologia.setIdPaciente(id_paciente);
 			
 			Date fecha = new Date();
@@ -44,6 +44,8 @@ public class SerologiaController implements Serializable {
 			serologiaEjb.create(serologia);
 		
 			pacienteTipoExamenEJB.eliminarPaciente(id_paciente);
+			
+			desabilitado = false;
 			
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se genero correctamente"));
@@ -54,6 +56,11 @@ public class SerologiaController implements Serializable {
 			System.out.println("Error al registrar examen Serología :" + e);
 		}
 	}
+	
+	public String regresar() {
+		serologia = null;
+		return"/protegido/agendar?faces-redirect=true";
+	}
 
 	public Serologia getSerologia() {
 		return serologia;
@@ -61,6 +68,14 @@ public class SerologiaController implements Serializable {
 
 	public void setSerologia(Serologia serologia) {
 		this.serologia = serologia;
+	}
+
+	public boolean isDesabilitado() {
+		return desabilitado;
+	}
+
+	public void setDesabilitado(boolean desabilitado) {
+		this.desabilitado = desabilitado;
 	}
 
 }

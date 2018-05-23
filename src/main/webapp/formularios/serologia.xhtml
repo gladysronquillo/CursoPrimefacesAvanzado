@@ -197,30 +197,24 @@
 
 				<p:commandLink
 					actionListener="#{serologiaController.registrar(pacienteController.paciente.id_paciente)}"
-					update=":idFormPaciente:mensaje , serologia"
-					oncomplete="PF('wdlgReporte').show();">
+					update=":idFormPaciente:mensaje , serologia, botonPdf" >
 					<h:graphicImage value="/resources/images/grabar.png" border="0"
 						width="75" height="75" />
 				</p:commandLink>
 
-				<p:commandLink
+				<p:commandLink id="botonPdf"
 					action="#{reportesLaboratorio.exportarSerologiaPDF(pacienteController.paciente)}"
-					ajax="false">
+					ajax="false" disabled="#{serologiaController.desabilitado}">
 					<h:graphicImage value="/resources/images/pdf.png" border="0"
+						width="90" height="75" />
+				</p:commandLink>
+				
+				<p:commandLink action="#{serologiaController.regresar()}">
+					<h:graphicImage value="/resources/images/regresar.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>
 
 			</h:form>
-
-			<p:dialog header="Reporte" widgetVar="wdlgReporte" id="idReporte"
-				width="900" height="200">
-				<h:form>
-					<p:commandButton icon="ui-icon-extlink" value="Imprimir"
-						ajax="false"
-						action="#{reportesLaboratorio.exportarSerologiaPDF(pacienteController.paciente)}"
-						oncomplete="PF('wdlgReporte').hide();"></p:commandButton>
-				</h:form>
-			</p:dialog>
 
 		</ui:define>
 	</ui:composition>

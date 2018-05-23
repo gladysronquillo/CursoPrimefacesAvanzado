@@ -141,10 +141,6 @@ public class PacienteController implements Serializable {
 		}
 	}
 	
-
-	
-	
-
 	public List<TipoExamen> getListaTipoExamenPaciente() {
 		return listaTipoExamenPaciente;
 	}
@@ -178,7 +174,6 @@ public class PacienteController implements Serializable {
 		this.accion = accion;
 	}
 	
-
 	public boolean isDesabilitado() {
 		return desabilitado;
 	}
@@ -195,6 +190,4 @@ public class PacienteController implements Serializable {
 		this.paciente_TipoExamen = paciente_TipoExamen;
 	}
 	
-	
-
 }
