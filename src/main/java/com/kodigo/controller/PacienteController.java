@@ -10,7 +10,11 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 import com.kodigo.interfarces.PacienteFacadeLocal;
+import com.kodigo.interfarces.Paciente_TipoExamenFacadeLocal;
+import com.kodigo.interfarces.TipoExamenFacadeLocal;
 import com.kodigo.model.Paciente;
+import com.kodigo.model.Paciente_TipoExamen;
+import com.kodigo.model.TipoExamen;
 
 @Named
 @SessionScoped
@@ -20,10 +24,20 @@ public class PacienteController implements Serializable {
 
 	@EJB
 	private PacienteFacadeLocal pacienteEjb;
+	
+	@EJB
+	private Paciente_TipoExamenFacadeLocal paciente_TipoExamenEjb;
+	
+	@EJB
+	private TipoExamenFacadeLocal tipoExamenEjb;
 
 	private List<Paciente> listaPaciente;
 	private Paciente paciente;
 	private String accion;
+	private boolean desabilitado = true;
+	private List<Paciente_TipoExamen> paciente_TipoExamen;
+	private List<TipoExamen> listaTipoExamenPaciente;
+
 
 	@PostConstruct
 	public void init() {
@@ -46,10 +60,13 @@ public class PacienteController implements Serializable {
 	public void leerId(Paciente paciente) {
 		try {
 			Paciente temp = pacienteEjb.find(paciente.getId_paciente());
+			
 
 			if (temp != null) {
 				this.paciente = temp;
 				this.accion = "Modificar";
+				desabilitado = false;
+				this.listarTipoExamen(paciente.getId_paciente());
 			}
 		} catch (Exception e) {
 			System.out.println("Error al obtener paciente" + e);
@@ -106,6 +123,35 @@ public class PacienteController implements Serializable {
 			System.out.println("Error al eliminar paciente" + e);
 		}
 	}
+	
+	public void listarTipoExamen(Integer id_paciente) {
+		try {
+			paciente_TipoExamen = paciente_TipoExamenEjb.buscarDisponibles(id_paciente);
+		} catch (Exception e) {
+			System.out.println("Error al listar lista de pacientes" + e);
+		}
+	}
+	
+	public void eliminarPacienteTipoExamen(Paciente_TipoExamen pacienteTipoExamen) {
+		try {
+			paciente_TipoExamenEjb.remove(pacienteTipoExamen);
+			this.listarTipoExamen(pacienteTipoExamen.getId_paciente());
+		} catch (Exception e) {
+			System.out.println("Error al eliminar Paciente tipo examen" + e);
+		}
+	}
+	
+
+	
+	
+
+	public List<TipoExamen> getListaTipoExamenPaciente() {
+		return listaTipoExamenPaciente;
+	}
+
+	public void setListaTipoExamenPaciente(List<TipoExamen> listaTipoExamenPaciente) {
+		this.listaTipoExamenPaciente = listaTipoExamenPaciente;
+	}
 
 	public List<Paciente> getListaPaciente() {
 		return listaPaciente;
@@ -131,5 +177,24 @@ public class PacienteController implements Serializable {
 		this.limpiar();
 		this.accion = accion;
 	}
+	
+
+	public boolean isDesabilitado() {
+		return desabilitado;
+	}
+
+	public void setDesabilitado(boolean desabilitado) {
+		this.desabilitado = desabilitado;
+	}
+
+	public List<Paciente_TipoExamen> getPaciente_TipoExamen() {
+		return paciente_TipoExamen;
+	}
+
+	public void setPaciente_TipoExamen(List<Paciente_TipoExamen> paciente_TipoExamen) {
+		this.paciente_TipoExamen = paciente_TipoExamen;
+	}
+	
+	
 
 }

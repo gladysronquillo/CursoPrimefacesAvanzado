@@ -35,12 +35,11 @@ public class TipoExamenController implements Serializable {
 	private MenuModel model;
 	private TipoExamen tipoExamen;
 	private Paciente_TipoExamen paciente_TipoExamen;
+	
 
 	@PostConstruct
 	public void init() {
 		this.listarTodosTipoExamenes();
-		
-
 	}
 
 	public void listarTodosTipoExamenes() {
@@ -54,11 +53,14 @@ public class TipoExamenController implements Serializable {
 	public void registrarExamenesSelecionados(Integer id_paciente, Integer[] listaTipoExamenSeleccionados) {
 		this.establecerPermisos();
 		this.registrar(id_paciente, listaTipoExamenSeleccionados);
+		
 	}
 	
-	public String link(TipoExamen tipoExamen) {
-		return tipoExamen.getDetalle();
+	public String link(Paciente_TipoExamen pacientetipoExamen) {
+		//paciente_TipoExamenEjb.remove(pacientetipoExamen);
+		return pacientetipoExamen.getDetalle();
 	}
+	
 
 	public void establecerPermisos() {
 		model = new DefaultMenuModel();
@@ -80,21 +82,27 @@ public class TipoExamenController implements Serializable {
 	public void registrar(Integer id_paciente, Integer[] listaTipoExamenSeleccionados) {
 		try {
 			paciente_TipoExamen = new Paciente_TipoExamen();
-
-			for (Integer i : listaTipoExamenSeleccionados) {
+			
+			for (Integer tipoExamen : listaTipoExamenSeleccionados) {
+				
+				TipoExamen tp = new TipoExamen();
+				tp = tipoExamenEjb.find(tipoExamen);
+				
 				paciente_TipoExamen.setId_paciente(id_paciente);
-				paciente_TipoExamen.setId_tipo_examen(i.intValue());
-				
-				
+				paciente_TipoExamen.setId_tipo_examen(tp.getNombre());
+				paciente_TipoExamen.setDetalle(tp.getDetalle());
 				paciente_TipoExamen.setDisponible(1);
+
 				paciente_TipoExamenEjb.create(paciente_TipoExamen);
 				paciente_TipoExamen = new Paciente_TipoExamen();
 			}
+
 			
 		} catch (Exception e) {
 			System.out.println("Error al registrar paciente_tipo_examen :" + e);
 		}
 	}
+	
 
 	public List<TipoExamen> getListaTipoExamen() {
 		return listaTipoExamen;

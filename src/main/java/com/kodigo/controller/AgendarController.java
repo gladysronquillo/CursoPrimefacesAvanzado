@@ -14,6 +14,4 @@ public class AgendarController implements Serializable {
 		return "/protegido/agendar?faces-redirect=true";
 	}
 
-	
-
 }
