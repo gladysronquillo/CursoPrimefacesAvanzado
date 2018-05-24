@@ -10,34 +10,34 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
-import com.kodigo.interfarces.SerologiaFacadeLocal;
+import com.kodigo.interfarces.Cultivo_antibiogramaFacadeLocal;
 import com.kodigo.model.Paciente;
-import com.kodigo.model.Serologia;
+import com.kodigo.model.Cultivo_antibiograma;
 
 @Named
 @SessionScoped
-public class SerologiaController implements Serializable {
+public class Cultivo_antibiogramaController implements Serializable {
 	private static final long serialVersionUID = 7868279604883358623L;
 
 	@EJB
-	private SerologiaFacadeLocal serologiaEjb;
+	private Cultivo_antibiogramaFacadeLocal cultivo_antibiogramaEjb;
 
-	private Serologia serologia;
+	private Cultivo_antibiograma cultivo_antibiograma;
 	private boolean desabilitado = true;
 
 	@PostConstruct
 	public void init() {
-		serologia = new Serologia();
+		cultivo_antibiograma = new Cultivo_antibiograma();
 	}
 
 	public void registrar(Integer id_paciente) {
 		try {
-			serologia.setIdPaciente(id_paciente);
+			cultivo_antibiograma.setIdPaciente(id_paciente);
 
 			Date fecha = new Date();
 
-			serologia.setFecha(fecha);
-			serologiaEjb.create(serologia);
+			cultivo_antibiograma.setFecha(fecha);
+			cultivo_antibiogramaEjb.create(cultivo_antibiograma);
 
 			FacesContext context = FacesContext.getCurrentInstance();
 			Paciente_TipoExamenController bean = context.getApplication().evaluateExpressionGet(context,
@@ -46,7 +46,7 @@ public class SerologiaController implements Serializable {
 			bean.eliminarPaciente(id_paciente);
 
 			desabilitado = false;
-			serologia = new Serologia();
+			cultivo_antibiograma = new Cultivo_antibiograma();
 
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se genero correctamente"));
@@ -59,7 +59,7 @@ public class SerologiaController implements Serializable {
 	}
 
 	public String regresar(Paciente paciente) {
-		serologia = new Serologia();
+		cultivo_antibiograma = new Cultivo_antibiograma();
 
 		FacesContext context = FacesContext.getCurrentInstance();
 		PacienteController bean = context.getApplication().evaluateExpressionGet(context, "#{pacienteController}",
@@ -70,12 +70,12 @@ public class SerologiaController implements Serializable {
 		return "/protegido/agendar?faces-redirect=true";
 	}
 
-	public Serologia getSerologia() {
-		return serologia;
+	public Cultivo_antibiograma getCultivo_antibiograma() {
+		return cultivo_antibiograma;
 	}
 
-	public void setSerologia(Serologia serologia) {
-		this.serologia = serologia;
+	public void setCultivo_antibiograma(Cultivo_antibiograma cultivo_antibiograma) {
+		this.cultivo_antibiograma = cultivo_antibiograma;
 	}
 
 	public boolean isDesabilitado() {

@@ -16,7 +16,8 @@
 		<ui:define name="content">
 
 			<h:form id="idFormPaciente">
-
+				<p:growl id="mensaje" autoUpdate="false" severity="info, fatal"
+					showSummary="true" showDetail="true" />
 				<h1></h1>
 
 				<p:fieldset legend="Datos Personales">
@@ -62,27 +63,26 @@
 
 				<table class="formulario" border="0">
 					<tr>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">FÍSICO</p:outputLabel></td>					
+						<td colspan="2"><p:outputLabel style="font-weight: bold">FÍSICO</p:outputLabel></td>
 						<td colspan="2"><p:outputLabel style="font-weight: bold">QUÍMICO</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">COLOR : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>					
+						<td><p:inputText></p:inputText></td>
 						<td><p:outputLabel style="font-weight: bold">NITRITOS : </p:outputLabel></td>
 						<td><p:selectOneMenu>
 								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu>
-						</td>
+							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">ASPECTO : </p:outputLabel></td>
 						<td><p:selectOneMenu>
-								<f:selectItem itemValue="LIGERAMENTE TURBIO" itemLabel="LIGERAMENTE TURBIO" />
+								<f:selectItem itemValue="LIGERAMENTE TURBIO"
+									itemLabel="LIGERAMENTE TURBIO" />
 								<f:selectItem itemValue="TRANSPARENTE" itemLabel="TRANSPARENTE" />
 								<f:selectItem itemValue="TURBIO" itemLabel="TURBIO" />
-							</p:selectOneMenu>
-						</td>
+							</p:selectOneMenu></td>
 						<td><p:outputLabel style="font-weight: bold">PROTEINAS : </p:outputLabel></td>
 						<td><p:selectOneMenu>
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
@@ -90,9 +90,8 @@
 								<f:selectItem itemValue="30" itemLabel="30" />
 								<f:selectItem itemValue="60" itemLabel="60" />
 								<f:selectItem itemValue="100" itemLabel="100" />
-							</p:selectOneMenu>
-							</td>
-							<td><p:outputLabel>mg/dl</p:outputLabel></td>
+							</p:selectOneMenu></td>
+						<td><p:outputLabel>mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">DENSIDAD : </p:outputLabel></td>
@@ -103,9 +102,8 @@
 								<f:selectItem itemValue="+" itemLabel="+" />
 								<f:selectItem itemValue="++" itemLabel="++" />
 								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu>
-							</td>
-							<td><p:outputLabel>mg/dl</p:outputLabel></td>
+							</p:selectOneMenu></td>
+						<td><p:outputLabel>mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">PH : </p:outputLabel></td>
@@ -118,16 +116,14 @@
 								<f:selectItem itemValue="7.5" itemLabel="7.5" />
 								<f:selectItem itemValue="8.0" itemLabel="8.0" />
 								<f:selectItem itemValue="8.5" itemLabel="8.5" />
-							</p:selectOneMenu>
-						</td>
+							</p:selectOneMenu></td>
 						<td><p:outputLabel style="font-weight: bold">C. CETONICO : </p:outputLabel></td>
 						<td colspan="2"><p:selectOneMenu>
 								<f:selectItem itemValue="NORMAL" itemLabel="NORMAL" />
 								<f:selectItem itemValue="+" itemLabel="+" />
 								<f:selectItem itemValue="++" itemLabel="++" />
 								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu>
-						</td>
+							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td colspan="2"><p:outputLabel></p:outputLabel></td>
@@ -138,9 +134,8 @@
 								<f:selectItem itemValue="2" itemLabel="2" />
 								<f:selectItem itemValue="4" itemLabel="4" />
 								<f:selectItem itemValue="8" itemLabel="8" />
-							</p:selectOneMenu>
-							</td>
-							<td><p:outputLabel>mg/dl</p:outputLabel></td>
+							</p:selectOneMenu></td>
+						<td><p:outputLabel>mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td colspan="2"><p:outputLabel></p:outputLabel></td>
@@ -150,8 +145,7 @@
 								<f:selectItem itemValue="+" itemLabel="+" />
 								<f:selectItem itemValue="++" itemLabel="++" />
 								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu>
-						</td>
+							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td colspan="2"><p:outputLabel></p:outputLabel></td>
@@ -162,8 +156,7 @@
 								<f:selectItem itemValue="+" itemLabel="+" />
 								<f:selectItem itemValue="++" itemLabel="++" />
 								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu>
-						</td>
+							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td colspan="2"><p:outputLabel></p:outputLabel></td>
@@ -174,8 +167,7 @@
 								<f:selectItem itemValue="+" itemLabel="+" />
 								<f:selectItem itemValue="++" itemLabel="++" />
 								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu>
-						</td>
+							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td colspan="4"><p:outputLabel>MICROSCÓPICO</p:outputLabel></td>
@@ -195,8 +187,7 @@
 								<f:selectItem itemValue="+" itemLabel="+" />
 								<f:selectItem itemValue="++" itemLabel="++" />
 								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu>
-						</td>
+							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td colspan="2"><p:outputLabel style="font-weight: bold">Piocitos : </p:outputLabel></td>
@@ -212,8 +203,7 @@
 								<f:selectItem itemValue="+" itemLabel="+" />
 								<f:selectItem itemValue="++" itemLabel="++" />
 								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu>
-						</td>
+							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td colspan="2"><p:outputLabel style="font-weight: bold">Cristales : </p:outputLabel></td>
@@ -230,8 +220,7 @@
 								<f:selectItem itemValue="+" itemLabel="+" />
 								<f:selectItem itemValue="++" itemLabel="++" />
 								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu>
-						</td>
+							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td colspan="2"><p:outputLabel style="font-weight: bold">Miscelios de hongos : </p:outputLabel></td>
@@ -240,8 +229,7 @@
 								<f:selectItem itemValue="+" itemLabel="+" />
 								<f:selectItem itemValue="++" itemLabel="++" />
 								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu>
-						</td>
+							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td colspan="2"><p:outputLabel style="font-weight: bold">Trichomonas : </p:outputLabel></td>
@@ -250,8 +238,7 @@
 								<f:selectItem itemValue="+" itemLabel="+" />
 								<f:selectItem itemValue="++" itemLabel="++" />
 								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu>
-						</td>
+							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td colspan="2"><p:outputLabel style="font-weight: bold">GOTA RFRESCA: </p:outputLabel></td>
@@ -286,17 +273,15 @@
 						<td colspan="2"><p:selectOneMenu>
 								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu>
-						</td>
+							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td colspan="2"><p:outputLabel style="font-weight: bold">MUESTRAS : </p:outputLabel></td>
 						<td colspan="2"><p:selectOneMenu>
 								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu>
-						</td>
-					</tr>					
+							</p:selectOneMenu></td>
+					</tr>
 				</table>
 				<br></br>
 				<p:commandButton icon="ui-icon-play" value="Generar"></p:commandButton>

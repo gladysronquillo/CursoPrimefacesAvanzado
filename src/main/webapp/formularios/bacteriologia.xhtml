@@ -17,6 +17,8 @@
 
 			<h:form id="idFormPaciente">
 
+				<p:growl id="mensaje" autoUpdate="false" severity="info, fatal"
+					showSummary="true" showDetail="true" />
 				<h1></h1>
 
 				<p:fieldset legend="Datos Personales">
@@ -25,22 +27,26 @@
 						<p:outputLabel style="font-weight:bold" for="txtCedula"
 							value="Número Cédula" />
 						<p:outputLabel id="txtCedula" disabled="true"
+							value="#{pacienteController.paciente.cedula}"
 							requiredMessage="Campo Requerido" />
 						<p:message for="txtCedula" />
 
 						<p:outputLabel style="font-weight:bold" for="txtNombres"
 							value="Nombres" />
 						<p:outputLabel id="txtNombres" disabled="true"
+							value="#{pacienteController.paciente.nombres}"
 							requiredMessage="Campo Requerido" />
 						<p:message for="txtNombres" />
 
 						<p:outputLabel style="font-weight:bold" for="txtApellidos"
 							value="Apellidos" />
-						<p:outputLabel id="txtApellidos" disabled="true" />
+						<p:outputLabel id="txtApellidos" disabled="true"
+							value="#{pacienteController.paciente.apellidos}" />
 						<p:message for="txtApellidos" />
 
 						<p:outputLabel style="font-weight:bold" for="rdbSexo" value="Sexo" />
-						<p:selectOneRadio id="rdbSexo" disabled="true">
+						<p:selectOneRadio id="rdbSexo" disabled="true"
+							value="#{pacienteController.paciente.sexo}">
 							<f:selectItem itemValue="M" itemLabel="Masculino" />
 							<f:selectItem itemValue="F" itemLabel="Femenino" />
 						</p:selectOneRadio>
@@ -48,7 +54,9 @@
 
 						<p:outputLabel style="font-weight:bold" for="txtFechaNacimiento"
 							value="Fec. Nacimiento" />
-						<p:outputLabel id="txtFechaNacimiento" locale="es" disabled="true" />
+						<p:outputLabel id="txtFechaNacimiento"
+							value="#{pacienteController.paciente.fechaNacimiento}"
+							locale="es" disabled="true" />
 						<p:message for="txtFechaNacimiento" />
 
 					</h:panelGrid>
@@ -56,44 +64,65 @@
 			</h:form>
 
 
-			<h:form>
+			<h:form id="bacteriologia">
 				<p:clock></p:clock>
 				<h1>BACTERIOLOGÍA</h1>
 
 				<table class="formulario" border="0">
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">SECRECIÓN : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
+						<td><p:inputText
+								value="#{bacteriologiaController.bacteriologia.secrecion}" /></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">FRESCO : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
+						<td><p:inputText
+								value="#{bacteriologiaController.bacteriologia.fresco}" /></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">GRAM : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
+						<td><p:inputText
+								value="#{bacteriologiaController.bacteriologia.gram}" /></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">KOH : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
+						<td><p:inputText
+								value="#{bacteriologiaController.bacteriologia.koh}" /></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">ZHIEL : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
+						<td><p:inputText
+								value="#{bacteriologiaController.bacteriologia.zhiel}" /></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">EOSINOFILOS EN MOCO NASAL : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
+						<td><p:inputText
+								value="#{bacteriologiaController.bacteriologia.eosinofilosNasal}" /></td>
 						<td align="right"><p:outputLabel>%</p:outputLabel></td>
 					</tr>
 
-
 				</table>
 				<br></br>
-				<p:commandButton icon="ui-icon-play" value="Generar"></p:commandButton>
-				<p:commandButton value="Generar PDF" ajax="false"
-					action="#{reportesLaboratorio.exportarBacteriologiaPDF(pacienteController.paciente)}">
-				</p:commandButton>
+
+				<p:commandLink
+					actionListener="#{bacteriologiaController.registrar(pacienteController.paciente.id_paciente)}"
+					update=":idFormPaciente:mensaje , bacteriologia, botonPdf">
+					<h:graphicImage value="/resources/images/grabar.png" border="0"
+						width="75" height="75" />
+				</p:commandLink>
+
+				<p:commandLink id="botonPdf"
+					action="#{reportesLaboratorio.exportarBacteriologiaPDF(pacienteController.paciente)}"
+					ajax="false" disabled="#{bacteriologiaController.desabilitado}">
+					<h:graphicImage value="/resources/images/pdf.png" border="0"
+						width="90" height="75" />
+				</p:commandLink>
+
+				<p:commandLink
+					action="#{bacteriologiaController.regresar(pacienteController.paciente)}">
+					<h:graphicImage value="/resources/images/regresar.png" border="0"
+						width="90" height="75" />
+				</p:commandLink>
 
 			</h:form>
 

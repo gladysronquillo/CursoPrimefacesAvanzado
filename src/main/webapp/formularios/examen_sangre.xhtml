@@ -16,7 +16,8 @@
 		<ui:define name="content">
 
 			<h:form id="idFormPaciente">
-
+				<p:growl id="mensaje" autoUpdate="false" severity="info, fatal"
+					showSummary="true" showDetail="true" />
 				<h1></h1>
 
 				<p:fieldset legend="Datos Personales">
@@ -62,54 +63,56 @@
 
 				<table class="formulario" border="0">
 					<tr>
-						<td colspan="3"><p:outputLabel style="font-weight: bold; text-align:center">BIOMETRIA HEMÁTICA</p:outputLabel></td>					
+						<td colspan="3"><p:outputLabel
+								style="font-weight: bold; text-align:center">BIOMETRIA HEMÁTICA</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Hematocrito : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>		
+						<td><p:inputText></p:inputText></td>
 						<td><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Hemoglobina : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>		
+						<td><p:inputText></p:inputText></td>
 						<td><p:outputLabel style="font-weight: bold">gr%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Glóbulos Blancos : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>		
+						<td><p:inputText></p:inputText></td>
 						<td><p:outputLabel style="font-weight: bold">/mm3</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Glóbulos Rojos : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>		
+						<td><p:inputText></p:inputText></td>
 						<td><p:outputLabel style="font-weight: bold">/mm3</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Sedimentación : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>		
+						<td><p:inputText></p:inputText></td>
 						<td><p:outputLabel style="font-weight: bold">mm/h</p:outputLabel></td>
 					</tr>
 					<tr>
-						<td colspan="3"><p:outputLabel style="font-weight: bold; text-align:center">FÓRMULA LEUCOCITARIA</p:outputLabel></td>					
+						<td colspan="3"><p:outputLabel
+								style="font-weight: bold; text-align:center">FÓRMULA LEUCOCITARIA</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Segmentación : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>		
+						<td><p:inputText></p:inputText></td>
 						<td><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Linfocitos : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>		
+						<td><p:inputText></p:inputText></td>
 						<td><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Monocitos : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>		
+						<td><p:inputText></p:inputText></td>
 						<td><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Eosinofilos : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>		
+						<td><p:inputText></p:inputText></td>
 						<td><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
 					</tr>
 					<tr>
@@ -118,12 +121,11 @@
 								<f:selectItem itemValue="LEVE" itemLabel="LEVE" />
 								<f:selectItem itemValue="MODERADO" itemLabel="MODERADO" />
 								<f:selectItem itemValue="SEVERA" itemLabel="SEVERA" />
-							</p:selectOneMenu>
-							</td>
+							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Anisocitosis : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>	
+						<td><p:inputText></p:inputText></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Poiquilocitosis : </p:outputLabel></td>
@@ -131,17 +133,17 @@
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">VCM : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>		
+						<td><p:inputText></p:inputText></td>
 						<td><p:outputLabel style="font-weight: bold">V.N.: 80-95u3</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">HCM : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>		
+						<td><p:inputText></p:inputText></td>
 						<td><p:outputLabel style="font-weight: bold">25-31 pg</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">CHCM : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>		
+						<td><p:inputText></p:inputText></td>
 						<td><p:outputLabel style="font-weight: bold">30-35 %</p:outputLabel></td>
 					</tr>
 					<tr>
@@ -151,48 +153,42 @@
 								<f:selectItem itemValue="B" itemLabel="B" />
 								<f:selectItem itemValue="O" itemLabel="O" />
 								<f:selectItem itemValue="AB" itemLabel="AB" />
-							</p:selectOneMenu>
-							</td>
+							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">FACTOR Rh : </p:outputLabel></td>
 						<td><p:selectOneMenu>
 								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu>
-							</td>
+							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">HEMATOZOARIO : </p:outputLabel></td>
 						<td><p:selectOneMenu>
 								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu>
-							</td>
+							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">COOMBS DIRECTO : </p:outputLabel></td>
 						<td><p:selectOneMenu>
 								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu>
-							</td>
+							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">COOMBS INDIRECTO : </p:outputLabel></td>
 						<td><p:selectOneMenu>
 								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu>
-							</td>
+							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">CÉLULAS L.E : </p:outputLabel></td>
 						<td><p:selectOneMenu>
 								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu>
-							</td>
+							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">RETICULOCITOS : </p:outputLabel></td>
@@ -203,7 +199,7 @@
 						<td><p:outputLabel style="font-weight: bold">PLAQUETAS : </p:outputLabel></td>
 						<td><p:inputText></p:inputText></td>
 						<td><p:outputLabel>150000-300000/mm3</p:outputLabel></td>
-					</tr>							
+					</tr>
 				</table>
 				<br></br>
 				<p:commandButton icon="ui-icon-play" value="Generar"></p:commandButton>

@@ -10,34 +10,34 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
-import com.kodigo.interfarces.SerologiaFacadeLocal;
+import com.kodigo.interfarces.DrogasFacadeLocal;
 import com.kodigo.model.Paciente;
-import com.kodigo.model.Serologia;
+import com.kodigo.model.Drogas;
 
 @Named
 @SessionScoped
-public class SerologiaController implements Serializable {
+public class DrogasController implements Serializable {
 	private static final long serialVersionUID = 7868279604883358623L;
 
 	@EJB
-	private SerologiaFacadeLocal serologiaEjb;
+	private DrogasFacadeLocal drogasEjb;
 
-	private Serologia serologia;
+	private Drogas drogas;
 	private boolean desabilitado = true;
 
 	@PostConstruct
 	public void init() {
-		serologia = new Serologia();
+		drogas = new Drogas();
 	}
 
 	public void registrar(Integer id_paciente) {
 		try {
-			serologia.setIdPaciente(id_paciente);
+			drogas.setIdPaciente(id_paciente);
 
 			Date fecha = new Date();
 
-			serologia.setFecha(fecha);
-			serologiaEjb.create(serologia);
+			drogas.setFecha(fecha);
+			drogasEjb.create(drogas);
 
 			FacesContext context = FacesContext.getCurrentInstance();
 			Paciente_TipoExamenController bean = context.getApplication().evaluateExpressionGet(context,
@@ -46,7 +46,7 @@ public class SerologiaController implements Serializable {
 			bean.eliminarPaciente(id_paciente);
 
 			desabilitado = false;
-			serologia = new Serologia();
+			drogas = new Drogas();
 
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se genero correctamente"));
@@ -59,7 +59,7 @@ public class SerologiaController implements Serializable {
 	}
 
 	public String regresar(Paciente paciente) {
-		serologia = new Serologia();
+		drogas = new Drogas();
 
 		FacesContext context = FacesContext.getCurrentInstance();
 		PacienteController bean = context.getApplication().evaluateExpressionGet(context, "#{pacienteController}",
@@ -70,12 +70,12 @@ public class SerologiaController implements Serializable {
 		return "/protegido/agendar?faces-redirect=true";
 	}
 
-	public Serologia getSerologia() {
-		return serologia;
+	public Drogas getDrogas() {
+		return drogas;
 	}
 
-	public void setSerologia(Serologia serologia) {
-		this.serologia = serologia;
+	public void setDrogas(Drogas drogas) {
+		this.drogas = drogas;
 	}
 
 	public boolean isDesabilitado() {

@@ -3,7 +3,6 @@ package com.kodigo.controller;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
@@ -20,14 +19,7 @@ public class Paciente_TipoExamenController implements Serializable {
 	private Paciente_TipoExamenFacadeLocal paciente_TipoExamenEjb;
 
 	private List<Paciente_TipoExamen> paciente_TipoExamen;
-	
 
-	@PostConstruct
-	public void init() {
-		
-	}
-	
-	
 	public void listar(Integer id_paciente) {
 		try {
 			paciente_TipoExamen = paciente_TipoExamenEjb.buscarDisponibles(id_paciente);
@@ -35,7 +27,16 @@ public class Paciente_TipoExamenController implements Serializable {
 			System.out.println("Error al listar lista de pacientes" + e);
 		}
 	}
-
+	
+	public void eliminarPaciente(Integer id_paciente) {
+		try {
+			paciente_TipoExamenEjb.eliminarPaciente(id_paciente);
+		} catch (Exception e) {
+			System.out.println("Error al listar lista de pacientes" + e);
+		}
+	}
+	
+	
 
 	public List<Paciente_TipoExamen> getPaciente_TipoExamen() {
 		return paciente_TipoExamen;

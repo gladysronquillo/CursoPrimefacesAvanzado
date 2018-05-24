@@ -10,34 +10,34 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
-import com.kodigo.interfarces.SerologiaFacadeLocal;
+import com.kodigo.interfarces.BacteriologiaFacadeLocal;
 import com.kodigo.model.Paciente;
-import com.kodigo.model.Serologia;
+import com.kodigo.model.Bacteriologia;
 
 @Named
 @SessionScoped
-public class SerologiaController implements Serializable {
+public class BacteriologiaController implements Serializable {
 	private static final long serialVersionUID = 7868279604883358623L;
 
 	@EJB
-	private SerologiaFacadeLocal serologiaEjb;
+	private BacteriologiaFacadeLocal bacteriologiaEjb;
 
-	private Serologia serologia;
+	private Bacteriologia bacteriologia;
 	private boolean desabilitado = true;
 
 	@PostConstruct
 	public void init() {
-		serologia = new Serologia();
+		bacteriologia = new Bacteriologia();
 	}
 
 	public void registrar(Integer id_paciente) {
 		try {
-			serologia.setIdPaciente(id_paciente);
+			bacteriologia.setIdPaciente(id_paciente);
 
 			Date fecha = new Date();
 
-			serologia.setFecha(fecha);
-			serologiaEjb.create(serologia);
+			bacteriologia.setFecha(fecha);
+			bacteriologiaEjb.create(bacteriologia);
 
 			FacesContext context = FacesContext.getCurrentInstance();
 			Paciente_TipoExamenController bean = context.getApplication().evaluateExpressionGet(context,
@@ -46,7 +46,7 @@ public class SerologiaController implements Serializable {
 			bean.eliminarPaciente(id_paciente);
 
 			desabilitado = false;
-			serologia = new Serologia();
+			bacteriologia = new Bacteriologia();
 
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se genero correctamente"));
@@ -59,7 +59,7 @@ public class SerologiaController implements Serializable {
 	}
 
 	public String regresar(Paciente paciente) {
-		serologia = new Serologia();
+		bacteriologia = new Bacteriologia();
 
 		FacesContext context = FacesContext.getCurrentInstance();
 		PacienteController bean = context.getApplication().evaluateExpressionGet(context, "#{pacienteController}",
@@ -70,12 +70,12 @@ public class SerologiaController implements Serializable {
 		return "/protegido/agendar?faces-redirect=true";
 	}
 
-	public Serologia getSerologia() {
-		return serologia;
+	public Bacteriologia getBacteriologia() {
+		return bacteriologia;
 	}
 
-	public void setSerologia(Serologia serologia) {
-		this.serologia = serologia;
+	public void setBacteriologia(Bacteriologia bacteriologia) {
+		this.bacteriologia = bacteriologia;
 	}
 
 	public boolean isDesabilitado() {

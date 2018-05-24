@@ -19,7 +19,6 @@
 
 				<p:growl id="mensaje" autoUpdate="false" severity="info, fatal"
 					showSummary="true" showDetail="true" />
-
 				<h1></h1>
 
 				<p:fieldset legend="Datos Personales">
@@ -209,7 +208,7 @@
 						width="90" height="75" />
 				</p:commandLink>
 				
-				<p:commandLink action="#{serologiaController.regresar()}">
+				<p:commandLink action="#{serologiaController.regresar(pacienteController.paciente)}">
 					<h:graphicImage value="/resources/images/regresar.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>

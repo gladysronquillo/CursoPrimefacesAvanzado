@@ -13,6 +13,18 @@
 		<class>com.kodigo.model.TipoExamen</class>
 		<class>com.kodigo.model.Paciente_TipoExamen</class>
 		<class>com.kodigo.model.Serologia</class>
+		<class>com.kodigo.model.Bacteriologia</class>
+		<class>com.kodigo.model.Coagulacion</class>
+		<class>com.kodigo.model.BioquimicaSanguinea</class>
+		<class>com.kodigo.model.Cultivo_antibiograma</class>
+		<class>com.kodigo.model.Drogas</class>
+		<class>com.kodigo.model.Electrolito</class>
+		<class>com.kodigo.model.Espermatograma</class>
+		<class>com.kodigo.model.ExamenOrina</class>
+		<class>com.kodigo.model.ExamenSangre</class>
+		<class>com.kodigo.model.Hormona</class>
+		<class>com.kodigo.model.MarcadoresTumorale</class>
+		<class>com.kodigo.model.Sanguinea</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 	
 	</persistence-unit>
