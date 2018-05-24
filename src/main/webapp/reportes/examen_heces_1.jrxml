@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="397"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="589"/>
+	<parameter name="id_paciente" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT ehe.*, CONCAT(apellidos, " ", nombres) paciente from examen_heces ehe 
+join paciente pa on pa.id_paciente = ehe.id_paciente
+where  pa.id_paciente = $P{id_paciente}
+order by id_examen_heces desc limit 1]]>
+	</queryString>
+	<field name="id_examen_heces" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_examen_heces"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="id_paciente" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_paciente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="fecha" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="color" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="color"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="cosistencia" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cosistencia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="levaduras" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="levaduras"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="almidones" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="almidones"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="grasas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="grasas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="restos_vegetales" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="restos_vegetales"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="blastocistis_hominis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="blastocistis_hominis"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="esporas_hongos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="esporas_hongos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="piocitos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="piocitos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="hematies" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="hematies"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="moco" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="moco"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="ipmn" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ipmn"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="sangre_oculta" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sangre_oculta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="flora_bacteriana" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="flora_bacteriana"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="rotavirus" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="rotavirus"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="parasitario" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="parasitario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="ameba_histolitica" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ameba_histolitica"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="ameba_coli" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ameba_coli"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="yodameba_butschlii" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="yodameba_butschlii"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="endolimax_nana" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="endolimax_nana"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="giardia_lamblia" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="giardia_lamblia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="trichomonas_hominis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="trichomonas_hominis"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="chilomastix_mesnili" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="chilomastix_mesnili"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="embadomonas_hominis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="embadomonas_hominis"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="ascaris_lumbricoides" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ascaris_lumbricoides"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tricocefalos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tricocefalos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="oxiuros" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="oxiuros"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="uncinairas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uncinairas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="strongiloides_stercoralis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="strongiloides_stercoralis"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tenias_solium" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tenias_solium"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="saginata" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="saginata"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="himenolepis_nana" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="himenolepis_nana"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="himenolepis_diminuta" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="himenolepis_diminuta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="clinitest" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="clinitest"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="sudan_iii" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sudan_iii"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="ph" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ph"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="helicobacter_pylori" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="helicobacter_pylori"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="paciente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="paciente"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="42" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="181" y="50" width="193" height="20" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EXAMEN DE HECES]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="19" width="159" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{paciente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="580" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="20" width="130" height="20" uuid="3a1d5332-471f-4b14-be8d-a450c004fe02"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[COLOR:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="40" width="130" height="20" uuid="a6ee6091-54b0-494d-9cb6-d7b2e681e7dc"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[COSISTENCIA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="189" y="20" width="148" height="20" uuid="6e9520fb-6dec-4e70-ad72-84e1eee5fcb1"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{color}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="480" width="130" height="20" uuid="1e571aa1-1042-4353-b927-bc3c47ef4275"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Chilomastix mesnili:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="60" width="130" height="20" uuid="85659594-f98f-4ea9-9125-1443f9020236"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[COPROLÓGICO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="80" width="130" height="20" uuid="5e4b2f25-dd48-482f-b69d-fe3abe181d25"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Levaduras:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="100" width="130" height="20" uuid="89f77802-f6b0-4871-810d-c5d17aef2594"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Almidones:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="120" width="130" height="20" uuid="b0fde8a3-1b46-4f19-89ad-f4923aae154b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Grasas:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="61" y="140" width="130" height="20" uuid="719a0c46-87e5-4a0a-9c47-c9b0d5faa8c3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Restos Vegetales:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="160" width="130" height="20" uuid="b08af541-785d-4b90-a993-65a9794f0312"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Blastocistis hominis:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="61" y="180" width="130" height="20" uuid="ec1ed8ce-57c4-40b2-b87c-9f3a4826e348"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Esporas de hongos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="200" width="130" height="20" uuid="8f29830c-473a-44e7-acfd-bd3c5aae66e8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Piocitos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="61" y="220" width="130" height="20" uuid="b895659e-7302-4f85-b35b-375871100e46"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hemetíes:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="61" y="240" width="130" height="20" uuid="a4cca3e1-461e-48c6-93ad-895b5f216a8c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Moco:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="62" y="260" width="130" height="20" uuid="8bcd85d2-dcdb-4c52-a9cb-fd86287042c6"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[I.P.M.N:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="61" y="280" width="130" height="20" uuid="369d9f29-4e3c-4883-9eaf-336f97adce8b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SANGRE OCULTA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="62" y="300" width="130" height="20" uuid="13e20216-b144-4d2d-902b-b7923f524e30"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FLORA BACTERIANA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="62" y="320" width="130" height="20" uuid="e53ce542-e6ed-446c-b84d-3c42cb067c15"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ROTAVIRUS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="61" y="340" width="130" height="20" uuid="400ce344-c155-4eee-88e2-8821ec3dd96e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PARASITARIO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="61" y="360" width="130" height="20" uuid="dfea459b-8dbb-4766-83cb-fff6fd8400cc"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ameba Histolítica:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="62" y="380" width="130" height="20" uuid="3eef7520-6c05-4047-920e-834579283996"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ameba Coli:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="61" y="400" width="130" height="20" uuid="db96d011-05e0-4e16-b31a-64c5e2b7ca22"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Yodameba butschlii:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="62" y="420" width="130" height="20" uuid="28e782e8-a16f-4e64-b5d7-7c1c157017d5"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Endolimax nana:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="62" y="440" width="130" height="20" uuid="c7106259-619b-4f67-94d1-89dd19b1a42c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Giardia lamblia:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="61" y="460" width="130" height="20" uuid="7763e531-477e-4018-9b54-c12a4e8aa527"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Trichomonas hominis:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="189" y="40" width="148" height="20" uuid="d7161520-398c-4982-b2e5-4144e3dba095"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{cosistencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="80" width="148" height="20" uuid="e73a1011-b019-4b1c-826c-d9c24c88b108"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{levaduras}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="100" width="148" height="20" uuid="f9a6cb5c-1961-4ccb-bbee-57932efe4fe3"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{almidones}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="120" width="148" height="20" uuid="affd7853-1b48-4c20-ade3-6a2c2a4d2944"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{grasas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="140" width="148" height="20" uuid="d7778dd6-5fe1-49f9-abf8-d78d74f8ad4c"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{restos_vegetales}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="160" width="148" height="20" uuid="b8dfd68c-edbd-4920-815c-f86cf74529b9"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{blastocistis_hominis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="180" width="148" height="20" uuid="0e4d8d6e-4e4b-481b-a500-ea0100459494"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{esporas_hongos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="200" width="148" height="20" uuid="3a1aa3c8-a3b3-4e43-a712-27205cc44ea3"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{piocitos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="220" width="148" height="20" uuid="5c66e4c7-c733-4d54-960c-9d33fc029d41"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{hematies}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="240" width="148" height="20" uuid="5b017954-1cf2-4eba-8507-baffac73b0bc"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{moco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="260" width="148" height="20" uuid="8f35bc4e-2dd3-41ee-b76a-e40ae32d98ee"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{ipmn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="280" width="148" height="20" uuid="bd5eef55-1122-4c5f-911d-93dc0f47fe36"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{sangre_oculta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="300" width="148" height="20" uuid="4817f847-f7c8-4fc9-b0a7-7c96e1a74374"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{flora_bacteriana}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="320" width="148" height="20" uuid="c6d2f4de-34b1-4499-99fc-74038014d541"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{rotavirus}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="340" width="148" height="20" uuid="427a672a-1381-48aa-a0eb-7ba3d285255e"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{parasitario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="360" width="148" height="20" uuid="69edc0aa-bc28-4148-a2de-8d5dfba2d592"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{ameba_histolitica}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="193" y="380" width="148" height="20" uuid="39f0acb7-b2fc-43ed-af17-01e4c34aa888"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{ameba_coli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="193" y="400" width="148" height="20" uuid="5b4b4e79-6b21-4e57-86d7-1dbf324db0ac"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{yodameba_butschlii}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="420" width="148" height="20" uuid="ea9862cb-fa67-4519-ae72-6d9375f1b40c"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{endolimax_nana}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="440" width="148" height="20" uuid="2d143bef-8756-4ece-bd4b-889020509a7e"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{giardia_lamblia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="193" y="460" width="148" height="20" uuid="e1b89c98-699c-4595-85a3-d01f33a8d067"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{trichomonas_hominis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="193" y="480" width="148" height="20" uuid="5193a8e8-547c-47b7-b255-dd5dea46d386"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{chilomastix_mesnili}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="36">
+			<textField>
+				<reportElement x="130" y="10" width="100" height="20" uuid="79008dc6-6bdb-4879-8d11-0d9625c6d2b3"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>
