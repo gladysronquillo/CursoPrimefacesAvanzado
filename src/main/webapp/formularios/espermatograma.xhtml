@@ -57,46 +57,46 @@
 			</h:form>
 
 
-			<h:form>
+			<h:form id="espermatograma">
 				<p:clock></p:clock>
 				<h1>ESPERMATOGRAMA</h1>
 
 				<table class="formulario" border="0">
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Color : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
+						<td><p:inputText value="#{espermatogramaController.espermatograma.color}" /></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Aspecto : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
+						<td><p:inputText value="#{espermatogramaController.espermatograma.aspecto}" /></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Consistencia : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
+						<td><p:inputText value="#{espermatogramaController.espermatograma.consistencia}" /></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Volumen : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
+						<td><p:inputText value="#{espermatogramaController.espermatograma.volumen}" /></td>
 						<td align="right"><p:outputLabel>1.5 - 6.0 ml</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Motilidad : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
+						<td><p:inputText value="#{espermatogramaController.espermatograma.motilidad}" /></td>
 						<td align="right"><p:outputLabel>más del 75%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Ph : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
+						<td><p:inputText value="#{espermatogramaController.espermatograma.ph}" /></td>
 						<td align="right"><p:outputLabel>7.2 - 8.0</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Licuación : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
+						<td><p:inputText value="#{espermatogramaController.espermatograma.licuación}" /></td>
 						<td align="right"><p:outputLabel>15 - 30 minutos</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Contaje de espermatozoides : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
+						<td><p:inputText value="#{espermatogramaController.espermatograma.contajeEspermatozoides}" /></td>
 						<td align="right"><p:outputLabel>60 - 300 millones</p:outputLabel></td>
 					</tr>
 					<tr>
@@ -104,40 +104,57 @@
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Normales : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
+						<td><p:inputText value="#{espermatogramaController.espermatograma.normales}" /></td>
 						<td align="right"><p:outputLabel>%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Microcéfalos : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
+						<td><p:inputText value="#{espermatogramaController.espermatograma.microcefalos}" /></td>
 						<td align="right"><p:outputLabel>%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Macrocéfalos : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
+						<td><p:inputText value="#{espermatogramaController.espermatograma.macrocefalos}" /></td>
 						<td align="right"><p:outputLabel>%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Sin Cola : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
+						<td><p:inputText value="#{espermatogramaController.espermatograma.sinCola}" /></td>
 						<td align="right"><p:outputLabel>%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Acefalos : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
+						<td><p:inputText value="#{espermatogramaController.espermatograma.acefalos}" /></td>
 						<td align="right"><p:outputLabel>%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Doble cabeza : </p:outputLabel></td>
-						<td><p:inputText></p:inputText></td>
+						<td><p:inputText value="#{espermatogramaController.espermatograma.dobleCabeza}" /></td>
 						<td align="right"><p:outputLabel>%</p:outputLabel></td>
 					</tr>
 				</table>
 				<br></br>
-				<p:commandButton icon="ui-icon-play" value="Generar"></p:commandButton>
-				<p:commandButton value="Generar PDF" ajax="false"
-					action="#{reportesLaboratorio.exportarEspermatogramaPDF(pacienteController.paciente)}">
-				</p:commandButton>
+				
+				<p:commandLink
+					actionListener="#{espermatogramaController.registrar(pacienteController.paciente.id_paciente)}"
+					update=":idFormPaciente:mensaje , espermatograma, botonPdf">
+					<h:graphicImage value="/resources/images/grabar.png" border="0"
+						width="75" height="75" />
+				</p:commandLink>
+
+				<p:commandLink id="botonPdf"
+					action="#{reportesLaboratorio.exportarEspermatogramaPDF(pacienteController.paciente)}"
+					ajax="false" disabled="#{espermatogramaController.desabilitado}">
+					<h:graphicImage value="/resources/images/pdf.png" border="0"
+						width="90" height="75" />
+				</p:commandLink>
+
+				<p:commandLink
+					action="#{espermatogramaController.regresar(pacienteController.paciente)}">
+					<h:graphicImage value="/resources/images/regresar.png" border="0"
+						width="90" height="75" />
+				</p:commandLink>
+				
 			</h:form>
 		</ui:define>
 	</ui:composition>

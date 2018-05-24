@@ -18,7 +18,7 @@
 		<class>com.kodigo.model.BioquimicaSanguinea</class>
 		<class>com.kodigo.model.Cultivo_antibiograma</class>
 		<class>com.kodigo.model.Drogas</class>
-		<class>com.kodigo.model.Electrolito</class>
+		<class>com.kodigo.model.Electrolitos</class>
 		<class>com.kodigo.model.Espermatograma</class>
 		<class>com.kodigo.model.ExamenOrina</class>
 		<class>com.kodigo.model.ExamenSangre</class>

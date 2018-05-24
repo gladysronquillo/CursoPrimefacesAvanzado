@@ -11,8 +11,8 @@ import java.util.Date;
  */
 @Entity
 @Table(name="electrolitos")
-@NamedQuery(name="Electrolito.findAll", query="SELECT e FROM Electrolito e")
-public class Electrolito implements Serializable {
+@NamedQuery(name="Electrolitos.findAll", query="SELECT e FROM Electrolitos e")
+public class Electrolitos implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -46,7 +46,7 @@ public class Electrolito implements Serializable {
 
 	private String sodio;
 
-	public Electrolito() {
+	public Electrolitos() {
 	}
 
 	public int getIdElectrolitos() {

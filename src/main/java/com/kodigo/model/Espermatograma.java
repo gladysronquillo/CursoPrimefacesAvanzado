@@ -30,6 +30,9 @@ public class Espermatograma implements Serializable {
 
 	@Column(name="doble_cabeza")
 	private String dobleCabeza;
+	
+	@Column(name="acefalos")
+	private String acefalos;
 
 	@Temporal(TemporalType.DATE)
 	private Date fecha;
@@ -183,6 +186,14 @@ public class Espermatograma implements Serializable {
 
 	public void setVolumen(String volumen) {
 		this.volumen = volumen;
+	}
+
+	public String getAcefalos() {
+		return acefalos;
+	}
+
+	public void setAcefalos(String acefalos) {
+		this.acefalos = acefalos;
 	}
 
 }
