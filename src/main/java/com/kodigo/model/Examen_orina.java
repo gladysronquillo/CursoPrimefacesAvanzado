@@ -11,8 +11,8 @@ import java.util.Date;
  */
 @Entity
 @Table(name="examen_orina")
-@NamedQuery(name="ExamenOrina.findAll", query="SELECT e FROM ExamenOrina e")
-public class ExamenOrina implements Serializable {
+@NamedQuery(name="Examen_orina.findAll", query="SELECT e FROM Examen_orina e")
+public class Examen_orina implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -110,7 +110,7 @@ public class ExamenOrina implements Serializable {
 
 	private String trichomonas;
 
-	public ExamenOrina() {
+	public Examen_orina() {
 	}
 
 	public int getIdExamenOrina() {

@@ -64,8 +64,9 @@
 				<h1></h1>
 				<p:commandLink id="seleccionarExamenes"
 					disabled="#{pacienteController.desabilitado}"
+					actionListener="#{tipoExamenController.listarTipoExamenesPaciente(pacienteController.paciente.id_paciente)}"
 					oncomplete="PF('wdlgExamenesSelecionados').show();"
-					update=":idDatosSelecionarPaciente">
+					update=":idDatosSelecionarPaciente, :idExamenesSelecionados" >
 					<h:graphicImage value="/resources/images/tipoExamen.png" border="0"
 						width="75" height="75" />
 				</p:commandLink>
@@ -73,21 +74,22 @@
 
 				<h1 />
 				<p:dataTable id="idExamenesSeleccionados"
-					value="#{pacienteController.paciente_TipoExamen}"
+					value="#{paciente_TipoExamenController.listaPaciente_TipoExamen}"
 					var="seleccionados" tableStyle="width:auto">
 					<p:column headerText="Examen">
 						<p:commandLink
-							action="#{tipoExamenController.link(seleccionados)}">
+							action="#{tipoExamenController.obtenerUrl(seleccionados.id_tipo_examen)}">
 							<h:graphicImage value="/resources/images/reporte.png" border="0"
 								width="50" height="50" />
 						</p:commandLink>
 						<p:commandLink
-							action="#{pacienteController.eliminarPacienteTipoExamen(seleccionados)}"
-							update="idExamenesSeleccionados">
+							action="#{paciente_TipoExamenController.eliminarPacienteTipoExamen(seleccionados)}"
+							actionListener="#{tipoExamenController.listarTipoExamenesPaciente(pacienteController.paciente.id_paciente)}"
+							update="idExamenesSeleccionados, idExamenesSelecionados">
 							<h:graphicImage value="/resources/images/eliminar.png" border="0"
 								width="50" height="50" />
 						</p:commandLink>
-						<p:outputLabel value="#{seleccionados.id_tipo_examen}"></p:outputLabel>
+						<p:outputLabel value="#{tipoExamenController.obtenerNombreTipoExamen(seleccionados.id_tipo_examen)}"></p:outputLabel>
 					</p:column>
 				</p:dataTable>
 
@@ -130,7 +132,7 @@
 			<p:dialog header="Seleccionar Examenen"
 				widgetVar="wdlgExamenesSelecionados" id="idExamenesSelecionados"
 				width="900" height="200">
-				<h:form>
+				<h:form id="tipoExamen">
 					<h1 />
 					<p:selectManyCheckbox id="idTipoListaTipoExamenSeleccionados"
 						value="#{tipoExamenController.listaTipoExamenSeleccionados}"
@@ -142,7 +144,7 @@
 					<h1 />
 					<p:commandButton icon="ui-icon-extlink" value="Generar"
 						actionListener="#{tipoExamenController.registrarExamenesSelecionados(pacienteController.paciente.id_paciente,tipoExamenController.listaTipoExamenSeleccionados)}"
-						action="#{pacienteController.listarTipoExamen(pacienteController.paciente.id_paciente)}"
+						action="#{paciente_TipoExamenController.listarTipoExamen(pacienteController.paciente.id_paciente)}"
 						update="idFormPaciente:idExamenesSeleccionados"
 						oncomplete="PF('wdlgExamenesSelecionados').hide();"></p:commandButton>
 				</h:form>

@@ -137,7 +137,7 @@
 				
 				<p:commandLink
 					actionListener="#{espermatogramaController.registrar(pacienteController.paciente.id_paciente)}"
-					update=":idFormPaciente:mensaje , espermatograma, botonPdf">
+					update=":idFormPaciente:mensaje , espermatograma, botonPdf" disabled="#{!espermatogramaController.desabilitado}">
 					<h:graphicImage value="/resources/images/grabar.png" border="0"
 						width="75" height="75" />
 				</p:commandLink>

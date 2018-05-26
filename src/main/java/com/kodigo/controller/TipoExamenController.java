@@ -4,18 +4,16 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 import org.primefaces.model.menu.DefaultMenuModel;
 import org.primefaces.model.menu.DefaultSubMenu;
 import org.primefaces.model.menu.MenuModel;
 
-import com.kodigo.interfarces.Paciente_TipoExamenFacadeLocal;
 import com.kodigo.interfarces.TipoExamenFacadeLocal;
-import com.kodigo.model.Paciente_TipoExamen;
 import com.kodigo.model.TipoExamen;
 
 @Named
@@ -25,26 +23,23 @@ public class TipoExamenController implements Serializable {
 
 	@EJB
 	private TipoExamenFacadeLocal tipoExamenEjb;
-	
-	@EJB
-	private Paciente_TipoExamenFacadeLocal paciente_TipoExamenEjb;
 
 	private List<TipoExamen> listaTipoExamen;
 	private List<TipoExamen> listaTipoExamenSelecionadosTablaDinamica;
 	private Integer[] listaTipoExamenSeleccionados;
 	private MenuModel model;
 	private TipoExamen tipoExamen;
-	private Paciente_TipoExamen paciente_TipoExamen;
-	
 
-	@PostConstruct
-	public void init() {
-		this.listarTodosTipoExamenes();
+
+	public TipoExamen buscarTipoExamen(Integer id_tipoExamen) {
+		tipoExamen = new TipoExamen();
+		tipoExamen = tipoExamenEjb.find(id_tipoExamen);
+		return tipoExamen;
 	}
 
-	public void listarTodosTipoExamenes() {
+	public void listarTipoExamenesPaciente(Integer id_paciente) {
 		try {
-			listaTipoExamen = tipoExamenEjb.findAll();
+			listaTipoExamen = tipoExamenEjb.buscarTipoExamenPorPaciente(id_paciente);
 		} catch (Exception e) {
 			System.out.println("Error al buscar tipos de examenes: " + e);
 		}
@@ -52,15 +47,13 @@ public class TipoExamenController implements Serializable {
 
 	public void registrarExamenesSelecionados(Integer id_paciente, Integer[] listaTipoExamenSeleccionados) {
 		this.establecerPermisos();
-		this.registrar(id_paciente, listaTipoExamenSeleccionados);
-		
+
+		FacesContext context = FacesContext.getCurrentInstance();
+		Paciente_TipoExamenController bean = context.getApplication().evaluateExpressionGet(context,
+				"#{paciente_TipoExamenController}", Paciente_TipoExamenController.class);
+
+		bean.registrar(id_paciente, listaTipoExamenSeleccionados);
 	}
-	
-	public String link(Paciente_TipoExamen pacientetipoExamen) {
-		//paciente_TipoExamenEjb.remove(pacientetipoExamen);
-		return pacientetipoExamen.getDetalle();
-	}
-	
 
 	public void establecerPermisos() {
 		model = new DefaultMenuModel();
@@ -79,30 +72,19 @@ public class TipoExamenController implements Serializable {
 		}
 	}
 	
-	public void registrar(Integer id_paciente, Integer[] listaTipoExamenSeleccionados) {
-		try {
-			paciente_TipoExamen = new Paciente_TipoExamen();
-			
-			for (Integer tipoExamen : listaTipoExamenSeleccionados) {
-				
-				TipoExamen tp = new TipoExamen();
-				tp = tipoExamenEjb.find(tipoExamen);
-				
-				paciente_TipoExamen.setId_paciente(id_paciente);
-				paciente_TipoExamen.setId_tipo_examen(tp.getNombre());
-				paciente_TipoExamen.setDetalle(tp.getDetalle());
-				paciente_TipoExamen.setDisponible(1);
-
-				paciente_TipoExamenEjb.create(paciente_TipoExamen);
-				paciente_TipoExamen = new Paciente_TipoExamen();
-			}
-
-			
-		} catch (Exception e) {
-			System.out.println("Error al registrar paciente_tipo_examen :" + e);
-		}
+	public String obtenerNombreTipoExamen(Integer id_tipo_examen) {
+		tipoExamen = new TipoExamen();
+		tipoExamen = tipoExamenEjb.find(id_tipo_examen);
+		return tipoExamen.getNombre();
+		
 	}
 	
+	public String obtenerUrl(Integer id_tipo_examen) {
+		tipoExamen = new TipoExamen();
+		tipoExamen = tipoExamenEjb.find(id_tipo_examen);
+		return tipoExamen.getDetalle();
+		
+	}
 
 	public List<TipoExamen> getListaTipoExamen() {
 		return listaTipoExamen;

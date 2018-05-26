@@ -20,8 +20,8 @@
 		<class>com.kodigo.model.Drogas</class>
 		<class>com.kodigo.model.Electrolitos</class>
 		<class>com.kodigo.model.Espermatograma</class>
-		<class>com.kodigo.model.ExamenOrina</class>
-		<class>com.kodigo.model.ExamenSangre</class>
+		<class>com.kodigo.model.Examen_orina</class>
+		<class>com.kodigo.model.Examen_sangre</class>
 		<class>com.kodigo.model.Hormona</class>
 		<class>com.kodigo.model.MarcadoresTumorale</class>
 		<class>com.kodigo.model.Sanguinea</class>

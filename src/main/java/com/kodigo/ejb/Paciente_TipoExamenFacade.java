@@ -34,7 +34,7 @@ public class Paciente_TipoExamenFacade extends AbstractFacade<Paciente_TipoExame
 		List<Paciente_TipoExamen> lista;
 		try {
 			lista = new ArrayList<Paciente_TipoExamen>();
-			consulta = "FROM Paciente_TipoExamen Pte WHERE Pte.disponible = 1 and Pte.id_paciente = ?1";
+			consulta = "FROM Paciente_TipoExamen Pte WHERE Pte.id_paciente = ?1";
 			Query query = em.createQuery(consulta);
 			query.setParameter(1, id_paciente);
 			lista = query.getResultList();

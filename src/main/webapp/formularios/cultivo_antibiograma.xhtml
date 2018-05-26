@@ -106,7 +106,7 @@
 				
 				<p:commandLink
 					actionListener="#{cultivo_antibiogramaController.registrar(pacienteController.paciente.id_paciente)}"
-					update=":idFormPaciente:mensaje , cultivo_antibiograma, botonPdf">
+					update=":idFormPaciente:mensaje , cultivo_antibiograma, botonPdf" disabled="#{!cultivo_antibiogramaController.desabilitado}">
 					<h:graphicImage value="/resources/images/grabar.png" border="0"
 						width="75" height="75" />
 				</p:commandLink>

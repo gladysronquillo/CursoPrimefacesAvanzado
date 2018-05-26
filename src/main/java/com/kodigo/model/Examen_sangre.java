@@ -11,8 +11,8 @@ import java.util.Date;
  */
 @Entity
 @Table(name="examen_sangre")
-@NamedQuery(name="ExamenSangre.findAll", query="SELECT e FROM ExamenSangre e")
-public class ExamenSangre implements Serializable {
+@NamedQuery(name="Examen_sangre.findAll", query="SELECT e FROM Examen_sangre e")
+public class Examen_sangre implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -49,6 +49,9 @@ public class ExamenSangre implements Serializable {
 
 	@Column(name="grupo_sanguineo")
 	private String grupoSanguineo;
+	
+	@Column(name="plaquetas")
+	private String plaquetas;
 
 	private String hcm;
 
@@ -77,7 +80,7 @@ public class ExamenSangre implements Serializable {
 
 	private String vcm;
 
-	public ExamenSangre() {
+	public Examen_sangre() {
 	}
 
 	public int getIdExamenSangre() {
@@ -279,5 +282,15 @@ public class ExamenSangre implements Serializable {
 	public void setVcm(String vcm) {
 		this.vcm = vcm;
 	}
+
+	public String getPlaquetas() {
+		return plaquetas;
+	}
+
+	public void setPlaquetas(String plaquetas) {
+		this.plaquetas = plaquetas;
+	}
+	
+	
 
 }

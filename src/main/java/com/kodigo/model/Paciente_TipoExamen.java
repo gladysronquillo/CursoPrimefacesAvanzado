@@ -23,7 +23,7 @@ public class Paciente_TipoExamen implements Serializable {
 	private Integer id_paciente;
 	
 	@Column(name = "id_tipo_examen")
-	private String id_tipo_examen;
+	private Integer id_tipo_examen;
 	
 	@Column(name = "disponible")
 	private Integer disponible;
@@ -47,11 +47,11 @@ public class Paciente_TipoExamen implements Serializable {
 		this.id_paciente = id_paciente;
 	}
 
-	public String getId_tipo_examen() {
+	public Integer getId_tipo_examen() {
 		return id_tipo_examen;
 	}
 
-	public void setId_tipo_examen(String id_tipo_examen) {
+	public void setId_tipo_examen(Integer id_tipo_examen) {
 		this.id_tipo_examen = id_tipo_examen;
 	}
 

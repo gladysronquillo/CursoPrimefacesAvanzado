@@ -22,4 +22,6 @@ public interface TipoExamenFacadeLocal {
 	List<TipoExamen> findRange(int[] range);
 
 	int count();
+
+	List<TipoExamen> buscarTipoExamenPorPaciente(Integer id_paciente);
 }
