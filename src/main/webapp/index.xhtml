@@ -14,8 +14,11 @@
 	<div id="cuadro">
 		<h:form>
 			<p:messages autoUpdate="true" showDetail="true" />
-			 <img src="./resources/images/marca.png" border="0" width="425" height="425"></img>
-            <p:separator style="width:430px;height:5px"  />
+			<p:galleria value="#{indexController.images}" var="image" panelWidth="500"
+				panelHeight="330" showCaption="true">
+				<img src="./resources/images/#{image}" class="content" title="" alt="Laboratorio Clínico"/>
+			</p:galleria>
+			<p:separator style="width:500px;height:5px" />
 			<h:panelGrid columns="2">
 
 				<p:outputLabel for="txtUsuario" value="Usuario" />
@@ -31,7 +34,7 @@
 					action="#{indexController.iniciarSesion()}" />
 
 			</h:panelGrid>
-			<p:separator />
+			<p:separator style="width:500px;height:1px"/>
 
 			<p:link value="Crear Cuenta" outcome="usuario" />
 		</h:form>
