@@ -16,7 +16,8 @@
 		<ui:define name="content">
 
 			<h:form id="idFormPaciente">
-
+				<p:growl id="mensaje" autoUpdate="false" severity="info, fatal"
+					showSummary="true" showDetail="true" />
 				<h1></h1>
 
 				<p:fieldset legend="Datos Personales">
@@ -69,158 +70,189 @@
 				<table class="formulario" border="0">
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">GLUCOSA : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.glucosa}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.glucosa}" /></td>
 						<td align="right"><p:outputLabel>70 - 110 mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">ÚREA : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.urea}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.urea}" /></td>
 						<td align="right"><p:outputLabel>10 - 40 mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">CREATININA : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.creatinina}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.creatinina}" /></td>
 						<td align="right"><p:outputLabel>0.8 - 1.4 mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">COLESTEROL : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.colesterol}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.colesterol}" /></td>
 						<td align="right"><p:outputLabel>150 - 220 mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">TRIGLICERIDOS : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.trigliceridos}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.trigliceridos}" /></td>
 						<td align="right"><p:outputLabel>10 - 160 mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">HDL. COLESTEROL : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.hdlColesterol}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.hdlColesterol}" /></td>
 						<td align="right"><p:outputLabel>H:>65 M:>55 mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">LDL. COLESTEROL : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.ldlColesterol}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.ldlColesterol}" /></td>
 						<td align="right"><p:outputLabel> menor 150 mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">LÍPIDOS TOTALES : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.lipidosTotales}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.lipidosTotales}" /></td>
 						<td align="right"><p:outputLabel>400 - 800 mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">ÁCIDO ÚRICO : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.acidoUrico}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.acidoUrico}" /></td>
 						<td align="right"><p:outputLabel>H:3.5 - 7.0 M:2.5 - 6.0 mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">BIL. TOTAL : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.bilTotal}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.bilTotal}" /></td>
 						<td align="right"><p:outputLabel>hasta 1.0 mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">BIL. DIRECTA : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.bilDirecta}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.bilDirecta}" /></td>
 						<td align="right"><p:outputLabel>hasta 0.2 mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">BIL. INDIRECTA : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.bilIndirecta}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.bilIndirecta}" /></td>
 						<td align="right"><p:outputLabel>hasta 0.8 mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">SGOT : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.sgot}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.sgot}" /></td>
 						<td align="right"><p:outputLabel>hasta 40 U/I</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">SGPT : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.sgpt}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.sgpt}" /></td>
 						<td align="right"><p:outputLabel>hasta 40 U/I</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">FOSFALTASA ALCALINA : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.fosfatasaAlcalina}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.fosfatasaAlcalina}" /></td>
 						<td align="right"><p:outputLabel>A: 68 - 240 N:100-400 U/I</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">FOSFALTASA ÁCIDA : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.fosfatasaAcida}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.fosfatasaAcida}" /></td>
 						<td align="right"><p:outputLabel>hasta 11 U/I</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">FOSFALTASA AC. PROST. : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.fosfatasaAcProst}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.fosfatasaAcProst}" /></td>
 						<td align="right"><p:outputLabel>hasta 4 U/I</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">GAMMA G.T. : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.gamma}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.gamma}" /></td>
 						<td align="right"><p:outputLabel>H:11 - 50 M:7 - 32 mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">AMILASA : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.amilasa}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.amilasa}" /></td>
 						<td align="right"><p:outputLabel>hasta 120 ua/dl</p:outputLabel></td>
 					</tr>
 
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">LIPASA : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.lipasa}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.lipasa}" /></td>
 						<td align="right"><p:outputLabel>hasta 120 U/I</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">PROTEÍNAS TOTALES : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.proteinasTotales}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.proteinasTotales}" /></td>
 						<td align="right"><p:outputLabel>6.1 - 7.9 g/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">ALBUMINA : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.albumina}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.albumina}" /></td>
 						<td align="right"><p:outputLabel>3.5 - 5.0 g/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">GLOBULINA : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.globulina}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.globulina}" /></td>
 						<td align="right"><p:outputLabel>2.3 - 4.0 g/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">LDH : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.ldh}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.ldh}" /></td>
 						<td align="right"><p:outputLabel>120 - 240 U/I</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">CPK : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.cpk}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.cpk}" /></td>
 						<td align="right"><p:outputLabel>H: 24 - 195 M: 24 - 170 U/I</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">CK - MB : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.ckMb}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.ckMb}" /></td>
 						<td align="right"><p:outputLabel>0 - 25 U/I</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">TROPONINA : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.troponina}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.troponina}" /></td>
 						<td align="right"><p:outputLabel>hasta 1.0 ng/ml</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">N. UREICO (BUN) : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.NUreico}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.NUreico}" /></td>
 						<td align="right"><p:outputLabel>4.5 - 22.7 mg/ml</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">VLDL : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.vldl}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.vldl}" /></td>
 						<td align="right"><p:outputLabel>8 - 17 mg/ml</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">GLUCOSA POST P : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.glucosaPost}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.glucosaPost}" /></td>
 						<td align="right"><p:outputLabel>menor a 140 mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">HBA1C : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.hba1c}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.hba1c}" /></td>
 						<td align="right"><p:outputLabel>6.5 - 8.0 %</p:outputLabel></td>
 					</tr>
 					<tr>
@@ -228,37 +260,44 @@
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">GLUCOSA EN AYUNAS : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.glucosaAyunas}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.glucosaAyunas}" /></td>
 						<td align="right"><p:outputLabel>70 - 110 mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td align="right"><p:outputLabel style="font-weight: bold">1 HORA : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.glucosaAyunas1h}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.glucosaAyunas1h}" /></td>
 						<td align="right"><p:outputLabel>100 - 150</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td align="right"><p:outputLabel style="font-weight: bold">2 HORA : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.glucosaAyunas2h}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.glucosaAyunas2h}" /></td>
 						<td align="right"><p:outputLabel>80 - 130</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td align="right"><p:outputLabel style="font-weight: bold">3 HORA : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.glucosaAyunas3h}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.glucosaAyunas3h}" /></td>
 						<td align="right"><p:outputLabel>65 - 110</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td align="right"><p:outputLabel style="font-weight: bold">4 HORA : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.glucosaAyunas4h}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.glucosaAyunas4h}" /></td>
 						<td align="right"><p:outputLabel>75 - 115</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td align="right"><p:outputLabel style="font-weight: bold">5 HORA : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.glucosaAyunas5h}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.glucosaAyunas5h}" /></td>
 						<td align="right"><p:outputLabel>75 - 110</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">FRUCTOSAMINA : </p:outputLabel></td>
-						<td><p:inputText value="#{bioquimica_sanguineaController.bioquimica_sanguinea.fructosamina}" /></td>
+						<td><p:inputText
+								value="#{bioquimica_sanguineaController.bioquimica_sanguinea.fructosamina}" /></td>
 						<td align="right"><p:outputLabel>37 - 58 mg/ml</p:outputLabel></td>
 					</tr>
 				</table>
@@ -274,7 +313,8 @@
 
 				<p:commandLink id="botonPdf"
 					action="#{reportesLaboratorio.exportarBioquimicaSanguineaPDF(pacienteController.paciente)}"
-					ajax="false" disabled="#{bioquimica_sanguineaController.desabilitado}">
+					ajax="false"
+					disabled="#{bioquimica_sanguineaController.desabilitado}">
 					<h:graphicImage value="/resources/images/pdf.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>
