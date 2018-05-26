@@ -7,11 +7,9 @@ import javax.persistence.PersistenceContext;
 import com.kodigo.interfarces.DrogasFacadeLocal;
 import com.kodigo.model.Drogas;
 
-
 @Stateless
 public class DrogasFacade extends AbstractFacade<Drogas> implements DrogasFacadeLocal {
 
- 
 	@PersistenceContext(unitName = "primePU")
 	private EntityManager em;
 
@@ -19,9 +17,9 @@ public class DrogasFacade extends AbstractFacade<Drogas> implements DrogasFacade
 	protected EntityManager getEntityManager() {
 		return em;
 	}
-	
-    public DrogasFacade() {
-    	super(Drogas.class);
-    }
+
+	public DrogasFacade() {
+		super(Drogas.class);
+	}
 
 }

@@ -7,11 +7,9 @@ import javax.persistence.PersistenceContext;
 import com.kodigo.interfarces.EspermatogramaFacadeLocal;
 import com.kodigo.model.Espermatograma;
 
-
 @Stateless
 public class EspermatogramaFacade extends AbstractFacade<Espermatograma> implements EspermatogramaFacadeLocal {
 
- 
 	@PersistenceContext(unitName = "primePU")
 	private EntityManager em;
 
@@ -19,9 +17,9 @@ public class EspermatogramaFacade extends AbstractFacade<Espermatograma> impleme
 	protected EntityManager getEntityManager() {
 		return em;
 	}
-	
-    public EspermatogramaFacade() {
-    	super(Espermatograma.class);
-    }
+
+	public EspermatogramaFacade() {
+		super(Espermatograma.class);
+	}
 
 }

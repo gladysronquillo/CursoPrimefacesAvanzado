@@ -10,9 +10,9 @@ import java.util.Date;
  * 
  */
 @Entity
-@Table(name="hormonas")
-@NamedQuery(name="Hormona.findAll", query="SELECT h FROM Hormona h")
-public class Hormona implements Serializable {
+@Table(name="Hormonas")
+@NamedQuery(name="Hormonas.findAll", query="SELECT h FROM Hormonas h")
+public class Hormonas implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -68,7 +68,7 @@ public class Hormona implements Serializable {
 
 	private String tsh;
 
-	public Hormona() {
+	public Hormonas() {
 	}
 
 	public int getIdHormonas() {

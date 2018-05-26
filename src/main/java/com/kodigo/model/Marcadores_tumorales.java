@@ -10,9 +10,9 @@ import java.util.Date;
  * 
  */
 @Entity
-@Table(name="marcadores_tumorales")
-@NamedQuery(name="MarcadoresTumorale.findAll", query="SELECT m FROM MarcadoresTumorale m")
-public class MarcadoresTumorale implements Serializable {
+@Table(name="Marcadores_tumorales")
+@NamedQuery(name="Marcadores_tumorales.findAll", query="SELECT m FROM Marcadores_tumorales m")
+public class Marcadores_tumorales implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -45,7 +45,7 @@ public class MarcadoresTumorale implements Serializable {
 	@Column(name="psa_total")
 	private String psaTotal;
 
-	public MarcadoresTumorale() {
+	public Marcadores_tumorales() {
 	}
 
 	public int getIdMarcadoresTumorales() {

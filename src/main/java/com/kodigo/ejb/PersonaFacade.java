@@ -7,11 +7,9 @@ import javax.persistence.PersistenceContext;
 import com.kodigo.interfarces.PersonaFacadeLocal;
 import com.kodigo.model.Persona;
 
-
 @Stateless
 public class PersonaFacade extends AbstractFacade<Persona> implements PersonaFacadeLocal {
 
- 
 	@PersistenceContext(unitName = "primePU")
 	private EntityManager em;
 
@@ -19,9 +17,9 @@ public class PersonaFacade extends AbstractFacade<Persona> implements PersonaFac
 	protected EntityManager getEntityManager() {
 		return em;
 	}
-	
-    public PersonaFacade() {
-    	super(Persona.class);
-    }
+
+	public PersonaFacade() {
+		super(Persona.class);
+	}
 
 }

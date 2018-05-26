@@ -1,7 +1,6 @@
 package com.kodigo.controller;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -9,8 +8,6 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
-import org.primefaces.model.menu.DefaultMenuModel;
-import org.primefaces.model.menu.DefaultSubMenu;
 import org.primefaces.model.menu.MenuModel;
 
 import com.kodigo.interfarces.TipoExamenFacadeLocal;
@@ -25,7 +22,6 @@ public class TipoExamenController implements Serializable {
 	private TipoExamenFacadeLocal tipoExamenEjb;
 
 	private List<TipoExamen> listaTipoExamen;
-	private List<TipoExamen> listaTipoExamenSelecionadosTablaDinamica;
 	private Integer[] listaTipoExamenSeleccionados;
 	private MenuModel model;
 	private TipoExamen tipoExamen;
@@ -46,7 +42,6 @@ public class TipoExamenController implements Serializable {
 	}
 
 	public void registrarExamenesSelecionados(Integer id_paciente, Integer[] listaTipoExamenSeleccionados) {
-		this.establecerPermisos();
 
 		FacesContext context = FacesContext.getCurrentInstance();
 		Paciente_TipoExamenController bean = context.getApplication().evaluateExpressionGet(context,
@@ -55,22 +50,6 @@ public class TipoExamenController implements Serializable {
 		bean.registrar(id_paciente, listaTipoExamenSeleccionados);
 	}
 
-	public void establecerPermisos() {
-		model = new DefaultMenuModel();
-		tipoExamen = new TipoExamen();
-		listaTipoExamenSelecionadosTablaDinamica = new ArrayList<TipoExamen>();
-		for (TipoExamen examenes : listaTipoExamen) {
-			for (Integer examenesSeleccionados : this.listaTipoExamenSeleccionados) {
-				if (examenes.getId_tipo_examen().intValue() == examenesSeleccionados.intValue()) {
-					tipoExamen = tipoExamenEjb.find(examenes.getId_tipo_examen().intValue());
-					DefaultSubMenu firstSubMenu = new DefaultSubMenu(examenes.getNombre());
-					model.addElement(firstSubMenu);
-					listaTipoExamenSelecionadosTablaDinamica.add(tipoExamen);
-				}
-			}
-
-		}
-	}
 	
 	public String obtenerNombreTipoExamen(Integer id_tipo_examen) {
 		tipoExamen = new TipoExamen();
@@ -108,14 +87,6 @@ public class TipoExamenController implements Serializable {
 
 	public void setModel(MenuModel model) {
 		this.model = model;
-	}
-
-	public List<TipoExamen> getListaTipoExamenSelecionadosTablaDinamica() {
-		return listaTipoExamenSelecionadosTablaDinamica;
-	}
-
-	public void setListaTipoExamenSelecionadosTablaDinamica(List<TipoExamen> listaTipoExamenSelecionadosTablaDinamica) {
-		this.listaTipoExamenSelecionadosTablaDinamica = listaTipoExamenSelecionadosTablaDinamica;
 	}
 
 }

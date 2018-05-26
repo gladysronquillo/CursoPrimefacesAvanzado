@@ -7,11 +7,9 @@ import javax.persistence.PersistenceContext;
 import com.kodigo.interfarces.SerologiaFacadeLocal;
 import com.kodigo.model.Serologia;
 
-
 @Stateless
 public class SerologiaFacade extends AbstractFacade<Serologia> implements SerologiaFacadeLocal {
 
- 
 	@PersistenceContext(unitName = "primePU")
 	private EntityManager em;
 
@@ -19,9 +17,9 @@ public class SerologiaFacade extends AbstractFacade<Serologia> implements Serolo
 	protected EntityManager getEntityManager() {
 		return em;
 	}
-	
-    public SerologiaFacade() {
-    	super(Serologia.class);
-    }
+
+	public SerologiaFacade() {
+		super(Serologia.class);
+	}
 
 }

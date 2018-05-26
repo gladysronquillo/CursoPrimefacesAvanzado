@@ -7,11 +7,9 @@ import javax.persistence.PersistenceContext;
 import com.kodigo.interfarces.PacienteFacadeLocal;
 import com.kodigo.model.Paciente;
 
-
 @Stateless
 public class PacienteFacade extends AbstractFacade<Paciente> implements PacienteFacadeLocal {
 
- 
 	@PersistenceContext(unitName = "primePU")
 	private EntityManager em;
 
@@ -19,9 +17,9 @@ public class PacienteFacade extends AbstractFacade<Paciente> implements Paciente
 	protected EntityManager getEntityManager() {
 		return em;
 	}
-	
-    public PacienteFacade() {
-    	super(Paciente.class);
-    }
+
+	public PacienteFacade() {
+		super(Paciente.class);
+	}
 
 }

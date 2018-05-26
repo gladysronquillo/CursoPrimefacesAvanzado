@@ -7,11 +7,9 @@ import javax.persistence.PersistenceContext;
 import com.kodigo.interfarces.CoagulacionFacadeLocal;
 import com.kodigo.model.Coagulacion;
 
-
 @Stateless
 public class CoagulacionFacade extends AbstractFacade<Coagulacion> implements CoagulacionFacadeLocal {
 
- 
 	@PersistenceContext(unitName = "primePU")
 	private EntityManager em;
 
@@ -19,9 +17,9 @@ public class CoagulacionFacade extends AbstractFacade<Coagulacion> implements Co
 	protected EntityManager getEntityManager() {
 		return em;
 	}
-	
-    public CoagulacionFacade() {
-    	super(Coagulacion.class);
-    }
+
+	public CoagulacionFacade() {
+		super(Coagulacion.class);
+	}
 
 }

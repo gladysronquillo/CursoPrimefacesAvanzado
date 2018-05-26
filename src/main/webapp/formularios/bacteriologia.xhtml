@@ -106,7 +106,7 @@
 
 				<p:commandLink
 					actionListener="#{bacteriologiaController.registrar(pacienteController.paciente.id_paciente)}"
-					update=":idFormPaciente:mensaje , bacteriologia, botonPdf" disabled="#{bacteriologiaController.desabilitado}">
+					update=":idFormPaciente:mensaje , bacteriologia, botonPdf" disabled="#{!bacteriologiaController.desabilitado}">
 					<h:graphicImage value="/resources/images/grabar.png" border="0"
 						width="75" height="75" />
 				</p:commandLink>

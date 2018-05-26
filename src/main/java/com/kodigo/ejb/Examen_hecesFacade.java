@@ -4,11 +4,11 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import com.kodigo.interfarces.Examen_orinaFacadeLocal;
-import com.kodigo.model.Examen_orina;
+import com.kodigo.interfarces.Examen_hecesFacadeLocal;
+import com.kodigo.model.Examen_heces;
 
 @Stateless
-public class Examen_orinaFacade extends AbstractFacade<Examen_orina> implements Examen_orinaFacadeLocal {
+public class Examen_hecesFacade extends AbstractFacade<Examen_heces> implements Examen_hecesFacadeLocal {
 
 	@PersistenceContext(unitName = "primePU")
 	private EntityManager em;
@@ -18,8 +18,8 @@ public class Examen_orinaFacade extends AbstractFacade<Examen_orina> implements 
 		return em;
 	}
 
-	public Examen_orinaFacade() {
-		super(Examen_orina.class);
+	public Examen_hecesFacade() {
+		super(Examen_heces.class);
 	}
 
 }

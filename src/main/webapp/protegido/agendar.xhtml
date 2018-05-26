@@ -85,14 +85,13 @@
 						<p:commandLink
 							action="#{paciente_TipoExamenController.eliminarPacienteTipoExamen(seleccionados)}"
 							actionListener="#{tipoExamenController.listarTipoExamenesPaciente(pacienteController.paciente.id_paciente)}"
-							update="idExamenesSeleccionados, idExamenesSelecionados">
+							update="idExamenesSeleccionados, :tipoExamen:idTipoListaTipoExamenSeleccionados">
 							<h:graphicImage value="/resources/images/eliminar.png" border="0"
 								width="50" height="50" />
 						</p:commandLink>
 						<p:outputLabel value="#{tipoExamenController.obtenerNombreTipoExamen(seleccionados.id_tipo_examen)}"></p:outputLabel>
 					</p:column>
 				</p:dataTable>
-
 			</h:form>
 
 			<p:dialog header="DatosSelecionarPaciente"
@@ -137,7 +136,7 @@
 					<p:selectManyCheckbox id="idTipoListaTipoExamenSeleccionados"
 						value="#{tipoExamenController.listaTipoExamenSeleccionados}"
 						layout="responsive" columns="4">
-						<f:selectItems value="#{tipoExamenController.listaTipoExamen}"
+						<f:selectItems  value="#{tipoExamenController.listaTipoExamen}"
 							var="tipoExamen" itemLabel="#{tipoExamen.nombre}"
 							itemValue="#{tipoExamen.id_tipo_examen}" />
 					</p:selectManyCheckbox>

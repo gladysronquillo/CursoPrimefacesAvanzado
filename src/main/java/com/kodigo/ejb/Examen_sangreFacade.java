@@ -7,11 +7,9 @@ import javax.persistence.PersistenceContext;
 import com.kodigo.interfarces.Examen_sangreFacadeLocal;
 import com.kodigo.model.Examen_sangre;
 
-
 @Stateless
 public class Examen_sangreFacade extends AbstractFacade<Examen_sangre> implements Examen_sangreFacadeLocal {
 
- 
 	@PersistenceContext(unitName = "primePU")
 	private EntityManager em;
 
@@ -19,9 +17,9 @@ public class Examen_sangreFacade extends AbstractFacade<Examen_sangre> implement
 	protected EntityManager getEntityManager() {
 		return em;
 	}
-	
-    public Examen_sangreFacade() {
-    	super(Examen_sangre.class);
-    }
+
+	public Examen_sangreFacade() {
+		super(Examen_sangre.class);
+	}
 
 }
