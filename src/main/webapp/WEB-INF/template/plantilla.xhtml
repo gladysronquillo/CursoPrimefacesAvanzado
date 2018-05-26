@@ -15,45 +15,62 @@
 </style>
 
 	<meta http-equiv="Content-Type" content="text/xhtml; charset=UTF-8" />
-	<title>kodigo</title>
+	<title>KODIGOR</title>
 	<f:event type="preRenderView"
 		listener="#{plantillaController.verificarSesion()}"></f:event>
 </h:head>
 
 <h:body>
+	<p:layout style="min-width:400px;min-height:1000px;">
+		<p:layoutUnit position="south" size="53" resizable="false"
+			closable="false" collapsible="true">
+			<h:outputText value="KODIGOR, Copyright © 2018" />
+			<br />
+			<h:outputText value="Todos los derechos reservados" />
+		</p:layoutUnit>
 
-	<div id="top">
-		<ui:insert name="top"></ui:insert>
-		<h:form>
+		<p:layoutUnit position="west" size="100" resizable="true"
+			closable="true" collapsible="true">
+		</p:layoutUnit>
 
-			<p:menubar>
-				<p:submenu label="Paciente" icon="ui-icon-home">
-					<p:menuitem value="Nuevo" icon="ui-icon-document"
-						action="#{pacienteController.linkPaciente()}" />
-				</p:submenu>
-				<p:submenu label="Ordenes" icon="ui-icon-pencil">
-					<p:menuitem value="Orden"
-						action="#{agendarController.linkAgendar()}" />
-				</p:submenu>
-				<p:submenu label="Reportes" icon="ui-icon-circle-zoomin">
-					<p:menuitem value="Reporte" />
-				</p:submenu>
-				<p:submenu label="Ayuda" icon="ui-icon-circle-plus">
-					<p:menuitem value="Contactos" />
-				</p:submenu>
-			</p:menubar>
-		</h:form>
-	</div>
+		<p:layoutUnit position="east" size="100" resizable="false"
+			closable="false" collapsible="true" effect="drop">
+		</p:layoutUnit>
 
-	<div id="content" class="center_content">
-		<ui:insert name="content"></ui:insert>
-	</div>
+		<p:layoutUnit position="center">
+			<div id="top">
+				<ui:insert name="top"></ui:insert>
+				<h:form>
+					<p:menubar>
+						<p:submenu label="Paciente" icon="ui-icon-home">
+							<p:menuitem value="Nuevo" icon="ui-icon-document"
+								action="#{pacienteController.linkPaciente()}" />
+						</p:submenu>
+						<p:submenu label="Órdenes" icon="ui-icon-pencil">
+							<p:menuitem value="Orden"
+								action="#{agendarController.linkAgendar()}" />
+						</p:submenu>
+						<p:submenu label="Ayuda" icon="ui-icon-circle-plus">
+							<p:menuitem value="Contactos"
+								action="#{agendarController.linkContacto()}" />
+						</p:submenu>
+						
+						<f:facet name="options">
+							<p:commandButton value="Salir" icon="ui-icon-extlink"
+								action="#{indexController.cerrarSesion()}"/>
+						</f:facet>
+					</p:menubar>
+				</h:form>
+			</div>
 
-	<div id="bottom">
-		<ui:insert name="bottom"></ui:insert>
-	</div>
+			<div id="content" class="center_content">
+				<ui:insert name="content"></ui:insert>
+			</div>
 
-
+			<div id="bottom">
+				<ui:insert name="bottom"></ui:insert>
+			</div>
+		</p:layoutUnit>
+	</p:layout>
 </h:body>
-
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<body>
+	<ui:composition template="./../WEB-INF/template/plantilla.xhtml">
+		<ui:define name="content">
+			<h3>Contactos:</h3>
+			<p:panelGrid columns="2">
+				<f:facet name="header">
+					<h:graphicImage value="/resources/images/soporte.jpg">
+					</h:graphicImage>
+				</f:facet>
+
+				<h:outputText value="Consultoría TI:" />
+				<h:outputText value="Kodigor" />
+
+				<h:outputText value="Teléfonos:" />
+				<h:outputText value="0985341343 - 0988569896" />
+
+				<h:outputText value="Email:" />
+				<h:outputLink value="mailto:gronquillo@kodigor.com">
+					<f:param name="subject" value="Laboratorio" />
+					<f:param name="body" value="Contacto ayuda" />
+					<h:outputText value="gronquillo@kodigor.com" />
+				</h:outputLink>
+
+				<h:outputText value="Web:" />
+				<h:outputLink value="http://www.kodigor.com" target="_blank">
+					<h:outputText value="www.kodigor.com" />
+				</h:outputLink>
+
+			</p:panelGrid>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

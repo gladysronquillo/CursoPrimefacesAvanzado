@@ -1,7 +1,6 @@
 package com.kodigo.controller;
 
 import java.io.Serializable;
-
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
@@ -61,5 +60,10 @@ public class IndexController implements Serializable{
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Aviso", "Error!")); 
 		}
 		return redireccion;
+	}
+	
+	public String cerrarSesion() {
+		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();	
+		return "/index?faces-redirect=true";
 	}
 }
