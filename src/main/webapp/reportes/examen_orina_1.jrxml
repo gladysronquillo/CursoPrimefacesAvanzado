@@ -2,7 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="397"/>
@@ -178,7 +178,7 @@ order by id_examen_orina desc limit 1]]>
 		</band>
 	</pageHeader>
 	<detail>
-		<band height="446" splitType="Stretch">
+		<band height="468" splitType="Stretch">
 			<staticText>
 				<reportElement stretchType="ElementGroupBottom" x="58" y="80" width="91" height="20" uuid="4ff6da2a-47f9-40f0-964c-af6cd04d9d46"/>
 				<textElement>
@@ -447,6 +447,171 @@ order by id_examen_orina desc limit 1]]>
 				</textElement>
 				<text><![CDATA[ELEMENTAL Y MICROSCOPICO]]></text>
 			</staticText>
+		</band>
+		<band height="294">
+			<break>
+				<reportElement x="0" y="1" width="559" height="1" uuid="3492447b-def0-4f88-9dc0-7a1eca79048e"/>
+			</break>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="110" width="190" height="20" uuid="1a7c781c-2256-48c2-bcda-5aa1d6324675"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROTEINURIA 24 HORAS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="130" width="190" height="20" uuid="9789fcd4-cd0d-426d-8614-c89fa99f27f5"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROTEINURIA MICCIONAL:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="150" width="190" height="20" uuid="a0e167c2-150a-451f-a579-90167448590c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[MICROALBUMINURIA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="170" width="190" height="20" uuid="fb008ce9-b107-4693-91be-24689ba52232"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CLEARANCE DE CREATININA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="380" y="110" width="131" height="20" uuid="0ce6aad0-b17b-487f-bf3e-c8ab7bc08014"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[V.N: hasta 150 mg/24H]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="379" y="130" width="131" height="20" uuid="27375b7e-17c2-42ae-bd8f-0bf550326865"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[hasta 12 mg/dl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="379" y="150" width="131" height="20" uuid="cf2beeb8-c775-4e2d-89d1-e28303f270b8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[0 - 20 mg/l]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="379" y="170" width="131" height="20" uuid="cecc127a-9874-4799-affc-fc915be488f5"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[80 - 120 mil/min.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="250" y="110" width="129" height="20" uuid="c3f8dd1c-5486-491c-a887-f617d0931170"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{proteinuria_24}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="130" width="129" height="20" uuid="8a13dfa1-ed0c-4ccc-bfc2-c29c1973746f"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{proteinuria_miccional}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="150" width="129" height="20" uuid="78024d42-ea3d-4044-b3c8-6c279b8407c5"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{microalbuminuria}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="170" width="129" height="20" uuid="639b2222-e07b-4587-8145-c9ac3b4aedbb"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{clearance_creatinina}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="190" width="190" height="20" uuid="c5f8b643-c38c-4418-8d88-ef8dfb5df8bd"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRUEBA DE EMBARAZO (HCGB):]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="250" y="190" width="129" height="20" uuid="c2b16a65-1999-4a3b-b268-c6a1731fc344"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{prueba_embarazo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="210" width="61" height="20" uuid="42175601-2e7a-4686-ab41-6bbccf1a5c54"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[BAAR EN:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="249" y="210" width="129" height="20" uuid="54d2f590-55ff-42fa-9214-a28ece5b836c"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{muestras}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="30" width="190" height="20" uuid="636b0f13-3a6a-4e24-b336-44230d9bcb4c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Esporas de hongos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="50" width="190" height="20" uuid="800b6b39-ec6a-4df3-b8e3-2fd801070c0d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Miscelios de hongos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="70" width="190" height="20" uuid="0daaafba-e9c7-4dbc-b324-2abb0e69a524"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Trichomonas:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="90" width="190" height="20" uuid="f6f965ab-15e0-4258-bf68-815214b53712"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[GOTA FRESCA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="250" y="30" width="260" height="20" uuid="fbd8c47b-53b0-4d4f-bb5d-3eee26a0d755"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{esporas_hongos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="50" width="260" height="20" uuid="76212711-c17b-4f84-bcb0-8fa3f9d54e6c"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{miscelios_hongos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="70" width="260" height="20" uuid="50f2cfc0-7a0d-49b3-bf48-52e12cc9ceed"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{trichomonas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="90" width="260" height="20" uuid="d5e7a9b6-c2bb-4b99-abab-9a1e9b37e04e"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{gota_fresca}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="169" y="210" width="80" height="20" uuid="64265807-08d5-44a6-be44-af3d683cd369"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[MUESTRAS:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="210" width="49" height="20" uuid="9402cfca-2b69-4759-a9b1-4213c96d3ba9"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{baar}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<lastPageFooter>

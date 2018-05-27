@@ -92,12 +92,8 @@ public class ReportesLaboratorio implements Serializable {
 	// Reporte PDF de Bioquimica Sanguinea llamado desde la vista
 	public void exportarBioquimicaSanguineaPDF(Paciente paciente) {
 		// Nombre del archivo jrxml con el template del reporte
-		String filename = "bioquimica_sanguinea_1";
-		this.exportarPDF(paciente, filename);
 		String filename2 = "bioquimica_sanguinea_2";
 		this.exportarPDF(paciente, filename2);
-		String filename3 = "bioquimica_sanguinea_3";
-		this.exportarPDF(paciente, filename3);
 	}
 
 	// Reporte PDF de Coagulación llamado desde la vista
@@ -139,27 +135,21 @@ public class ReportesLaboratorio implements Serializable {
 	public void exportarExamenOrinaPDF(Paciente paciente) {
 		// Nombre del archivo jrxml con el template del reporte
 		String filename = "examen_orina_1";
-		String filename2 = "examen_orina_2";
 		this.exportarPDF(paciente, filename);
-		this.exportarPDF(paciente, filename2);
 	}
 
 	// Reporte PDF de Examen Sangre llamado desde la vista
 	public void exportarExamenSangrePDF(Paciente paciente) {
 		// Nombre del archivo jrxml con el template del reporte
 		String filename = "examen_sangre_1";
-		String filename2 = "examen_sangre_2";
 		this.exportarPDF(paciente, filename);
-		this.exportarPDF(paciente, filename2);
 	}
 
 	// Reporte PDF de Electrolitos llamado desde la vista
 	public void exportarHormonasPDF(Paciente paciente) {
 		// Nombre del archivo jrxml con el template del reporte
 		String filename = "hormonas_1";
-		String filename2 = "hormonas_2";
 		this.exportarPDF(paciente, filename);
-		this.exportarPDF(paciente, filename2);
 	}
 
 	// Reporte PDF de Marcadores Tumorales llamado desde la vista
@@ -173,9 +163,7 @@ public class ReportesLaboratorio implements Serializable {
 	public void exportarExamenHecesPDF(Paciente paciente) {
 		// Nombre del archivo jrxml con el template del reporte
 		String filename = "examen_heces_1";
-		String filename2 = "examen_heces_2";
 		this.exportarPDF(paciente, filename);
-		this.exportarPDF(paciente, filename2);
 	}
 
 }

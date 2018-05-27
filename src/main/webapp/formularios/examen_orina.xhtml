@@ -293,15 +293,15 @@
 				
 				
 				<p:commandLink
-					actionListener="#{examen_orina.registrar(pacienteController.paciente.id_paciente)}"
-					update=":idFormPaciente:mensaje , examen_orina, botonPdf" disabled="#{!examen_orina.desabilitado}">
+					actionListener="#{examen_orinaController.registrar(pacienteController.paciente.id_paciente)}"
+					update=":idFormPaciente:mensaje , examen_orina, botonPdf" disabled="#{!examen_orinaController.desabilitado}">
 					<h:graphicImage value="/resources/images/grabar.png" border="0"
 						width="75" height="75" />
 				</p:commandLink>
 
 				<p:commandLink id="botonPdf"
 					action="#{reportesLaboratorio.exportarExamenOrinaPDF(pacienteController.paciente)}"
-					ajax="false" disabled="#{examen_orina.desabilitado}">
+					ajax="false" disabled="#{examen_orinaController.desabilitado}">
 					<h:graphicImage value="/resources/images/pdf.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>

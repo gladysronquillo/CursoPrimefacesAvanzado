@@ -2,7 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="397"/>
@@ -200,7 +200,7 @@ order by id_examen_heces desc limit 1]]>
 		</band>
 	</pageHeader>
 	<detail>
-		<band height="580" splitType="Stretch">
+		<band height="540" splitType="Stretch">
 			<staticText>
 				<reportElement stretchType="ElementGroupBottom" x="60" y="20" width="130" height="20" uuid="3a1d5332-471f-4b14-be8d-a450c004fe02"/>
 				<textElement>
@@ -483,6 +483,179 @@ order by id_examen_heces desc limit 1]]>
 				<reportElement x="193" y="480" width="148" height="20" uuid="5193a8e8-547c-47b7-b255-dd5dea46d386"/>
 				<textElement textAlignment="Left"/>
 				<textFieldExpression><![CDATA[$F{chilomastix_mesnili}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="356">
+			<break>
+				<reportElement x="0" y="0" width="560" height="1" uuid="e93cbdf8-7c2b-4d59-a1cb-e74f9284ecac"/>
+			</break>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="20" width="130" height="20" uuid="1402422c-d1f0-4269-81ac-35c02cdbe044"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Embadomonas hominis:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="40" width="130" height="20" uuid="324de79d-a35c-404e-927d-c31aaae044c2"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ascaris lumbricoides:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="189" y="20" width="148" height="20" uuid="160d5cec-ca4b-4bcf-ac84-961a0439bb81"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{embadomonas_hominis}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="60" width="130" height="20" uuid="00c3d63a-ef51-4177-8052-a9b6c01a1984"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tricocefalos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="59" y="80" width="130" height="20" uuid="5164855b-f5ad-4f10-8c9d-c425287b5ebc"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Oxiuros:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="100" width="130" height="20" uuid="05ef62b6-7a55-4e92-959f-1d1d05770ba0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Uncinairas:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="120" width="130" height="20" uuid="31354779-cbdc-492e-afe5-757e029388d5"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Strongiloides stercoralis:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="61" y="140" width="130" height="20" uuid="fd649852-aa44-42c7-a73f-b40d83f7adc6"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tenias: Solium]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="160" width="130" height="20" uuid="685a3ef9-0176-4f2e-9371-ba1a41fcc028"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Saginata:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="61" y="180" width="130" height="20" uuid="e6e1cab4-38a2-4eff-8f14-cdcd0cd53a3f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Himenolepis Nana:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="60" y="200" width="130" height="20" uuid="07cd923d-46a2-4d4f-8ebb-51ba811941db"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Himenolepis Diminuta:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="61" y="220" width="130" height="20" uuid="3dd8164c-bab2-44d3-ae4d-2fe32bf153b3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CLINITEST:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="61" y="240" width="130" height="20" uuid="62560a0c-0856-4e32-b678-3b32a38dea1f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUDAN III:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="62" y="260" width="130" height="20" uuid="e1214153-e28a-4305-b450-d6f0dabeff7f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[pH:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="61" y="280" width="130" height="20" uuid="f735e280-6e68-4ab8-a1a0-e41b29b914e4"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Helicobacter pylori:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="189" y="40" width="148" height="20" uuid="c6a9f617-2faf-436c-a46c-a558b366b4ed"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{ascaris_lumbricoides}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="80" width="148" height="20" uuid="57fa3697-5879-42b0-85dc-143522f0f90a"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{oxiuros}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="100" width="148" height="20" uuid="3587034d-e3d2-4c4c-9cf3-21f7d24e38b0"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{uncinairas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="120" width="148" height="20" uuid="0ad2b8a0-e1f8-4e7b-8684-4db3daad3083"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{strongiloides_stercoralis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="140" width="148" height="20" uuid="73017150-20b9-4671-91dd-477219c81a5c"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{tenias_solium}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="160" width="148" height="20" uuid="ac00ea84-3b8b-4137-801b-2c39023cc5b0"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{saginata}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="180" width="148" height="20" uuid="8cab89a9-a1cb-430f-a07d-cc7b4cd243d3"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{himenolepis_nana}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="200" width="148" height="20" uuid="d4314c95-b3a8-44bf-91c6-defcd8aaee8f"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{himenolepis_diminuta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="220" width="148" height="20" uuid="09e2c9a4-4464-49a6-8d2d-b14ad5a5277c"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{clinitest}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="240" width="148" height="20" uuid="7d844ef7-9c12-4a01-9bed-a3f8fd58422e"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{sudan_iii}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="260" width="148" height="20" uuid="7fdcec3c-09cb-471c-9dd3-10731d62db2e"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{ph}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="280" width="148" height="20" uuid="b6eca255-34f9-4ebd-b817-ff0685b86bee"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{helicobacter_pylori}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="60" width="148" height="20" uuid="c496203a-cb04-4fd3-8efc-d0fb178df69e"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{tricocefalos}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

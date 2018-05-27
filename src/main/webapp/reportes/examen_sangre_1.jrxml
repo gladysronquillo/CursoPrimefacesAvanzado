@@ -2,7 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="397"/>
@@ -140,7 +140,7 @@ order by id_examen_sangre desc limit 1]]>
 		</band>
 	</pageHeader>
 	<detail>
-		<band height="440" splitType="Stretch">
+		<band height="494" splitType="Stretch">
 			<staticText>
 				<reportElement stretchType="ElementGroupBottom" x="70" y="50" width="130" height="20" uuid="4e041a77-9de4-49f0-8456-7358e6e54cfa"/>
 				<textElement>
@@ -431,6 +431,90 @@ order by id_examen_sangre desc limit 1]]>
 				<textElement textAlignment="Left"/>
 				<textFieldExpression><![CDATA[$F{grupo_sanguineo}]]></textFieldExpression>
 			</textField>
+			<break>
+				<reportElement x="0" y="493" width="550" height="1" uuid="5daa985d-0922-4905-8467-1ffea31c12ee"/>
+			</break>
+		</band>
+		<band height="220">
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="80" y="30" width="130" height="20" uuid="c8ffd3af-a44b-4ce6-afa0-b882d036087b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FACTOR Rh:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="79" y="50" width="130" height="20" uuid="b28bedc1-6d08-4168-a13b-bac804e2129f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[HEMATOZOARIO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="79" y="70" width="130" height="20" uuid="d150deee-a176-4bcd-8796-cfb47b839a88"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[COOMS DIRECTO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="80" y="90" width="130" height="20" uuid="550af13a-ee32-4c90-97b4-7d56b9d721af"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[COOMBS INDIRECTO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="79" y="110" width="130" height="20" uuid="4fc498c2-f6c9-4089-8631-d968f3957aff"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CÉLULAS L.E.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="79" y="130" width="130" height="20" uuid="b2743530-18ab-4da8-955d-b676014eeb3f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RETICULOCITOS:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="30" width="159" height="20" uuid="42feb040-0da2-4e07-855b-56425a207548"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{factor_rh}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="211" y="50" width="159" height="20" uuid="47e51a87-ef61-442f-baf6-7ff7ce1c01bb"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{hematozoario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="70" width="159" height="20" uuid="5c378880-58f2-4943-922e-04e5a5c6856a"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{cooms_directo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="211" y="90" width="159" height="20" uuid="40a334c3-d0f9-4c82-8ed6-765d4a63168c"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{cooms_indirecto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="110" width="159" height="20" uuid="aca36536-d0e1-487e-a94e-663125694e91"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{celulas_le}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="211" y="130" width="159" height="20" uuid="3a7d7b37-b3c2-4bb9-8858-dbcf1d9e69df"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{reticulocitos}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" x="370" y="130" width="130" height="20" uuid="34384d91-c905-428d-93d9-14f016e7cf04"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[V.N.: hasta 2%]]></text>
+			</staticText>
 		</band>
 	</detail>
 	<lastPageFooter>
