@@ -1,1 +1,1 @@
-# CursoPrimefacesAvanzado
+# Laboratorio

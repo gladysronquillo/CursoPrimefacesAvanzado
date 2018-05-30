@@ -31,7 +31,7 @@ import net.sf.jasperreports.engine.xml.JRXmlLoader;
 public class ReportesLaboratorio implements Serializable {
 	private static final long serialVersionUID = 2072950384835762455L;
 	Conexion conn = new Conexion();
-	String pathReport = "C:\\workspace\\CursoPrimefacesAvanzado\\src\\main\\webapp\\reportes\\";
+	String pathReport = "C:\\workspace\\Laboratorio\\src\\main\\webapp\\reportes\\";
 
 	// Método general que exporta PDF
 	public void exportarPDF(Paciente paciente, String filename) {
