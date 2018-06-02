@@ -2,7 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="397"/>
@@ -494,91 +494,91 @@ order by id_bioquimica_sanguinea desc limit 1]]>
 				<text><![CDATA[hasta 40 U/I]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="238" y="30" width="151" height="20" uuid="c9730029-46a1-424c-8aeb-94fc28fef4b4"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="30" width="151" height="20" isRemoveLineWhenBlank="true" uuid="c9730029-46a1-424c-8aeb-94fc28fef4b4"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{glucosa},"")?"":$F{glucosa})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="50" width="152" height="20" uuid="c74c62b3-646d-4623-8932-3391c26ae9af"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="50" width="152" height="20" isRemoveLineWhenBlank="true" uuid="c74c62b3-646d-4623-8932-3391c26ae9af"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{urea},"")?"":$F{urea})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="70" width="151" height="20" uuid="1d8e05ae-7452-4ba6-a552-7232e59b722e"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="70" width="151" height="20" isRemoveLineWhenBlank="true" uuid="1d8e05ae-7452-4ba6-a552-7232e59b722e"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{creatinina},"")?"":$F{creatinina})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="90" width="152" height="20" uuid="ab9f10bd-bae5-42f9-8b51-a3404b366947"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="90" width="152" height="20" isRemoveLineWhenBlank="true" uuid="ab9f10bd-bae5-42f9-8b51-a3404b366947"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{colesterol},"")?"":$F{colesterol})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="110" width="151" height="20" uuid="117f5c76-824c-49dc-8320-d80abfc356ef"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="110" width="151" height="20" isRemoveLineWhenBlank="true" uuid="117f5c76-824c-49dc-8320-d80abfc356ef"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{trigliceridos},"")?"":$F{trigliceridos})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="130" width="152" height="20" uuid="fc88ac40-b75f-45f4-b7cd-69be07cb5fb4"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="130" width="152" height="20" isRemoveLineWhenBlank="true" uuid="fc88ac40-b75f-45f4-b7cd-69be07cb5fb4"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{hdl_colesterol},"")?"":$F{hdl_colesterol})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="150" width="153" height="20" uuid="f01a479a-960d-487b-961e-b5dd15b5daf2"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="150" width="153" height="20" isRemoveLineWhenBlank="true" uuid="f01a479a-960d-487b-961e-b5dd15b5daf2"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{ldl_colesterol},"")?"":$F{ldl_colesterol})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="170" width="152" height="20" uuid="ccddc4f4-9ba3-4ae7-94fd-f9f99e7ce452"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="170" width="152" height="20" isRemoveLineWhenBlank="true" uuid="ccddc4f4-9ba3-4ae7-94fd-f9f99e7ce452"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{lipidos_totales},"")?"":$F{lipidos_totales})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="190" width="153" height="20" uuid="1d4fe732-9135-4d29-bc1a-34a77ed69b0f"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="190" width="153" height="20" isRemoveLineWhenBlank="true" uuid="1d4fe732-9135-4d29-bc1a-34a77ed69b0f"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{acido_urico},"")?"":$F{acido_urico})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="210" width="152" height="20" uuid="4cea570e-6e85-4553-8380-fca02a2db722"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="210" width="152" height="20" isRemoveLineWhenBlank="true" uuid="4cea570e-6e85-4553-8380-fca02a2db722"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{bil_total},"")?"":$F{bil_total})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="230" width="151" height="20" uuid="9b868e10-b977-4964-8819-6eaa10e5bd4c"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="230" width="151" height="20" isRemoveLineWhenBlank="true" uuid="9b868e10-b977-4964-8819-6eaa10e5bd4c"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{bil_directa},"")?"":$F{bil_directa})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="250" width="152" height="20" uuid="fb39796d-6f77-465b-8f62-c3f0bf72d268"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="250" width="152" height="20" isRemoveLineWhenBlank="true" uuid="fb39796d-6f77-465b-8f62-c3f0bf72d268"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{bil_indirecta},"")?"":$F{bil_indirecta})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="270" width="151" height="20" uuid="67ec4dfc-532b-4d14-98c8-13281b47e969"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="270" width="151" height="20" isRemoveLineWhenBlank="true" uuid="67ec4dfc-532b-4d14-98c8-13281b47e969"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
@@ -693,42 +693,42 @@ order by id_bioquimica_sanguinea desc limit 1]]>
 				<text><![CDATA[hasta 120 UA/dl]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="238" y="290" width="153" height="20" uuid="d40aecd7-19c3-42ff-96ee-097319b38aed"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="290" width="153" height="20" isRemoveLineWhenBlank="true" uuid="d40aecd7-19c3-42ff-96ee-097319b38aed"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{sgpt},"")?"":$F{sgpt})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="310" width="154" height="20" uuid="8da50081-780b-4749-b50d-405c3bc490e7"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="310" width="154" height="20" isRemoveLineWhenBlank="true" uuid="8da50081-780b-4749-b50d-405c3bc490e7"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{fosfatasa_alcalina},"")?"":$F{fosfatasa_alcalina})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="330" width="153" height="20" uuid="769b04f8-f222-402c-9e1f-8ae7689f2f71"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="330" width="153" height="20" isRemoveLineWhenBlank="true" uuid="769b04f8-f222-402c-9e1f-8ae7689f2f71"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{fosfatasa_acida},"")?"":$F{fosfatasa_acida})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="350" width="152" height="20" uuid="689ea044-cfb1-4ef2-8c0f-328d806f9931"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="350" width="152" height="20" isRemoveLineWhenBlank="true" uuid="689ea044-cfb1-4ef2-8c0f-328d806f9931"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{fosfatasa_ac_prost},"")?"":$F{fosfatasa_ac_prost})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="370" width="153" height="20" uuid="eb6757dd-daa2-4f2f-832f-3ace8602b6e9"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="370" width="153" height="20" isRemoveLineWhenBlank="true" uuid="eb6757dd-daa2-4f2f-832f-3ace8602b6e9"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{gamma},"")?"":$F{gamma})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="390" width="152" height="20" uuid="989fab28-fba3-41ae-bf37-8174ec1895a1"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="390" width="152" height="20" isRemoveLineWhenBlank="true" uuid="989fab28-fba3-41ae-bf37-8174ec1895a1"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
@@ -902,63 +902,63 @@ order by id_bioquimica_sanguinea desc limit 1]]>
 				<text><![CDATA[4.5 - 22.7 mg/dl]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="238" y="30" width="152" height="20" uuid="7d4f7088-b78d-40e7-8433-1e94264ace03"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="30" width="152" height="20" isRemoveLineWhenBlank="true" uuid="7d4f7088-b78d-40e7-8433-1e94264ace03"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{lipasa},"")?"":$F{lipasa})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="50" width="153" height="20" uuid="1872c2ed-97dd-42a8-8642-78c4dc1c0b4f"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="50" width="153" height="20" isRemoveLineWhenBlank="true" uuid="1872c2ed-97dd-42a8-8642-78c4dc1c0b4f"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{proteinas_totales},"")?"":$F{proteinas_totales})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="70" width="152" height="20" uuid="43a2d6fb-3781-4297-84b5-72b84f250755"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="70" width="152" height="20" isRemoveLineWhenBlank="true" uuid="43a2d6fb-3781-4297-84b5-72b84f250755"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{albumina},"")?"":$F{albumina})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="90" width="153" height="20" uuid="394722ea-ac56-44b9-a684-a8767678c04b"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="90" width="153" height="20" isRemoveLineWhenBlank="true" uuid="394722ea-ac56-44b9-a684-a8767678c04b"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{globulina},"")?"":$F{globulina})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="110" width="152" height="20" uuid="016b689d-8ea3-4e74-9e82-dc20ec8318b3"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="110" width="152" height="20" isRemoveLineWhenBlank="true" uuid="016b689d-8ea3-4e74-9e82-dc20ec8318b3"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{ldh},"")?"":$F{ldh})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="130" width="153" height="20" uuid="ec3ed77d-b25c-4140-85d0-46fdb8a14725"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="130" width="153" height="20" isRemoveLineWhenBlank="true" uuid="ec3ed77d-b25c-4140-85d0-46fdb8a14725"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{cpk},"")?"":$F{cpk})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="150" width="154" height="20" uuid="75376a81-73e7-4b09-b0df-2d99445b110d"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="150" width="154" height="20" isRemoveLineWhenBlank="true" uuid="75376a81-73e7-4b09-b0df-2d99445b110d"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{ck_mb},"")?"":$F{ck_mb})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="170" width="153" height="20" uuid="de45c6ec-66d2-4901-bcee-9fc58c1a0826"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="170" width="153" height="20" isRemoveLineWhenBlank="true" uuid="de45c6ec-66d2-4901-bcee-9fc58c1a0826"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{troponina},"")?"":$F{troponina})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="190" width="154" height="20" uuid="19f5f7f7-efab-4732-8c98-53cf06fd3433"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="190" width="154" height="20" isRemoveLineWhenBlank="true" uuid="19f5f7f7-efab-4732-8c98-53cf06fd3433"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
@@ -1154,28 +1154,28 @@ order by id_bioquimica_sanguinea desc limit 1]]>
 				<text><![CDATA[37 - 58 mg/ml]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="238" y="210" width="153" height="20" uuid="5e8253d0-6b11-4572-97b6-ea375679b390"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="210" width="153" height="20" isRemoveLineWhenBlank="true" uuid="5e8253d0-6b11-4572-97b6-ea375679b390"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{vldl},"")?"":$F{vldl})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="230" width="152" height="20" uuid="d93c1eeb-cb00-4635-b9da-26061ab22d2d"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="230" width="152" height="20" isRemoveLineWhenBlank="true" uuid="d93c1eeb-cb00-4635-b9da-26061ab22d2d"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{glucosa_post},"")?"":$F{glucosa_post})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="250" width="153" height="20" uuid="d406c07f-ba43-4c26-be07-dcdd51819209"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="250" width="153" height="20" isRemoveLineWhenBlank="true" uuid="d406c07f-ba43-4c26-be07-dcdd51819209"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{hba1c},"")?"":$F{hba1c})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="290" width="154" height="20" uuid="9e4d7a82-927f-491c-9254-e050e145a994"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="290" width="154" height="20" isRemoveLineWhenBlank="true" uuid="9e4d7a82-927f-491c-9254-e050e145a994"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
@@ -1189,35 +1189,35 @@ order by id_bioquimica_sanguinea desc limit 1]]>
 				<textFieldExpression><![CDATA[(EQUALS($F{glucosa_ayunas_1h},"")?"":$F{glucosa_ayunas_1h})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="330" width="154" height="20" uuid="4c21169e-d990-4dbd-bddf-1b812fcdef99"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="330" width="154" height="20" isRemoveLineWhenBlank="true" uuid="4c21169e-d990-4dbd-bddf-1b812fcdef99"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{glucosa_ayunas_2h},"")?"":$F{glucosa_ayunas_2h})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="350" width="153" height="20" uuid="cfcdec5e-d077-4ecb-9e98-e3daa32c4229"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="350" width="153" height="20" isRemoveLineWhenBlank="true" uuid="cfcdec5e-d077-4ecb-9e98-e3daa32c4229"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{glucosa_ayunas_3h},"")?"":$F{glucosa_ayunas_3h})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="370" width="154" height="20" uuid="02c2d7d3-c0c3-40cd-af6b-758b4c9e0450"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="370" width="154" height="20" isRemoveLineWhenBlank="true" uuid="02c2d7d3-c0c3-40cd-af6b-758b4c9e0450"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{glucosa_ayunas_4h},"")?"":$F{glucosa_ayunas_4h})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="390" width="153" height="20" uuid="f3eeda15-8575-47f0-bd42-ab012f61103d"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="390" width="153" height="20" isRemoveLineWhenBlank="true" uuid="f3eeda15-8575-47f0-bd42-ab012f61103d"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{glucosa_ayunas_5h},"")?"":$F{glucosa_ayunas_5h})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="238" y="410" width="151" height="20" uuid="2d7c0b64-899e-4b5a-b4da-063882bc0a08"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="238" y="410" width="151" height="20" isRemoveLineWhenBlank="true" uuid="2d7c0b64-899e-4b5a-b4da-063882bc0a08"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
@@ -1247,7 +1247,7 @@ order by id_bioquimica_sanguinea desc limit 1]]>
 				<text><![CDATA[200 - 400 mg/dl]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="240" y="30" width="152" height="20" uuid="58d320fe-5c5f-44da-9ac2-70215ba4c874"/>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="240" y="30" width="152" height="20" isRemoveLineWhenBlank="true" uuid="58d320fe-5c5f-44da-9ac2-70215ba4c874"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
@@ -1470,84 +1470,84 @@ order by id_bioquimica_sanguinea desc limit 1]]>
 				<text><![CDATA[3100 - 7700 U/I]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="240" y="50" width="153" height="20" uuid="30dfcd0e-aa06-43ca-9f19-74286fd811fb"/>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="240" y="50" width="153" height="20" isRemoveLineWhenBlank="true" uuid="30dfcd0e-aa06-43ca-9f19-74286fd811fb"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{esteres_colest},"")?"":$F{esteres_colest})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="240" y="70" width="152" height="20" uuid="6d907ffc-d35d-4437-8910-9af6d2abcf2a"/>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="240" y="70" width="152" height="20" isRemoveLineWhenBlank="true" uuid="6d907ffc-d35d-4437-8910-9af6d2abcf2a"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{apo_a1},"")?"":$F{apo_a1})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="240" y="90" width="153" height="20" uuid="1df14b40-033c-40ab-8c88-e4384e60b58d"/>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="240" y="90" width="153" height="20" isRemoveLineWhenBlank="true" uuid="1df14b40-033c-40ab-8c88-e4384e60b58d"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{apo_b100},"")?"":$F{apo_b100})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="240" y="110" width="152" height="20" uuid="0749b79a-e406-4d7a-99df-66e11989c7ee"/>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="240" y="110" width="152" height="20" isRemoveLineWhenBlank="true" uuid="0749b79a-e406-4d7a-99df-66e11989c7ee"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{hierro_serico},"")?"":$F{hierro_serico})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="240" y="130" width="153" height="20" uuid="f1aa98b3-7a32-4fcf-8fff-170d9d3fcd54"/>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="240" y="130" width="153" height="20" isRemoveLineWhenBlank="true" uuid="f1aa98b3-7a32-4fcf-8fff-170d9d3fcd54"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{ferritina},"")?"":$F{ferritina})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="240" y="150" width="154" height="20" uuid="a701a7b7-d3d1-4548-a13f-6236c5205136"/>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="240" y="150" width="154" height="20" isRemoveLineWhenBlank="true" uuid="a701a7b7-d3d1-4548-a13f-6236c5205136"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{cap_transferrina},"")?"":$F{cap_transferrina})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="240" y="170" width="153" height="20" uuid="27975b1a-105b-4873-962b-3caa8526e865"/>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="240" y="170" width="153" height="20" isRemoveLineWhenBlank="true" uuid="27975b1a-105b-4873-962b-3caa8526e865"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{sat_transferrina},"")?"":$F{sat_transferrina})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="240" y="190" width="154" height="20" uuid="4e6bdcb3-d576-4adf-b08d-180b9def02fa"/>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="240" y="190" width="154" height="20" isRemoveLineWhenBlank="true" uuid="4e6bdcb3-d576-4adf-b08d-180b9def02fa"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{acido_folico},"")?"":$F{acido_folico})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="240" y="210" width="153" height="20" uuid="eb69ff0b-ecad-4a02-bf0b-1fa45e0a4b2e"/>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="240" y="210" width="153" height="20" isRemoveLineWhenBlank="true" uuid="eb69ff0b-ecad-4a02-bf0b-1fa45e0a4b2e"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{vitamina_b12},"")?"":$F{vitamina_b12})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="240" y="230" width="152" height="20" uuid="3ba96eaa-f97b-4725-833b-a2b93bc20f7b"/>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="240" y="230" width="152" height="20" isRemoveLineWhenBlank="true" uuid="3ba96eaa-f97b-4725-833b-a2b93bc20f7b"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{glucosa_sullivan},"")?"":$F{glucosa_sullivan})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="240" y="250" width="153" height="20" uuid="cacd35cb-1d2d-4f52-8b9f-8c1016ea69fa"/>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="240" y="250" width="153" height="20" isRemoveLineWhenBlank="true" uuid="cacd35cb-1d2d-4f52-8b9f-8c1016ea69fa"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(EQUALS($F{aldolasa},"")?"":$F{aldolasa})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="240" y="270" width="152" height="20" uuid="5dc318fa-ca3f-42ba-9383-feb3138cd03b"/>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="240" y="270" width="152" height="20" isRemoveLineWhenBlank="true" uuid="5dc318fa-ca3f-42ba-9383-feb3138cd03b"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
