@@ -11,8 +11,8 @@ import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 import com.kodigo.interfarces.Cultivo_antibiogramaFacadeLocal;
-import com.kodigo.model.Paciente;
 import com.kodigo.model.Cultivo_antibiograma;
+import com.kodigo.model.Paciente;
 
 @Named
 @SessionScoped
@@ -36,13 +36,39 @@ public class Cultivo_antibiogramaController implements Serializable {
 
 			Date fecha = new Date();
 
+			FacesContext contextCatalogo = FacesContext.getCurrentInstance();
+			CatalogoController beanCatalogo = contextCatalogo.getApplication().evaluateExpressionGet(contextCatalogo,
+					"#{catalogoController}", CatalogoController.class);
+
+			String[] lista = beanCatalogo.getListaCatalogoMuySensible();
+			String mensajeMuySensible = "";
+			for (String string : lista) {
+				mensajeMuySensible = mensajeMuySensible + "  -" + string;
+			}
+
+			String[] listaMedSensible = beanCatalogo.getListaCatalogoMedSensible();
+			String mensajeMedSensible = "";
+			for (String string : listaMedSensible) {
+				mensajeMedSensible = mensajeMedSensible + "  -" + string;
+			}
+
+			String[] listaResistente = beanCatalogo.getListaCatalogoResistente();
+			String mensajeResistente = "";
+			for (String string : listaResistente) {
+				mensajeResistente = mensajeResistente + "  -" + string;
+			}
+
 			cultivo_antibiograma.setFecha(fecha);
+			cultivo_antibiograma.setMuySensible(mensajeMuySensible);
+			cultivo_antibiograma.setMedSensible(mensajeMedSensible);
+			cultivo_antibiograma.setResistente(mensajeResistente);
+
 			cultivo_antibiogramaEjb.create(cultivo_antibiograma);
 
 			FacesContext context = FacesContext.getCurrentInstance();
 			Paciente_TipoExamenController bean = context.getApplication().evaluateExpressionGet(context,
 					"#{paciente_TipoExamenController}", Paciente_TipoExamenController.class);
-			
+
 			bean.eliminarPaciente(id_paciente);
 
 			desabilitado = false;
