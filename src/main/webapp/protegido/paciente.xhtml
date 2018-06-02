@@ -17,7 +17,10 @@
 					actionListener="#{pacienteController.setAccion('Registrar')}" update=":idDatos"></p:commandButton>
 
 				<p:dataTable id="dataListaPaciente"
-					value="#{pacienteController.listaPaciente}" var="paciente">
+					value="#{pacienteController.listaPaciente}" var="paciente" rows="10"
+                         paginator="true"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="5,10,15">
 					<p:column>
 						<p:commandButton icon="ui-icon-pencil"
 							actionListener="#{pacienteController.leerId(paciente)}"
