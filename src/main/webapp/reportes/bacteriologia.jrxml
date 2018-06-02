@@ -57,102 +57,130 @@ order by id_bacteriologia desc limit 1]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
+		<band height="80" splitType="Stretch"/>
 	</title>
 	<pageHeader>
-		<band height="80" splitType="Stretch">
+		<band height="100" splitType="Stretch">
 			<staticText>
-				<reportElement x="197" y="60" width="160" height="20" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
+				<reportElement x="190" y="70" width="160" height="20" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
 				<textElement textAlignment="Center">
-					<font fontName="Arial" size="13" isBold="true"/>
+					<font fontName="Arial" size="17" isBold="true"/>
 				</textElement>
 				<text><![CDATA[BACTERIOLOGÍA]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="130" y="19" width="159" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
-				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA[$F{paciente}]]></textFieldExpression>
+				<reportElement x="110" y="30" width="179" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
+				<textElement textAlignment="Left">
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[UPPER($F{paciente})]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
 	<detail>
 		<band height="210" splitType="Stretch">
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="70" y="30" width="170" height="20" uuid="4ff6da2a-47f9-40f0-964c-af6cd04d9d46"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="30" width="170" height="20" isRemoveLineWhenBlank="true" uuid="4ff6da2a-47f9-40f0-964c-af6cd04d9d46">
+					<printWhenExpression><![CDATA[!EQUALS($F{secrecion},"")]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[SECRECIÓN:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="69" y="50" width="170" height="20" uuid="3043e070-2074-48f0-a726-e06177cdc520"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="50" width="170" height="20" isRemoveLineWhenBlank="true" uuid="3043e070-2074-48f0-a726-e06177cdc520">
+					<printWhenExpression><![CDATA[!EQUALS($F{fresco},"")]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Fresco:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="69" y="70" width="170" height="20" uuid="4f426558-7c7a-43f1-a8f3-70d81e03c5fa"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="70" width="170" height="20" isRemoveLineWhenBlank="true" uuid="4f426558-7c7a-43f1-a8f3-70d81e03c5fa">
+					<printWhenExpression><![CDATA[!EQUALS($F{gram},"")]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Gram:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="70" y="90" width="170" height="20" uuid="a23e6df5-07f7-40f9-a70d-b7d9a422b2fe"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="90" width="170" height="20" isRemoveLineWhenBlank="true" uuid="a23e6df5-07f7-40f9-a70d-b7d9a422b2fe">
+					<printWhenExpression><![CDATA[!EQUALS($F{koh},"")]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[KOH:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="69" y="110" width="170" height="20" uuid="a04ab28c-4c1d-493e-9846-4561b2301452"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="110" width="170" height="20" isRemoveLineWhenBlank="true" uuid="a04ab28c-4c1d-493e-9846-4561b2301452">
+					<printWhenExpression><![CDATA[!EQUALS($F{zhiel},"")]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Zhiel:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="69" y="130" width="170" height="20" uuid="553e2fd1-5d52-49ed-8c4c-96ea92099878"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="130" width="170" height="20" isRemoveLineWhenBlank="true" uuid="553e2fd1-5d52-49ed-8c4c-96ea92099878">
+					<printWhenExpression><![CDATA[!EQUALS($F{eosinofilos_nasal},"")]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[EOSINOFILOS EN MOCO NASAL:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="239" y="30" width="240" height="20" uuid="c9730029-46a1-424c-8aeb-94fc28fef4b4"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{secrecion}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="250" y="30" width="240" height="20" isRemoveLineWhenBlank="true" uuid="c9730029-46a1-424c-8aeb-94fc28fef4b4"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(EQUALS($F{secrecion},"")?"":$F{secrecion})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="240" y="50" width="240" height="20" uuid="c74c62b3-646d-4623-8932-3391c26ae9af"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{fresco}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="251" y="50" width="240" height="20" isRemoveLineWhenBlank="true" uuid="c74c62b3-646d-4623-8932-3391c26ae9af"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(EQUALS($F{fresco},"")?"":$F{fresco})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="239" y="70" width="240" height="20" uuid="1d8e05ae-7452-4ba6-a552-7232e59b722e"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{gram}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="250" y="70" width="240" height="20" isRemoveLineWhenBlank="true" uuid="1d8e05ae-7452-4ba6-a552-7232e59b722e"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(EQUALS($F{gram},"")?"":$F{gram})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="240" y="90" width="240" height="20" uuid="ab9f10bd-bae5-42f9-8b51-a3404b366947"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{koh}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="251" y="90" width="240" height="20" isRemoveLineWhenBlank="true" uuid="ab9f10bd-bae5-42f9-8b51-a3404b366947"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(EQUALS($F{koh},"")?"":$F{koh})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="239" y="110" width="240" height="20" uuid="117f5c76-824c-49dc-8320-d80abfc356ef"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{zhiel}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="250" y="110" width="240" height="20" isRemoveLineWhenBlank="true" uuid="117f5c76-824c-49dc-8320-d80abfc356ef"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(EQUALS($F{zhiel},"")?"":$F{zhiel})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="240" y="130" width="140" height="20" uuid="fc88ac40-b75f-45f4-b7cd-69be07cb5fb4"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{eosinofilos_nasal}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="251" y="130" width="140" height="20" isRemoveLineWhenBlank="true" uuid="fc88ac40-b75f-45f4-b7cd-69be07cb5fb4"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(EQUALS($F{eosinofilos_nasal},"")?"":$F{eosinofilos_nasal})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="380" y="130" width="100" height="20" uuid="06e17ab8-a8ce-422a-9b76-042fcdf0c3c7"/>
+				<reportElement positionType="Float" stretchType="ElementGroupBottom" isPrintRepeatedValues="false" x="391" y="130" width="100" height="20" isRemoveLineWhenBlank="true" uuid="06e17ab8-a8ce-422a-9b76-042fcdf0c3c7">
+					<printWhenExpression><![CDATA[!EQUALS($F{eosinofilos_nasal},"")]]></printWhenExpression>
+				</reportElement>
 				<textElement textAlignment="Left">
-					<font isBold="true"/>
+					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[%]]></text>
 			</staticText>
@@ -160,9 +188,12 @@ order by id_bacteriologia desc limit 1]]>
 	</detail>
 	<lastPageFooter>
 		<band height="50">
-			<textField>
-				<reportElement x="130" y="10" width="100" height="20" uuid="79008dc6-6bdb-4879-8d11-0d9625c6d2b3"/>
-				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			<textField pattern="MM/dd/yyyy">
+				<reportElement x="110" y="30" width="100" height="20" uuid="79008dc6-6bdb-4879-8d11-0d9625c6d2b3"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 		</band>
 	</lastPageFooter>

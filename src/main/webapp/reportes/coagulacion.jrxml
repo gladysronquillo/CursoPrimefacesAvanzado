@@ -77,10 +77,10 @@ order by id_coagulacion desc limit 1]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
+		<band height="80" splitType="Stretch"/>
 	</title>
 	<pageHeader>
-		<band height="80" splitType="Stretch">
+		<band height="100" splitType="Stretch">
 			<staticText>
 				<reportElement x="173" y="60" width="193" height="20" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
 				<textElement textAlignment="Center">
