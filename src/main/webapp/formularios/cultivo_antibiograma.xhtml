@@ -87,33 +87,72 @@
 						<td colspan="2"><p:outputLabel style="font-weight: bold">ANTIBIOGRAMA</p:outputLabel></td>
 					</tr>
 					<tr>
+						<td><p:separator style="width:700px;height:1px" /></td>
+					</tr>
+
+					<tr>
 						<td><p:outputLabel style="font-weight: bold">Muy Sensible : </p:outputLabel></td>
-						<td><p:inputTextarea
-								value="#{cultivo_antibiogramaController.cultivo_antibiograma.muySensible}" /></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><p:selectManyCheckbox
+								value="#{catalogoController.listaCatalogoMuySensible}"
+								layout="grid" columns="5">
+								<f:selectItems value="#{catalogoController.listaCatalogo}"
+									var="catalogo" itemLabel="#{catalogo.nombre}"
+									itemValue="#{catalogo.nombre}" />
+							</p:selectManyCheckbox></td>
+					</tr>
+					<tr>
+						<td><p:separator style="width:700px;height:1px" /></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Med. Sensible : </p:outputLabel></td>
-						<td><p:inputTextarea
-								value="#{cultivo_antibiogramaController.cultivo_antibiograma.medSensible}" /></td>
+						<td />
+					</tr>
+					<tr>
+						<td><p:selectManyCheckbox
+								value="#{catalogoController.listaCatalogoMedSensible}"
+								layout="grid" columns="5">
+								<f:selectItems value="#{catalogoController.listaCatalogo}"
+									var="catalogo" itemLabel="#{catalogo.nombre}"
+									itemValue="#{catalogo.nombre}" />
+							</p:selectManyCheckbox></td>
+					</tr>
+					<tr>
+						<td><p:separator style="width:700px;height:1px" /></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Resistente : </p:outputLabel></td>
-						<td><p:inputTextarea
-								value="#{cultivo_antibiogramaController.cultivo_antibiograma.resistente}" /></td>
+						<td />
+					</tr>
+					<tr>
+						<td><p:selectManyCheckbox
+								value="#{catalogoController.listaCatalogoResistente}"
+								layout="grid" columns="5">
+								<f:selectItems value="#{catalogoController.listaCatalogo}"
+									var="catalogo" itemLabel="#{catalogo.nombre}"
+									itemValue="#{catalogo.nombre}" />
+							</p:selectManyCheckbox></td>
+					</tr>
+					<tr>
+						<td><p:separator style="width:700px;height:1px" /></td>
 					</tr>
 				</table>
 				<br></br>
-				
+
 				<p:commandLink
 					actionListener="#{cultivo_antibiogramaController.registrar(pacienteController.paciente.id_paciente)}"
-					update=":idFormPaciente:mensaje , cultivo_antibiograma, botonPdf" disabled="#{!cultivo_antibiogramaController.desabilitado}">
+					update=":idFormPaciente:mensaje , cultivo_antibiograma, botonPdf"
+					disabled="#{!cultivo_antibiogramaController.desabilitado}">
 					<h:graphicImage value="/resources/images/grabar.png" border="0"
 						width="75" height="75" />
 				</p:commandLink>
 
 				<p:commandLink id="botonPdf"
 					action="#{reportesLaboratorio.exportarCultivoAntibiogramaPDF(pacienteController.paciente)}"
-					ajax="false" disabled="#{cultivo_antibiogramaController.desabilitado}">
+					ajax="false"
+					disabled="#{cultivo_antibiogramaController.desabilitado}">
 					<h:graphicImage value="/resources/images/pdf.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>
