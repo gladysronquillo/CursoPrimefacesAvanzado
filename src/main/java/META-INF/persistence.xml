@@ -26,6 +26,7 @@
 		<class>com.kodigo.model.Marcadores_tumorales</class>
 		<class>com.kodigo.model.Sanguinea</class>
 		<class>com.kodigo.model.Examen_heces</class>
+		<class>com.kodigo.model.Inmunologia</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 	
 	</persistence-unit>
