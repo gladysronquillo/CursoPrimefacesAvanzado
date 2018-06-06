@@ -70,7 +70,9 @@
 				<table class="formulario" border="0">
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">PRUEBA DE EMBARAZO(HCGB) : </p:outputLabel></td>
-						<td><p:selectOneMenu value="#{hormonasController.hormonas.pruebaEmbarazo}">
+						<td><p:selectOneMenu
+								value="#{hormonasController.hormonas.pruebaEmbarazo}">
+								<f:selectItem itemValue="NULL" itemLabel="N/A" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
 							</p:selectOneMenu></td>
@@ -107,7 +109,8 @@
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">CORTISOL : </p:outputLabel></td>
-						<td><p:inputText value="#{hormonasController.hormonas.cortisol}" /></td>
+						<td><p:inputText
+								value="#{hormonasController.hormonas.cortisol}" /></td>
 						<td align="right"><p:outputLabel>a.m.: 6.2-19.4 ug/dl</p:outputLabel><br />
 							<p:outputLabel>p.m.: 2.3-11.9</p:outputLabel></td>
 					</tr>
@@ -119,13 +122,15 @@
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">ESTRÓGENOS : </p:outputLabel></td>
-						<td><p:inputText value="#{hormonasController.hormonas.estrogenos}" /></td>
+						<td><p:inputText
+								value="#{hormonasController.hormonas.estrogenos}" /></td>
 						<td align="right"><p:outputLabel>fase folicular: 24-195 pg/ml</p:outputLabel><br />
 							<p:outputLabel>fase ovulatoria: 66.1-411.0</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">ESTRADIOL : </p:outputLabel></td>
-						<td><p:inputText value="#{hormonasController.hormonas.estradiol}" /></td>
+						<td><p:inputText
+								value="#{hormonasController.hormonas.estradiol}" /></td>
 						<td align="right"><p:outputLabel>fase lutea: 40.0-261.0</p:outputLabel><br />
 							<p:outputLabel>post menopausia: 10.0-39.5</p:outputLabel><br />
 							<p:outputLabel>1er trimestre: 786-4584</p:outputLabel><br /> <p:outputLabel>2do trimestre: 801-5763</p:outputLabel><br />
@@ -170,19 +175,22 @@
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">PARATOHORMONA(PTH) : </p:outputLabel></td>
-						<td><p:inputText value="#{hormonasController.hormonas.paratohormona}" /></td>
+						<td><p:inputText
+								value="#{hormonasController.hormonas.paratohormona}" /></td>
 						<td align="right"><p:outputLabel>12-72 pg/dl</p:outputLabel><br />
 						</td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">PEPTIDO C : </p:outputLabel></td>
-						<td><p:inputText value="#{hormonasController.hormonas.peptidoC}" /></td>
+						<td><p:inputText
+								value="#{hormonasController.hormonas.peptidoC}" /></td>
 						<td align="right"><p:outputLabel>1.1-4.4 ng/ml</p:outputLabel>
 						</td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">PROGESTERONA : </p:outputLabel></td>
-						<td><p:inputText value="#{hormonasController.hormonas.progesterona}" /></td>
+						<td><p:inputText
+								value="#{hormonasController.hormonas.progesterona}" /></td>
 						<td align="right"><p:outputLabel>fase folicular: 0.2-1.5 ng/ml</p:outputLabel><br />
 							<p:outputLabel>fase ovulatoria: 0.8-3.0</p:outputLabel><br /> <p:outputLabel>fase lutea: 1.7-27.0</p:outputLabel><br />
 							<p:outputLabel>post menopausia: 0.1-0.8</p:outputLabel><br /> <p:outputLabel>1er trimestre: 16.4-48.6</p:outputLabel><br />
@@ -191,36 +199,40 @@
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">PROLACTINA : </p:outputLabel></td>
-						<td><p:inputText value="#{hormonasController.hormonas.prolactina}" /></td>
+						<td><p:inputText
+								value="#{hormonasController.hormonas.prolactina}" /></td>
 						<td align="right"><p:outputLabel>niños: 3.9-25.4 ng/ml</p:outputLabel><br />
 							<p:outputLabel>hombres: 4.1-18.4</p:outputLabel><br /> <p:outputLabel>mujeres: 3.4-24.1</p:outputLabel>
 						</td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">TESTOSTERONA : </p:outputLabel></td>
-						<td><p:inputText value="#{hormonasController.hormonas.testosterona}" /></td>
+						<td><p:inputText
+								value="#{hormonasController.hormonas.testosterona}" /></td>
 						<td align="right"><p:outputLabel>niños: 0.03-0.68  ng/ml</p:outputLabel><br />
 							<p:outputLabel>hombres: 2.8-8.0</p:outputLabel><br /> <p:outputLabel>mujeres: 0.06-0.82</p:outputLabel>
 						</td>
 					</tr>
 				</table>
 				<br></br>
-				
+
 				<p:commandLink
 					actionListener="#{hormonasController.registrar(pacienteController.paciente.id_paciente)}"
-					update=":idFormPaciente:mensaje , hormonas, botonPdf" disabled="#{!hormonasController.desabilitado}">
+					update=":idFormPaciente:mensaje , hormonas, botonPdf"
+					disabled="#{!hormonasController.desabilitado}">
 					<h:graphicImage value="/resources/images/grabar.png" border="0"
 						width="75" height="75" />
 				</p:commandLink>
 
 				<p:commandLink id="botonPdf"
 					action="#{reportesLaboratorio.exportarHormonasPDF(pacienteController.paciente)}"
-					ajax="false" >
+					ajax="false">
 					<h:graphicImage value="/resources/images/pdf.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>
-				
-				<p:commandLink action="#{hormonasController.regresar(pacienteController.paciente)}">
+
+				<p:commandLink
+					action="#{hormonasController.regresar(pacienteController.paciente)}">
 					<h:graphicImage value="/resources/images/regresar.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>

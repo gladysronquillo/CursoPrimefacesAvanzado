@@ -68,27 +68,32 @@
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Hematocrito : </p:outputLabel></td>
-						<td><p:inputText value="#{examen_sangreController.examen_sangre.hematocrito}" /></td>
+						<td><p:inputText
+								value="#{examen_sangreController.examen_sangre.hematocrito}" /></td>
 						<td><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Hemoglobina : </p:outputLabel></td>
-						<td><p:inputText value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
+						<td><p:inputText
+								value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
 						<td><p:outputLabel style="font-weight: bold">gr%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Glóbulos Blancos : </p:outputLabel></td>
-						<td><p:inputText value="#{examen_sangreController.examen_sangre.globulosBlancos}" /></td>
+						<td><p:inputText
+								value="#{examen_sangreController.examen_sangre.globulosBlancos}" /></td>
 						<td><p:outputLabel style="font-weight: bold">/mm3</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Glóbulos Rojos : </p:outputLabel></td>
-						<td><p:inputText value="#{examen_sangreController.examen_sangre.globulosRojos}" /></td>
+						<td><p:inputText
+								value="#{examen_sangreController.examen_sangre.globulosRojos}" /></td>
 						<td><p:outputLabel style="font-weight: bold">/mm3</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Sedimentación : </p:outputLabel></td>
-						<td><p:inputText value="#{examen_sangreController.examen_sangre.sedimentacion}" /></td>
+						<td><p:inputText
+								value="#{examen_sangreController.examen_sangre.sedimentacion}" /></td>
 						<td><p:outputLabel style="font-weight: bold">mm/h</p:outputLabel></td>
 					</tr>
 					<tr>
@@ -97,27 +102,33 @@
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Segmentación : </p:outputLabel></td>
-						<td><p:inputText value="#{examen_sangreController.examen_sangre.sedimentacion}" /></td>
+						<td><p:inputText
+								value="#{examen_sangreController.examen_sangre.sedimentacion}" /></td>
 						<td><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Linfocitos : </p:outputLabel></td>
-						<td><p:inputText value="#{examen_sangreController.examen_sangre.linfocitos}" /></td>
+						<td><p:inputText
+								value="#{examen_sangreController.examen_sangre.linfocitos}" /></td>
 						<td><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Monocitos : </p:outputLabel></td>
-						<td><p:inputText value="#{examen_sangreController.examen_sangre.monocitos}" /></td>
+						<td><p:inputText
+								value="#{examen_sangreController.examen_sangre.monocitos}" /></td>
 						<td><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Eosinofilos : </p:outputLabel></td>
-						<td><p:inputText value="#{examen_sangreController.examen_sangre.eosinofilos}" /></td>
+						<td><p:inputText
+								value="#{examen_sangreController.examen_sangre.eosinofilos}" /></td>
 						<td><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Hipocromia : </p:outputLabel></td>
-						<td><p:selectOneMenu value="#{examen_sangreController.examen_sangre.hipocromia}">
+						<td><p:selectOneMenu
+								value="#{examen_sangreController.examen_sangre.hipocromia}">
+								<f:selectItem itemValue="NULL" itemLabel="N/A" />
 								<f:selectItem itemValue="LEVE" itemLabel="LEVE" />
 								<f:selectItem itemValue="MODERADO" itemLabel="MODERADO" />
 								<f:selectItem itemValue="SEVERA" itemLabel="SEVERA" />
@@ -125,30 +136,37 @@
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Anisocitosis : </p:outputLabel></td>
-						<td><p:inputText value="#{examen_sangreController.examen_sangre.anisocitosis}" /></td>
+						<td><p:inputText
+								value="#{examen_sangreController.examen_sangre.anisocitosis}" /></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Poiquilocitosis : </p:outputLabel></td>
-						<td><p:inputText value="#{examen_sangreController.examen_sangre.poiquilocitosis}" /></td>
+						<td><p:inputText
+								value="#{examen_sangreController.examen_sangre.poiquilocitosis}" /></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">VCM : </p:outputLabel></td>
-						<td><p:inputText value="#{examen_sangreController.examen_sangre.vcm}" /></td>
+						<td><p:inputText
+								value="#{examen_sangreController.examen_sangre.vcm}" /></td>
 						<td><p:outputLabel style="font-weight: bold">V.N.: 80-95u3</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">HCM : </p:outputLabel></td>
-						<td><p:inputText value="#{examen_sangreController.examen_sangre.hcm}" /></td>
+						<td><p:inputText
+								value="#{examen_sangreController.examen_sangre.hcm}" /></td>
 						<td><p:outputLabel style="font-weight: bold">25-31 pg</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">CHCM : </p:outputLabel></td>
-						<td><p:inputText value="#{examen_sangreController.examen_sangre.chcm}" /></td>
+						<td><p:inputText
+								value="#{examen_sangreController.examen_sangre.chcm}" /></td>
 						<td><p:outputLabel style="font-weight: bold">30-35 %</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">GRUPO SANGUÍNEO : </p:outputLabel></td>
-						<td><p:selectOneMenu value="#{examen_sangreController.examen_sangre.grupoSanguineo}">
+						<td><p:selectOneMenu
+								value="#{examen_sangreController.examen_sangre.grupoSanguineo}">
+								<f:selectItem itemValue="NULL" itemLabel="N/A" />
 								<f:selectItem itemValue="A" itemLabel="A" />
 								<f:selectItem itemValue="B" itemLabel="B" />
 								<f:selectItem itemValue="O" itemLabel="O" />
@@ -157,55 +175,68 @@
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">FACTOR Rh : </p:outputLabel></td>
-						<td><p:selectOneMenu value="#{examen_sangreController.examen_sangre.factorRh}">
+						<td><p:selectOneMenu
+								value="#{examen_sangreController.examen_sangre.factorRh}">
+								<f:selectItem itemValue="NULL" itemLabel="N/A" />
 								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">HEMATOZOARIO : </p:outputLabel></td>
-						<td><p:selectOneMenu value="#{examen_sangreController.examen_sangre.hematozoario}">
+						<td><p:selectOneMenu
+								value="#{examen_sangreController.examen_sangre.hematozoario}">
+								<f:selectItem itemValue="NULL" itemLabel="N/A" />
 								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">COOMBS DIRECTO : </p:outputLabel></td>
-						<td><p:selectOneMenu value="#{examen_sangreController.examen_sangre.coomsDirecto}">
+						<td><p:selectOneMenu
+								value="#{examen_sangreController.examen_sangre.coomsDirecto}">
+								<f:selectItem itemValue="NULL" itemLabel="N/A" />
 								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">COOMBS INDIRECTO : </p:outputLabel></td>
-						<td><p:selectOneMenu value="#{examen_sangreController.examen_sangre.coomsIndirecto}">
+						<td><p:selectOneMenu
+								value="#{examen_sangreController.examen_sangre.coomsIndirecto}">
+								<f:selectItem itemValue="NULL" itemLabel="N/A" />
 								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">CÉLULAS L.E : </p:outputLabel></td>
-						<td><p:selectOneMenu value="#{examen_sangreController.examen_sangre.celulasLe}">
+						<td><p:selectOneMenu
+								value="#{examen_sangreController.examen_sangre.celulasLe}">
+								<f:selectItem itemValue="NULL" itemLabel="N/A" />
 								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">RETICULOCITOS : </p:outputLabel></td>
-						<td><p:inputText value="#{examen_sangreController.examen_sangre.reticulocitos}" /></td>
+						<td><p:inputText
+								value="#{examen_sangreController.examen_sangre.reticulocitos}" /></td>
 						<td><p:outputLabel>V.N.: hasta 2%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">PLAQUETAS : </p:outputLabel></td>
-						<td><p:inputText value="#{examen_sangreController.examen_sangre.plaquetas}"></p:inputText></td>
+						<td><p:inputText
+								value="#{examen_sangreController.examen_sangre.plaquetas}"></p:inputText></td>
 						<td><p:outputLabel>150000-300000/mm3</p:outputLabel></td>
 					</tr>
 				</table>
 				<br></br>
-				
+
 				<p:commandLink
 					actionListener="#{examen_sangreController.registrar(pacienteController.paciente.id_paciente)}"
-					update=":idFormPaciente:mensaje , drogas, botonPdf" disabled="#{!examen_sangreController.desabilitado}">
+					update=":idFormPaciente:mensaje , drogas, botonPdf"
+					disabled="#{!examen_sangreController.desabilitado}">
 					<h:graphicImage value="/resources/images/grabar.png" border="0"
 						width="75" height="75" />
 				</p:commandLink>
@@ -222,7 +253,7 @@
 					<h:graphicImage value="/resources/images/regresar.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>
-				
+
 			</h:form>
 		</ui:define>
 	</ui:composition>

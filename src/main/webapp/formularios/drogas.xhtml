@@ -16,8 +16,8 @@
 		<ui:define name="content">
 
 			<h:form id="idFormPaciente">
-			
-			<p:growl id="mensaje" autoUpdate="false" severity="info, fatal"
+
+				<p:growl id="mensaje" autoUpdate="false" severity="info, fatal"
 					showSummary="true" showDetail="true" />
 				<h1></h1>
 
@@ -71,17 +71,20 @@
 				<table class="formulario" border="0">
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">ÁCIDO VALPROICO : </p:outputLabel></td>
-						<td><p:inputText value="#{drogasController.drogas.acidoValproico}" /></td>
+						<td><p:inputText
+								value="#{drogasController.drogas.acidoValproico}" /></td>
 						<td align="right"><p:outputLabel>50 - 100 ug/ml</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">CARBAMAZEPINA : </p:outputLabel></td>
-						<td><p:inputText value="#{drogasController.drogas.carbamazepina}" /></td>
+						<td><p:inputText
+								value="#{drogasController.drogas.carbamazepina}" /></td>
 						<td align="right"><p:outputLabel>4 - 12 ug/ml</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">DIFENILHIDANTOINA : </p:outputLabel></td>
-						<td><p:inputText value="#{drogasController.drogas.difenilhidantoina}" /></td>
+						<td><p:inputText
+								value="#{drogasController.drogas.difenilhidantoina}" /></td>
 						<td align="right"><p:outputLabel>10 - 20 ug/ml</p:outputLabel></td>
 					</tr>
 					<tr>
@@ -91,31 +94,39 @@
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">FENOBARBITAL : </p:outputLabel></td>
-						<td><p:inputText value="#{drogasController.drogas.fenobarbital}" /></td>
+						<td><p:inputText
+								value="#{drogasController.drogas.fenobarbital}" /></td>
 						<td align="right"><p:outputLabel>15 - 45 ug/ml</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">COCAÍNA : </p:outputLabel></td>
-						<td align="right"><p:selectOneRadio value="#{drogasController.drogas.cocaina}">
+						<td align="right"><p:selectOneRadio
+								value="#{drogasController.drogas.cocaina}">
+								<f:selectItem itemValue="NULL" itemLabel="N/A" />
 								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 							</p:selectOneRadio></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">MARIHUANA : </p:outputLabel></td>
-						<td align="right"><p:selectOneRadio value="#{drogasController.drogas.marihuana}" >
+						<td align="right"><p:selectOneRadio
+								value="#{drogasController.drogas.marihuana}">
+								<f:selectItem itemValue="NULL" itemLabel="N/A" />
 								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 							</p:selectOneRadio></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">ALCOHOL SÉRICO : </p:outputLabel></td>
-						<td><p:inputText value="#{drogasController.drogas.alcoholSerico}" /></td>
+						<td><p:inputText
+								value="#{drogasController.drogas.alcoholSerico}" /></td>
 						<td align="right"><p:outputLabel>0 - 10 mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">AFETAMINAS : </p:outputLabel></td>
-						<td align="right"><p:selectOneRadio value="#{drogasController.drogas.anfetaminas}">
+						<td align="right"><p:selectOneRadio
+								value="#{drogasController.drogas.anfetaminas}">
+								<f:selectItem itemValue="NULL" itemLabel="N/A" />
 								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 							</p:selectOneRadio></td>
@@ -124,18 +135,19 @@
 
 				</table>
 				<br></br>
-				
-				
+
+
 				<p:commandLink
 					actionListener="#{drogasController.registrar(pacienteController.paciente.id_paciente)}"
-					update=":idFormPaciente:mensaje , drogas, botonPdf" disabled="#{!drogasController.desabilitado}">
+					update=":idFormPaciente:mensaje , drogas, botonPdf"
+					disabled="#{!drogasController.desabilitado}">
 					<h:graphicImage value="/resources/images/grabar.png" border="0"
 						width="75" height="75" />
 				</p:commandLink>
 
 				<p:commandLink id="botonPdf"
 					action="#{reportesLaboratorio.exportarDrogasPDF(pacienteController.paciente)}"
-					ajax="false" >
+					ajax="false">
 					<h:graphicImage value="/resources/images/pdf.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>

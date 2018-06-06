@@ -97,7 +97,7 @@
 						<td><p:outputLabel style="font-weight: bold">VDRL : </p:outputLabel></td>
 						<td><p:selectOneMenu
 								value="#{serologiaController.serologia.vdrl}">
-								<f:selectItem itemLabel="N/A" />
+								<f:selectItem itemValue="NULL" itemLabel="N/A" />
 								<f:selectItem itemValue="REACTIVO" itemLabel="REACTIVO" />
 								<f:selectItem itemValue="NO REACTIVO" itemLabel="NO REACTIVO" />
 							</p:selectOneMenu></td>
@@ -109,7 +109,7 @@
 						<td><p:outputLabel style="font-weight: bold">PARATIFICO A : </p:outputLabel></td>
 						<td><p:selectOneMenu
 								value="#{serologiaController.serologia.paratificoA}">
-								<f:selectItem itemLabel="N/A" />
+								<f:selectItem itemValue="NULL" itemLabel="N/A" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 								<f:selectItem itemValue="1/40" itemLabel="1/40" />
 								<f:selectItem itemValue="1/80" itemLabel="1/80" />
@@ -121,7 +121,7 @@
 						<td><p:outputLabel style="font-weight: bold">PARATIFICO B : </p:outputLabel></td>
 						<td><p:selectOneMenu
 								value="#{serologiaController.serologia.paratificoB}">
-								<f:selectItem itemLabel="N/A" />
+								<f:selectItem itemValue="NULL" itemLabel="N/A" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 								<f:selectItem itemValue="1/40" itemLabel="1/40" />
 								<f:selectItem itemValue="1/80" itemLabel="1/80" />
@@ -133,7 +133,7 @@
 						<td><p:outputLabel style="font-weight: bold">TIFICO O : </p:outputLabel></td>
 						<td><p:selectOneMenu
 								value="#{serologiaController.serologia.tificoO}">
-								<f:selectItem itemLabel="N/A" />
+								<f:selectItem itemValue="NULL" itemLabel="N/A" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 								<f:selectItem itemValue="1/40" itemLabel="1/40" />
 								<f:selectItem itemValue="1/80" itemLabel="1/80" />
@@ -145,7 +145,7 @@
 						<td><p:outputLabel style="font-weight: bold">TIFICO H : </p:outputLabel></td>
 						<td><p:selectOneMenu
 								value="#{serologiaController.serologia.tificoH}">
-								<f:selectItem itemLabel="N/A" />
+								<f:selectItem itemValue="NULL" itemLabel="N/A" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 								<f:selectItem itemValue="1/40" itemLabel="1/40" />
 								<f:selectItem itemValue="1/80" itemLabel="1/80" />
@@ -157,7 +157,7 @@
 						<td><p:outputLabel style="font-weight: bold">BRUCELLA ABORTUS : </p:outputLabel></td>
 						<td><p:selectOneMenu
 								value="#{serologiaController.serologia.brucellaAbortus}">
-								<f:selectItem itemLabel="N/A" />
+								<f:selectItem itemValue="NULL" itemLabel="N/A" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 								<f:selectItem itemValue="1/40" itemLabel="1/40" />
 								<f:selectItem itemValue="1/80" itemLabel="1/80" />
@@ -169,7 +169,7 @@
 						<td><p:outputLabel style="font-weight: bold">PROTEUS OX19 : </p:outputLabel></td>
 						<td><p:selectOneMenu
 								value="#{serologiaController.serologia.proteusOx19}">
-								<f:selectItem itemLabel="N/A" />
+								<f:selectItem itemValue="NULL" itemLabel="N/A" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 								<f:selectItem itemValue="1/40" itemLabel="1/40" />
 								<f:selectItem itemValue="1/80" itemLabel="1/80" />
@@ -193,7 +193,7 @@
 						<td><p:outputLabel style="font-weight: bold">BRUCELLOSIS : </p:outputLabel></td>
 						<td><p:selectOneMenu
 								value="#{serologiaController.serologia.brucellosis}">
-								<f:selectItem itemLabel="N/A" />
+								<f:selectItem itemValue="NULL" itemLabel="N/A" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
 							</p:selectOneMenu></td>
@@ -211,7 +211,7 @@
 
 				<p:commandLink id="botonPdf"
 					action="#{reportesLaboratorio.exportarSerologiaPDF(pacienteController.paciente)}"
-					ajax="false" >
+					ajax="false" disabled="#{serologiaController.desabilitado}">
 					<h:graphicImage value="/resources/images/pdf.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>
