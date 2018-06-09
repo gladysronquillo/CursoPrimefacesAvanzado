@@ -82,14 +82,14 @@ order by id_coagulacion desc limit 1]]>
 	<pageHeader>
 		<band height="100" splitType="Stretch">
 			<staticText>
-				<reportElement x="170" y="80" width="193" height="20" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
+				<reportElement x="190" y="80" width="193" height="20" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
 				<textElement textAlignment="Center">
 					<font fontName="Arial" size="17" isBold="true"/>
 				</textElement>
 				<text><![CDATA[COAGULACIÓN]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="110" y="30" width="263" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
+				<reportElement x="110" y="38" width="263" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
 				<textElement textAlignment="Left">
 					<font size="13"/>
 				</textElement>
@@ -384,9 +384,9 @@ order by id_coagulacion desc limit 1]]>
 		</band>
 	</detail>
 	<lastPageFooter>
-		<band height="50">
+		<band height="39">
 			<textField pattern="MM/dd/yyyy">
-				<reportElement x="110" y="30" width="100" height="20" uuid="79008dc6-6bdb-4879-8d11-0d9625c6d2b3"/>
+				<reportElement x="110" y="19" width="100" height="20" uuid="79008dc6-6bdb-4879-8d11-0d9625c6d2b3"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
