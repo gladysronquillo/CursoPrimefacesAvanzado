@@ -89,54 +89,42 @@
 					<tr>
 						<td><p:separator style="width:700px;height:1px" /></td>
 					</tr>
-
 					<tr>
-						<td><p:outputLabel style="font-weight: bold">Muy Sensible : </p:outputLabel></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td><p:selectManyCheckbox
-								value="#{catalogoController.listaCatalogoMuySensible}"
-								layout="grid" columns="5">
-								<f:selectItems value="#{catalogoController.listaCatalogo}"
-									var="catalogo" itemLabel="#{catalogo.nombre}"
-									itemValue="#{catalogo.nombre}" />
-							</p:selectManyCheckbox></td>
-					</tr>
-					<tr>
-						<td><p:separator style="width:700px;height:1px" /></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">Med. Sensible : </p:outputLabel></td>
-						<td />
-					</tr>
-					<tr>
-						<td><p:selectManyCheckbox
-								value="#{catalogoController.listaCatalogoMedSensible}"
-								layout="grid" columns="5">
-								<f:selectItems value="#{catalogoController.listaCatalogo}"
-									var="catalogo" itemLabel="#{catalogo.nombre}"
-									itemValue="#{catalogo.nombre}" />
-							</p:selectManyCheckbox></td>
-					</tr>
-					<tr>
-						<td><p:separator style="width:700px;height:1px" /></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">Resistente : </p:outputLabel></td>
-						<td />
-					</tr>
-					<tr>
-						<td><p:selectManyCheckbox
-								value="#{catalogoController.listaCatalogoResistente}"
-								layout="grid" columns="5">
-								<f:selectItems value="#{catalogoController.listaCatalogo}"
-									var="catalogo" itemLabel="#{catalogo.nombre}"
-									itemValue="#{catalogo.nombre}" />
-							</p:selectManyCheckbox></td>
-					</tr>
-					<tr>
-						<td><p:separator style="width:700px;height:1px" /></td>
+						<td><p:accordionPanel>
+								<p:tab title="Muy Sensible :">
+									<h:panelGrid columns="2" cellpadding="10">
+										<p:selectManyCheckbox
+											value="#{catalogoController.listaCatalogoMuySensible}"
+											layout="grid" columns="5">
+											<f:selectItems value="#{catalogoController.listaCatalogo}"
+												var="catalogo" itemLabel="#{catalogo.nombre}"
+												itemValue="#{catalogo.nombre}" />
+										</p:selectManyCheckbox>
+									</h:panelGrid>
+								</p:tab>
+								<p:tab title="Med. Sensible :">
+									<h:panelGrid columns="2" cellpadding="10">
+										<p:selectManyCheckbox
+											value="#{catalogoController.listaCatalogoMedSensible}"
+											layout="grid" columns="5">
+											<f:selectItems value="#{catalogoController.listaCatalogo}"
+												var="catalogo" itemLabel="#{catalogo.nombre}"
+												itemValue="#{catalogo.nombre}" />
+										</p:selectManyCheckbox>
+									</h:panelGrid>
+								</p:tab>
+								<p:tab title="Resistente :">
+									<h:panelGrid columns="2" cellpadding="10">
+										<p:selectManyCheckbox
+											value="#{catalogoController.listaCatalogoResistente}"
+											layout="grid" columns="5">
+											<f:selectItems value="#{catalogoController.listaCatalogo}"
+												var="catalogo" itemLabel="#{catalogo.nombre}"
+												itemValue="#{catalogo.nombre}" />
+										</p:selectManyCheckbox>
+									</h:panelGrid>
+								</p:tab>
+							</p:accordionPanel></td>
 					</tr>
 				</table>
 				<br></br>
@@ -156,7 +144,7 @@
 					<h:graphicImage value="/resources/images/pdf.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>
-				
+
 				<p:commandLink id="botonPdf_backup"
 					action="#{reportesLaboratorio.exportarCultivoAntibiogramaPDF(pacienteController.paciente)}"
 					ajax="false">
