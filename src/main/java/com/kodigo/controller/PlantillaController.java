@@ -21,7 +21,7 @@ public class PlantillaController implements Serializable {
 			Usuario usuario = (Usuario) context.getExternalContext().getSessionMap().get("usuario");
 
 			if (usuario == null) {
-				context.getExternalContext().redirect("./../permisos.xhtml");
+				context.getExternalContext().redirect("./../");
 			}
 		} catch (Exception e) {
 			System.out.println("Error al validar sesión");
