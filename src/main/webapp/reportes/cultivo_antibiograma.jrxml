@@ -2,7 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySql"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="397"/>
@@ -76,84 +76,98 @@ order by id_cultivo_antibiograma desc limit 1]]>
 	<detail>
 		<band height="367" splitType="Stretch">
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="40" y="50" width="111" height="20" uuid="4ff6da2a-47f9-40f0-964c-af6cd04d9d46"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="50" width="111" height="20" isRemoveLineWhenBlank="true" uuid="4ff6da2a-47f9-40f0-964c-af6cd04d9d46">
+					<printWhenExpression><![CDATA[!(new Boolean($F{nombre_cultivo}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Cultivo de:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="39" y="70" width="111" height="20" uuid="3043e070-2074-48f0-a726-e06177cdc520"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="80" width="111" height="20" isRemoveLineWhenBlank="true" uuid="3043e070-2074-48f0-a726-e06177cdc520">
+					<printWhenExpression><![CDATA[!(new Boolean($F{germen_identificado}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Germen Identificado:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="40" y="130" width="111" height="20" uuid="4f426558-7c7a-43f1-a8f3-70d81e03c5fa"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="150" width="111" height="20" isRemoveLineWhenBlank="true" uuid="4f426558-7c7a-43f1-a8f3-70d81e03c5fa">
+					<printWhenExpression><![CDATA[!(new Boolean($F{muy_sensible}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Muy sensible:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="40" y="208" width="111" height="20" uuid="a23e6df5-07f7-40f9-a70d-b7d9a422b2fe"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="228" width="111" height="20" isRemoveLineWhenBlank="true" uuid="a23e6df5-07f7-40f9-a70d-b7d9a422b2fe">
+					<printWhenExpression><![CDATA[!(new Boolean($F{med_sensible}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Med. Sensible:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="40" y="278" width="111" height="20" uuid="a04ab28c-4c1d-493e-9846-4561b2301452"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="298" width="111" height="20" isRemoveLineWhenBlank="true" uuid="a04ab28c-4c1d-493e-9846-4561b2301452">
+					<printWhenExpression><![CDATA[!(new Boolean($F{resistente}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Resistente:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="151" y="50" width="357" height="20" uuid="c9730029-46a1-424c-8aeb-94fc28fef4b4"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="191" y="50" width="357" height="20" isRemoveLineWhenBlank="true" uuid="c9730029-46a1-424c-8aeb-94fc28fef4b4"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{nombre_cultivo}.equals("")) ?"":$F{nombre_cultivo})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="152" y="70" width="357" height="20" uuid="c74c62b3-646d-4623-8932-3391c26ae9af"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="192" y="80" width="357" height="20" isRemoveLineWhenBlank="true" uuid="c74c62b3-646d-4623-8932-3391c26ae9af"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{germen_identificado}.equals("")) ?"":$F{germen_identificado})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="152" y="131" width="357" height="69" uuid="1d8e05ae-7452-4ba6-a552-7232e59b722e"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="192" y="151" width="357" height="69" isRemoveLineWhenBlank="true" uuid="1d8e05ae-7452-4ba6-a552-7232e59b722e"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{muy_sensible}.equals("")) ?"":$F{muy_sensible})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="152" y="208" width="357" height="62" uuid="ab9f10bd-bae5-42f9-8b51-a3404b366947"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="192" y="228" width="357" height="62" isRemoveLineWhenBlank="true" uuid="ab9f10bd-bae5-42f9-8b51-a3404b366947"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{med_sensible}.equals("")) ?"":$F{med_sensible})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="152" y="278" width="357" height="62" uuid="117f5c76-824c-49dc-8320-d80abfc356ef"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="192" y="298" width="357" height="62" isRemoveLineWhenBlank="true" uuid="117f5c76-824c-49dc-8320-d80abfc356ef"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{resistente}.equals("")) ?"":$F{resistente})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="189" y="100" width="183" height="20" uuid="21acf058-84c7-45d2-bcc2-1e16572fe55d"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="190" y="120" width="183" height="20" isRemoveLineWhenBlank="true" uuid="21acf058-84c7-45d2-bcc2-1e16572fe55d">
+					<printWhenExpression><![CDATA[!(new Boolean($F{muy_sensible}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement textAlignment="Center">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[ANTIBIOGRAMA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="200" y="20" width="183" height="20" uuid="90b4f695-a66d-4ac2-b05d-99b616da7e05"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="190" y="20" width="183" height="20" isRemoveLineWhenBlank="true" uuid="90b4f695-a66d-4ac2-b05d-99b616da7e05">
+					<printWhenExpression><![CDATA[!(new Boolean($F{nombre_cultivo}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement textAlignment="Center">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
@@ -168,7 +182,7 @@ order by id_cultivo_antibiograma desc limit 1]]>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 		</band>
 	</lastPageFooter>
