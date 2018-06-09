@@ -2,7 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySql"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="397"/>
@@ -72,7 +72,7 @@ order by id_cultivo_antibiograma desc limit 1]]>
 		</band>
 	</pageHeader>
 	<detail>
-		<band height="250" splitType="Stretch">
+		<band height="387" splitType="Stretch">
 			<staticText>
 				<reportElement stretchType="ElementGroupBottom" x="40" y="50" width="111" height="20" uuid="4ff6da2a-47f9-40f0-964c-af6cd04d9d46"/>
 				<textElement>
@@ -95,14 +95,14 @@ order by id_cultivo_antibiograma desc limit 1]]>
 				<text><![CDATA[Muy sensible:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="40" y="180" width="111" height="20" uuid="a23e6df5-07f7-40f9-a70d-b7d9a422b2fe"/>
+				<reportElement stretchType="ElementGroupBottom" x="40" y="208" width="111" height="20" uuid="a23e6df5-07f7-40f9-a70d-b7d9a422b2fe"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[Med. Sensible:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="40" y="230" width="111" height="20" uuid="a04ab28c-4c1d-493e-9846-4561b2301452"/>
+				<reportElement stretchType="ElementGroupBottom" x="40" y="278" width="111" height="20" uuid="a04ab28c-4c1d-493e-9846-4561b2301452"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
@@ -119,17 +119,17 @@ order by id_cultivo_antibiograma desc limit 1]]>
 				<textFieldExpression><![CDATA[$F{germen_identificado}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="152" y="130" width="357" height="20" uuid="1d8e05ae-7452-4ba6-a552-7232e59b722e"/>
+				<reportElement x="152" y="131" width="357" height="69" uuid="1d8e05ae-7452-4ba6-a552-7232e59b722e"/>
 				<textElement textAlignment="Left"/>
 				<textFieldExpression><![CDATA[$F{muy_sensible}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="152" y="180" width="357" height="20" uuid="ab9f10bd-bae5-42f9-8b51-a3404b366947"/>
+				<reportElement x="152" y="208" width="357" height="62" uuid="ab9f10bd-bae5-42f9-8b51-a3404b366947"/>
 				<textElement textAlignment="Left"/>
 				<textFieldExpression><![CDATA[$F{med_sensible}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="152" y="230" width="357" height="20" uuid="117f5c76-824c-49dc-8320-d80abfc356ef"/>
+				<reportElement x="152" y="278" width="357" height="62" uuid="117f5c76-824c-49dc-8320-d80abfc356ef"/>
 				<textElement textAlignment="Left"/>
 				<textFieldExpression><![CDATA[$F{resistente}]]></textFieldExpression>
 			</textField>
