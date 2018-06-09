@@ -25,5 +25,5 @@ public interface Paciente_TipoExamenFacadeLocal {
 
 	int count();
 
-	void eliminarPaciente(Integer id_paciente);
+	void eliminarPaciente(Integer id_paciente,Integer id_tipo_examen);
 }

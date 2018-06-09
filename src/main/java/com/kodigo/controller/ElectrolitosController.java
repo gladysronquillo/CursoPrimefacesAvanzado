@@ -43,7 +43,12 @@ public class ElectrolitosController implements Serializable {
 			Paciente_TipoExamenController bean = context.getApplication().evaluateExpressionGet(context,
 					"#{paciente_TipoExamenController}", Paciente_TipoExamenController.class);
 			
-			bean.eliminarPaciente(id_paciente);
+			FacesContext contextTipoExamen = FacesContext.getCurrentInstance();
+			TipoExamenController beanTipoExamen = contextTipoExamen.getApplication().evaluateExpressionGet(contextTipoExamen,
+					"#{tipoExamenController}", TipoExamenController.class);
+						
+			Integer id_tipo_examen=  beanTipoExamen.getId_tipo_examen();
+			bean.eliminarPaciente(id_paciente, id_tipo_examen);
 
 			desabilitado = false;
 			electrolitos = new Electrolitos();

@@ -31,9 +31,9 @@ public class Paciente_TipoExamenController implements Serializable {
 		}
 	}
 
-	public void eliminarPaciente(Integer id_paciente) {
+	public void eliminarPaciente(Integer id_paciente,Integer id_tipo_examen) {
 		try {
-			paciente_TipoExamenEjb.eliminarPaciente(id_paciente);
+			paciente_TipoExamenEjb.eliminarPaciente(id_paciente,id_tipo_examen);
 		} catch (Exception e) {
 			System.out.println("Error al listar lista de pacientes" + e);
 		}

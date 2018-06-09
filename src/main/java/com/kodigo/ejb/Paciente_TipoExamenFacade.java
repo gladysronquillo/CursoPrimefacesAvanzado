@@ -49,15 +49,15 @@ public class Paciente_TipoExamenFacade extends AbstractFacade<Paciente_TipoExame
 	}
 
 	@Override
-	public void eliminarPaciente(Integer id_paciente) {
+	public void eliminarPaciente(Integer id_paciente, Integer id_tipo_examen) {
 		String consulta;
-		Integer maximo;
+		
 		try {
-			consulta = "DELETE Paciente_TipoExamen pte WHERE pte.id_paciente = ?1 and pte.id_paciente_tipo_examen = ?2";
-			maximo = obtenerMaximo();
+			consulta = "DELETE Paciente_TipoExamen pte WHERE pte.id_paciente = ?1 and pte.id_tipo_examen = ?2";
+		
 			Query query = em.createQuery(consulta);
 			query.setParameter(1, id_paciente);
-			query.setParameter(2, maximo);
+			query.setParameter(2, id_tipo_examen);
 			query.executeUpdate();
 		} catch (Exception e) {
 			System.out.println("error al eliminar ultimo registro paciente tipo examen: " + e);
@@ -65,27 +65,8 @@ public class Paciente_TipoExamenFacade extends AbstractFacade<Paciente_TipoExame
 
 	}
 
-	@SuppressWarnings("unchecked")
-	private Integer obtenerMaximo() {
-		String consulta;
-		Integer maximo = null;
-		List<Integer> lista;
+	
 
-		try {
-			consulta = "select max(id_paciente_tipo_examen) as max from Paciente_TipoExamen pte";
-			Query query = em.createQuery(consulta);
-			lista = query.getResultList();
-			maximo = lista.get(0);
-			if (maximo == 0) {
-				System.out.println("Tabla paciente tipo examen esta vacia");
-				return 0;
-			}
-			return maximo;
-		} catch (Exception e) {
-			System.out.println("error al obterner maximo de paciente tipo examen: " + e);
-			throw e;
-		}
-
-	}
+	
 
 }

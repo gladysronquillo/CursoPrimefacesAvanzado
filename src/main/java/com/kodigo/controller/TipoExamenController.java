@@ -25,6 +25,7 @@ public class TipoExamenController implements Serializable {
 	private Integer[] listaTipoExamenSeleccionados;
 	private MenuModel model;
 	private TipoExamen tipoExamen;
+	private Integer id_tipo_examen;
 
 
 	public TipoExamen buscarTipoExamen(Integer id_tipoExamen) {
@@ -54,6 +55,7 @@ public class TipoExamenController implements Serializable {
 	public String obtenerNombreTipoExamen(Integer id_tipo_examen) {
 		tipoExamen = new TipoExamen();
 		tipoExamen = tipoExamenEjb.find(id_tipo_examen);
+		
 		return tipoExamen.getNombre();
 		
 	}
@@ -61,6 +63,7 @@ public class TipoExamenController implements Serializable {
 	public String obtenerUrl(Integer id_tipo_examen) {
 		tipoExamen = new TipoExamen();
 		tipoExamen = tipoExamenEjb.find(id_tipo_examen);
+		this.id_tipo_examen = id_tipo_examen;
 		return tipoExamen.getDetalle();
 		
 	}
@@ -88,5 +91,14 @@ public class TipoExamenController implements Serializable {
 	public void setModel(MenuModel model) {
 		this.model = model;
 	}
+
+	public Integer getId_tipo_examen() {
+		return id_tipo_examen;
+	}
+
+	public void setId_tipo_examen(Integer id_tipo_examen) {
+		this.id_tipo_examen = id_tipo_examen;
+	}
+
 
 }
