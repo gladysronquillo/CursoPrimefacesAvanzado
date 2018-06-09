@@ -71,7 +71,7 @@ order by id_bacteriologia desc limit 1]]>
 			<textField>
 				<reportElement x="110" y="30" width="179" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
 				<textElement textAlignment="Left">
-					<font size="13"/>
+					<font fontName="Arial" size="13"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{paciente}.toUpperCase()]]></textFieldExpression>
 			</textField>
@@ -84,7 +84,7 @@ order by id_bacteriologia desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{secrecion}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[SECRECIÓN:]]></text>
 			</staticText>
@@ -93,7 +93,7 @@ order by id_bacteriologia desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{fresco}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Fresco:]]></text>
 			</staticText>
@@ -102,7 +102,7 @@ order by id_bacteriologia desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{gram}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Gram:]]></text>
 			</staticText>
@@ -111,7 +111,7 @@ order by id_bacteriologia desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{koh}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[KOH:]]></text>
 			</staticText>
@@ -120,7 +120,7 @@ order by id_bacteriologia desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{zhiel}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Zhiel:]]></text>
 			</staticText>
@@ -129,49 +129,49 @@ order by id_bacteriologia desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{eosinofilos_nasal}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[EOSINOFILOS EN MOCO NASAL:]]></text>
 			</staticText>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="250" y="30" width="240" height="20" isRemoveLineWhenBlank="true" uuid="c9730029-46a1-424c-8aeb-94fc28fef4b4"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{secrecion}.equals("")) ?"":$F{secrecion})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="251" y="50" width="240" height="20" isRemoveLineWhenBlank="true" uuid="c74c62b3-646d-4623-8932-3391c26ae9af"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(new Boolean($F{fresco}.equals("")) ?"":$F{fresco})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="250" y="70" width="240" height="20" isRemoveLineWhenBlank="true" uuid="1d8e05ae-7452-4ba6-a552-7232e59b722e"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(new Boolean($F{gram}.equals("")) ?"":$F{gram})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="251" y="90" width="240" height="20" isRemoveLineWhenBlank="true" uuid="ab9f10bd-bae5-42f9-8b51-a3404b366947"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(new Boolean($F{koh}.equals("")) ?"":$F{koh})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="250" y="110" width="240" height="20" isRemoveLineWhenBlank="true" uuid="117f5c76-824c-49dc-8320-d80abfc356ef"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(new Boolean($F{zhiel}.equals("")) ?"":$F{zhiel})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="251" y="130" width="140" height="20" isRemoveLineWhenBlank="true" uuid="fc88ac40-b75f-45f4-b7cd-69be07cb5fb4"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(new Boolean($F{eosinofilos_nasal}.equals("")) ?"":$F{eosinofilos_nasal})]]></textFieldExpression>
 			</textField>
@@ -180,7 +180,7 @@ order by id_bacteriologia desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{eosinofilos_nasal}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Left">
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[%]]></text>
 			</staticText>
@@ -191,7 +191,7 @@ order by id_bacteriologia desc limit 1]]>
 			<textField pattern="MM/dd/yyyy">
 				<reportElement x="110" y="30" width="100" height="20" uuid="79008dc6-6bdb-4879-8d11-0d9625c6d2b3"/>
 				<textElement>
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
