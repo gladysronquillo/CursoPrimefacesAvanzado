@@ -501,7 +501,7 @@ order by id_examen_heces desc limit 1]]>
 		<band height="540" splitType="Stretch">
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="40" width="130" height="20" isRemoveLineWhenBlank="true" uuid="3a1d5332-471f-4b14-be8d-a450c004fe02">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_color}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_color}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -510,7 +510,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="60" width="130" height="20" isRemoveLineWhenBlank="true" uuid="a6ee6091-54b0-494d-9cb6-d7b2e681e7dc">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_cosistencia}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_cosistencia}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -522,11 +522,11 @@ order by id_examen_heces desc limit 1]]>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_color}.equals("")) ?"":$F{uno_color})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_color}==null  ?"":$F{uno_color})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="500" width="130" height="20" isRemoveLineWhenBlank="true" uuid="1e571aa1-1042-4353-b927-bc3c47ef4275">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_chilomastix_mesnili}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_chilomastix_mesnili}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -535,7 +535,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="80" width="130" height="20" isRemoveLineWhenBlank="true" uuid="85659594-f98f-4ea9-9125-1443f9020236">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_levaduras}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_levaduras}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true" isUnderline="true"/>
@@ -544,7 +544,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="100" width="130" height="20" isRemoveLineWhenBlank="true" uuid="5e4b2f25-dd48-482f-b69d-fe3abe181d25">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_levaduras}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_levaduras}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -553,7 +553,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="120" width="130" height="20" isRemoveLineWhenBlank="true" uuid="89f77802-f6b0-4871-810d-c5d17aef2594">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_almidones}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_almidones}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -562,7 +562,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="140" width="130" height="20" isRemoveLineWhenBlank="true" uuid="b0fde8a3-1b46-4f19-89ad-f4923aae154b">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_grasas}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_grasas}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -571,7 +571,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="160" width="130" height="20" isRemoveLineWhenBlank="true" uuid="719a0c46-87e5-4a0a-9c47-c9b0d5faa8c3">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_restos_vegetales}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_restos_vegetales}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -580,7 +580,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="180" width="130" height="20" isRemoveLineWhenBlank="true" uuid="b08af541-785d-4b90-a993-65a9794f0312">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_blastocistis_hominis}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_blastocistis_hominis}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -598,7 +598,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="220" width="130" height="20" isRemoveLineWhenBlank="true" uuid="8f29830c-473a-44e7-acfd-bd3c5aae66e8">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_piocitos}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_piocitos}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -607,7 +607,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="240" width="130" height="20" isRemoveLineWhenBlank="true" uuid="b895659e-7302-4f85-b35b-375871100e46">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_hematies}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_hematies}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -616,7 +616,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="260" width="130" height="20" isRemoveLineWhenBlank="true" uuid="a4cca3e1-461e-48c6-93ad-895b5f216a8c">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_moco}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_moco}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -634,7 +634,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="300" width="130" height="20" isRemoveLineWhenBlank="true" uuid="369d9f29-4e3c-4883-9eaf-336f97adce8b">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_sangre_oculta}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_sangre_oculta}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -643,7 +643,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="82" y="320" width="130" height="20" isRemoveLineWhenBlank="true" uuid="13e20216-b144-4d2d-902b-b7923f524e30">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_flora_bacteriana}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_flora_bacteriana}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -652,7 +652,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="82" y="340" width="130" height="20" isRemoveLineWhenBlank="true" uuid="e53ce542-e6ed-446c-b84d-3c42cb067c15">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_rotavirus}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_rotavirus}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -661,7 +661,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="360" width="130" height="20" isRemoveLineWhenBlank="true" uuid="400ce344-c155-4eee-88e2-8821ec3dd96e">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_parasitario}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_parasitario}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true" isUnderline="true"/>
@@ -670,7 +670,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="380" width="130" height="20" isRemoveLineWhenBlank="true" uuid="dfea459b-8dbb-4766-83cb-fff6fd8400cc">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_ameba_histolitica}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_ameba_histolitica}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -679,7 +679,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="82" y="400" width="130" height="20" isRemoveLineWhenBlank="true" uuid="3eef7520-6c05-4047-920e-834579283996">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_ameba_coli}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_ameba_coli}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -688,7 +688,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="420" width="130" height="20" isRemoveLineWhenBlank="true" uuid="db96d011-05e0-4e16-b31a-64c5e2b7ca22">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_yodameba_butschlii}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_yodameba_butschlii}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -697,7 +697,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="82" y="440" width="130" height="20" isRemoveLineWhenBlank="true" uuid="28e782e8-a16f-4e64-b5d7-7c1c157017d5">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_endolimax_nana}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_endolimax_nana}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -706,7 +706,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="82" y="460" width="130" height="20" isRemoveLineWhenBlank="true" uuid="c7106259-619b-4f67-94d1-89dd19b1a42c">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_giardia_lamblia}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_giardia_lamblia}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -715,7 +715,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="480" width="130" height="20" isRemoveLineWhenBlank="true" uuid="7763e531-477e-4018-9b54-c12a4e8aa527">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_trichomonas_hominis}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_trichomonas_hominis}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -727,158 +727,158 @@ order by id_examen_heces desc limit 1]]>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_cosistencia}.equals("")) ?"":$F{uno_cosistencia})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_cosistencia}==null  ?"":$F{uno_cosistencia})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="100" width="109" height="20" isRemoveLineWhenBlank="true" uuid="e73a1011-b019-4b1c-826c-d9c24c88b108"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_levaduras}.equals("")) ?"":$F{uno_levaduras})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_levaduras}==null  ?"":$F{uno_levaduras})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="120" width="109" height="20" isRemoveLineWhenBlank="true" uuid="f9a6cb5c-1961-4ccb-bbee-57932efe4fe3"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_almidones}.equals("")) ?"":$F{uno_almidones})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_almidones}==null  ?"":$F{uno_almidones})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="140" width="109" height="20" isRemoveLineWhenBlank="true" uuid="affd7853-1b48-4c20-ade3-6a2c2a4d2944"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_grasas}.equals("")) ?"":$F{uno_grasas})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_grasas}==null  ?"":$F{uno_grasas})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="160" width="109" height="20" isRemoveLineWhenBlank="true" uuid="d7778dd6-5fe1-49f9-abf8-d78d74f8ad4c"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_restos_vegetales}.equals("")) ?"":$F{uno_restos_vegetales})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_restos_vegetales}==null  ?"":$F{uno_restos_vegetales})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="180" width="109" height="20" isRemoveLineWhenBlank="true" uuid="b8dfd68c-edbd-4920-815c-f86cf74529b9"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_blastocistis_hominis}.equals("")) ?"":$F{uno_blastocistis_hominis})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_blastocistis_hominis}==null  ?"":$F{uno_blastocistis_hominis})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="200" width="109" height="20" isRemoveLineWhenBlank="true" uuid="0e4d8d6e-4e4b-481b-a500-ea0100459494"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_esporas_hongos}.equals("")) ?"":$F{uno_esporas_hongos})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[(new Boolean($F{uno_esporas_hongos}.equals("")) ?"":$F{uno_esporas_hongos})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="220" width="109" height="20" isRemoveLineWhenBlank="true" uuid="3a1aa3c8-a3b3-4e43-a712-27205cc44ea3"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_piocitos}.equals("")) ?"":$F{uno_piocitos})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_piocitos}==null  ?"":$F{uno_piocitos})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="240" width="109" height="20" isRemoveLineWhenBlank="true" uuid="5c66e4c7-c733-4d54-960c-9d33fc029d41"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_hematies}.equals("")) ?"":$F{uno_hematies})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_hematies}==null  ?"":$F{uno_hematies})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="260" width="109" height="20" isRemoveLineWhenBlank="true" uuid="5b017954-1cf2-4eba-8507-baffac73b0bc"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_moco}.equals("")) ?"":$F{uno_moco})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_moco}==null  ?"":$F{uno_moco})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="280" width="109" height="20" isRemoveLineWhenBlank="true" uuid="8f35bc4e-2dd3-41ee-b76a-e40ae32d98ee"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_ipmn}.equals("")) ?"":$F{uno_ipmn})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[(new Boolean($F{uno_ipmn}.equals("")) ?"":$F{uno_ipmn})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="300" width="109" height="20" isRemoveLineWhenBlank="true" uuid="bd5eef55-1122-4c5f-911d-93dc0f47fe36"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_sangre_oculta}.equals("")) ?"":$F{uno_sangre_oculta})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_sangre_oculta}==null  ?"":$F{uno_sangre_oculta})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="320" width="109" height="20" isRemoveLineWhenBlank="true" uuid="4817f847-f7c8-4fc9-b0a7-7c96e1a74374"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_flora_bacteriana}.equals("")) ?"":$F{uno_flora_bacteriana})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_flora_bacteriana}==null  ?"":$F{uno_flora_bacteriana})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="340" width="109" height="20" isRemoveLineWhenBlank="true" uuid="c6d2f4de-34b1-4499-99fc-74038014d541"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_rotavirus}.equals("")) ?"":$F{uno_rotavirus})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_rotavirus}==null  ?"":$F{uno_rotavirus})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="212" y="360" width="109" height="20" isRemoveLineWhenBlank="true" uuid="427a672a-1381-48aa-a0eb-7ba3d285255e"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_parasitario}.equals("")) ?"":$F{uno_parasitario})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_parasitario}==null  ?"":$F{uno_parasitario})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="212" y="380" width="109" height="20" isRemoveLineWhenBlank="true" uuid="69edc0aa-bc28-4148-a2de-8d5dfba2d592"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_ameba_histolitica}.equals("")) ?"":$F{uno_ameba_histolitica})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_ameba_histolitica}==null  ?"":$F{uno_ameba_histolitica})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="213" y="400" width="109" height="20" isRemoveLineWhenBlank="true" uuid="39f0acb7-b2fc-43ed-af17-01e4c34aa888"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_ameba_coli}.equals("")) ?"":$F{uno_ameba_coli})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_ameba_coli}==null  ?"":$F{uno_ameba_coli})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="213" y="420" width="109" height="20" isRemoveLineWhenBlank="true" uuid="5b4b4e79-6b21-4e57-86d7-1dbf324db0ac"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_yodameba_butschlii}.equals("")) ?"":$F{uno_yodameba_butschlii})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_yodameba_butschlii}==null  ?"":$F{uno_yodameba_butschlii})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="212" y="440" width="109" height="20" isRemoveLineWhenBlank="true" uuid="ea9862cb-fa67-4519-ae72-6d9375f1b40c"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_endolimax_nana}.equals("")) ?"":$F{uno_endolimax_nana})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_endolimax_nana}==null  ?"":$F{uno_endolimax_nana})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="212" y="460" width="109" height="20" isRemoveLineWhenBlank="true" uuid="2d143bef-8756-4ece-bd4b-889020509a7e"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_giardia_lamblia}.equals("")) ?"":$F{uno_giardia_lamblia})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_giardia_lamblia}==null  ?"":$F{uno_giardia_lamblia})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="213" y="480" width="109" height="20" isRemoveLineWhenBlank="true" uuid="e1b89c98-699c-4595-85a3-d01f33a8d067"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_trichomonas_hominis}.equals("")) ?"":$F{uno_trichomonas_hominis})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_trichomonas_hominis}==null  ?"":$F{uno_trichomonas_hominis})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="213" y="500" width="109" height="20" isRemoveLineWhenBlank="true" uuid="5193a8e8-547c-47b7-b255-dd5dea46d386"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_chilomastix_mesnili}.equals("")) ?"":$F{uno_chilomastix_mesnili})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_chilomastix_mesnili}==null  ?"":$F{uno_chilomastix_mesnili})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="20" width="108" height="20" isRemoveLineWhenBlank="true" uuid="825ed1d1-15dc-49ae-9d12-5bbbfe1bbc5d">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_color}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_color}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center">
 					<font fontName="Arial" size="14" isBold="true"/>
@@ -887,7 +887,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="320" y="20" width="108" height="20" isRemoveLineWhenBlank="true" uuid="5dfffc6c-5bf4-4fca-8d51-7394e469fa64">
-					<printWhenExpression><![CDATA[!(new Boolean($F{dos_color}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{dos_color}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center">
 					<font fontName="Arial" size="14" isBold="true"/>
@@ -896,7 +896,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="431" y="20" width="108" height="20" isRemoveLineWhenBlank="true" uuid="95c101ac-52e2-41bc-b645-a04e8bc54cde">
-					<printWhenExpression><![CDATA[!(new Boolean($F{tres_color}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{tres_color}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center">
 					<font fontName="Arial" size="14" isBold="true"/>
@@ -908,322 +908,322 @@ order by id_examen_heces desc limit 1]]>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_color}.equals(""))?"":$F{dos_color})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_color}==null?"":$F{dos_color})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="318" y="60" width="109" height="20" isRemoveLineWhenBlank="true" uuid="99cca0dc-9a16-4078-ba52-b10cdc2018ed"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_cosistencia}.equals("")) ?"":$F{dos_cosistencia})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_cosistencia}==null  ?"":$F{dos_cosistencia})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="319" y="100" width="109" height="20" isRemoveLineWhenBlank="true" uuid="bd88ab76-0ecf-4bd6-9c0d-9efacd64e47f"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_levaduras}.equals("")) ?"":$F{dos_levaduras})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_levaduras}==null  ?"":$F{dos_levaduras})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="319" y="120" width="109" height="20" isRemoveLineWhenBlank="true" uuid="1d754354-e6b4-4d5f-827c-98988c5706a9"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_almidones}.equals("")) ?"":$F{dos_almidones})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_almidones}==null  ?"":$F{dos_almidones})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="319" y="140" width="109" height="20" isRemoveLineWhenBlank="true" uuid="1a4050aa-3fcc-4551-9bf1-d590d6201d7d"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_grasas}.equals("")) ?"":$F{dos_grasas})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_grasas}==null  ?"":$F{dos_grasas})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="320" y="160" width="109" height="20" isRemoveLineWhenBlank="true" uuid="502bf49f-28d5-4e4f-8cf5-4340091e22de"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_restos_vegetales}.equals("")) ?"":$F{dos_restos_vegetales})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_restos_vegetales}==null  ?"":$F{dos_restos_vegetales})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="320" y="180" width="109" height="20" isRemoveLineWhenBlank="true" uuid="c1e29f92-af36-45fd-8817-27293cc4dbaf"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_blastocistis_hominis}.equals("")) ?"":$F{dos_blastocistis_hominis})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_blastocistis_hominis}==null  ?"":$F{dos_blastocistis_hominis})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="319" y="200" width="109" height="20" isRemoveLineWhenBlank="true" uuid="224faaf2-3e78-4b07-9ccd-b0bd83022ab6"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_esporas_hongos}.equals("")) ?"":$F{dos_esporas_hongos})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_esporas_hongos}==null ?"":$F{dos_esporas_hongos})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="319" y="220" width="109" height="20" isRemoveLineWhenBlank="true" uuid="4c2bb0a8-aad9-4e94-a703-25c5102a262d"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_piocitos}.equals("")) ?"":$F{dos_piocitos})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_piocitos}==null  ?"":$F{dos_piocitos})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="320" y="240" width="109" height="20" isRemoveLineWhenBlank="true" uuid="a7e66cab-2ee5-4b74-9297-ef314fb1f24a"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_hematies}.equals("")) ?"":$F{dos_hematies})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_hematies}==null  ?"":$F{dos_hematies})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="320" y="260" width="109" height="20" isRemoveLineWhenBlank="true" uuid="2394a9c2-3f43-4e0a-9be0-40df1cc414d4"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_moco}.equals("")) ?"":$F{dos_moco})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_moco}==null  ?"":$F{dos_moco})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="319" y="280" width="109" height="20" isRemoveLineWhenBlank="true" uuid="58d08b4c-1d58-4ad6-b2c4-593ca7e0f693"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_ipmn}.equals("")) ?"":$F{dos_ipmn})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_ipmn}==null ?"":$F{dos_ipmn})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="319" y="300" width="109" height="20" isRemoveLineWhenBlank="true" uuid="4bf431cd-fa61-4365-b91c-5490e5107531"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_sangre_oculta}.equals("")) ?"":$F{dos_sangre_oculta})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_sangre_oculta}==null  ?"":$F{dos_sangre_oculta})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="320" y="320" width="109" height="20" isRemoveLineWhenBlank="true" uuid="242fe760-1281-477b-b574-8ab4829455d6"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_flora_bacteriana}.equals("")) ?"":$F{dos_flora_bacteriana})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_flora_bacteriana}==null  ?"":$F{dos_flora_bacteriana})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="320" y="340" width="109" height="20" isRemoveLineWhenBlank="true" uuid="9e7eb780-225f-4b49-8a30-c9283395e87e"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_rotavirus}.equals("")) ?"":$F{dos_rotavirus})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_rotavirus}==null  ?"":$F{dos_rotavirus})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="360" width="109" height="20" isRemoveLineWhenBlank="true" uuid="deb7fa90-3208-4c40-a576-1471a6e80f00"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_parasitario}.equals("")) ?"":$F{dos_parasitario})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_parasitario}==null  ?"":$F{dos_parasitario})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="380" width="109" height="20" isRemoveLineWhenBlank="true" uuid="734506d7-2c40-4fec-a67d-1714ba27ec0d"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_ameba_histolitica}.equals("")) ?"":$F{dos_ameba_histolitica})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_ameba_histolitica}==null  ?"":$F{dos_ameba_histolitica})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="322" y="400" width="109" height="20" isRemoveLineWhenBlank="true" uuid="89ec5112-fb98-46b7-9171-09b0b5b9ec25"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_ameba_coli}.equals("")) ?"":$F{dos_ameba_coli})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_ameba_coli}==null  ?"":$F{dos_ameba_coli})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="322" y="420" width="109" height="20" isRemoveLineWhenBlank="true" uuid="dcfeab91-ceac-4c06-a02c-744722c49704"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_yodameba_butschlii}.equals("")) ?"":$F{dos_yodameba_butschlii})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_yodameba_butschlii}==null  ?"":$F{dos_yodameba_butschlii})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="440" width="109" height="20" isRemoveLineWhenBlank="true" uuid="06464015-ee1c-41ca-b5e8-600beb65fc62"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_endolimax_nana}.equals("")) ?"":$F{dos_endolimax_nana})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_endolimax_nana}==null  ?"":$F{dos_endolimax_nana})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="460" width="109" height="20" isRemoveLineWhenBlank="true" uuid="133a8e3f-9fae-4790-a98a-779a409a1555"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_giardia_lamblia}.equals("")) ?"":$F{dos_giardia_lamblia})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_giardia_lamblia}==null  ?"":$F{dos_giardia_lamblia})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="322" y="480" width="109" height="20" isRemoveLineWhenBlank="true" uuid="ad31825d-43f0-4c70-9c56-c63a94240c70"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_trichomonas_hominis}.equals("")) ?"":$F{dos_trichomonas_hominis})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_trichomonas_hominis}==null  ?"":$F{dos_trichomonas_hominis})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="322" y="500" width="109" height="20" isRemoveLineWhenBlank="true" uuid="e3236e81-7bee-468b-bcb2-2d1d3ec1760c"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_chilomastix_mesnili}.equals("")) ?"":$F{dos_chilomastix_mesnili})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_chilomastix_mesnili}==null  ?"":$F{dos_chilomastix_mesnili})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="431" y="40" width="109" height="20" isRemoveLineWhenBlank="true" uuid="2b0686b2-b707-4219-8448-4892d98bda82"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_color}.equals(""))?"":$F{tres_color})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_color}==null?"":$F{tres_color})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="431" y="60" width="109" height="20" isRemoveLineWhenBlank="true" uuid="368f7996-2e22-4b62-a7ce-d606b4ca22d6"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_cosistencia}.equals("")) ?"":$F{tres_cosistencia})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_cosistencia}==null  ?"":$F{tres_cosistencia})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="432" y="100" width="109" height="20" isRemoveLineWhenBlank="true" uuid="c08e3862-d6c6-4440-aa95-12668f8e99b3"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_levaduras}.equals("")) ?"":$F{tres_levaduras})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_levaduras}==null  ?"":$F{tres_levaduras})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="432" y="120" width="109" height="20" isRemoveLineWhenBlank="true" uuid="73f63f0a-f919-43e3-9877-ef25c47e086d"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_almidones}.equals("")) ?"":$F{tres_almidones})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_almidones}==null  ?"":$F{tres_almidones})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="432" y="140" width="109" height="20" isRemoveLineWhenBlank="true" uuid="cb770cde-70a8-4a8a-bbb9-72a997300716"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_grasas}.equals("")) ?"":$F{tres_grasas})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_grasas}==null  ?"":$F{tres_grasas})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="433" y="160" width="109" height="20" isRemoveLineWhenBlank="true" uuid="06459d68-1efa-4031-8664-6bf84d4a621f"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_restos_vegetales}.equals("")) ?"":$F{tres_restos_vegetales})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_restos_vegetales}==null  ?"":$F{tres_restos_vegetales})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="433" y="180" width="109" height="20" isRemoveLineWhenBlank="true" uuid="df7d8fc7-b41f-44f9-9e26-2903af225166"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_blastocistis_hominis}.equals("")) ?"":$F{tres_blastocistis_hominis})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_blastocistis_hominis}==null  ?"":$F{tres_blastocistis_hominis})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="432" y="200" width="109" height="20" isRemoveLineWhenBlank="true" uuid="c9922523-26e1-49a9-8c84-87aa2d66fb15"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_esporas_hongos}.equals("")) ?"":$F{tres_esporas_hongos})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_esporas_hongos}==null?"":$F{tres_esporas_hongos})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="432" y="220" width="109" height="20" isRemoveLineWhenBlank="true" uuid="e04ac5e2-6008-4e7d-aaf1-b599f7d0f9d2"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_piocitos}.equals("")) ?"":$F{tres_piocitos})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_piocitos}==null  ?"":$F{tres_piocitos})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="433" y="240" width="109" height="20" isRemoveLineWhenBlank="true" uuid="205cb8a0-e669-4549-b5e9-e00f9f9520a8"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_hematies}.equals("")) ?"":$F{tres_hematies})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_hematies}==null  ?"":$F{tres_hematies})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="433" y="260" width="109" height="20" isRemoveLineWhenBlank="true" uuid="fe98e341-1d78-4cce-819a-b0692278989a"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_moco}.equals("")) ?"":$F{tres_moco})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_moco}==null  ?"":$F{tres_moco})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="432" y="280" width="109" height="20" isRemoveLineWhenBlank="true" uuid="97662a31-78fa-40ea-bbb4-58006b130e40"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_ipmn}.equals("")) ?"":$F{tres_ipmn})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_ipmn}==null?"":$F{tres_ipmn})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="432" y="300" width="109" height="20" isRemoveLineWhenBlank="true" uuid="5607cdf2-a85a-4b26-b9b0-ebb0a60d29b7"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_sangre_oculta}.equals("")) ?"":$F{tres_sangre_oculta})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_sangre_oculta}==null  ?"":$F{tres_sangre_oculta})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="433" y="320" width="109" height="20" isRemoveLineWhenBlank="true" uuid="2e641c5b-bb61-47b8-989f-c7d07b330ae2"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_flora_bacteriana}.equals("")) ?"":$F{tres_flora_bacteriana})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_flora_bacteriana}==null  ?"":$F{tres_flora_bacteriana})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="433" y="340" width="109" height="20" isRemoveLineWhenBlank="true" uuid="ec0f04ea-dcfe-4859-8880-d9aa07dff3ab"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_rotavirus}.equals("")) ?"":$F{tres_rotavirus})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_rotavirus}==null  ?"":$F{tres_rotavirus})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="360" width="109" height="20" isRemoveLineWhenBlank="true" uuid="09fa6972-15f4-494a-ab7b-0ac523bd7bbb"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_parasitario}.equals("")) ?"":$F{tres_parasitario})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_parasitario}==null  ?"":$F{tres_parasitario})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="380" width="109" height="20" isRemoveLineWhenBlank="true" uuid="1e456186-50e1-46c3-a8c6-14cd334d94b2"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_ameba_histolitica}.equals("")) ?"":$F{tres_ameba_histolitica})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_ameba_histolitica}==null  ?"":$F{tres_ameba_histolitica})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="435" y="400" width="109" height="20" isRemoveLineWhenBlank="true" uuid="13c489c0-b68d-4af1-a3b1-d7f93089acb0"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_ameba_coli}.equals("")) ?"":$F{tres_ameba_coli})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_ameba_coli}==null  ?"":$F{tres_ameba_coli})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="435" y="420" width="109" height="20" isRemoveLineWhenBlank="true" uuid="c549cb7f-a754-4399-87ce-bfbc3c9b0074"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_yodameba_butschlii}.equals("")) ?"":$F{tres_yodameba_butschlii})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_yodameba_butschlii}==null  ?"":$F{tres_yodameba_butschlii})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="440" width="109" height="20" isRemoveLineWhenBlank="true" uuid="f3655b0e-ba0a-44f4-8a8a-d678487a276b"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_endolimax_nana}.equals("")) ?"":$F{tres_endolimax_nana})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_endolimax_nana}==null  ?"":$F{tres_endolimax_nana})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="460" width="109" height="20" isRemoveLineWhenBlank="true" uuid="2cab553d-8879-44ad-9c00-4ec0619fab39"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_giardia_lamblia}.equals("")) ?"":$F{tres_giardia_lamblia})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_giardia_lamblia}==null  ?"":$F{tres_giardia_lamblia})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="435" y="480" width="109" height="20" isRemoveLineWhenBlank="true" uuid="a4eb24c8-bb23-4886-aea7-873cf1379893"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_trichomonas_hominis}.equals("")) ?"":$F{tres_trichomonas_hominis})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_trichomonas_hominis}==null  ?"":$F{tres_trichomonas_hominis})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="435" y="500" width="109" height="20" isRemoveLineWhenBlank="true" uuid="7d8ab88d-ea5a-41bd-9c54-a9ddb3712e9b"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_chilomastix_mesnili}.equals("")) ?"":$F{tres_chilomastix_mesnili})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_chilomastix_mesnili}==null  ?"":$F{tres_chilomastix_mesnili})]]></textFieldExpression>
 			</textField>
 		</band>
 		<band height="356">
@@ -1232,7 +1232,7 @@ order by id_examen_heces desc limit 1]]>
 			</break>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="20" width="130" height="20" isRemoveLineWhenBlank="true" uuid="1402422c-d1f0-4269-81ac-35c02cdbe044">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_embadomonas_hominis}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_embadomonas_hominis}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -1241,7 +1241,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="40" width="130" height="20" isRemoveLineWhenBlank="true" uuid="324de79d-a35c-404e-927d-c31aaae044c2">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_ascaris_lumbricoides}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_ascaris_lumbricoides}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -1253,11 +1253,11 @@ order by id_examen_heces desc limit 1]]>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_embadomonas_hominis}.equals("")) ?"":$F{uno_embadomonas_hominis})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_embadomonas_hominis}==null  ?"":$F{uno_embadomonas_hominis})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="60" width="130" height="20" isRemoveLineWhenBlank="true" uuid="00c3d63a-ef51-4177-8052-a9b6c01a1984">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_tricocefalos}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_tricocefalos}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -1266,7 +1266,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="80" width="130" height="20" isRemoveLineWhenBlank="true" uuid="5164855b-f5ad-4f10-8c9d-c425287b5ebc">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_oxiuros}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_oxiuros}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -1275,7 +1275,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="100" width="130" height="20" isRemoveLineWhenBlank="true" uuid="05ef62b6-7a55-4e92-959f-1d1d05770ba0">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_uncinairas}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_uncinairas}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -1284,7 +1284,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="120" width="130" height="20" isRemoveLineWhenBlank="true" uuid="31354779-cbdc-492e-afe5-757e029388d5">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_strongiloides_stercoralis}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_strongiloides_stercoralis}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -1293,7 +1293,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="140" width="130" height="20" isRemoveLineWhenBlank="true" uuid="fd649852-aa44-42c7-a73f-b40d83f7adc6">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_tenias_solium}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_tenias_solium}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -1302,7 +1302,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="160" width="130" height="20" isRemoveLineWhenBlank="true" uuid="685a3ef9-0176-4f2e-9371-ba1a41fcc028">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_saginata}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_saginata}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -1311,7 +1311,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="180" width="130" height="20" isRemoveLineWhenBlank="true" uuid="e6e1cab4-38a2-4eff-8f14-cdcd0cd53a3f">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_himenolepis_nana}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_himenolepis_nana}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -1320,7 +1320,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="200" width="130" height="20" isRemoveLineWhenBlank="true" uuid="07cd923d-46a2-4d4f-8ebb-51ba811941db">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_himenolepis_diminuta}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_himenolepis_diminuta}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -1329,7 +1329,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="220" width="130" height="20" isRemoveLineWhenBlank="true" uuid="3dd8164c-bab2-44d3-ae4d-2fe32bf153b3">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_clinitest}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_clinitest}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -1338,7 +1338,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="240" width="130" height="20" isRemoveLineWhenBlank="true" uuid="62560a0c-0856-4e32-b678-3b32a38dea1f">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_sudan_iii}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_sudan_iii}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -1356,7 +1356,7 @@ order by id_examen_heces desc limit 1]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="280" width="130" height="20" isRemoveLineWhenBlank="true" uuid="f735e280-6e68-4ab8-a1a0-e41b29b914e4">
-					<printWhenExpression><![CDATA[!(new Boolean($F{uno_helicobacter_pylori}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!($F{uno_helicobacter_pylori}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -1368,287 +1368,287 @@ order by id_examen_heces desc limit 1]]>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_ascaris_lumbricoides}.equals("")) ?"":$F{uno_ascaris_lumbricoides})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_ascaris_lumbricoides}==null  ?"":$F{uno_ascaris_lumbricoides})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="80" width="108" height="20" isRemoveLineWhenBlank="true" uuid="57fa3697-5879-42b0-85dc-143522f0f90a"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_oxiuros}.equals("")) ?"":$F{uno_oxiuros})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_oxiuros}==null  ?"":$F{uno_oxiuros})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="100" width="108" height="20" isRemoveLineWhenBlank="true" uuid="3587034d-e3d2-4c4c-9cf3-21f7d24e38b0"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_uncinairas}.equals("")) ?"":$F{uno_uncinairas})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_uncinairas}==null  ?"":$F{uno_uncinairas})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="120" width="108" height="20" isRemoveLineWhenBlank="true" uuid="0ad2b8a0-e1f8-4e7b-8684-4db3daad3083"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_strongiloides_stercoralis}.equals("")) ?"":$F{uno_strongiloides_stercoralis})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_strongiloides_stercoralis}==null  ?"":$F{uno_strongiloides_stercoralis})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="140" width="108" height="20" isRemoveLineWhenBlank="true" uuid="73017150-20b9-4671-91dd-477219c81a5c"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_tenias_solium}.equals("")) ?"":$F{uno_tenias_solium})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_tenias_solium}==null  ?"":$F{uno_tenias_solium})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="160" width="108" height="20" isRemoveLineWhenBlank="true" uuid="ac00ea84-3b8b-4137-801b-2c39023cc5b0"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_saginata}.equals("")) ?"":$F{uno_saginata})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_saginata}==null  ?"":$F{uno_saginata})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="180" width="108" height="20" isRemoveLineWhenBlank="true" uuid="8cab89a9-a1cb-430f-a07d-cc7b4cd243d3"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_himenolepis_nana}.equals("")) ?"":$F{uno_himenolepis_nana})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_himenolepis_nana}==null  ?"":$F{uno_himenolepis_nana})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="200" width="108" height="20" isRemoveLineWhenBlank="true" uuid="d4314c95-b3a8-44bf-91c6-defcd8aaee8f"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_himenolepis_diminuta}.equals("")) ?"":$F{uno_himenolepis_diminuta})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_himenolepis_diminuta}==null  ?"":$F{uno_himenolepis_diminuta})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="220" width="108" height="20" isRemoveLineWhenBlank="true" uuid="09e2c9a4-4464-49a6-8d2d-b14ad5a5277c"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_clinitest}.equals("")) ?"":$F{uno_clinitest})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_clinitest}==null  ?"":$F{uno_clinitest})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="240" width="108" height="20" isRemoveLineWhenBlank="true" uuid="7d844ef7-9c12-4a01-9bed-a3f8fd58422e"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_sudan_iii}.equals("")) ?"":$F{uno_sudan_iii})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_sudan_iii}==null  ?"":$F{uno_sudan_iii})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="260" width="108" height="20" isRemoveLineWhenBlank="true" uuid="7fdcec3c-09cb-471c-9dd3-10731d62db2e"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_ph}.equals("")) ?"":$F{uno_ph})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[(new Boolean($F{uno_ph}.equals("")) ?"":$F{uno_ph})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="280" width="108" height="20" isRemoveLineWhenBlank="true" uuid="b6eca255-34f9-4ebd-b817-ff0685b86bee"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_helicobacter_pylori}.equals("")) ?"":$F{uno_helicobacter_pylori})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_helicobacter_pylori}==null  ?"":$F{uno_helicobacter_pylori})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="60" width="108" height="20" isRemoveLineWhenBlank="true" uuid="c496203a-cb04-4fd3-8efc-d0fb178df69e"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{uno_tricocefalos}.equals("")) ?"":$F{uno_tricocefalos})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{uno_tricocefalos}==null  ?"":$F{uno_tricocefalos})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="320" y="20" width="108" height="20" isRemoveLineWhenBlank="true" uuid="a7e23c94-f63d-4573-9a53-9f41ee76c25c"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_embadomonas_hominis}.equals("")) ?"":$F{dos_embadomonas_hominis})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_embadomonas_hominis}==null  ?"":$F{dos_embadomonas_hominis})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="320" y="40" width="108" height="20" isRemoveLineWhenBlank="true" uuid="19e475f6-4e17-4c92-ad2f-33bcc247c740"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_ascaris_lumbricoides}.equals("")) ?"":$F{dos_ascaris_lumbricoides})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_ascaris_lumbricoides}==null  ?"":$F{dos_ascaris_lumbricoides})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="80" width="108" height="20" isRemoveLineWhenBlank="true" uuid="9c930323-d00a-44e0-b6dc-ecc9ad56cc50"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_oxiuros}.equals("")) ?"":$F{dos_oxiuros})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_oxiuros}==null  ?"":$F{dos_oxiuros})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="100" width="108" height="20" isRemoveLineWhenBlank="true" uuid="28d19d4c-53d2-4c49-8c76-5600120922a8"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_uncinairas}.equals("")) ?"":$F{dos_uncinairas})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_uncinairas}==null  ?"":$F{dos_uncinairas})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="120" width="108" height="20" isRemoveLineWhenBlank="true" uuid="353b718a-c0db-415d-aae6-6861064b08fc"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_strongiloides_stercoralis}.equals("")) ?"":$F{dos_strongiloides_stercoralis})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_strongiloides_stercoralis}==null  ?"":$F{dos_strongiloides_stercoralis})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="322" y="140" width="108" height="20" isRemoveLineWhenBlank="true" uuid="213de2c5-451a-4f1e-a665-3408f24ac849"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_tenias_solium}.equals("")) ?"":$F{dos_tenias_solium})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_tenias_solium}==null  ?"":$F{dos_tenias_solium})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="322" y="160" width="108" height="20" isRemoveLineWhenBlank="true" uuid="0d0275c4-a53a-4a88-b1f5-809de4040746"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_saginata}.equals("")) ?"":$F{dos_saginata})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_saginata}==null  ?"":$F{dos_saginata})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="180" width="108" height="20" isRemoveLineWhenBlank="true" uuid="eab5dbca-8dc1-4052-9cf1-75da9e173a3e"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_himenolepis_nana}.equals("")) ?"":$F{dos_himenolepis_nana})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_himenolepis_nana}==null  ?"":$F{dos_himenolepis_nana})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="200" width="108" height="20" isRemoveLineWhenBlank="true" uuid="4feb5461-6236-4f88-b7e7-c98f7279695a"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_himenolepis_diminuta}.equals("")) ?"":$F{dos_himenolepis_diminuta})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_himenolepis_diminuta}==null  ?"":$F{dos_himenolepis_diminuta})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="322" y="220" width="108" height="20" isRemoveLineWhenBlank="true" uuid="8aa325b1-d380-4c25-b850-9f7748a69d76"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_clinitest}.equals("")) ?"":$F{dos_clinitest})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_clinitest}==null  ?"":$F{dos_clinitest})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="322" y="240" width="108" height="20" isRemoveLineWhenBlank="true" uuid="33d08c93-181a-4853-a3f0-cb64cf17d11b"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_sudan_iii}.equals("")) ?"":$F{dos_sudan_iii})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_sudan_iii}==null  ?"":$F{dos_sudan_iii})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="260" width="108" height="20" isRemoveLineWhenBlank="true" uuid="3bcc54cf-e166-45af-ab6a-c720231989cc"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_ph}.equals("")) ?"":$F{dos_ph})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_ph}==null?"":$F{dos_ph})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="280" width="108" height="20" isRemoveLineWhenBlank="true" uuid="ed952f18-e941-444d-9a9e-0ae3f3a442f6"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_helicobacter_pylori}.equals("")) ?"":$F{dos_helicobacter_pylori})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_helicobacter_pylori}==null  ?"":$F{dos_helicobacter_pylori})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="60" width="108" height="20" isRemoveLineWhenBlank="true" uuid="b9a85400-d851-4998-8c33-c5624e7e8309"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{dos_tricocefalos}.equals("")) ?"":$F{dos_tricocefalos})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dos_tricocefalos}==null  ?"":$F{dos_tricocefalos})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="433" y="20" width="108" height="20" isRemoveLineWhenBlank="true" uuid="af894dfa-24bf-4bb7-93ae-b5ad47b2f211"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_embadomonas_hominis}.equals("")) ?"":$F{tres_embadomonas_hominis})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_embadomonas_hominis}==null  ?"":$F{tres_embadomonas_hominis})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="433" y="40" width="108" height="20" isRemoveLineWhenBlank="true" uuid="cbbfa51f-f03b-4629-90cb-3e8182020bb1"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_ascaris_lumbricoides}.equals("")) ?"":$F{tres_ascaris_lumbricoides})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_ascaris_lumbricoides}==null  ?"":$F{tres_ascaris_lumbricoides})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="80" width="108" height="20" isRemoveLineWhenBlank="true" uuid="a41f7bae-8fcc-431c-8ad1-c1b279e6391d"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_oxiuros}.equals("")) ?"":$F{tres_oxiuros})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_oxiuros}==null  ?"":$F{tres_oxiuros})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="100" width="108" height="20" isRemoveLineWhenBlank="true" uuid="e772084a-8819-42be-be94-9fdcb933f13b"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_uncinairas}.equals("")) ?"":$F{tres_uncinairas})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_uncinairas}==null  ?"":$F{tres_uncinairas})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="120" width="108" height="20" isRemoveLineWhenBlank="true" uuid="8e888643-e5e3-4ce0-93aa-315b25e2e52d"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_strongiloides_stercoralis}.equals("")) ?"":$F{tres_strongiloides_stercoralis})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_strongiloides_stercoralis}==null  ?"":$F{tres_strongiloides_stercoralis})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="435" y="140" width="108" height="20" isRemoveLineWhenBlank="true" uuid="b62568a8-82b5-4a41-b1be-ba2e679e0231"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_tenias_solium}.equals("")) ?"":$F{tres_tenias_solium})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_tenias_solium}==null  ?"":$F{tres_tenias_solium})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="435" y="160" width="108" height="20" isRemoveLineWhenBlank="true" uuid="7908faac-6d6d-4c2d-bce4-12675cf36069"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_saginata}.equals("")) ?"":$F{tres_saginata})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_saginata}==null  ?"":$F{tres_saginata})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="180" width="108" height="20" isRemoveLineWhenBlank="true" uuid="f0894b2f-87e3-486f-8865-d0b674bad2de"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_himenolepis_nana}.equals("")) ?"":$F{tres_himenolepis_nana})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_himenolepis_nana}==null  ?"":$F{tres_himenolepis_nana})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="200" width="108" height="20" isRemoveLineWhenBlank="true" uuid="4ab3fcd1-89ee-418e-bc98-286fa5ac3b85"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_himenolepis_diminuta}.equals("")) ?"":$F{tres_himenolepis_diminuta})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_himenolepis_diminuta}==null  ?"":$F{tres_himenolepis_diminuta})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="435" y="220" width="108" height="20" isRemoveLineWhenBlank="true" uuid="53ee0725-c864-4a23-8580-21eb38aef33f"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_clinitest}.equals("")) ?"":$F{tres_clinitest})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_clinitest}==null  ?"":$F{tres_clinitest})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="435" y="240" width="108" height="20" isRemoveLineWhenBlank="true" uuid="36ea9ad0-4ad8-44e3-8d3e-32f106bd6e76"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_sudan_iii}.equals("")) ?"":$F{tres_sudan_iii})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_sudan_iii}==null  ?"":$F{tres_sudan_iii})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="260" width="108" height="20" isRemoveLineWhenBlank="true" uuid="37e1d517-f708-44db-89d6-cee7f572af7a"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_ph}.equals("")) ?"":$F{tres_ph})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_ph}==null?"":$F{tres_ph})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="280" width="108" height="20" isRemoveLineWhenBlank="true" uuid="2a7d5f7b-48af-4041-bcec-6ee58d8496fe"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_helicobacter_pylori}.equals("")) ?"":$F{tres_helicobacter_pylori})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_helicobacter_pylori}==null  ?"":$F{tres_helicobacter_pylori})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="60" width="108" height="20" isRemoveLineWhenBlank="true" uuid="618ba0b9-8a23-47f7-a34d-091d59c0e77d"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[( new Boolean($F{tres_tricocefalos}.equals("")) ?"":$F{tres_tricocefalos})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{tres_tricocefalos}==null  ?"":$F{tres_tricocefalos})]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
