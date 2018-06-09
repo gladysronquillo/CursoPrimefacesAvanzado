@@ -549,7 +549,7 @@ mujeres: 0.06-0.82]]></text>
 	</detail>
 	<lastPageFooter>
 		<band height="36">
-			<textField>
+			<textField pattern="MM/dd/yyyy">
 				<reportElement x="130" y="10" width="100" height="20" uuid="79008dc6-6bdb-4879-8d11-0d9625c6d2b3"/>
 				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
 			</textField>
