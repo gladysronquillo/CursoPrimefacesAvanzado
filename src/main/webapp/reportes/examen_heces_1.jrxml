@@ -2,7 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySql"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="397"/>
@@ -26,152 +26,448 @@ order by id_examen_heces desc limit 1]]>
 		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="color" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="color"/>
+	<field name="uno_color" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_color"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="cosistencia" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="cosistencia"/>
+	<field name="uno_cosistencia" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_cosistencia"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="levaduras" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="levaduras"/>
+	<field name="uno_levaduras" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_levaduras"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="almidones" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="almidones"/>
+	<field name="uno_almidones" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_almidones"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="grasas" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="grasas"/>
+	<field name="uno_grasas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_grasas"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="restos_vegetales" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="restos_vegetales"/>
+	<field name="uno_restos_vegetales" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_restos_vegetales"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="blastocistis_hominis" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="blastocistis_hominis"/>
+	<field name="uno_blastocistis_hominis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_blastocistis_hominis"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="esporas_hongos" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="esporas_hongos"/>
+	<field name="uno_esporas_hongos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_esporas_hongos"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="piocitos" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="piocitos"/>
+	<field name="uno_piocitos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_piocitos"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="hematies" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="hematies"/>
+	<field name="uno_hematies" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_hematies"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="moco" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="moco"/>
+	<field name="uno_moco" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_moco"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="ipmn" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="ipmn"/>
+	<field name="uno_ipmn" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_ipmn"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="sangre_oculta" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="sangre_oculta"/>
+	<field name="uno_sangre_oculta" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_sangre_oculta"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="flora_bacteriana" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="flora_bacteriana"/>
+	<field name="uno_flora_bacteriana" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_flora_bacteriana"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="rotavirus" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="rotavirus"/>
+	<field name="uno_rotavirus" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_rotavirus"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="parasitario" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="parasitario"/>
+	<field name="uno_parasitario" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_parasitario"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="ameba_histolitica" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="ameba_histolitica"/>
+	<field name="uno_ameba_histolitica" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_ameba_histolitica"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="ameba_coli" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="ameba_coli"/>
+	<field name="uno_ameba_coli" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_ameba_coli"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="yodameba_butschlii" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="yodameba_butschlii"/>
+	<field name="uno_yodameba_butschlii" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_yodameba_butschlii"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="endolimax_nana" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="endolimax_nana"/>
+	<field name="uno_endolimax_nana" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_endolimax_nana"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="giardia_lamblia" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="giardia_lamblia"/>
+	<field name="uno_giardia_lamblia" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_giardia_lamblia"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="trichomonas_hominis" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="trichomonas_hominis"/>
+	<field name="uno_trichomonas_hominis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_trichomonas_hominis"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="chilomastix_mesnili" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="chilomastix_mesnili"/>
+	<field name="uno_chilomastix_mesnili" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_chilomastix_mesnili"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="embadomonas_hominis" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="embadomonas_hominis"/>
+	<field name="uno_embadomonas_hominis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_embadomonas_hominis"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="ascaris_lumbricoides" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="ascaris_lumbricoides"/>
+	<field name="uno_ascaris_lumbricoides" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_ascaris_lumbricoides"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="tricocefalos" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="tricocefalos"/>
+	<field name="uno_tricocefalos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_tricocefalos"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="oxiuros" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="oxiuros"/>
+	<field name="uno_oxiuros" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_oxiuros"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="uncinairas" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="uncinairas"/>
+	<field name="uno_uncinairas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_uncinairas"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="strongiloides_stercoralis" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="strongiloides_stercoralis"/>
+	<field name="uno_strongiloides_stercoralis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_strongiloides_stercoralis"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="tenias_solium" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="tenias_solium"/>
+	<field name="uno_tenias_solium" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_tenias_solium"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="saginata" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="saginata"/>
+	<field name="uno_saginata" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_saginata"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="himenolepis_nana" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="himenolepis_nana"/>
+	<field name="uno_himenolepis_nana" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_himenolepis_nana"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="himenolepis_diminuta" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="himenolepis_diminuta"/>
+	<field name="uno_himenolepis_diminuta" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_himenolepis_diminuta"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="clinitest" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="clinitest"/>
+	<field name="uno_clinitest" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_clinitest"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="sudan_iii" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="sudan_iii"/>
+	<field name="uno_sudan_iii" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_sudan_iii"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="ph" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="ph"/>
+	<field name="uno_ph" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_ph"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
-	<field name="helicobacter_pylori" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="helicobacter_pylori"/>
+	<field name="uno_helicobacter_pylori" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uno_helicobacter_pylori"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_color" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_color"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_cosistencia" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_cosistencia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_levaduras" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_levaduras"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_almidones" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_almidones"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_grasas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_grasas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_restos_vegetales" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_restos_vegetales"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_blastocistis_hominis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_blastocistis_hominis"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_esporas_hongos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_esporas_hongos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_piocitos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_piocitos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_hematies" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_hematies"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_moco" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_moco"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_ipmn" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_ipmn"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_sangre_oculta" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_sangre_oculta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_flora_bacteriana" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_flora_bacteriana"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_rotavirus" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_rotavirus"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_parasitario" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_parasitario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_ameba_histolitica" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_ameba_histolitica"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_ameba_coli" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_ameba_coli"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_yodameba_butschlii" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_yodameba_butschlii"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_endolimax_nana" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_endolimax_nana"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_giardia_lamblia" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_giardia_lamblia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_trichomonas_hominis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_trichomonas_hominis"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_chilomastix_mesnili" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_chilomastix_mesnili"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_embadomonas_hominis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_embadomonas_hominis"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_ascaris_lumbricoides" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_ascaris_lumbricoides"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_tricocefalos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_tricocefalos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_oxiuros" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_oxiuros"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_uncinairas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_uncinairas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_strongiloides_stercoralis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_strongiloides_stercoralis"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_tenias_solium" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_tenias_solium"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_saginata" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_saginata"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_himenolepis_nana" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_himenolepis_nana"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_himenolepis_diminuta" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_himenolepis_diminuta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_clinitest" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_clinitest"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_sudan_iii" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_sudan_iii"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_ph" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_ph"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="dos_helicobacter_pylori" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dos_helicobacter_pylori"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_color" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_color"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_cosistencia" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_cosistencia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_levaduras" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_levaduras"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_almidones" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_almidones"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_grasas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_grasas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_restos_vegetales" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_restos_vegetales"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_blastocistis_hominis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_blastocistis_hominis"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_esporas_hongos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_esporas_hongos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_piocitos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_piocitos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_hematies" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_hematies"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_moco" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_moco"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_ipmn" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_ipmn"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_sangre_oculta" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_sangre_oculta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_flora_bacteriana" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_flora_bacteriana"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_rotavirus" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_rotavirus"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_parasitario" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_parasitario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_ameba_histolitica" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_ameba_histolitica"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_ameba_coli" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_ameba_coli"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_yodameba_butschlii" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_yodameba_butschlii"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_endolimax_nana" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_endolimax_nana"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_giardia_lamblia" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_giardia_lamblia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_trichomonas_hominis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_trichomonas_hominis"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_chilomastix_mesnili" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_chilomastix_mesnili"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_embadomonas_hominis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_embadomonas_hominis"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_ascaris_lumbricoides" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_ascaris_lumbricoides"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_tricocefalos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_tricocefalos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_oxiuros" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_oxiuros"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_uncinairas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_uncinairas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_strongiloides_stercoralis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_strongiloides_stercoralis"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_tenias_solium" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_tenias_solium"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_saginata" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_saginata"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_himenolepis_nana" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_himenolepis_nana"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_himenolepis_diminuta" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_himenolepis_diminuta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_clinitest" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_clinitest"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_sudan_iii" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_sudan_iii"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_ph" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_ph"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
+	</field>
+	<field name="tres_helicobacter_pylori" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tres_helicobacter_pylori"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="examen_heces"/>
 	</field>
 	<field name="paciente" class="java.lang.String">
@@ -218,7 +514,7 @@ order by id_examen_heces desc limit 1]]>
 			<textField>
 				<reportElement x="189" y="20" width="148" height="20" uuid="6e9520fb-6dec-4e70-ad72-84e1eee5fcb1"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{color}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_color}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement stretchType="ElementGroupBottom" x="60" y="480" width="130" height="20" uuid="1e571aa1-1042-4353-b927-bc3c47ef4275"/>
@@ -377,112 +673,112 @@ order by id_examen_heces desc limit 1]]>
 			<textField>
 				<reportElement x="189" y="40" width="148" height="20" uuid="d7161520-398c-4982-b2e5-4144e3dba095"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{cosistencia}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_cosistencia}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="190" y="80" width="148" height="20" uuid="e73a1011-b019-4b1c-826c-d9c24c88b108"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{levaduras}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_levaduras}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="190" y="100" width="148" height="20" uuid="f9a6cb5c-1961-4ccb-bbee-57932efe4fe3"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{almidones}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_almidones}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="190" y="120" width="148" height="20" uuid="affd7853-1b48-4c20-ade3-6a2c2a4d2944"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{grasas}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_grasas}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="191" y="140" width="148" height="20" uuid="d7778dd6-5fe1-49f9-abf8-d78d74f8ad4c"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{restos_vegetales}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_restos_vegetales}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="191" y="160" width="148" height="20" uuid="b8dfd68c-edbd-4920-815c-f86cf74529b9"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{blastocistis_hominis}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_blastocistis_hominis}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="190" y="180" width="148" height="20" uuid="0e4d8d6e-4e4b-481b-a500-ea0100459494"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{esporas_hongos}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_esporas_hongos}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="190" y="200" width="148" height="20" uuid="3a1aa3c8-a3b3-4e43-a712-27205cc44ea3"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{piocitos}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_piocitos}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="191" y="220" width="148" height="20" uuid="5c66e4c7-c733-4d54-960c-9d33fc029d41"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{hematies}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_hematies}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="191" y="240" width="148" height="20" uuid="5b017954-1cf2-4eba-8507-baffac73b0bc"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{moco}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_moco}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="190" y="260" width="148" height="20" uuid="8f35bc4e-2dd3-41ee-b76a-e40ae32d98ee"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{ipmn}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_ipmn}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="190" y="280" width="148" height="20" uuid="bd5eef55-1122-4c5f-911d-93dc0f47fe36"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{sangre_oculta}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_sangre_oculta}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="191" y="300" width="148" height="20" uuid="4817f847-f7c8-4fc9-b0a7-7c96e1a74374"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{flora_bacteriana}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_flora_bacteriana}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="191" y="320" width="148" height="20" uuid="c6d2f4de-34b1-4499-99fc-74038014d541"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{rotavirus}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_rotavirus}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="192" y="340" width="148" height="20" uuid="427a672a-1381-48aa-a0eb-7ba3d285255e"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{parasitario}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_parasitario}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="192" y="360" width="148" height="20" uuid="69edc0aa-bc28-4148-a2de-8d5dfba2d592"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{ameba_histolitica}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_ameba_histolitica}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="193" y="380" width="148" height="20" uuid="39f0acb7-b2fc-43ed-af17-01e4c34aa888"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{ameba_coli}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_ameba_coli}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="193" y="400" width="148" height="20" uuid="5b4b4e79-6b21-4e57-86d7-1dbf324db0ac"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{yodameba_butschlii}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_yodameba_butschlii}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="192" y="420" width="148" height="20" uuid="ea9862cb-fa67-4519-ae72-6d9375f1b40c"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{endolimax_nana}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_endolimax_nana}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="192" y="440" width="148" height="20" uuid="2d143bef-8756-4ece-bd4b-889020509a7e"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{giardia_lamblia}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_giardia_lamblia}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="193" y="460" width="148" height="20" uuid="e1b89c98-699c-4595-85a3-d01f33a8d067"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{trichomonas_hominis}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_trichomonas_hominis}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="193" y="480" width="148" height="20" uuid="5193a8e8-547c-47b7-b255-dd5dea46d386"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{chilomastix_mesnili}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_chilomastix_mesnili}]]></textFieldExpression>
 			</textField>
 		</band>
 		<band height="356">
@@ -506,7 +802,7 @@ order by id_examen_heces desc limit 1]]>
 			<textField>
 				<reportElement x="189" y="20" width="148" height="20" uuid="160d5cec-ca4b-4bcf-ac84-961a0439bb81"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{embadomonas_hominis}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_embadomonas_hominis}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement stretchType="ElementGroupBottom" x="60" y="60" width="130" height="20" uuid="00c3d63a-ef51-4177-8052-a9b6c01a1984"/>
@@ -595,73 +891,73 @@ order by id_examen_heces desc limit 1]]>
 			<textField>
 				<reportElement x="189" y="40" width="148" height="20" uuid="c6a9f617-2faf-436c-a46c-a558b366b4ed"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{ascaris_lumbricoides}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_ascaris_lumbricoides}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="190" y="80" width="148" height="20" uuid="57fa3697-5879-42b0-85dc-143522f0f90a"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{oxiuros}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_oxiuros}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="190" y="100" width="148" height="20" uuid="3587034d-e3d2-4c4c-9cf3-21f7d24e38b0"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{uncinairas}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_uncinairas}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="190" y="120" width="148" height="20" uuid="0ad2b8a0-e1f8-4e7b-8684-4db3daad3083"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{strongiloides_stercoralis}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_strongiloides_stercoralis}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="191" y="140" width="148" height="20" uuid="73017150-20b9-4671-91dd-477219c81a5c"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{tenias_solium}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_tenias_solium}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="191" y="160" width="148" height="20" uuid="ac00ea84-3b8b-4137-801b-2c39023cc5b0"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{saginata}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_saginata}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="190" y="180" width="148" height="20" uuid="8cab89a9-a1cb-430f-a07d-cc7b4cd243d3"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{himenolepis_nana}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_himenolepis_nana}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="190" y="200" width="148" height="20" uuid="d4314c95-b3a8-44bf-91c6-defcd8aaee8f"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{himenolepis_diminuta}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_himenolepis_diminuta}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="191" y="220" width="148" height="20" uuid="09e2c9a4-4464-49a6-8d2d-b14ad5a5277c"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{clinitest}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_clinitest}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="191" y="240" width="148" height="20" uuid="7d844ef7-9c12-4a01-9bed-a3f8fd58422e"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{sudan_iii}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_sudan_iii}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="190" y="260" width="148" height="20" uuid="7fdcec3c-09cb-471c-9dd3-10731d62db2e"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{ph}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_ph}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="190" y="280" width="148" height="20" uuid="b6eca255-34f9-4ebd-b817-ff0685b86bee"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{helicobacter_pylori}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_helicobacter_pylori}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="190" y="60" width="148" height="20" uuid="c496203a-cb04-4fd3-8efc-d0fb178df69e"/>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{tricocefalos}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{uno_tricocefalos}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
 	<lastPageFooter>
 		<band height="36">
-			<textField>
+			<textField pattern="MM/dd/yyyy">
 				<reportElement x="130" y="10" width="100" height="20" uuid="79008dc6-6bdb-4879-8d11-0d9625c6d2b3"/>
 				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
 			</textField>

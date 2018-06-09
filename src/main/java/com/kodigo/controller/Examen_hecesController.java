@@ -24,6 +24,7 @@ public class Examen_hecesController implements Serializable {
 
 	private Examen_heces examen_heces;
 	private boolean desabilitado = true;
+	
 
 	@PostConstruct
 	public void init() {
