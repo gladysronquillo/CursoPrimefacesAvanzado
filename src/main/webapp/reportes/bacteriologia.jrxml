@@ -69,7 +69,7 @@ order by id_bacteriologia desc limit 1]]>
 				<text><![CDATA[BACTERIOLOGÍA]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="110" y="30" width="179" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
+				<reportElement x="110" y="30" width="381" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="13"/>
 				</textElement>
