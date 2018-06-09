@@ -46,7 +46,7 @@
 				<h:form>
 					
 					<p:growl id="messages" showDetail="true" sticky="true" />
-					<p:idleMonitor timeout="30000">
+					<p:idleMonitor timeout="300000">
 						<p:ajax event="idle" listener="#{idleMonitorView.onIdle}"
 							update="messages" />
 						
