@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="397"/>
@@ -157,459 +157,595 @@ order by id_examen_orina desc limit 1]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
+		<band height="90" splitType="Stretch"/>
 	</title>
 	<pageHeader>
-		<band height="82" splitType="Stretch">
+		<band height="100" splitType="Stretch">
 			<staticText>
-				<reportElement x="190" y="50" width="160" height="20" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
+				<reportElement x="180" y="70" width="210" height="20" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
 				<textElement textAlignment="Center">
-					<font fontName="Arial" size="13" isBold="true" isItalic="false"/>
+					<font fontName="Arial" size="17" isBold="true" isItalic="false"/>
 				</textElement>
 				<text><![CDATA[EXAMEN DE ORINA]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="130" y="19" width="159" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
-				<textElement textAlignment="Center">
-					<font size="11" isBold="false"/>
+				<reportElement x="101" y="20" width="379" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="13" isBold="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{paciente}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{paciente}.toUpperCase()]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
 	<detail>
-		<band height="468" splitType="Stretch">
+		<band height="446" splitType="Stretch">
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="58" y="80" width="91" height="20" uuid="4ff6da2a-47f9-40f0-964c-af6cd04d9d46"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="80" width="91" height="20" isRemoveLineWhenBlank="true" uuid="4ff6da2a-47f9-40f0-964c-af6cd04d9d46">
+					<printWhenExpression><![CDATA[!(new Boolean($F{fisico_color}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[COLOR:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="57" y="100" width="91" height="20" uuid="3043e070-2074-48f0-a726-e06177cdc520"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="100" width="91" height="20" isRemoveLineWhenBlank="true" uuid="3043e070-2074-48f0-a726-e06177cdc520">
+					<printWhenExpression><![CDATA[!(new Boolean($F{fisico_aspecto}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[ASPECTO:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="57" y="120" width="91" height="20" uuid="4f426558-7c7a-43f1-a8f3-70d81e03c5fa"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="120" width="91" height="20" isRemoveLineWhenBlank="true" uuid="4f426558-7c7a-43f1-a8f3-70d81e03c5fa">
+					<printWhenExpression><![CDATA[!(new Boolean($F{fisico_densidad}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[DENSIDAD:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="58" y="140" width="91" height="20" uuid="a23e6df5-07f7-40f9-a70d-b7d9a422b2fe"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="140" width="91" height="20" isRemoveLineWhenBlank="true" uuid="a23e6df5-07f7-40f9-a70d-b7d9a422b2fe">
+					<printWhenExpression><![CDATA[!(new Boolean($F{fisico_ph}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[pH:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="279" y="60" width="110" height="20" uuid="3c21e086-0f8d-4859-92b8-7a5d0eec2527"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="301" y="60" width="110" height="20" isRemoveLineWhenBlank="true" uuid="3c21e086-0f8d-4859-92b8-7a5d0eec2527">
+					<printWhenExpression><![CDATA[!(new Boolean($F{quimico_nitritos}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font size="13" isBold="true"/>
+					<font fontName="Arial" size="13" isBold="true"/>
 				</textElement>
 				<text><![CDATA[QUÍMICO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="279" y="80" width="110" height="20" uuid="c52ffd12-e467-4587-8578-c48048b6231f"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="301" y="80" width="110" height="20" isRemoveLineWhenBlank="true" uuid="c52ffd12-e467-4587-8578-c48048b6231f">
+					<printWhenExpression><![CDATA[!(new Boolean($F{quimico_nitritos}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[NITRITOS:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="278" y="100" width="110" height="20" uuid="d20dca65-e705-407f-9156-3f354ebd4e18"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="300" y="100" width="110" height="20" isRemoveLineWhenBlank="true" uuid="d20dca65-e705-407f-9156-3f354ebd4e18">
+					<printWhenExpression><![CDATA[!(new Boolean($F{quimico_proteinas}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[PROTEINAS:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="278" y="120" width="110" height="20" uuid="116e2f39-6dc6-4ce0-a645-835031579139"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="300" y="120" width="110" height="20" isRemoveLineWhenBlank="true" uuid="116e2f39-6dc6-4ce0-a645-835031579139">
+					<printWhenExpression><![CDATA[!(new Boolean($F{quimico_glucosa}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[GLUCOSA:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="279" y="140" width="110" height="20" uuid="bc7f1563-9683-4902-bc22-8ca2bd829b24"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="301" y="140" width="110" height="20" isRemoveLineWhenBlank="true" uuid="bc7f1563-9683-4902-bc22-8ca2bd829b24">
+					<printWhenExpression><![CDATA[!(new Boolean($F{quimico_cetonico}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[C. CETONICO:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="278" y="160" width="110" height="20" uuid="ac1896de-b391-4380-a5a6-76f686bc2809"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="300" y="160" width="110" height="20" isRemoveLineWhenBlank="true" uuid="ac1896de-b391-4380-a5a6-76f686bc2809">
+					<printWhenExpression><![CDATA[!(new Boolean($F{quimico_urobilinogeno}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[UROBILINOGENO:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="278" y="180" width="110" height="20" uuid="baf0abb9-6f9e-465c-9c71-18d65a114ff8"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="300" y="180" width="110" height="20" isRemoveLineWhenBlank="true" uuid="baf0abb9-6f9e-465c-9c71-18d65a114ff8">
+					<printWhenExpression><![CDATA[!(new Boolean($F{quimico_bilirubinas}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[BILIRUBINAS:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="279" y="200" width="110" height="20" uuid="9c63f8f2-0b05-4fb7-a62c-7dd95ec3a4a8"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="301" y="200" width="110" height="20" isRemoveLineWhenBlank="true" uuid="9c63f8f2-0b05-4fb7-a62c-7dd95ec3a4a8">
+					<printWhenExpression><![CDATA[!(new Boolean($F{quimico_sangre}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[SANGRE:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="278" y="220" width="110" height="20" uuid="8c82c179-98f6-456d-b418-ddab42853a27"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="300" y="220" width="110" height="20" isRemoveLineWhenBlank="true" uuid="8c82c179-98f6-456d-b418-ddab42853a27">
+					<printWhenExpression><![CDATA[!(new Boolean($F{quimico_leucocitos}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[LEUCOCITOS:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="148" y="80" width="129" height="20" uuid="c9730029-46a1-424c-8aeb-94fc28fef4b4"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{fisico_color}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="170" y="80" width="129" height="20" isRemoveLineWhenBlank="true" uuid="c9730029-46a1-424c-8aeb-94fc28fef4b4"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{fisico_color}.equals("")) ?"":$F{fisico_color})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="149" y="100" width="129" height="20" uuid="c74c62b3-646d-4623-8932-3391c26ae9af"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{fisico_aspecto}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="171" y="100" width="129" height="20" isRemoveLineWhenBlank="true" uuid="c74c62b3-646d-4623-8932-3391c26ae9af"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{fisico_aspecto}==null ?"":$F{fisico_aspecto})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="148" y="120" width="129" height="20" uuid="1d8e05ae-7452-4ba6-a552-7232e59b722e"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{fisico_densidad}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="170" y="120" width="129" height="20" isRemoveLineWhenBlank="true" uuid="1d8e05ae-7452-4ba6-a552-7232e59b722e"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{fisico_densidad}.equals("")) ?"":$F{fisico_densidad})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="149" y="140" width="129" height="20" uuid="ab9f10bd-bae5-42f9-8b51-a3404b366947"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{fisico_ph}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="171" y="140" width="129" height="20" isRemoveLineWhenBlank="true" uuid="ab9f10bd-bae5-42f9-8b51-a3404b366947"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{fisico_ph}==null  ?"":$F{fisico_ph})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="58" y="60" width="91" height="20" uuid="3b6b6ea4-d6fd-4cc8-849e-4397e5607987"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="60" width="91" height="20" isRemoveLineWhenBlank="true" uuid="3b6b6ea4-d6fd-4cc8-849e-4397e5607987"/>
 				<textElement>
-					<font size="13" isBold="true"/>
+					<font fontName="Arial" size="13" isBold="true"/>
 				</textElement>
 				<text><![CDATA[FÍSICO]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="389" y="220" width="129" height="20" uuid="9a27bdc8-6654-4b34-9dcb-b5c6c546abeb"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{quimico_leucocitos}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="411" y="220" width="129" height="20" isRemoveLineWhenBlank="true" uuid="9a27bdc8-6654-4b34-9dcb-b5c6c546abeb"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{quimico_leucocitos}==null  ?"":$F{quimico_leucocitos})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="390" y="200" width="129" height="20" uuid="99c79457-9162-4663-8651-7070c090d563"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{quimico_sangre}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="412" y="200" width="129" height="20" isRemoveLineWhenBlank="true" uuid="99c79457-9162-4663-8651-7070c090d563"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{quimico_sangre}==null  ?"":$F{quimico_sangre})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="389" y="180" width="129" height="20" uuid="c1f537bd-67e3-4773-a288-1a47b6579a54"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{quimico_bilirubinas}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="411" y="180" width="129" height="20" isRemoveLineWhenBlank="true" uuid="c1f537bd-67e3-4773-a288-1a47b6579a54"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{quimico_bilirubinas}==null ?"":$F{quimico_bilirubinas})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="388" y="160" width="129" height="20" uuid="54f86e39-53e4-4f2e-938b-a6f79ed19d2c"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{quimico_urobilinogeno}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="410" y="160" width="129" height="20" isRemoveLineWhenBlank="true" uuid="54f86e39-53e4-4f2e-938b-a6f79ed19d2c"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{quimico_urobilinogeno}==null  ?"":$F{quimico_urobilinogeno})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="389" y="140" width="129" height="20" uuid="b2d5871b-c54a-49b5-a40c-63cffe642509"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{quimico_cetonico}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="411" y="140" width="129" height="20" isRemoveLineWhenBlank="true" uuid="b2d5871b-c54a-49b5-a40c-63cffe642509"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{quimico_cetonico}==null  ?"":$F{quimico_cetonico})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="388" y="120" width="129" height="20" uuid="50a1fc5c-dbd6-40e0-b247-3c90a1850367"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{quimico_glucosa}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="410" y="120" width="129" height="20" isRemoveLineWhenBlank="true" uuid="50a1fc5c-dbd6-40e0-b247-3c90a1850367"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{quimico_glucosa}==null ?"":$F{quimico_glucosa})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="389" y="100" width="129" height="20" uuid="d889e44f-ae13-49ee-933c-c79c13b47cd8"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{quimico_proteinas}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="411" y="100" width="129" height="20" isRemoveLineWhenBlank="true" uuid="d889e44f-ae13-49ee-933c-c79c13b47cd8"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{quimico_proteinas}==null  ?"":$F{quimico_proteinas})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="388" y="80" width="129" height="20" uuid="f7bb8245-4c4f-405c-9c56-8e336b4c0675"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{quimico_nitritos}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="410" y="80" width="129" height="20" isRemoveLineWhenBlank="true" uuid="f7bb8245-4c4f-405c-9c56-8e336b4c0675"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{quimico_nitritos}==null ?"":$F{quimico_nitritos})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="78" y="286" width="190" height="20" uuid="4c66a413-e07c-4d33-80e5-fcf8ba3bef41"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="100" y="286" width="190" height="20" isRemoveLineWhenBlank="true" uuid="4c66a413-e07c-4d33-80e5-fcf8ba3bef41">
+					<printWhenExpression><![CDATA[!(new Boolean($F{celulas_epiteliales}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Células epiteliales:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="77" y="306" width="190" height="20" uuid="6603511e-14f3-4c1d-9e43-75f7df446a99"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="99" y="306" width="190" height="20" isRemoveLineWhenBlank="true" uuid="6603511e-14f3-4c1d-9e43-75f7df446a99">
+					<printWhenExpression><![CDATA[!(new Boolean($F{celulas_redondas}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Células redondas:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="77" y="326" width="190" height="20" uuid="3c27d171-5426-43e0-9339-9ac5369ce4a5"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="99" y="326" width="190" height="20" isRemoveLineWhenBlank="true" uuid="3c27d171-5426-43e0-9339-9ac5369ce4a5">
+					<printWhenExpression><![CDATA[!(new Boolean($F{bacterias}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Bacterias:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="77" y="346" width="190" height="20" uuid="4ffe4a9f-2fe8-4d55-afe1-3beb81e1bd2c"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="99" y="346" width="190" height="20" isRemoveLineWhenBlank="true" uuid="4ffe4a9f-2fe8-4d55-afe1-3beb81e1bd2c">
+					<printWhenExpression><![CDATA[!(new Boolean($F{piocitos}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Plocitos:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="268" y="286" width="231" height="20" uuid="bc3887ef-9ea6-4a7e-8cf4-c884fe580c4f"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{celulas_epiteliales}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="290" y="286" width="231" height="20" isRemoveLineWhenBlank="true" uuid="bc3887ef-9ea6-4a7e-8cf4-c884fe580c4f"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{celulas_epiteliales}.equals("")) ?"":$F{celulas_epiteliales})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="267" y="306" width="231" height="20" uuid="d9e95bfb-e9e3-4394-8a8f-9f9afae4088e"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{celulas_redondas}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="289" y="306" width="231" height="20" isRemoveLineWhenBlank="true" uuid="d9e95bfb-e9e3-4394-8a8f-9f9afae4088e"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{celulas_redondas}.equals("")) ?"":$F{celulas_redondas})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="268" y="326" width="231" height="20" uuid="49905161-3030-41e6-b141-1dee760f21ed"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{bacterias}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="290" y="326" width="231" height="20" isRemoveLineWhenBlank="true" uuid="49905161-3030-41e6-b141-1dee760f21ed"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{bacterias}==null ?"":$F{bacterias})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="267" y="346" width="231" height="20" uuid="a8deefcf-ae8d-48ab-844b-c71ae0ae49aa"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{piocitos}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="289" y="346" width="231" height="20" isRemoveLineWhenBlank="true" uuid="a8deefcf-ae8d-48ab-844b-c71ae0ae49aa"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{piocitos}.equals("")) ?"":$F{piocitos})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="78" y="366" width="190" height="20" uuid="876e7261-f3fa-4b4e-ac78-51c4abda09f1"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="100" y="366" width="190" height="20" isRemoveLineWhenBlank="true" uuid="876e7261-f3fa-4b4e-ac78-51c4abda09f1">
+					<printWhenExpression><![CDATA[!(new Boolean($F{hematies}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Hematíes:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="268" y="366" width="231" height="20" uuid="c0cf4d2a-d62e-4e7b-8997-056d450297ff"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{hematies}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="290" y="366" width="231" height="20" isRemoveLineWhenBlank="true" uuid="c0cf4d2a-d62e-4e7b-8997-056d450297ff"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{hematies}.equals("")) ?"":$F{hematies})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="77" y="386" width="190" height="20" uuid="cf7d36b4-e5c0-4ef0-b144-86ffdd944394"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="99" y="386" width="190" height="20" isRemoveLineWhenBlank="true" uuid="cf7d36b4-e5c0-4ef0-b144-86ffdd944394">
+					<printWhenExpression><![CDATA[!(new Boolean($F{filamentos_mucosos}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Filamentos mucosos:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="267" y="386" width="231" height="20" uuid="604616a2-d6de-4b05-af53-77af2cc168b0"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{filamentos_mucosos}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="289" y="386" width="231" height="20" isRemoveLineWhenBlank="true" uuid="604616a2-d6de-4b05-af53-77af2cc168b0"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{filamentos_mucosos}==null ?"":$F{filamentos_mucosos})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="168" y="250" width="240" height="20" uuid="c69a0621-ace5-4ac9-93f5-53a9e6de4c56"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="190" y="250" width="240" height="20" isRemoveLineWhenBlank="true" uuid="c69a0621-ace5-4ac9-93f5-53a9e6de4c56">
+					<printWhenExpression><![CDATA[!(new Boolean($F{celulas_epiteliales}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement textAlignment="Center">
-					<font fontName="Arial" size="13" isBold="true"/>
+					<font fontName="Arial" size="13" isBold="true" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[MICROSCOPICO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="78" y="406" width="190" height="20" uuid="247e8475-6e21-4882-bc8c-3c05d399e753"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="100" y="406" width="190" height="20" isRemoveLineWhenBlank="true" uuid="247e8475-6e21-4882-bc8c-3c05d399e753">
+					<printWhenExpression><![CDATA[!(new Boolean($F{cristales}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Cristales:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="268" y="406" width="231" height="20" uuid="52dc1b2f-e1c3-4f9d-b83a-edd8f66f281c"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{cristales}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="290" y="406" width="231" height="20" isRemoveLineWhenBlank="true" uuid="52dc1b2f-e1c3-4f9d-b83a-edd8f66f281c"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{cristales}.equals("")) ?"":$F{cristales})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="77" y="426" width="190" height="20" uuid="a8021196-eb15-4171-a008-4d2fdac41878"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="99" y="426" width="190" height="20" isRemoveLineWhenBlank="true" uuid="a8021196-eb15-4171-a008-4d2fdac41878">
+					<printWhenExpression><![CDATA[!(new Boolean($F{cilindros}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Cilindros:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="267" y="426" width="231" height="20" uuid="c6e16cb1-0cc2-451a-bffc-43d57b140bbe"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{cilindros}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="289" y="426" width="231" height="20" isRemoveLineWhenBlank="true" uuid="c6e16cb1-0cc2-451a-bffc-43d57b140bbe"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{cilindros}.equals("")) ?"":$F{cilindros})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="157" y="15" width="240" height="20" uuid="92d353ce-b8dc-493b-90f0-fbd63e39f1f6"/>
+				<reportElement x="179" y="15" width="240" height="20" uuid="92d353ce-b8dc-493b-90f0-fbd63e39f1f6"/>
 				<textElement textAlignment="Center">
-					<font fontName="Arial" size="13" isBold="true"/>
+					<font fontName="Arial" size="13" isBold="true" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[ELEMENTAL Y MICROSCOPICO]]></text>
 			</staticText>
 		</band>
-		<band height="294">
+		<band height="230">
 			<break>
 				<reportElement x="0" y="1" width="559" height="1" uuid="3492447b-def0-4f88-9dc0-7a1eca79048e"/>
 			</break>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="60" y="110" width="190" height="20" uuid="1a7c781c-2256-48c2-bcda-5aa1d6324675"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="110" width="190" height="20" isRemoveLineWhenBlank="true" uuid="1a7c781c-2256-48c2-bcda-5aa1d6324675">
+					<printWhenExpression><![CDATA[!(new Boolean($F{proteinuria_24}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[PROTEINURIA 24 HORAS:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="59" y="130" width="190" height="20" uuid="9789fcd4-cd0d-426d-8614-c89fa99f27f5"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="130" width="190" height="20" isRemoveLineWhenBlank="true" uuid="9789fcd4-cd0d-426d-8614-c89fa99f27f5">
+					<printWhenExpression><![CDATA[!(new Boolean($F{proteinuria_miccional}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[PROTEINURIA MICCIONAL:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="59" y="150" width="190" height="20" uuid="a0e167c2-150a-451f-a579-90167448590c"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="150" width="190" height="20" isRemoveLineWhenBlank="true" uuid="a0e167c2-150a-451f-a579-90167448590c">
+					<printWhenExpression><![CDATA[!(new Boolean($F{microalbuminuria}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[MICROALBUMINURIA:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="59" y="170" width="190" height="20" uuid="fb008ce9-b107-4693-91be-24689ba52232"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="170" width="190" height="20" isRemoveLineWhenBlank="true" uuid="fb008ce9-b107-4693-91be-24689ba52232">
+					<printWhenExpression><![CDATA[!(new Boolean($F{clearance_creatinina}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[CLEARANCE DE CREATININA:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="380" y="110" width="131" height="20" uuid="0ce6aad0-b17b-487f-bf3e-c8ab7bc08014"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="400" y="110" width="131" height="20" isRemoveLineWhenBlank="true" uuid="0ce6aad0-b17b-487f-bf3e-c8ab7bc08014">
+					<printWhenExpression><![CDATA[!(new Boolean($F{proteinuria_24}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[V.N: hasta 150 mg/24H]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="379" y="130" width="131" height="20" uuid="27375b7e-17c2-42ae-bd8f-0bf550326865"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="399" y="130" width="131" height="20" isRemoveLineWhenBlank="true" uuid="27375b7e-17c2-42ae-bd8f-0bf550326865">
+					<printWhenExpression><![CDATA[!(new Boolean($F{proteinuria_miccional}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[hasta 12 mg/dl]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="379" y="150" width="131" height="20" uuid="cf2beeb8-c775-4e2d-89d1-e28303f270b8"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="399" y="150" width="131" height="20" isRemoveLineWhenBlank="true" uuid="cf2beeb8-c775-4e2d-89d1-e28303f270b8">
+					<printWhenExpression><![CDATA[!(new Boolean($F{microalbuminuria}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[0 - 20 mg/l]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="379" y="170" width="131" height="20" uuid="cecc127a-9874-4799-affc-fc915be488f5"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="399" y="170" width="131" height="20" isRemoveLineWhenBlank="true" uuid="cecc127a-9874-4799-affc-fc915be488f5">
+					<printWhenExpression><![CDATA[!(new Boolean($F{clearance_creatinina}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[80 - 120 mil/min.]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="250" y="110" width="129" height="20" uuid="c3f8dd1c-5486-491c-a887-f617d0931170"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{proteinuria_24}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="270" y="110" width="129" height="20" isRemoveLineWhenBlank="true" uuid="c3f8dd1c-5486-491c-a887-f617d0931170"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{proteinuria_24}.equals("")) ?"":$F{proteinuria_24})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="249" y="130" width="129" height="20" uuid="8a13dfa1-ed0c-4ccc-bfc2-c29c1973746f"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{proteinuria_miccional}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="269" y="130" width="129" height="20" isRemoveLineWhenBlank="true" uuid="8a13dfa1-ed0c-4ccc-bfc2-c29c1973746f"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{proteinuria_miccional}.equals("")) ?"":$F{proteinuria_miccional})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="250" y="150" width="129" height="20" uuid="78024d42-ea3d-4044-b3c8-6c279b8407c5"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{microalbuminuria}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="270" y="150" width="129" height="20" isRemoveLineWhenBlank="true" uuid="78024d42-ea3d-4044-b3c8-6c279b8407c5"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{microalbuminuria}.equals("")) ?"":$F{microalbuminuria})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="249" y="170" width="129" height="20" uuid="639b2222-e07b-4587-8145-c9ac3b4aedbb"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{clearance_creatinina}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="269" y="170" width="129" height="20" isRemoveLineWhenBlank="true" uuid="639b2222-e07b-4587-8145-c9ac3b4aedbb"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{clearance_creatinina}.equals("")) ?"":$F{clearance_creatinina})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="60" y="190" width="190" height="20" uuid="c5f8b643-c38c-4418-8d88-ef8dfb5df8bd"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="190" width="190" height="20" isRemoveLineWhenBlank="true" uuid="c5f8b643-c38c-4418-8d88-ef8dfb5df8bd">
+					<printWhenExpression><![CDATA[!(new Boolean($F{prueba_embarazo}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[PRUEBA DE EMBARAZO (HCGB):]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="250" y="190" width="129" height="20" uuid="c2b16a65-1999-4a3b-b268-c6a1731fc344"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{prueba_embarazo}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="270" y="190" width="129" height="20" isRemoveLineWhenBlank="true" uuid="c2b16a65-1999-4a3b-b268-c6a1731fc344"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{prueba_embarazo}==null ?"":$F{prueba_embarazo})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="59" y="210" width="61" height="20" uuid="42175601-2e7a-4686-ab41-6bbccf1a5c54"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="210" width="61" height="20" isRemoveLineWhenBlank="true" uuid="42175601-2e7a-4686-ab41-6bbccf1a5c54">
+					<printWhenExpression><![CDATA[!(new Boolean($F{baar}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[BAAR EN:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="249" y="210" width="129" height="20" uuid="54d2f590-55ff-42fa-9214-a28ece5b836c"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{muestras}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="269" y="210" width="129" height="20" isRemoveLineWhenBlank="true" uuid="54d2f590-55ff-42fa-9214-a28ece5b836c"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{muestras}==null ?"":$F{muestras})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="60" y="30" width="190" height="20" uuid="636b0f13-3a6a-4e24-b336-44230d9bcb4c"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="30" width="190" height="20" isRemoveLineWhenBlank="true" uuid="636b0f13-3a6a-4e24-b336-44230d9bcb4c">
+					<printWhenExpression><![CDATA[!(new Boolean($F{esporas_hongos}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Esporas de hongos:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="59" y="50" width="190" height="20" uuid="800b6b39-ec6a-4df3-b8e3-2fd801070c0d"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="50" width="190" height="20" isRemoveLineWhenBlank="true" uuid="800b6b39-ec6a-4df3-b8e3-2fd801070c0d">
+					<printWhenExpression><![CDATA[!(new Boolean($F{miscelios_hongos}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Miscelios de hongos:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="59" y="70" width="190" height="20" uuid="0daaafba-e9c7-4dbc-b324-2abb0e69a524"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="70" width="190" height="20" isRemoveLineWhenBlank="true" uuid="0daaafba-e9c7-4dbc-b324-2abb0e69a524">
+					<printWhenExpression><![CDATA[!(new Boolean($F{trichomonas}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Trichomonas:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="59" y="90" width="190" height="20" uuid="f6f965ab-15e0-4258-bf68-815214b53712"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="90" width="190" height="20" isRemoveLineWhenBlank="true" uuid="f6f965ab-15e0-4258-bf68-815214b53712">
+					<printWhenExpression><![CDATA[!(new Boolean($F{gota_fresca}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[GOTA FRESCA:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="250" y="30" width="260" height="20" uuid="fbd8c47b-53b0-4d4f-bb5d-3eee26a0d755"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{esporas_hongos}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="270" y="30" width="260" height="20" isRemoveLineWhenBlank="true" uuid="fbd8c47b-53b0-4d4f-bb5d-3eee26a0d755"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{esporas_hongos}==null ?"":$F{esporas_hongos})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="249" y="50" width="260" height="20" uuid="76212711-c17b-4f84-bcb0-8fa3f9d54e6c"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{miscelios_hongos}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="269" y="50" width="260" height="20" isRemoveLineWhenBlank="true" uuid="76212711-c17b-4f84-bcb0-8fa3f9d54e6c"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{miscelios_hongos}==null ?"":$F{miscelios_hongos})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="250" y="70" width="260" height="20" uuid="50f2cfc0-7a0d-49b3-bf48-52e12cc9ceed"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{trichomonas}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="270" y="70" width="260" height="20" isRemoveLineWhenBlank="true" uuid="50f2cfc0-7a0d-49b3-bf48-52e12cc9ceed"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{trichomonas}==null ?"":$F{trichomonas})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="249" y="90" width="260" height="20" uuid="d5e7a9b6-c2bb-4b99-abab-9a1e9b37e04e"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{gota_fresca}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="269" y="90" width="260" height="20" isRemoveLineWhenBlank="true" uuid="d5e7a9b6-c2bb-4b99-abab-9a1e9b37e04e"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{gota_fresca}.equals("")) ?"":$F{gota_fresca})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="169" y="210" width="80" height="20" uuid="64265807-08d5-44a6-be44-af3d683cd369"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="189" y="210" width="80" height="20" isRemoveLineWhenBlank="true" uuid="64265807-08d5-44a6-be44-af3d683cd369">
+					<printWhenExpression><![CDATA[!(new Boolean($F{muestras}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[MUESTRAS:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="120" y="210" width="49" height="20" uuid="9402cfca-2b69-4759-a9b1-4213c96d3ba9"/>
-				<textElement textAlignment="Left"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="140" y="210" width="49" height="20" isRemoveLineWhenBlank="true" uuid="9402cfca-2b69-4759-a9b1-4213c96d3ba9"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{baar}]]></textFieldExpression>
 			</textField>
 		</band>
@@ -617,8 +753,11 @@ order by id_examen_orina desc limit 1]]>
 	<lastPageFooter>
 		<band height="50">
 			<textField pattern="MM/dd/yyyy">
-				<reportElement x="130" y="10" width="100" height="20" uuid="79008dc6-6bdb-4879-8d11-0d9625c6d2b3"/>
-				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+				<reportElement x="110" y="30" width="100" height="20" uuid="79008dc6-6bdb-4879-8d11-0d9625c6d2b3"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 		</band>
 	</lastPageFooter>
