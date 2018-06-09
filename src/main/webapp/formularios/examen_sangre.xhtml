@@ -235,7 +235,7 @@
 
 				<p:commandLink
 					actionListener="#{examen_sangreController.registrar(pacienteController.paciente.id_paciente)}"
-					update=":idFormPaciente:mensaje , drogas, botonPdf"
+					update=":idFormPaciente:mensaje , examen_sangre, botonPdf"
 					disabled="#{!examen_sangreController.desabilitado}">
 					<h:graphicImage value="/resources/images/grabar.png" border="0"
 						width="75" height="75" />
