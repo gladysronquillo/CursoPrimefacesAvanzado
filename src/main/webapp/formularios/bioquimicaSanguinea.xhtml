@@ -396,6 +396,13 @@
 					<h:graphicImage value="/resources/images/pdf.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>
+				
+				<p:commandLink id="botonPdf_backup"
+					action="#{reportesLaboratorio.exportarBioquimicaSanguineaPDF(pacienteController.paciente)}"
+					ajax="false">
+					<h:graphicImage value="/resources/images/pdf_backup.png" border="0"
+						width="90" height="75" />
+				</p:commandLink>
 
 				<p:commandLink
 					action="#{bioquimica_sanguineaController.regresar(pacienteController.paciente)}">

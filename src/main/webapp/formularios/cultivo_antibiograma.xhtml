@@ -156,6 +156,13 @@
 					<h:graphicImage value="/resources/images/pdf.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>
+				
+				<p:commandLink id="botonPdf_backup"
+					action="#{reportesLaboratorio.exportarCultivoAntibiogramaPDF(pacienteController.paciente)}"
+					ajax="false">
+					<h:graphicImage value="/resources/images/pdf_backup.png" border="0"
+						width="90" height="75" />
+				</p:commandLink>
 
 				<p:commandLink
 					action="#{cultivo_antibiogramaController.regresar(pacienteController.paciente)}">

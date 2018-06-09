@@ -130,6 +130,13 @@
 					<h:graphicImage value="/resources/images/pdf.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>
+				
+				<p:commandLink id="botonPdf_backup"
+					action="#{reportesLaboratorio.exportarElectrolitosPDF(pacienteController.paciente)}"
+					ajax="false" >
+					<h:graphicImage value="/resources/images/pdf_backup.png" border="0"
+						width="90" height="75" />
+				</p:commandLink>
 
 				<p:commandLink
 					action="#{electrolitosController.regresar(pacienteController.paciente)}">

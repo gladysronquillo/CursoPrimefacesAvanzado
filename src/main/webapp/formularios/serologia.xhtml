@@ -216,6 +216,13 @@
 						width="90" height="75" />
 				</p:commandLink>
 				
+				<p:commandLink id="botonPdf_backup"
+					action="#{reportesLaboratorio.exportarSerologiaPDF(pacienteController.paciente)}"
+					ajax="false" >
+					<h:graphicImage value="/resources/images/pdf_backup.png" border="0"
+						width="90" height="75" />
+				</p:commandLink>
+				
 				<p:commandLink action="#{serologiaController.regresar(pacienteController.paciente)}">
 					<h:graphicImage value="/resources/images/regresar.png" border="0"
 						width="90" height="75" />
