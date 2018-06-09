@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="397"/>
@@ -113,80 +113,98 @@ order by id_hormonas desc limit 1]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="42" splitType="Stretch"/>
+		<band height="90" splitType="Stretch"/>
 	</title>
 	<pageHeader>
-		<band height="84" splitType="Stretch">
+		<band height="100" splitType="Stretch">
 			<staticText>
-				<reportElement x="181" y="50" width="193" height="20" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
+				<reportElement x="180" y="70" width="193" height="20" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
 				<textElement textAlignment="Center">
-					<font fontName="Arial" size="13" isBold="true"/>
+					<font fontName="Arial" size="17" isBold="true"/>
 				</textElement>
 				<text><![CDATA[HORMONAS]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="130" y="19" width="159" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{paciente}]]></textFieldExpression>
+				<reportElement x="110" y="30" width="372" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{paciente}.toUpperCase()]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
 	<detail>
 		<band height="593" splitType="Stretch">
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="60" y="20" width="130" height="40" uuid="3a1d5332-471f-4b14-be8d-a450c004fe02"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="30" width="130" height="40" isRemoveLineWhenBlank="true" uuid="3a1d5332-471f-4b14-be8d-a450c004fe02">
+					<printWhenExpression><![CDATA[!(new Boolean($F{prueba_embarazo}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[PRUEBAS DE EMBARAZO (HCGB):]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="60" y="60" width="130" height="20" uuid="a6ee6091-54b0-494d-9cb6-d7b2e681e7dc"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="70" width="130" height="20" isRemoveLineWhenBlank="true" uuid="a6ee6091-54b0-494d-9cb6-d7b2e681e7dc">
+					<printWhenExpression><![CDATA[!(new Boolean($F{hcgb}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[HCGB Cuantitativa:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="59" y="200" width="130" height="30" uuid="1c807f1c-8ac6-4428-be6c-c510fe1ddc02"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="210" width="130" height="30" isRemoveLineWhenBlank="true" uuid="1c807f1c-8ac6-4428-be6c-c510fe1ddc02">
+					<printWhenExpression><![CDATA[!(new Boolean($F{t3}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[T3:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="340" y="20" width="138" height="20" uuid="0e78c9c9-ae10-41e4-9c47-a3d7bc549074"/>
+				<reportElement stretchType="ElementGroupBottom" x="360" y="30" width="138" height="20" uuid="0e78c9c9-ae10-41e4-9c47-a3d7bc549074"/>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Valores normales]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="341" y="200" width="138" height="30" uuid="6396d718-c6ef-4c38-85b4-dd8ba4c8b71c"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="361" y="210" width="138" height="30" isRemoveLineWhenBlank="true" uuid="6396d718-c6ef-4c38-85b4-dd8ba4c8b71c">
+					<printWhenExpression><![CDATA[!(new Boolean($F{t3}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[niños: 0.8-2.9    ng/ml adultos: 0.8-2.0]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="190" y="20" width="148" height="40" uuid="6e9520fb-6dec-4e70-ad72-84e1eee5fcb1"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{prueba_embarazo}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="30" width="148" height="40" isRemoveLineWhenBlank="true" uuid="6e9520fb-6dec-4e70-ad72-84e1eee5fcb1"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{prueba_embarazo}==null?"":$F{prueba_embarazo})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="192" y="60" width="148" height="20" uuid="61517123-9333-4060-8b4f-929920926f5b"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{hcgb}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="212" y="70" width="148" height="20" isRemoveLineWhenBlank="true" uuid="61517123-9333-4060-8b4f-929920926f5b"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{hcgb}.equals("")) ?"":$F{hcgb})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="190" y="200" width="149" height="30" uuid="83e90a82-1a79-4d58-b190-652416cef88f"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{t3}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="210" width="149" height="30" isRemoveLineWhenBlank="true" uuid="83e90a82-1a79-4d58-b190-652416cef88f"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{t3}.equals("")) ?"":$F{t3})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="341" y="60" width="138" height="130" uuid="3a941611-63e1-4f48-a618-83c33f422811"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="361" y="70" width="138" height="130" isRemoveLineWhenBlank="true" uuid="3a941611-63e1-4f48-a618-83c33f422811">
+					<printWhenExpression><![CDATA[!(new Boolean($F{hcgb}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[NO EMBARAZO: 0-5 mUI/ml
 3 semanas: 5.0-70.0
@@ -200,97 +218,127 @@ order by id_hormonas desc limit 1]]>
 12 semanas: 27000-210000]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="60" y="240" width="130" height="30" uuid="68df2f77-0fce-4964-9bcd-270f94fe8b92"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="250" width="130" height="30" isRemoveLineWhenBlank="true" uuid="68df2f77-0fce-4964-9bcd-270f94fe8b92">
+					<printWhenExpression><![CDATA[!(new Boolean($F{t4}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[T4:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="191" y="240" width="149" height="30" uuid="a05542e2-07b5-449f-8c08-31d0da8c5501"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{t4}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="250" width="149" height="30" isRemoveLineWhenBlank="true" uuid="a05542e2-07b5-449f-8c08-31d0da8c5501"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{t4}.equals("")) ?"":$F{t4})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="342" y="240" width="138" height="30" uuid="bef164e0-9fa5-444b-bb1d-4e20ebb2706d"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="362" y="250" width="138" height="30" isRemoveLineWhenBlank="true" uuid="bef164e0-9fa5-444b-bb1d-4e20ebb2706d">
+					<printWhenExpression><![CDATA[!(new Boolean($F{t4}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[niños: 6.2-15.1    ng/dl adultos: 5.1-14.1]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="59" y="280" width="130" height="40" uuid="57b5585c-b45d-42ac-849a-dd1fbeb2cbf3"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="290" width="130" height="40" isRemoveLineWhenBlank="true" uuid="57b5585c-b45d-42ac-849a-dd1fbeb2cbf3">
+					<printWhenExpression><![CDATA[!(new Boolean($F{tsh}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[TSH:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="190" y="280" width="149" height="40" uuid="5c038acd-bd6b-4669-9bec-5a9fcdbc256a"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{tsh}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="290" width="149" height="40" isRemoveLineWhenBlank="true" uuid="5c038acd-bd6b-4669-9bec-5a9fcdbc256a"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{tsh}.equals("")) ?"":$F{tsh})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="341" y="280" width="138" height="40" uuid="fd4af869-feee-4257-94f0-640f5befe679"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="361" y="290" width="138" height="40" isRemoveLineWhenBlank="true" uuid="fd4af869-feee-4257-94f0-640f5befe679">
+					<printWhenExpression><![CDATA[!(new Boolean($F{tsh}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[niños: 0.28-6.5    uU/ml adultos: 0.27-5.2                    > 60 años: 0.4-8.0]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="60" y="330" width="130" height="30" uuid="d831f1c6-e7df-4222-8338-2534305eec2a"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="340" width="130" height="30" isRemoveLineWhenBlank="true" uuid="d831f1c6-e7df-4222-8338-2534305eec2a">
+					<printWhenExpression><![CDATA[!(new Boolean($F{cortisol}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[CORTISOL:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="191" y="330" width="149" height="30" uuid="aa91f680-3c9a-445d-8b65-cbbfb6de3f5d"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{cortisol}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="340" width="149" height="30" isRemoveLineWhenBlank="true" uuid="aa91f680-3c9a-445d-8b65-cbbfb6de3f5d"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{cortisol}.equals("")) ?"":$F{cortisol})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="342" y="330" width="138" height="30" uuid="ad4c34f5-8c63-4cb9-a8e1-51fbc612dc54"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="362" y="340" width="138" height="30" isRemoveLineWhenBlank="true" uuid="ad4c34f5-8c63-4cb9-a8e1-51fbc612dc54">
+					<printWhenExpression><![CDATA[!(new Boolean($F{cortisol}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[a.m.: 6.2-19.4        ug/dl              p.m.: 2.3-11.9]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="60" y="370" width="130" height="20" uuid="01095ba5-e629-422b-ab5e-8d1e171d6291"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="380" width="130" height="20" isRemoveLineWhenBlank="true" uuid="01095ba5-e629-422b-ab5e-8d1e171d6291">
+					<printWhenExpression><![CDATA[!(new Boolean($F{dheas}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[DHEAS:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="191" y="370" width="149" height="20" uuid="3b58142d-ba5b-462c-a7c4-5715c8a24570"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{dheas}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="380" width="149" height="20" isRemoveLineWhenBlank="true" uuid="3b58142d-ba5b-462c-a7c4-5715c8a24570"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{dheas}.equals("")) ?"":$F{dheas})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="342" y="370" width="138" height="20" uuid="ef9482e1-7d8f-4a00-8c00-7372fa8fdec0"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="362" y="380" width="138" height="20" isRemoveLineWhenBlank="true" uuid="ef9482e1-7d8f-4a00-8c00-7372fa8fdec0">
+					<printWhenExpression><![CDATA[!(new Boolean($F{dheas}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[100-300 ug/dl]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="59" y="400" width="130" height="30" uuid="7e3c50c7-4cb6-4875-a7a2-e46ac5e99608"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="410" width="130" height="30" isRemoveLineWhenBlank="true" uuid="7e3c50c7-4cb6-4875-a7a2-e46ac5e99608">
+					<printWhenExpression><![CDATA[!(new Boolean($F{estrogenos}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[ESTROGENOS:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="190" y="400" width="149" height="30" uuid="56116177-551c-4aa4-a80d-96eb2b7527f2"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{estrogenos}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="410" width="149" height="30" isRemoveLineWhenBlank="true" uuid="56116177-551c-4aa4-a80d-96eb2b7527f2"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{estrogenos}.equals("")) ?"":$F{estrogenos})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="343" y="400" width="138" height="120" uuid="8e079b0c-5124-42cd-8d99-67144ddf7d0f"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="363" y="410" width="138" height="120" isRemoveLineWhenBlank="true" uuid="8e079b0c-5124-42cd-8d99-67144ddf7d0f">
+					<printWhenExpression><![CDATA[!(new Boolean($F{estrogenos}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[fase folicular: 24-195 pg/ml   
 fase ovulatoria: 66.1-411.0
@@ -303,40 +351,52 @@ niños: 10-36
 hombres: 3.3-59.5]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="59" y="530" width="130" height="30" uuid="ab15b819-f467-40c7-a80a-918e2af0a2ae"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="530" width="130" height="30" isRemoveLineWhenBlank="true" uuid="ab15b819-f467-40c7-a80a-918e2af0a2ae">
+					<printWhenExpression><![CDATA[!(new Boolean($F{ft3}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[FT3:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="190" y="530" width="149" height="30" uuid="ce3f1ad0-5e49-4862-9c6b-acd3301c5f85"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{ft3}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="530" width="149" height="30" isRemoveLineWhenBlank="true" uuid="ce3f1ad0-5e49-4862-9c6b-acd3301c5f85"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{ft3}.equals("")) ?"":$F{ft3})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="341" y="530" width="138" height="30" uuid="4d2f6485-b3e1-4b61-80e9-8a650a7f1b2c"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="362" y="530" width="138" height="30" isRemoveLineWhenBlank="true" uuid="4d2f6485-b3e1-4b61-80e9-8a650a7f1b2c">
+					<printWhenExpression><![CDATA[!(new Boolean($F{ft3}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[niños: 0.25-0.56 ng/dl adultos: 0.18-0.46]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="59" y="560" width="130" height="20" uuid="1e571aa1-1042-4353-b927-bc3c47ef4275"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="560" width="130" height="20" isRemoveLineWhenBlank="true" uuid="1e571aa1-1042-4353-b927-bc3c47ef4275">
+					<printWhenExpression><![CDATA[!(new Boolean($F{ft4}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[FT4:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="190" y="560" width="149" height="20" uuid="de30a9f6-89c0-472b-936a-6e9b3d9de066"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{ft4}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="560" width="149" height="20" isRemoveLineWhenBlank="true" uuid="de30a9f6-89c0-472b-936a-6e9b3d9de066"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{ft4}.equals("")) ?"":$F{ft4})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="341" y="560" width="138" height="20" uuid="c79dabff-886b-4bc7-bd3f-60536dc53985"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="362" y="560" width="138" height="20" isRemoveLineWhenBlank="true" uuid="c79dabff-886b-4bc7-bd3f-60536dc53985">
+					<printWhenExpression><![CDATA[!(new Boolean($F{ft4}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[0.9-1.7 ug/dl]]></text>
 			</staticText>
@@ -346,129 +406,158 @@ hombres: 3.3-59.5]]></text>
 				<reportElement x="0" y="0" width="560" height="1" uuid="bc984360-748a-40bb-951c-8b446a40cd67"/>
 			</break>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="60" y="40" width="130" height="20" uuid="d5dd9be7-9e24-4207-b032-da4f1dc3054d"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="40" width="130" height="20" isRemoveLineWhenBlank="true" uuid="d5dd9be7-9e24-4207-b032-da4f1dc3054d">
+					<printWhenExpression><![CDATA[!(new Boolean($F{fsh}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[FSH:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="61" y="130" width="130" height="30" uuid="66912631-adb8-4f6b-a750-2ac8e5fda18f"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="130" width="130" height="30" isRemoveLineWhenBlank="true" uuid="66912631-adb8-4f6b-a750-2ac8e5fda18f">
+					<printWhenExpression><![CDATA[!(new Boolean($F{hgh}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[HGH:]]></text>
 			</staticText>
-			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="342" y="20" width="138" height="20" uuid="d97633e9-214a-46a2-a0ab-13111092fc21"/>
-				<textElement>
-					<font isBold="true"/>
+			<textField>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="209" y="40" width="148" height="20" isRemoveLineWhenBlank="true" uuid="078b4df0-c8bc-4a4e-b103-5109dec6cee3"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
 				</textElement>
-				<text><![CDATA[Valores normales]]></text>
-			</staticText>
-			<textField>
-				<reportElement x="190" y="40" width="148" height="20" uuid="078b4df0-c8bc-4a4e-b103-5109dec6cee3"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{fsh}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[( new Boolean($F{fsh}.equals("")) ?"":$F{fsh})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="192" y="130" width="149" height="30" uuid="501ae8ae-7be9-49b4-8fba-105aace3df81"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{hgh}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="130" width="149" height="30" isRemoveLineWhenBlank="true" uuid="501ae8ae-7be9-49b4-8fba-105aace3df81"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{hgh}.equals("")) ?"":$F{hgh})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="343" y="40" width="138" height="80" uuid="009ce351-e11e-4d12-9b1f-d88a0e2b54ae"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="362" y="40" width="138" height="80" isRemoveLineWhenBlank="true" uuid="009ce351-e11e-4d12-9b1f-d88a0e2b54ae">
+					<printWhenExpression><![CDATA[!(new Boolean($F{fsh}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[fase folicular: 3-12 mUI/ml
-fase folicular: 3-12 mUI/ml
+fase ovulatoria: 4.7-21.5
 fase lutea: 1.7-7.7
 post menopausia: 25.8-134.8
 niños: 0.2-3.8
 hombres: 1.5-12.4]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="341" y="130" width="138" height="30" uuid="c2446f3a-de09-4628-87a1-b273e97669c2"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="360" y="130" width="138" height="30" isRemoveLineWhenBlank="true" uuid="c2446f3a-de09-4628-87a1-b273e97669c2">
+					<printWhenExpression><![CDATA[!(new Boolean($F{hgh}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[hombres: 0-1.0 ng/ml
 mujeres:  0-10 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="342" y="170" width="138" height="20" uuid="2b779ae1-bfac-48fa-9eec-0a06a39b7fc5"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="361" y="170" width="138" height="20" isRemoveLineWhenBlank="true" uuid="2b779ae1-bfac-48fa-9eec-0a06a39b7fc5">
+					<printWhenExpression><![CDATA[!(new Boolean($F{insulina}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[2.6-24.9 uUI/ml]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="62" y="170" width="130" height="20" uuid="5b8885f9-4161-42dc-9b08-cd1df6b8240d"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="170" width="130" height="20" isRemoveLineWhenBlank="true" uuid="5b8885f9-4161-42dc-9b08-cd1df6b8240d">
+					<printWhenExpression><![CDATA[!(new Boolean($F{insulina}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[INSULINA:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="192" y="170" width="149" height="20" uuid="d01571f7-b5b3-4951-b3d3-8ec8ba01d967"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{insulina}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="170" width="149" height="20" isRemoveLineWhenBlank="true" uuid="d01571f7-b5b3-4951-b3d3-8ec8ba01d967"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{insulina}.equals("")) ?"":$F{insulina})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="61" y="200" width="130" height="20" uuid="4d2f7b72-254c-4082-a56e-304a875caac3"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="200" width="130" height="20" isRemoveLineWhenBlank="true" uuid="4d2f7b72-254c-4082-a56e-304a875caac3">
+					<printWhenExpression><![CDATA[!(new Boolean($F{lh}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[LH:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="192" y="200" width="149" height="20" uuid="29cd4662-7657-46a9-8ab1-40f5b82f6ed9"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{lh}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="200" width="149" height="20" isRemoveLineWhenBlank="true" uuid="29cd4662-7657-46a9-8ab1-40f5b82f6ed9"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{lh}.equals("")) ?"":$F{lh})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="62" y="290" width="130" height="20" uuid="d1815790-e40d-4a27-9836-7b1be36784c9"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="290" width="130" height="20" isRemoveLineWhenBlank="true" uuid="d1815790-e40d-4a27-9836-7b1be36784c9">
+					<printWhenExpression><![CDATA[!(new Boolean($F{paratohormona}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[PARATOHORMONA (PTH):]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="193" y="290" width="149" height="20" uuid="05a7f36c-fcc6-4091-bdfa-3cdb166b17ad"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{paratohormona}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="212" y="290" width="149" height="20" isRemoveLineWhenBlank="true" uuid="05a7f36c-fcc6-4091-bdfa-3cdb166b17ad"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{paratohormona}.equals("")) ?"":$F{paratohormona})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="344" y="290" width="138" height="20" uuid="832138ff-27c5-4a74-9e1e-afcccde9d073"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="363" y="290" width="138" height="20" isRemoveLineWhenBlank="true" uuid="832138ff-27c5-4a74-9e1e-afcccde9d073">
+					<printWhenExpression><![CDATA[!(new Boolean($F{paratohormona}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[12-72 pg/ml]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="62" y="320" width="130" height="20" uuid="a15ae9bc-9474-4235-a3dd-809b794435d0"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="320" width="130" height="20" isRemoveLineWhenBlank="true" uuid="a15ae9bc-9474-4235-a3dd-809b794435d0">
+					<printWhenExpression><![CDATA[!(new Boolean($F{peptido_c}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[PEPTIDO C:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="193" y="320" width="149" height="20" uuid="4fd3ed62-fd8d-4f0e-a547-654dbf3baea3"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{peptido_c}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="212" y="320" width="149" height="20" isRemoveLineWhenBlank="true" uuid="4fd3ed62-fd8d-4f0e-a547-654dbf3baea3"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{peptido_c}.equals("")) ?"":$F{peptido_c})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="344" y="320" width="138" height="20" uuid="7f676d21-f53c-4b9b-9da4-520770a5b72b"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="363" y="320" width="138" height="20" isRemoveLineWhenBlank="true" uuid="7f676d21-f53c-4b9b-9da4-520770a5b72b">
+					<printWhenExpression><![CDATA[!(new Boolean($F{peptido_c}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[1.1-4.4 ng/ml]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="342" y="200" width="138" height="80" uuid="08e4d5bf-bd49-4266-b057-e4726c582578"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="361" y="200" width="138" height="80" isRemoveLineWhenBlank="true" uuid="08e4d5bf-bd49-4266-b057-e4726c582578">
+					<printWhenExpression><![CDATA[!(new Boolean($F{lh}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[fase folicular: 2-12 mUI/ml
 fase ovulatoria: 14.0-95.6
@@ -478,21 +567,27 @@ niños: 0.2-1.4
 hombres: 1.7-8.6]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="61" y="350" width="130" height="20" uuid="fdfe4e30-a7bf-43d9-99bb-228b830af782"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="350" width="130" height="20" isRemoveLineWhenBlank="true" uuid="fdfe4e30-a7bf-43d9-99bb-228b830af782">
+					<printWhenExpression><![CDATA[!(new Boolean($F{progesterona}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[PROGESTERONA:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="192" y="350" width="149" height="20" uuid="3c4e6387-07c1-4140-9c2b-e2c27cc4388a"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{progesterona}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="350" width="149" height="20" isRemoveLineWhenBlank="true" uuid="3c4e6387-07c1-4140-9c2b-e2c27cc4388a"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{progesterona}.equals("")) ?"":$F{progesterona})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="342" y="350" width="138" height="110" uuid="d84b89b8-1972-4391-a8f2-4b43c2fe9e23"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="361" y="350" width="138" height="110" isRemoveLineWhenBlank="true" uuid="d84b89b8-1972-4391-a8f2-4b43c2fe9e23">
+					<printWhenExpression><![CDATA[!(new Boolean($F{progesterona}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[fase folicular: 0.2-1.5 ng/ml
 fase ovulatoria: 0.8-3.0
@@ -504,42 +599,54 @@ post menopausia: 0.1-0.8
 hombres: 0.2-1.4]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="61" y="470" width="130" height="20" uuid="caf359ac-04b0-4503-b30b-d00d1d123dd5"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="470" width="130" height="20" isRemoveLineWhenBlank="true" uuid="caf359ac-04b0-4503-b30b-d00d1d123dd5">
+					<printWhenExpression><![CDATA[!(new Boolean($F{prolactina}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[PROLACTINA:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="192" y="470" width="149" height="20" uuid="64ac0a79-37d7-4d6a-85a3-09ac1cf4c559"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{prolactina}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="470" width="149" height="20" isRemoveLineWhenBlank="true" uuid="64ac0a79-37d7-4d6a-85a3-09ac1cf4c559"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{prolactina}.equals("")) ?"":$F{prolactina})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="343" y="470" width="138" height="40" uuid="1fc92658-c79d-4529-91b7-0936127c7240"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="362" y="470" width="138" height="40" isRemoveLineWhenBlank="true" uuid="1fc92658-c79d-4529-91b7-0936127c7240">
+					<printWhenExpression><![CDATA[!(new Boolean($F{prolactina}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[niños: 3.9-25.4 ng/ml
 hombres: 4.1-18.4
 mujeres: 3.4-24.1]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="63" y="520" width="130" height="20" uuid="af24d409-bb7b-4fa5-b086-bbf426836061"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="82" y="520" width="130" height="20" isRemoveLineWhenBlank="true" uuid="af24d409-bb7b-4fa5-b086-bbf426836061">
+					<printWhenExpression><![CDATA[!(new Boolean($F{testosterona}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[TESTOSTERONA:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="194" y="520" width="149" height="20" uuid="1a949f14-d03b-4440-b378-8e1718f13aec"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{testosterona}]]></textFieldExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="213" y="520" width="149" height="20" isRemoveLineWhenBlank="true" uuid="1a949f14-d03b-4440-b378-8e1718f13aec"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{testosterona}.equals("")) ?"":$F{testosterona})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="342" y="520" width="138" height="40" uuid="f0b169d9-53fc-4f1b-9f5e-a4f9c08a09bd"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="361" y="520" width="138" height="40" isRemoveLineWhenBlank="true" uuid="f0b169d9-53fc-4f1b-9f5e-a4f9c08a09bd">
+					<printWhenExpression><![CDATA[!(new Boolean($F{testosterona}.equals("")))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[niños: 0.03-0.68  ng/ml
 hombres: 2.8-8.0
@@ -550,8 +657,11 @@ mujeres: 0.06-0.82]]></text>
 	<lastPageFooter>
 		<band height="36">
 			<textField pattern="MM/dd/yyyy">
-				<reportElement x="130" y="10" width="100" height="20" uuid="79008dc6-6bdb-4879-8d11-0d9625c6d2b3"/>
-				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+				<reportElement x="110" y="16" width="100" height="20" uuid="79008dc6-6bdb-4879-8d11-0d9625c6d2b3"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 		</band>
 	</lastPageFooter>
