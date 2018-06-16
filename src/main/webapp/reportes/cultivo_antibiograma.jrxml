@@ -59,8 +59,8 @@ order by id_cultivo_antibiograma desc limit 1]]>
 		<band height="100" splitType="Stretch">
 			<staticText>
 				<reportElement x="160" y="70" width="270" height="20" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
-				<textElement textAlignment="Center">
-					<font fontName="Arial" size="17" isBold="true"/>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="Arial" size="17" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[CULTIVO Y ANTIBIOGRAMA]]></text>
 			</staticText>
@@ -79,17 +79,17 @@ order by id_cultivo_antibiograma desc limit 1]]>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="50" width="111" height="20" isRemoveLineWhenBlank="true" uuid="4ff6da2a-47f9-40f0-964c-af6cd04d9d46">
 					<printWhenExpression><![CDATA[!(new Boolean($F{nombre_cultivo}.equals("")))]]></printWhenExpression>
 				</reportElement>
-				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+				<textElement markup="styled">
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Cultivo de:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="80" width="111" height="20" isRemoveLineWhenBlank="true" uuid="3043e070-2074-48f0-a726-e06177cdc520">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="80" width="141" height="20" isRemoveLineWhenBlank="true" uuid="3043e070-2074-48f0-a726-e06177cdc520">
 					<printWhenExpression><![CDATA[!(new Boolean($F{germen_identificado}.equals("")))]]></printWhenExpression>
 				</reportElement>
-				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+				<textElement markup="styled">
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Germen Identificado:]]></text>
 			</staticText>
@@ -97,8 +97,8 @@ order by id_cultivo_antibiograma desc limit 1]]>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="150" width="111" height="20" isRemoveLineWhenBlank="true" uuid="4f426558-7c7a-43f1-a8f3-70d81e03c5fa">
 					<printWhenExpression><![CDATA[!(new Boolean($F{muy_sensible}.equals("")))]]></printWhenExpression>
 				</reportElement>
-				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+				<textElement markup="styled">
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Muy sensible:]]></text>
 			</staticText>
@@ -106,8 +106,8 @@ order by id_cultivo_antibiograma desc limit 1]]>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="228" width="111" height="20" isRemoveLineWhenBlank="true" uuid="a23e6df5-07f7-40f9-a70d-b7d9a422b2fe">
 					<printWhenExpression><![CDATA[!(new Boolean($F{med_sensible}.equals("")))]]></printWhenExpression>
 				</reportElement>
-				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+				<textElement markup="styled">
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Med. Sensible:]]></text>
 			</staticText>
@@ -115,20 +115,20 @@ order by id_cultivo_antibiograma desc limit 1]]>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="298" width="111" height="20" isRemoveLineWhenBlank="true" uuid="a04ab28c-4c1d-493e-9846-4561b2301452">
 					<printWhenExpression><![CDATA[!(new Boolean($F{resistente}.equals("")))]]></printWhenExpression>
 				</reportElement>
-				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+				<textElement markup="styled">
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Resistente:]]></text>
 			</staticText>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="191" y="50" width="357" height="20" isRemoveLineWhenBlank="true" uuid="c9730029-46a1-424c-8aeb-94fc28fef4b4"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="228" y="50" width="318" height="20" isRemoveLineWhenBlank="true" uuid="c9730029-46a1-424c-8aeb-94fc28fef4b4"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{nombre_cultivo}.equals("")) ?"":$F{nombre_cultivo})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="192" y="80" width="357" height="20" isRemoveLineWhenBlank="true" uuid="c74c62b3-646d-4623-8932-3391c26ae9af"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="229" y="80" width="318" height="20" isRemoveLineWhenBlank="true" uuid="c74c62b3-646d-4623-8932-3391c26ae9af"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="12"/>
 				</textElement>
@@ -149,8 +149,8 @@ order by id_cultivo_antibiograma desc limit 1]]>
 				<textFieldExpression><![CDATA[( new Boolean($F{med_sensible}.equals("")) ?"":$F{med_sensible})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="192" y="298" width="357" height="62" isRemoveLineWhenBlank="true" uuid="117f5c76-824c-49dc-8320-d80abfc356ef"/>
-				<textElement textAlignment="Left">
+				<reportElement positionType="Float" stretchType="ElementGroupBottom" isPrintRepeatedValues="false" x="192" y="298" width="357" height="62" isRemoveLineWhenBlank="true" uuid="117f5c76-824c-49dc-8320-d80abfc356ef"/>
+				<textElement textAlignment="Left" markup="styled">
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{resistente}.equals("")) ?"":$F{resistente})]]></textFieldExpression>
@@ -159,8 +159,8 @@ order by id_cultivo_antibiograma desc limit 1]]>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="190" y="120" width="183" height="20" isRemoveLineWhenBlank="true" uuid="21acf058-84c7-45d2-bcc2-1e16572fe55d">
 					<printWhenExpression><![CDATA[!(new Boolean($F{muy_sensible}.equals("")))]]></printWhenExpression>
 				</reportElement>
-				<textElement textAlignment="Center">
-					<font fontName="Arial" size="12" isBold="true"/>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[ANTIBIOGRAMA]]></text>
 			</staticText>
@@ -168,8 +168,8 @@ order by id_cultivo_antibiograma desc limit 1]]>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="190" y="20" width="183" height="20" isRemoveLineWhenBlank="true" uuid="90b4f695-a66d-4ac2-b05d-99b616da7e05">
 					<printWhenExpression><![CDATA[!(new Boolean($F{nombre_cultivo}.equals("")))]]></printWhenExpression>
 				</reportElement>
-				<textElement textAlignment="Center">
-					<font fontName="Arial" size="12" isBold="true"/>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[CULTIVO]]></text>
 			</staticText>
