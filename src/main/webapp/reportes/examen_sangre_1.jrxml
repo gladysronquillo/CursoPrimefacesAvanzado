@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="397"/>
@@ -130,16 +130,16 @@ order by id_examen_sangre desc limit 1]]>
 	<pageHeader>
 		<band height="100" splitType="Stretch">
 			<staticText>
-				<reportElement x="140" y="80" width="217" height="20" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
+				<reportElement x="140" y="70" width="280" height="30" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
 				<textElement textAlignment="Center">
-					<font fontName="Arial" size="17" isBold="true"/>
+					<font fontName="Arial" size="20" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[EXAMEN DE SANGRE]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="110" y="40" width="357" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
+				<reportElement x="110" y="30" width="357" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="15"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{paciente}.toUpperCase()]]></textFieldExpression>
 			</textField>
@@ -152,7 +152,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{hematocrito}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Hematocrito:]]></text>
 			</staticText>
@@ -161,7 +161,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{hemoglobina}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Hemoglobina:]]></text>
 			</staticText>
@@ -170,7 +170,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{globulos_blancos}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Glóbulos Blancos:]]></text>
 			</staticText>
@@ -179,7 +179,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{globulos_rojos}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Glóbulos Rojos:]]></text>
 			</staticText>
@@ -188,7 +188,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{sedimentacion}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Sedimentación:]]></text>
 			</staticText>
@@ -197,7 +197,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{hematocrito}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[%]]></text>
 			</staticText>
@@ -206,7 +206,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{hemoglobina}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[gr%]]></text>
 			</staticText>
@@ -215,7 +215,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{globulos_blancos}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[/mm3]]></text>
 			</staticText>
@@ -224,7 +224,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{globulos_rojos}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[/mm3]]></text>
 			</staticText>
@@ -233,28 +233,28 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{sedimentacion}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[mm/h]]></text>
 			</staticText>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="212" y="50" width="159" height="20" isRemoveLineWhenBlank="true" uuid="92646db1-8869-4a75-bc16-860da2da33bc"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{hematocrito}.equals("")) ?"":$F{hematocrito})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="208" y="10" width="160" height="20" uuid="b0ea9e69-7a29-4f74-bdec-9cc26e603792"/>
 				<textElement textAlignment="Center">
-					<font fontName="Arial" size="12" isBold="true" isUnderline="true"/>
+					<font fontName="Arial" size="14" isBold="true" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[BIOMETRIA HEMÁTICA]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="152" y="180" width="250" height="20" uuid="fa1699d1-599b-4895-ac07-37b919429206"/>
 				<textElement textAlignment="Center">
-					<font fontName="Arial" size="12" isBold="true" isUnderline="true"/>
+					<font fontName="Arial" size="14" isBold="true" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[FÓRMULA LEUCOCITARIA]]></text>
 			</staticText>
@@ -263,7 +263,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{segmentados}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Segmentados:]]></text>
 			</staticText>
@@ -272,7 +272,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{linfocitos}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Linfocitos:]]></text>
 			</staticText>
@@ -281,7 +281,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{monocitos}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Monocitos:]]></text>
 			</staticText>
@@ -290,7 +290,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{eosinofilos}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Eosinofilos:]]></text>
 			</staticText>
@@ -299,7 +299,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!($F{hipocromia}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Hipocromia:]]></text>
 			</staticText>
@@ -308,7 +308,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{segmentados}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[%]]></text>
 			</staticText>
@@ -317,7 +317,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{linfocitos}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[%]]></text>
 			</staticText>
@@ -326,7 +326,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{monocitos}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[%]]></text>
 			</staticText>
@@ -335,7 +335,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{eosinofilos}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[%]]></text>
 			</staticText>
@@ -344,7 +344,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{anisocitosis}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Anisocitosis:]]></text>
 			</staticText>
@@ -353,7 +353,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{poiquilocitosis}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Poiquilocitosis:]]></text>
 			</staticText>
@@ -362,7 +362,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{vcm}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[VCM:]]></text>
 			</staticText>
@@ -371,7 +371,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{vcm}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[V.N.: 80 - 95u3]]></text>
 			</staticText>
@@ -380,7 +380,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{hcm}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[HCM:]]></text>
 			</staticText>
@@ -389,7 +389,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{hcm}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[25 - 31 pg]]></text>
 			</staticText>
@@ -398,7 +398,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{chcm}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[CHCM:]]></text>
 			</staticText>
@@ -407,7 +407,7 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{chcm}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[30 - 35 %]]></text>
 			</staticText>
@@ -416,112 +416,112 @@ order by id_examen_sangre desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{grupo_sanguineo}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[GRUPO SANGUÍNEO:]]></text>
 			</staticText>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="212" y="70" width="159" height="20" isRemoveLineWhenBlank="true" uuid="e6e6c068-fec2-4499-9413-f0e8883488ef"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{hemoglobina}.equals("")) ?"":$F{hemoglobina})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="212" y="90" width="159" height="20" isRemoveLineWhenBlank="true" uuid="d801de81-74ee-4449-b1ca-a8aeb138cc53"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{globulos_blancos}.equals("")) ?"":$F{globulos_blancos})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="212" y="110" width="159" height="20" isRemoveLineWhenBlank="true" uuid="9d04a0f8-5496-4a23-9a69-1d2437a2f24c"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{globulos_rojos}.equals("")) ?"":$F{globulos_rojos})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="130" width="159" height="20" isRemoveLineWhenBlank="true" uuid="a977f27d-f343-44c8-95d4-1f0a470055a4"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{sedimentacion}.equals("")) ?"":$F{sedimentacion})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="220" width="159" height="20" isRemoveLineWhenBlank="true" uuid="a0868cca-55b6-421f-9638-dbdf6667b285"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{segmentados}.equals("")) ?"":$F{segmentados})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="240" width="159" height="20" isRemoveLineWhenBlank="true" uuid="30277684-a54b-4f83-b213-4483c9a6ae3c"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{linfocitos}.equals("")) ?"":$F{linfocitos})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="260" width="159" height="20" isRemoveLineWhenBlank="true" uuid="df8a8d28-abf4-469a-9c24-5a97d8e34264"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{monocitos}.equals("")) ?"":$F{monocitos})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="280" width="159" height="20" isRemoveLineWhenBlank="true" uuid="2ca9187d-d4c1-4ac0-90ce-f50f77e0e234"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{eosinofilos}.equals("")) ?"":$F{eosinofilos})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="300" width="159" height="20" isRemoveLineWhenBlank="true" uuid="b94f88ff-2e10-4e4c-bd61-3b88d55e1f9a"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{hipocromia}==null?"":$F{hipocromia})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="320" width="159" height="20" isRemoveLineWhenBlank="true" uuid="5c92a21f-df87-4c9a-9c2b-a3868a92dc56"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{anisocitosis}.equals("")) ?"":$F{anisocitosis})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="212" y="340" width="159" height="20" isRemoveLineWhenBlank="true" uuid="65cc83c6-5ad9-4484-8413-453acc034bf5"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{poiquilocitosis}.equals("")) ?"":$F{poiquilocitosis})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="209" y="360" width="159" height="20" isRemoveLineWhenBlank="true" uuid="097fb608-9b57-42e6-a309-3770528d10b6"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{vcm}.equals("")) ?"":$F{vcm})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="380" width="159" height="20" isRemoveLineWhenBlank="true" uuid="997bba2f-f95b-4967-9cf3-c120e998216c"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{hcm}.equals("")) ?"":$F{hcm})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="400" width="159" height="20" isRemoveLineWhenBlank="true" uuid="ca21b6eb-ae65-42f4-8d21-056e92ce3131"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{chcm}.equals("")) ?"":$F{chcm})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="212" y="420" width="159" height="20" isRemoveLineWhenBlank="true" uuid="c0f0d14f-ce70-4937-a1bc-1cb9f06c8452"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{grupo_sanguineo}==null ?"":$F{grupo_sanguineo})]]></textFieldExpression>
 			</textField>
@@ -531,132 +531,132 @@ order by id_examen_sangre desc limit 1]]>
 		</band>
 		<band height="220">
 			<staticText>
-				<reportElement positionType="Float" x="80" y="30" width="130" height="20" isRemoveLineWhenBlank="true" uuid="c8ffd3af-a44b-4ce6-afa0-b882d036087b">
+				<reportElement positionType="Float" x="80" y="30" width="140" height="20" isRemoveLineWhenBlank="true" uuid="c8ffd3af-a44b-4ce6-afa0-b882d036087b">
 					<printWhenExpression><![CDATA[!(new Boolean($F{factor_rh}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[FACTOR Rh:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" x="79" y="50" width="130" height="20" isRemoveLineWhenBlank="true" uuid="b28bedc1-6d08-4168-a13b-bac804e2129f">
+				<reportElement positionType="Float" x="79" y="50" width="140" height="20" isRemoveLineWhenBlank="true" uuid="b28bedc1-6d08-4168-a13b-bac804e2129f">
 					<printWhenExpression><![CDATA[!(new Boolean($F{hematozoario}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[HEMATOZOARIO:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" x="79" y="70" width="130" height="20" isRemoveLineWhenBlank="true" uuid="d150deee-a176-4bcd-8796-cfb47b839a88">
+				<reportElement positionType="Float" x="79" y="70" width="140" height="20" isRemoveLineWhenBlank="true" uuid="d150deee-a176-4bcd-8796-cfb47b839a88">
 					<printWhenExpression><![CDATA[!(new Boolean($F{cooms_directo}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[COOMS DIRECTO:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" x="80" y="90" width="130" height="20" isRemoveLineWhenBlank="true" uuid="550af13a-ee32-4c90-97b4-7d56b9d721af">
+				<reportElement positionType="Float" x="80" y="90" width="140" height="20" isRemoveLineWhenBlank="true" uuid="550af13a-ee32-4c90-97b4-7d56b9d721af">
 					<printWhenExpression><![CDATA[!(new Boolean($F{cooms_indirecto}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[COOMBS INDIRECTO:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" x="79" y="110" width="130" height="20" isRemoveLineWhenBlank="true" uuid="4fc498c2-f6c9-4089-8631-d968f3957aff">
+				<reportElement positionType="Float" x="79" y="110" width="140" height="20" isRemoveLineWhenBlank="true" uuid="4fc498c2-f6c9-4089-8631-d968f3957aff">
 					<printWhenExpression><![CDATA[!(new Boolean($F{celulas_le}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[CÉLULAS L.E.:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" x="79" y="130" width="130" height="20" isRemoveLineWhenBlank="true" uuid="b2743530-18ab-4da8-955d-b676014eeb3f">
+				<reportElement positionType="Float" x="79" y="130" width="140" height="20" isRemoveLineWhenBlank="true" uuid="b2743530-18ab-4da8-955d-b676014eeb3f">
 					<printWhenExpression><![CDATA[!(new Boolean($F{reticulocitos}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[RETICULOCITOS:]]></text>
 			</staticText>
 			<textField>
-				<reportElement positionType="Float" x="210" y="30" width="159" height="20" isRemoveLineWhenBlank="true" uuid="42feb040-0da2-4e07-855b-56425a207548"/>
+				<reportElement positionType="Float" x="219" y="30" width="159" height="20" isRemoveLineWhenBlank="true" uuid="42feb040-0da2-4e07-855b-56425a207548"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{factor_rh}==null?"":$F{factor_rh})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" x="211" y="50" width="159" height="20" isRemoveLineWhenBlank="true" uuid="47e51a87-ef61-442f-baf6-7ff7ce1c01bb"/>
+				<reportElement positionType="Float" x="220" y="50" width="159" height="20" isRemoveLineWhenBlank="true" uuid="47e51a87-ef61-442f-baf6-7ff7ce1c01bb"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{hematozoario}==null?"":$F{hematozoario})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" x="210" y="70" width="159" height="20" isRemoveLineWhenBlank="true" uuid="5c378880-58f2-4943-922e-04e5a5c6856a"/>
+				<reportElement positionType="Float" x="219" y="70" width="159" height="20" isRemoveLineWhenBlank="true" uuid="5c378880-58f2-4943-922e-04e5a5c6856a"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{cooms_directo}==null?"":$F{cooms_directo})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" x="211" y="90" width="159" height="20" isRemoveLineWhenBlank="true" uuid="40a334c3-d0f9-4c82-8ed6-765d4a63168c"/>
+				<reportElement positionType="Float" x="220" y="90" width="159" height="20" isRemoveLineWhenBlank="true" uuid="40a334c3-d0f9-4c82-8ed6-765d4a63168c"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{cooms_indirecto}==null?"":$F{cooms_indirecto})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" x="210" y="110" width="159" height="20" isRemoveLineWhenBlank="true" uuid="aca36536-d0e1-487e-a94e-663125694e91"/>
+				<reportElement positionType="Float" x="219" y="110" width="159" height="20" isRemoveLineWhenBlank="true" uuid="aca36536-d0e1-487e-a94e-663125694e91"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{celulas_le}==null?"":$F{celulas_le})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" x="211" y="130" width="159" height="20" isRemoveLineWhenBlank="true" uuid="3a7d7b37-b3c2-4bb9-8858-dbcf1d9e69df"/>
+				<reportElement positionType="Float" x="220" y="130" width="159" height="20" isRemoveLineWhenBlank="true" uuid="3a7d7b37-b3c2-4bb9-8858-dbcf1d9e69df"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{reticulocitos}.equals("")) ?"":$F{reticulocitos})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement positionType="Float" x="370" y="130" width="130" height="20" isRemoveLineWhenBlank="true" uuid="34384d91-c905-428d-93d9-14f016e7cf04">
+				<reportElement positionType="Float" x="379" y="130" width="130" height="20" isRemoveLineWhenBlank="true" uuid="34384d91-c905-428d-93d9-14f016e7cf04">
 					<printWhenExpression><![CDATA[!(new Boolean($F{reticulocitos}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[V.N.: hasta 2%]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" x="80" y="150" width="130" height="20" isRemoveLineWhenBlank="true" uuid="477ee609-4eda-49da-956a-d49d2fa0b155">
+				<reportElement positionType="Float" x="80" y="150" width="140" height="20" isRemoveLineWhenBlank="true" uuid="477ee609-4eda-49da-956a-d49d2fa0b155">
 					<printWhenExpression><![CDATA[!(new Boolean($F{plaquetas}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[PLAQUETAS:]]></text>
 			</staticText>
 			<textField>
-				<reportElement positionType="Float" x="212" y="150" width="159" height="20" isRemoveLineWhenBlank="true" uuid="62e297b8-d882-4de7-b767-b57b893af1f0"/>
+				<reportElement positionType="Float" x="221" y="150" width="159" height="20" isRemoveLineWhenBlank="true" uuid="62e297b8-d882-4de7-b767-b57b893af1f0"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( new Boolean($F{plaquetas}.equals("")) ?"":$F{plaquetas})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement positionType="Float" x="371" y="150" width="130" height="20" isRemoveLineWhenBlank="true" uuid="c8c31310-7718-4511-8716-57a5bda2e96c">
+				<reportElement positionType="Float" x="380" y="150" width="130" height="20" isRemoveLineWhenBlank="true" uuid="c8c31310-7718-4511-8716-57a5bda2e96c">
 					<printWhenExpression><![CDATA[!(new Boolean($F{plaquetas}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[150000-300000/mm3]]></text>
 			</staticText>
@@ -667,7 +667,7 @@ order by id_examen_sangre desc limit 1]]>
 			<textField pattern="dd/MM/yyyy">
 				<reportElement x="110" y="30" width="100" height="20" uuid="79008dc6-6bdb-4879-8d11-0d9625c6d2b3"/>
 				<textElement>
-					<font fontName="Arial" size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
