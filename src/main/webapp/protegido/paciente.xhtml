@@ -38,13 +38,16 @@
 					<p:column headerText="Nombres">
 						<p:outputLabel value="#{paciente.nombres}"></p:outputLabel>
 					</p:column>
-					<p:column headerText="Fecha Nacimiento">
-						<p:outputLabel value="#{paciente.fechaNacimiento}"></p:outputLabel>
+					<p:column headerText="Edad">
+						<p:outputLabel value="#{paciente.edad}"></p:outputLabel>
 					</p:column>
 					<p:column headerText="Sexo">
 						<p:outputLabel value="#{paciente.sexo}">
 							<f:converter converterId="sexoConverter"></f:converter>
 						</p:outputLabel>
+					</p:column>
+					<p:column headerText="Teléfono">
+						<p:outputLabel value="#{paciente.telefono}"></p:outputLabel>
 					</p:column>
 				</p:dataTable>
 			</h:form>
@@ -77,11 +80,15 @@
 					</p:selectOneRadio>
 					<p:message for="rdbSexo" />
 
-					<p:outputLabel for="txtFechaNacimiento" value="Fec. Nacimiento" />
-					<p:calendar id="txtFechaNacimiento"
-						value="#{pacienteController.paciente.fechaNacimiento}" locale="es"
-						required="true" />
-					<p:message for="txtFechaNacimiento" />
+					<p:outputLabel for="txtEdad" value="Edad" />
+					<p:inputText id="txtEdad"
+						value="#{pacienteController.paciente.edad}" required="true" />
+					<p:message for="txtEdad" />
+					
+					<p:outputLabel for="txtTelefono" value="Teléfono" />
+					<p:inputText id="txtTelefono"
+						value="#{pacienteController.paciente.telefono}" required="true" />
+					<p:message for="txtTelefono" />
 
 					<p:commandButton value="#{pacienteController.accion}"
 						actionListener="#{pacienteController.operar()}"
