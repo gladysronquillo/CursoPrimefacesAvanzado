@@ -247,14 +247,16 @@ order by id_examen_sangre desc limit 1]]>
 			<staticText>
 				<reportElement x="208" y="10" width="160" height="20" uuid="b0ea9e69-7a29-4f74-bdec-9cc26e603792"/>
 				<textElement textAlignment="Center">
-					<font fontName="Arial" size="14" isBold="true" isUnderline="true"/>
+					<font fontName="Arial" size="14" isBold="true" isUnderline="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[BIOMETRIA HEMÁTICA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="152" y="180" width="250" height="20" uuid="fa1699d1-599b-4895-ac07-37b919429206"/>
+				<reportElement x="175" y="180" width="250" height="20" uuid="fa1699d1-599b-4895-ac07-37b919429206">
+					<printWhenExpression><![CDATA[(!(new Boolean($F{segmentados}.equals(""))) || !(new Boolean($F{linfocitos}.equals("")))	|| !(new Boolean($F{monocitos}.equals("")))	|| !(new Boolean($F{eosinofilos}.equals(""))) || !($F{hipocromia}==null) || !(new Boolean($F{anisocitosis}.equals(""))) || !(new Boolean($F{poiquilocitosis}.equals(""))) || !(new Boolean($F{vcm}.equals(""))) || !(new Boolean($F{hcm}.equals("")))	|| !(new Boolean($F{chcm}.equals("")))	|| !(new Boolean($F{grupo_sanguineo}.equals(""))))]]></printWhenExpression>
+				</reportElement>
 				<textElement textAlignment="Center">
-					<font fontName="Arial" size="14" isBold="true" isUnderline="true"/>
+					<font fontName="Arial" size="14" isBold="true" isUnderline="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[FÓRMULA LEUCOCITARIA]]></text>
 			</staticText>
