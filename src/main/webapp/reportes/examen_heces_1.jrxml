@@ -7,6 +7,7 @@
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="397"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="589"/>
+	<property name="net.sf.jasperreports.print.create.bookmarks" value="true"/>
 	<parameter name="id_paciente" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT ehe.*, CONCAT(apellidos, " ", nombres) paciente from examen_heces ehe 
@@ -538,7 +539,7 @@ order by id_examen_heces desc limit 1]]>
 					<printWhenExpression><![CDATA[!($F{uno_levaduras}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="14" isBold="true" isUnderline="true"/>
+					<font fontName="Arial" size="14" isBold="true" isUnderline="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[COPROLÓGICO]]></text>
 			</staticText>
@@ -646,7 +647,7 @@ order by id_examen_heces desc limit 1]]>
 					<printWhenExpression><![CDATA[!($F{uno_flora_bacteriana}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="13" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[FLORA BACTERIANA:]]></text>
 			</staticText>
@@ -664,7 +665,7 @@ order by id_examen_heces desc limit 1]]>
 					<printWhenExpression><![CDATA[!($F{uno_parasitario}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="14" isBold="true" isUnderline="true"/>
+					<font fontName="Arial" size="14" isBold="true" isUnderline="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[PARASITARIO]]></text>
 			</staticText>
@@ -1226,12 +1227,9 @@ order by id_examen_heces desc limit 1]]>
 				<textFieldExpression><![CDATA[($F{tres_chilomastix_mesnili}==null  ?"":$F{tres_chilomastix_mesnili})]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="356">
-			<break>
-				<reportElement x="0" y="0" width="560" height="1" uuid="e93cbdf8-7c2b-4d59-a1cb-e74f9284ecac"/>
-			</break>
+		<band height="540" splitType="Stretch">
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="20" width="130" height="20" isRemoveLineWhenBlank="true" uuid="1402422c-d1f0-4269-81ac-35c02cdbe044">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="20" width="130" height="40" isRemoveLineWhenBlank="true" uuid="1402422c-d1f0-4269-81ac-35c02cdbe044">
 					<printWhenExpression><![CDATA[!($F{uno_embadomonas_hominis}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -1240,7 +1238,7 @@ order by id_examen_heces desc limit 1]]>
 				<text><![CDATA[Embadomonas hominis:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="40" width="130" height="20" isRemoveLineWhenBlank="true" uuid="324de79d-a35c-404e-927d-c31aaae044c2">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="60" width="130" height="40" isRemoveLineWhenBlank="true" uuid="324de79d-a35c-404e-927d-c31aaae044c2">
 					<printWhenExpression><![CDATA[!($F{uno_ascaris_lumbricoides}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -1256,7 +1254,7 @@ order by id_examen_heces desc limit 1]]>
 				<textFieldExpression><![CDATA[($F{uno_embadomonas_hominis}==null  ?"":$F{uno_embadomonas_hominis})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="60" width="130" height="20" isRemoveLineWhenBlank="true" uuid="00c3d63a-ef51-4177-8052-a9b6c01a1984">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="100" width="130" height="20" isRemoveLineWhenBlank="true" uuid="00c3d63a-ef51-4177-8052-a9b6c01a1984">
 					<printWhenExpression><![CDATA[!($F{uno_tricocefalos}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -1265,7 +1263,7 @@ order by id_examen_heces desc limit 1]]>
 				<text><![CDATA[Tricocefalos:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="80" width="130" height="20" isRemoveLineWhenBlank="true" uuid="5164855b-f5ad-4f10-8c9d-c425287b5ebc">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="120" width="130" height="20" isRemoveLineWhenBlank="true" uuid="5164855b-f5ad-4f10-8c9d-c425287b5ebc">
 					<printWhenExpression><![CDATA[!($F{uno_oxiuros}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -1274,7 +1272,7 @@ order by id_examen_heces desc limit 1]]>
 				<text><![CDATA[Oxiuros:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="100" width="130" height="20" isRemoveLineWhenBlank="true" uuid="05ef62b6-7a55-4e92-959f-1d1d05770ba0">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="140" width="130" height="20" isRemoveLineWhenBlank="true" uuid="05ef62b6-7a55-4e92-959f-1d1d05770ba0">
 					<printWhenExpression><![CDATA[!($F{uno_uncinairas}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -1283,7 +1281,7 @@ order by id_examen_heces desc limit 1]]>
 				<text><![CDATA[Uncinairas:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="120" width="130" height="20" isRemoveLineWhenBlank="true" uuid="31354779-cbdc-492e-afe5-757e029388d5">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="160" width="130" height="20" isRemoveLineWhenBlank="true" uuid="31354779-cbdc-492e-afe5-757e029388d5">
 					<printWhenExpression><![CDATA[!($F{uno_strongiloides_stercoralis}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -1292,7 +1290,7 @@ order by id_examen_heces desc limit 1]]>
 				<text><![CDATA[Strongiloides stercoralis:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="140" width="130" height="20" isRemoveLineWhenBlank="true" uuid="fd649852-aa44-42c7-a73f-b40d83f7adc6">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="180" width="130" height="20" isRemoveLineWhenBlank="true" uuid="fd649852-aa44-42c7-a73f-b40d83f7adc6">
 					<printWhenExpression><![CDATA[!($F{uno_tenias_solium}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -1301,7 +1299,7 @@ order by id_examen_heces desc limit 1]]>
 				<text><![CDATA[Tenias: Solium]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="160" width="130" height="20" isRemoveLineWhenBlank="true" uuid="685a3ef9-0176-4f2e-9371-ba1a41fcc028">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="200" width="130" height="20" isRemoveLineWhenBlank="true" uuid="685a3ef9-0176-4f2e-9371-ba1a41fcc028">
 					<printWhenExpression><![CDATA[!($F{uno_saginata}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -1310,7 +1308,7 @@ order by id_examen_heces desc limit 1]]>
 				<text><![CDATA[Saginata:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="180" width="130" height="20" isRemoveLineWhenBlank="true" uuid="e6e1cab4-38a2-4eff-8f14-cdcd0cd53a3f">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="220" width="130" height="20" isRemoveLineWhenBlank="true" uuid="e6e1cab4-38a2-4eff-8f14-cdcd0cd53a3f">
 					<printWhenExpression><![CDATA[!($F{uno_himenolepis_nana}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -1319,7 +1317,7 @@ order by id_examen_heces desc limit 1]]>
 				<text><![CDATA[Himenolepis Nana:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="200" width="130" height="20" isRemoveLineWhenBlank="true" uuid="07cd923d-46a2-4d4f-8ebb-51ba811941db">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="240" width="130" height="20" isRemoveLineWhenBlank="true" uuid="07cd923d-46a2-4d4f-8ebb-51ba811941db">
 					<printWhenExpression><![CDATA[!($F{uno_himenolepis_diminuta}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -1328,7 +1326,7 @@ order by id_examen_heces desc limit 1]]>
 				<text><![CDATA[Himenolepis Diminuta:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="220" width="130" height="20" isRemoveLineWhenBlank="true" uuid="3dd8164c-bab2-44d3-ae4d-2fe32bf153b3">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="260" width="130" height="20" isRemoveLineWhenBlank="true" uuid="3dd8164c-bab2-44d3-ae4d-2fe32bf153b3">
 					<printWhenExpression><![CDATA[!($F{uno_clinitest}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -1337,7 +1335,7 @@ order by id_examen_heces desc limit 1]]>
 				<text><![CDATA[CLINITEST:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="240" width="130" height="20" isRemoveLineWhenBlank="true" uuid="62560a0c-0856-4e32-b678-3b32a38dea1f">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="280" width="130" height="20" isRemoveLineWhenBlank="true" uuid="62560a0c-0856-4e32-b678-3b32a38dea1f">
 					<printWhenExpression><![CDATA[!($F{uno_sudan_iii}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -1346,7 +1344,7 @@ order by id_examen_heces desc limit 1]]>
 				<text><![CDATA[SUDAN III:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="82" y="260" width="130" height="20" isRemoveLineWhenBlank="true" uuid="e1214153-e28a-4305-b450-d6f0dabeff7f">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="82" y="300" width="130" height="20" isRemoveLineWhenBlank="true" uuid="e1214153-e28a-4305-b450-d6f0dabeff7f">
 					<printWhenExpression><![CDATA[!(new Boolean($F{uno_ph}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -1355,7 +1353,7 @@ order by id_examen_heces desc limit 1]]>
 				<text><![CDATA[pH:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="280" width="130" height="20" isRemoveLineWhenBlank="true" uuid="f735e280-6e68-4ab8-a1a0-e41b29b914e4">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="320" width="130" height="20" isRemoveLineWhenBlank="true" uuid="f735e280-6e68-4ab8-a1a0-e41b29b914e4">
 					<printWhenExpression><![CDATA[!($F{uno_helicobacter_pylori}==null)]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -1364,91 +1362,91 @@ order by id_examen_heces desc limit 1]]>
 				<text><![CDATA[Helicobacter pylori:]]></text>
 			</staticText>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="209" y="40" width="108" height="20" isRemoveLineWhenBlank="true" uuid="c6a9f617-2faf-436c-a46c-a558b366b4ed"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="60" width="108" height="20" isRemoveLineWhenBlank="true" uuid="c6a9f617-2faf-436c-a46c-a558b366b4ed"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{uno_ascaris_lumbricoides}==null  ?"":$F{uno_ascaris_lumbricoides})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="80" width="108" height="20" isRemoveLineWhenBlank="true" uuid="57fa3697-5879-42b0-85dc-143522f0f90a"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="120" width="108" height="20" isRemoveLineWhenBlank="true" uuid="57fa3697-5879-42b0-85dc-143522f0f90a"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{uno_oxiuros}==null  ?"":$F{uno_oxiuros})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="100" width="108" height="20" isRemoveLineWhenBlank="true" uuid="3587034d-e3d2-4c4c-9cf3-21f7d24e38b0"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="140" width="108" height="20" isRemoveLineWhenBlank="true" uuid="3587034d-e3d2-4c4c-9cf3-21f7d24e38b0"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{uno_uncinairas}==null  ?"":$F{uno_uncinairas})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="120" width="108" height="20" isRemoveLineWhenBlank="true" uuid="0ad2b8a0-e1f8-4e7b-8684-4db3daad3083"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="160" width="108" height="20" isRemoveLineWhenBlank="true" uuid="0ad2b8a0-e1f8-4e7b-8684-4db3daad3083"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{uno_strongiloides_stercoralis}==null  ?"":$F{uno_strongiloides_stercoralis})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="140" width="108" height="20" isRemoveLineWhenBlank="true" uuid="73017150-20b9-4671-91dd-477219c81a5c"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="180" width="108" height="20" isRemoveLineWhenBlank="true" uuid="73017150-20b9-4671-91dd-477219c81a5c"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{uno_tenias_solium}==null  ?"":$F{uno_tenias_solium})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="160" width="108" height="20" isRemoveLineWhenBlank="true" uuid="ac00ea84-3b8b-4137-801b-2c39023cc5b0"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="200" width="108" height="20" isRemoveLineWhenBlank="true" uuid="ac00ea84-3b8b-4137-801b-2c39023cc5b0"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{uno_saginata}==null  ?"":$F{uno_saginata})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="180" width="108" height="20" isRemoveLineWhenBlank="true" uuid="8cab89a9-a1cb-430f-a07d-cc7b4cd243d3"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="220" width="108" height="20" isRemoveLineWhenBlank="true" uuid="8cab89a9-a1cb-430f-a07d-cc7b4cd243d3"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{uno_himenolepis_nana}==null  ?"":$F{uno_himenolepis_nana})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="200" width="108" height="20" isRemoveLineWhenBlank="true" uuid="d4314c95-b3a8-44bf-91c6-defcd8aaee8f"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="240" width="108" height="20" isRemoveLineWhenBlank="true" uuid="d4314c95-b3a8-44bf-91c6-defcd8aaee8f"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{uno_himenolepis_diminuta}==null  ?"":$F{uno_himenolepis_diminuta})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="220" width="108" height="20" isRemoveLineWhenBlank="true" uuid="09e2c9a4-4464-49a6-8d2d-b14ad5a5277c"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="260" width="108" height="20" isRemoveLineWhenBlank="true" uuid="09e2c9a4-4464-49a6-8d2d-b14ad5a5277c"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{uno_clinitest}==null  ?"":$F{uno_clinitest})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="240" width="108" height="20" isRemoveLineWhenBlank="true" uuid="7d844ef7-9c12-4a01-9bed-a3f8fd58422e"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="280" width="108" height="20" isRemoveLineWhenBlank="true" uuid="7d844ef7-9c12-4a01-9bed-a3f8fd58422e"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{uno_sudan_iii}==null  ?"":$F{uno_sudan_iii})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="260" width="108" height="20" isRemoveLineWhenBlank="true" uuid="7fdcec3c-09cb-471c-9dd3-10731d62db2e"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="300" width="108" height="20" isRemoveLineWhenBlank="true" uuid="7fdcec3c-09cb-471c-9dd3-10731d62db2e"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(new Boolean($F{uno_ph}.equals("")) ?"":$F{uno_ph})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="280" width="108" height="20" isRemoveLineWhenBlank="true" uuid="b6eca255-34f9-4ebd-b817-ff0685b86bee"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="320" width="108" height="20" isRemoveLineWhenBlank="true" uuid="b6eca255-34f9-4ebd-b817-ff0685b86bee"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{uno_helicobacter_pylori}==null  ?"":$F{uno_helicobacter_pylori})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="60" width="108" height="20" isRemoveLineWhenBlank="true" uuid="c496203a-cb04-4fd3-8efc-d0fb178df69e"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="210" y="100" width="108" height="20" isRemoveLineWhenBlank="true" uuid="c496203a-cb04-4fd3-8efc-d0fb178df69e"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
@@ -1462,91 +1460,91 @@ order by id_examen_heces desc limit 1]]>
 				<textFieldExpression><![CDATA[($F{dos_embadomonas_hominis}==null  ?"":$F{dos_embadomonas_hominis})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="320" y="40" width="108" height="20" isRemoveLineWhenBlank="true" uuid="19e475f6-4e17-4c92-ad2f-33bcc247c740"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="60" width="108" height="20" isRemoveLineWhenBlank="true" uuid="19e475f6-4e17-4c92-ad2f-33bcc247c740"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{dos_ascaris_lumbricoides}==null  ?"":$F{dos_ascaris_lumbricoides})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="80" width="108" height="20" isRemoveLineWhenBlank="true" uuid="9c930323-d00a-44e0-b6dc-ecc9ad56cc50"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="120" width="108" height="20" isRemoveLineWhenBlank="true" uuid="9c930323-d00a-44e0-b6dc-ecc9ad56cc50"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{dos_oxiuros}==null  ?"":$F{dos_oxiuros})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="100" width="108" height="20" isRemoveLineWhenBlank="true" uuid="28d19d4c-53d2-4c49-8c76-5600120922a8"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="140" width="108" height="20" isRemoveLineWhenBlank="true" uuid="28d19d4c-53d2-4c49-8c76-5600120922a8"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{dos_uncinairas}==null  ?"":$F{dos_uncinairas})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="120" width="108" height="20" isRemoveLineWhenBlank="true" uuid="353b718a-c0db-415d-aae6-6861064b08fc"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="160" width="108" height="20" isRemoveLineWhenBlank="true" uuid="353b718a-c0db-415d-aae6-6861064b08fc"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{dos_strongiloides_stercoralis}==null  ?"":$F{dos_strongiloides_stercoralis})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="322" y="140" width="108" height="20" isRemoveLineWhenBlank="true" uuid="213de2c5-451a-4f1e-a665-3408f24ac849"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="322" y="180" width="108" height="20" isRemoveLineWhenBlank="true" uuid="213de2c5-451a-4f1e-a665-3408f24ac849"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{dos_tenias_solium}==null  ?"":$F{dos_tenias_solium})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="322" y="160" width="108" height="20" isRemoveLineWhenBlank="true" uuid="0d0275c4-a53a-4a88-b1f5-809de4040746"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="322" y="200" width="108" height="20" isRemoveLineWhenBlank="true" uuid="0d0275c4-a53a-4a88-b1f5-809de4040746"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{dos_saginata}==null  ?"":$F{dos_saginata})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="180" width="108" height="20" isRemoveLineWhenBlank="true" uuid="eab5dbca-8dc1-4052-9cf1-75da9e173a3e"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="220" width="108" height="20" isRemoveLineWhenBlank="true" uuid="eab5dbca-8dc1-4052-9cf1-75da9e173a3e"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{dos_himenolepis_nana}==null  ?"":$F{dos_himenolepis_nana})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="200" width="108" height="20" isRemoveLineWhenBlank="true" uuid="4feb5461-6236-4f88-b7e7-c98f7279695a"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="240" width="108" height="20" isRemoveLineWhenBlank="true" uuid="4feb5461-6236-4f88-b7e7-c98f7279695a"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{dos_himenolepis_diminuta}==null  ?"":$F{dos_himenolepis_diminuta})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="322" y="220" width="108" height="20" isRemoveLineWhenBlank="true" uuid="8aa325b1-d380-4c25-b850-9f7748a69d76"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="322" y="260" width="108" height="20" isRemoveLineWhenBlank="true" uuid="8aa325b1-d380-4c25-b850-9f7748a69d76"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{dos_clinitest}==null  ?"":$F{dos_clinitest})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="322" y="240" width="108" height="20" isRemoveLineWhenBlank="true" uuid="33d08c93-181a-4853-a3f0-cb64cf17d11b"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="322" y="280" width="108" height="20" isRemoveLineWhenBlank="true" uuid="33d08c93-181a-4853-a3f0-cb64cf17d11b"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{dos_sudan_iii}==null  ?"":$F{dos_sudan_iii})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="260" width="108" height="20" isRemoveLineWhenBlank="true" uuid="3bcc54cf-e166-45af-ab6a-c720231989cc"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="300" width="108" height="20" isRemoveLineWhenBlank="true" uuid="3bcc54cf-e166-45af-ab6a-c720231989cc"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{dos_ph}==null?"":$F{dos_ph})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="280" width="108" height="20" isRemoveLineWhenBlank="true" uuid="ed952f18-e941-444d-9a9e-0ae3f3a442f6"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="320" width="108" height="20" isRemoveLineWhenBlank="true" uuid="ed952f18-e941-444d-9a9e-0ae3f3a442f6"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{dos_helicobacter_pylori}==null  ?"":$F{dos_helicobacter_pylori})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="60" width="108" height="20" isRemoveLineWhenBlank="true" uuid="b9a85400-d851-4998-8c33-c5624e7e8309"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="321" y="100" width="108" height="20" isRemoveLineWhenBlank="true" uuid="b9a85400-d851-4998-8c33-c5624e7e8309"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
@@ -1560,91 +1558,91 @@ order by id_examen_heces desc limit 1]]>
 				<textFieldExpression><![CDATA[($F{tres_embadomonas_hominis}==null  ?"":$F{tres_embadomonas_hominis})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="433" y="40" width="108" height="20" isRemoveLineWhenBlank="true" uuid="cbbfa51f-f03b-4629-90cb-3e8182020bb1"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="60" width="108" height="20" isRemoveLineWhenBlank="true" uuid="cbbfa51f-f03b-4629-90cb-3e8182020bb1"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{tres_ascaris_lumbricoides}==null  ?"":$F{tres_ascaris_lumbricoides})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="80" width="108" height="20" isRemoveLineWhenBlank="true" uuid="a41f7bae-8fcc-431c-8ad1-c1b279e6391d"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="120" width="108" height="20" isRemoveLineWhenBlank="true" uuid="a41f7bae-8fcc-431c-8ad1-c1b279e6391d"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{tres_oxiuros}==null  ?"":$F{tres_oxiuros})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="100" width="108" height="20" isRemoveLineWhenBlank="true" uuid="e772084a-8819-42be-be94-9fdcb933f13b"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="140" width="108" height="20" isRemoveLineWhenBlank="true" uuid="e772084a-8819-42be-be94-9fdcb933f13b"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{tres_uncinairas}==null  ?"":$F{tres_uncinairas})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="120" width="108" height="20" isRemoveLineWhenBlank="true" uuid="8e888643-e5e3-4ce0-93aa-315b25e2e52d"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="160" width="108" height="20" isRemoveLineWhenBlank="true" uuid="8e888643-e5e3-4ce0-93aa-315b25e2e52d"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{tres_strongiloides_stercoralis}==null  ?"":$F{tres_strongiloides_stercoralis})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="435" y="140" width="108" height="20" isRemoveLineWhenBlank="true" uuid="b62568a8-82b5-4a41-b1be-ba2e679e0231"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="435" y="180" width="108" height="20" isRemoveLineWhenBlank="true" uuid="b62568a8-82b5-4a41-b1be-ba2e679e0231"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{tres_tenias_solium}==null  ?"":$F{tres_tenias_solium})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="435" y="160" width="108" height="20" isRemoveLineWhenBlank="true" uuid="7908faac-6d6d-4c2d-bce4-12675cf36069"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="435" y="200" width="108" height="20" isRemoveLineWhenBlank="true" uuid="7908faac-6d6d-4c2d-bce4-12675cf36069"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{tres_saginata}==null  ?"":$F{tres_saginata})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="180" width="108" height="20" isRemoveLineWhenBlank="true" uuid="f0894b2f-87e3-486f-8865-d0b674bad2de"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="220" width="108" height="20" isRemoveLineWhenBlank="true" uuid="f0894b2f-87e3-486f-8865-d0b674bad2de"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{tres_himenolepis_nana}==null  ?"":$F{tres_himenolepis_nana})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="200" width="108" height="20" isRemoveLineWhenBlank="true" uuid="4ab3fcd1-89ee-418e-bc98-286fa5ac3b85"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="240" width="108" height="20" isRemoveLineWhenBlank="true" uuid="4ab3fcd1-89ee-418e-bc98-286fa5ac3b85"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{tres_himenolepis_diminuta}==null  ?"":$F{tres_himenolepis_diminuta})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="435" y="220" width="108" height="20" isRemoveLineWhenBlank="true" uuid="53ee0725-c864-4a23-8580-21eb38aef33f"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="435" y="260" width="108" height="20" isRemoveLineWhenBlank="true" uuid="53ee0725-c864-4a23-8580-21eb38aef33f"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{tres_clinitest}==null  ?"":$F{tres_clinitest})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="435" y="240" width="108" height="20" isRemoveLineWhenBlank="true" uuid="36ea9ad0-4ad8-44e3-8d3e-32f106bd6e76"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="435" y="280" width="108" height="20" isRemoveLineWhenBlank="true" uuid="36ea9ad0-4ad8-44e3-8d3e-32f106bd6e76"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{tres_sudan_iii}==null  ?"":$F{tres_sudan_iii})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="260" width="108" height="20" isRemoveLineWhenBlank="true" uuid="37e1d517-f708-44db-89d6-cee7f572af7a"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="300" width="108" height="20" isRemoveLineWhenBlank="true" uuid="37e1d517-f708-44db-89d6-cee7f572af7a"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{tres_ph}==null?"":$F{tres_ph})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="280" width="108" height="20" isRemoveLineWhenBlank="true" uuid="2a7d5f7b-48af-4041-bcec-6ee58d8496fe"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="320" width="108" height="20" isRemoveLineWhenBlank="true" uuid="2a7d5f7b-48af-4041-bcec-6ee58d8496fe"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{tres_helicobacter_pylori}==null  ?"":$F{tres_helicobacter_pylori})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="60" width="108" height="20" isRemoveLineWhenBlank="true" uuid="618ba0b9-8a23-47f7-a34d-091d59c0e77d"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="434" y="100" width="108" height="20" isRemoveLineWhenBlank="true" uuid="618ba0b9-8a23-47f7-a34d-091d59c0e77d"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="14"/>
 				</textElement>

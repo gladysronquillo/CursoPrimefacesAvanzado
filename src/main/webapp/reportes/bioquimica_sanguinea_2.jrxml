@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" whenResourceMissingType="Empty" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
@@ -746,7 +746,7 @@ order by id_bioquimica_sanguinea desc limit 1]]>
 ]]></text>
 			</staticText>
 		</band>
-		<band height="464">
+		<band height="464" splitType="Stretch">
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="30" width="169" height="20" isRemoveLineWhenBlank="true" uuid="229b1685-900b-4e18-9e18-a729dca46bbf">
 					<printWhenExpression><![CDATA[!(new Boolean($F{lipasa}.equals("")))]]></printWhenExpression>
@@ -1232,10 +1232,7 @@ order by id_bioquimica_sanguinea desc limit 1]]>
 				<textFieldExpression><![CDATA[(new Boolean($F{fructosamina}.equals(""))?"":$F{fructosamina})]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="331">
-			<break>
-				<reportElement x="0" y="0" width="550" height="1" uuid="9eab954e-9588-4625-a318-168e38e942f6"/>
-			</break>
+		<band height="331" splitType="Stretch">
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="30" width="169" height="20" isRemoveLineWhenBlank="true" uuid="1aa95470-cc26-49c5-af54-5e5f44b4d6a4">
 					<printWhenExpression><![CDATA[!(new Boolean($F{fosfolipidos}.equals("")))]]></printWhenExpression>

@@ -532,10 +532,7 @@ order by id_examen_orina desc limit 1]]>
 				<text><![CDATA[ELEMENTAL Y MICROSCOPICO]]></text>
 			</staticText>
 		</band>
-		<band height="230">
-			<break>
-				<reportElement x="0" y="1" width="559" height="1" uuid="3492447b-def0-4f88-9dc0-7a1eca79048e"/>
-			</break>
+		<band height="230" splitType="Stretch">
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="110" width="190" height="20" isRemoveLineWhenBlank="true" uuid="1a7c781c-2256-48c2-bcda-5aa1d6324675">
 					<printWhenExpression><![CDATA[!(new Boolean($F{proteinuria_24}.equals("")))]]></printWhenExpression>
