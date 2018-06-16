@@ -78,6 +78,10 @@ order by id_espermatograma desc limit 1]]>
 		<property name="com.jaspersoft.studio.field.label" value="doble_cabeza"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="espermatograma"/>
 	</field>
+	<field name="acefalos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="acefalos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="espermatograma"/>
+	</field>
 	<field name="paciente" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="paciente"/>
 	</field>
@@ -85,19 +89,19 @@ order by id_espermatograma desc limit 1]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
+		<band height="90" splitType="Stretch"/>
 	</title>
 	<pageHeader>
-		<band height="85" splitType="Stretch">
+		<band height="100" splitType="Stretch">
 			<staticText>
-				<reportElement x="174" y="50" width="220" height="30" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
+				<reportElement x="170" y="70" width="220" height="30" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
 				<textElement textAlignment="Center">
-					<font fontName="Arial" size="20" isBold="true"/>
+					<font fontName="Arial" size="20" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[ESPERMATOGRAMA]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="115" y="19" width="377" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
+				<reportElement x="110" y="30" width="377" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="15"/>
 				</textElement>
@@ -112,7 +116,7 @@ order by id_espermatograma desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{color}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Color:]]></text>
 			</staticText>
@@ -121,7 +125,7 @@ order by id_espermatograma desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{aspecto}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Aspecto:]]></text>
 			</staticText>
@@ -130,7 +134,7 @@ order by id_espermatograma desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{consistencia}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Consistencia:]]></text>
 			</staticText>
@@ -139,7 +143,7 @@ order by id_espermatograma desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{volumen}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Volumen:]]></text>
 			</staticText>
@@ -148,7 +152,7 @@ order by id_espermatograma desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{motilidad}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Motilidad:]]></text>
 			</staticText>
@@ -157,7 +161,7 @@ order by id_espermatograma desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{ph}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Ph:]]></text>
 			</staticText>
@@ -166,7 +170,7 @@ order by id_espermatograma desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{licuación}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Licuación:]]></text>
 			</staticText>
@@ -175,7 +179,7 @@ order by id_espermatograma desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{contaje_espermatozoides}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Contaje de espermatozoides:]]></text>
 			</staticText>
@@ -184,7 +188,7 @@ order by id_espermatograma desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{normales}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Normales:]]></text>
 			</staticText>
@@ -193,7 +197,7 @@ order by id_espermatograma desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{microcefalos}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Microcéfalos:]]></text>
 			</staticText>
@@ -202,7 +206,7 @@ order by id_espermatograma desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{macrocefalos}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Macrocéfalos:]]></text>
 			</staticText>
@@ -211,23 +215,23 @@ order by id_espermatograma desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{sin_cola}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Sin Cola:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="345" width="129" height="20" isRemoveLineWhenBlank="true" uuid="7f73bf1c-75d1-4b6c-9298-988f197493eb">
-					<printWhenExpression><![CDATA[!(new Boolean($F{doble_cabeza}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!(new Boolean($F{acefalos}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
-				<text><![CDATA[Doble cabeza:]]></text>
+				<text><![CDATA[Acéfalos:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="373" y="10" width="130" height="20" uuid="3c21e086-0f8d-4859-92b8-7a5d0eec2527"/>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Valores normales]]></text>
 			</staticText>
@@ -236,7 +240,7 @@ order by id_espermatograma desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{volumen}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[1.5 - 6.0 ml]]></text>
 			</staticText>
@@ -245,7 +249,7 @@ order by id_espermatograma desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{motilidad}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[más del 75%]]></text>
 			</staticText>
@@ -254,7 +258,7 @@ order by id_espermatograma desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{ph}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[7.2 - 8.0]]></text>
 			</staticText>
@@ -263,7 +267,7 @@ order by id_espermatograma desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{licuación}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[15 - 30 minutos]]></text>
 			</staticText>
@@ -272,7 +276,7 @@ order by id_espermatograma desc limit 1]]>
 					<printWhenExpression><![CDATA[!(new Boolean($F{contaje_espermatozoides}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[60 - 300 millones]]></text>
 			</staticText>
@@ -280,8 +284,8 @@ order by id_espermatograma desc limit 1]]>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="310" y="265" width="64" height="20" isRemoveLineWhenBlank="true" uuid="a6b04017-282c-473e-9dd0-1f6f0b7a56bf">
 					<printWhenExpression><![CDATA[!(new Boolean($F{normales}.equals("")))]]></printWhenExpression>
 				</reportElement>
-				<textElement textAlignment="Center">
-					<font fontName="Arial" size="14" isBold="true"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[%]]></text>
 			</staticText>
@@ -289,8 +293,8 @@ order by id_espermatograma desc limit 1]]>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="311" y="285" width="64" height="20" isRemoveLineWhenBlank="true" uuid="def984ea-2165-4c51-b9bf-10348ce87f95">
 					<printWhenExpression><![CDATA[!(new Boolean($F{microcefalos}.equals("")))]]></printWhenExpression>
 				</reportElement>
-				<textElement textAlignment="Center">
-					<font fontName="Arial" size="14" isBold="true"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[%]]></text>
 			</staticText>
@@ -298,8 +302,8 @@ order by id_espermatograma desc limit 1]]>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="310" y="305" width="64" height="20" isRemoveLineWhenBlank="true" uuid="93b933ae-75e4-4ec6-a194-e1e16c6220cf">
 					<printWhenExpression><![CDATA[!(new Boolean($F{macrocefalos}.equals("")))]]></printWhenExpression>
 				</reportElement>
-				<textElement textAlignment="Center">
-					<font fontName="Arial" size="14" isBold="true"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[%]]></text>
 			</staticText>
@@ -307,17 +311,17 @@ order by id_espermatograma desc limit 1]]>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="310" y="325" width="64" height="20" isRemoveLineWhenBlank="true" uuid="fe5a65dc-f947-46d3-b5ab-91a85bce86a9">
 					<printWhenExpression><![CDATA[!(new Boolean($F{sin_cola}.equals("")))]]></printWhenExpression>
 				</reportElement>
-				<textElement textAlignment="Center">
-					<font fontName="Arial" size="14" isBold="true"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[%]]></text>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="310" y="345" width="64" height="20" isRemoveLineWhenBlank="true" uuid="21f35f66-40c1-4966-bf2d-cafca7538bc9">
-					<printWhenExpression><![CDATA[!(new Boolean($F{doble_cabeza}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[!(new Boolean($F{acefalos}.equals("")))]]></printWhenExpression>
 				</reportElement>
-				<textElement textAlignment="Center">
-					<font fontName="Arial" size="14" isBold="true"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[%]]></text>
 			</staticText>
@@ -351,8 +355,8 @@ order by id_espermatograma desc limit 1]]>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="209" y="110" width="100" height="20" isRemoveLineWhenBlank="true" uuid="117f5c76-824c-49dc-8320-d80abfc356ef"/>
-				<textElement textAlignment="Right">
-					<font fontName="Arial" size="14"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="14" isItalic="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(new Boolean($F{motilidad}.equals(""))?"":$F{motilidad})]]></textFieldExpression>
 			</textField>
@@ -365,8 +369,8 @@ order by id_espermatograma desc limit 1]]>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="211" y="150" width="99" height="20" isRemoveLineWhenBlank="true" uuid="f01a479a-960d-487b-961e-b5dd15b5daf2"/>
-				<textElement textAlignment="Right">
-					<font fontName="Arial" size="14"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="14" isItalic="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(new Boolean($F{licuación}.equals(""))?"":$F{licuación})]]></textFieldExpression>
 			</textField>
@@ -410,14 +414,14 @@ order by id_espermatograma desc limit 1]]>
 				<textElement textAlignment="Right">
 					<font fontName="Arial" size="14"/>
 				</textElement>
-				<textFieldExpression><![CDATA[(new Boolean($F{doble_cabeza}.equals(""))?"":$F{doble_cabeza})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[(new Boolean($F{acefalos}.equals(""))?"":$F{acefalos})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="309" y="110" width="64" height="20" uuid="b026ba78-6e4b-42ff-8b48-5fc194f4381b">
-					<printWhenExpression><![CDATA[!(new Boolean($F{doble_cabeza}.equals("")))]]></printWhenExpression>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="309" y="110" width="64" height="20" isRemoveLineWhenBlank="true" uuid="b026ba78-6e4b-42ff-8b48-5fc194f4381b">
+					<printWhenExpression><![CDATA[!(new Boolean($F{motilidad}.equals("")))]]></printWhenExpression>
 				</reportElement>
-				<textElement textAlignment="Center">
-					<font fontName="Arial" size="14" isBold="true"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[%]]></text>
 			</staticText>
@@ -425,20 +429,45 @@ order by id_espermatograma desc limit 1]]>
 				<reportElement stretchType="ElementGroupBottom" x="309" y="150" width="64" height="20" uuid="c6cc85c3-c598-40f5-a03c-8517a9c3cb78">
 					<printWhenExpression><![CDATA[!(new Boolean($F{licuación}.equals("")))]]></printWhenExpression>
 				</reportElement>
-				<textElement textAlignment="Center">
-					<font fontName="Arial" size="12" isBold="true"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[minutos]]></text>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="230" width="193" height="20" isRemoveLineWhenBlank="true" uuid="c27982b4-a622-467a-91e3-f9bc323b04e8">
-					<printWhenExpression><![CDATA[!(new Boolean($F{normales}.equals("")))]]></printWhenExpression>
+					<printWhenExpression><![CDATA[(!(new Boolean($F{normales}.equals(""))) || !(new Boolean($F{microcefalos}.equals(""))) || !(new Boolean($F{macrocefalos}.equals(""))) || !(new Boolean($F{sin_cola}.equals(""))))]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="14" isBold="true" isItalic="false" isUnderline="true"/>
+					<font fontName="Arial" size="14" isBold="true" isItalic="false" isUnderline="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Morfología]]></text>
 			</staticText>
+			<staticText>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="365" width="129" height="20" isRemoveLineWhenBlank="true" uuid="804f00fa-eb08-4ab8-a50b-8047de669578">
+					<printWhenExpression><![CDATA[!(new Boolean($F{doble_cabeza}.equals("")))]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Doble cabeza:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="310" y="365" width="64" height="20" isRemoveLineWhenBlank="true" uuid="7685570d-1a43-4623-a527-5c9030f9a40a">
+					<printWhenExpression><![CDATA[!(new Boolean($F{doble_cabeza}.equals("")))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[%]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="209" y="365" width="100" height="20" isRemoveLineWhenBlank="true" uuid="b9da3705-cdc5-40b8-a79e-c45323129d2e"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(new Boolean($F{doble_cabeza}.equals(""))?"":$F{doble_cabeza})]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<lastPageFooter>

@@ -98,324 +98,323 @@ order by id_serologia desc limit 1]]>
 	<pageHeader>
 		<band height="100" splitType="Stretch">
 			<staticText>
-				<reportElement x="190" y="70" width="193" height="20" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
+				<reportElement x="190" y="70" width="193" height="30" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
 				<textElement textAlignment="Center" markup="styled">
-					<font fontName="Arial" size="17" isBold="true" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="20" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[SEROLOGÍA]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="110" y="40" width="273" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
+				<reportElement x="110" y="40" width="400" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
 				<textElement textAlignment="Left">
-					<font size="13"/>
+					<font fontName="Arial" size="15"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{paciente}.toUpperCase()]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
 	<detail>
-		<band height="330" splitType="Stretch">
+		<band height="397" splitType="Stretch">
 			<staticText>
-				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="79" y="50" width="151" height="20" isRemoveLineWhenBlank="true" uuid="3043e070-2074-48f0-a726-e06177cdc520">
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="79" y="50" width="161" height="20" isRemoveLineWhenBlank="true" uuid="3043e070-2074-48f0-a726-e06177cdc520">
 					<printWhenExpression><![CDATA[!(new Boolean($F{latex_cuantitativo}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[LATEX CUANTITATIVO:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="70" width="151" height="20" isRemoveLineWhenBlank="true" uuid="4f426558-7c7a-43f1-a8f3-70d81e03c5fa">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="70" width="161" height="20" isRemoveLineWhenBlank="true" uuid="4f426558-7c7a-43f1-a8f3-70d81e03c5fa">
 					<printWhenExpression><![CDATA[!(new Boolean($F{pcr_cuantitativo}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[PCR CUANTITATIVO:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="90" width="151" height="20" isRemoveLineWhenBlank="true" uuid="a23e6df5-07f7-40f9-a70d-b7d9a422b2fe">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="90" width="161" height="20" isRemoveLineWhenBlank="true" uuid="a23e6df5-07f7-40f9-a70d-b7d9a422b2fe">
 					<printWhenExpression><![CDATA[!(new Boolean($F{fr_cuantitativo}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[FR CUANTITATIVO:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="110" width="151" height="20" isRemoveLineWhenBlank="true" uuid="a04ab28c-4c1d-493e-9846-4561b2301452">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="110" width="161" height="20" isRemoveLineWhenBlank="true" uuid="a04ab28c-4c1d-493e-9846-4561b2301452">
 					<printWhenExpression><![CDATA[!(new Boolean($F{vdrl}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[VDRL:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="130" width="151" height="20" isRemoveLineWhenBlank="true" uuid="553e2fd1-5d52-49ed-8c4c-96ea92099878">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="130" width="161" height="40" isRemoveLineWhenBlank="true" uuid="553e2fd1-5d52-49ed-8c4c-96ea92099878">
 					<printWhenExpression><![CDATA[!(new Boolean($F{aglutinaciones}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[AGLUTINACIONES FEBRILES:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="150" width="151" height="20" isRemoveLineWhenBlank="true" uuid="52c7c907-c690-44ea-b1f2-a63bcff08930">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="170" width="161" height="20" isRemoveLineWhenBlank="true" uuid="52c7c907-c690-44ea-b1f2-a63bcff08930">
 					<printWhenExpression><![CDATA[!(new Boolean($F{paratifico_a}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[PARATIFICO A:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="170" width="151" height="20" isRemoveLineWhenBlank="true" uuid="5d364772-fc40-4aa0-9e81-96b7468e320e">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="190" width="161" height="20" isRemoveLineWhenBlank="true" uuid="5d364772-fc40-4aa0-9e81-96b7468e320e">
 					<printWhenExpression><![CDATA[!(new Boolean($F{paratifico_b}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[PARATIFICO B:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="190" width="151" height="20" isRemoveLineWhenBlank="true" uuid="1754cc67-4851-43b8-94f0-a4e4ea0f2133">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="210" width="161" height="20" isRemoveLineWhenBlank="true" uuid="1754cc67-4851-43b8-94f0-a4e4ea0f2133">
 					<printWhenExpression><![CDATA[!(new Boolean($F{tifico_o}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[TIFICO O:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="210" width="151" height="20" isRemoveLineWhenBlank="true" uuid="b6ba0318-6dff-472d-93b8-f529bc688f4b">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="230" width="161" height="20" isRemoveLineWhenBlank="true" uuid="b6ba0318-6dff-472d-93b8-f529bc688f4b">
 					<printWhenExpression><![CDATA[!(new Boolean($F{tifico_h}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[TIFICO H:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="230" width="151" height="20" isRemoveLineWhenBlank="true" uuid="a2b03ec3-d988-439e-9b7a-071bf524876f">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="250" width="161" height="20" isRemoveLineWhenBlank="true" uuid="a2b03ec3-d988-439e-9b7a-071bf524876f">
 					<printWhenExpression><![CDATA[!(new Boolean($F{brucella_abortus}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[BRUCELLA ABORTUS:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="250" width="151" height="20" isRemoveLineWhenBlank="true" uuid="6b3ec844-d2cd-4d9e-90f2-cae211b7c687">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="270" width="161" height="20" isRemoveLineWhenBlank="true" uuid="6b3ec844-d2cd-4d9e-90f2-cae211b7c687">
 					<printWhenExpression><![CDATA[!(new Boolean($F{proteus_ox19}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[PROTEUS OX19:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="270" width="151" height="20" isRemoveLineWhenBlank="true" uuid="7f73bf1c-75d1-4b6c-9298-988f197493eb">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="290" width="161" height="20" isRemoveLineWhenBlank="true" uuid="7f73bf1c-75d1-4b6c-9298-988f197493eb">
 					<printWhenExpression><![CDATA[!(new Boolean($F{waller_rose}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[WALLER ROSE:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="389" y="50" width="111" height="20" isRemoveLineWhenBlank="true" uuid="d20dca65-e705-407f-9156-3f354ebd4e18">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="389" y="50" width="120" height="20" isRemoveLineWhenBlank="true" uuid="d20dca65-e705-407f-9156-3f354ebd4e18">
 					<printWhenExpression><![CDATA[!(new Boolean($F{latex_cuantitativo}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[0 - 8 UI/ml ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="389" y="70" width="111" height="20" isRemoveLineWhenBlank="true" uuid="116e2f39-6dc6-4ce0-a645-835031579139">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="389" y="70" width="120" height="20" isRemoveLineWhenBlank="true" uuid="116e2f39-6dc6-4ce0-a645-835031579139">
 					<printWhenExpression><![CDATA[!(new Boolean($F{pcr_cuantitativo}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[0 - 6 mg/l]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="390" y="90" width="111" height="20" isRemoveLineWhenBlank="true" uuid="bc7f1563-9683-4902-bc22-8ca2bd829b24">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="390" y="90" width="120" height="20" isRemoveLineWhenBlank="true" uuid="bc7f1563-9683-4902-bc22-8ca2bd829b24">
 					<printWhenExpression><![CDATA[!(new Boolean($F{fr_cuantitativo}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[0 - 16 UI/ml]]></text>
 			</staticText>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="231" y="50" width="159" height="20" isRemoveLineWhenBlank="true" uuid="c74c62b3-646d-4623-8932-3391c26ae9af"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="250" y="50" width="140" height="20" isRemoveLineWhenBlank="true" uuid="c74c62b3-646d-4623-8932-3391c26ae9af"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(new Boolean($F{latex_cuantitativo}.equals(""))?"":$F{latex_cuantitativo})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="230" y="70" width="159" height="20" isRemoveLineWhenBlank="true" uuid="1d8e05ae-7452-4ba6-a552-7232e59b722e"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="249" y="70" width="140" height="20" isRemoveLineWhenBlank="true" uuid="1d8e05ae-7452-4ba6-a552-7232e59b722e"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(new Boolean($F{pcr_cuantitativo}.equals(""))?"":$F{pcr_cuantitativo})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="231" y="90" width="159" height="20" isRemoveLineWhenBlank="true" uuid="ab9f10bd-bae5-42f9-8b51-a3404b366947"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="250" y="90" width="140" height="20" isRemoveLineWhenBlank="true" uuid="ab9f10bd-bae5-42f9-8b51-a3404b366947"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(new Boolean($F{fr_cuantitativo}.equals(""))?"":$F{fr_cuantitativo})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="230" y="110" width="159" height="20" isRemoveLineWhenBlank="true" uuid="117f5c76-824c-49dc-8320-d80abfc356ef"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="249" y="110" width="140" height="20" isRemoveLineWhenBlank="true" uuid="117f5c76-824c-49dc-8320-d80abfc356ef"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{vdrl}==null?"":$F{vdrl})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="232" y="150" width="159" height="20" isRemoveLineWhenBlank="true" uuid="f01a479a-960d-487b-961e-b5dd15b5daf2"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="251" y="170" width="140" height="20" isRemoveLineWhenBlank="true" uuid="f01a479a-960d-487b-961e-b5dd15b5daf2"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{paratifico_a}==null?"":$F{paratifico_a})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="231" y="170" width="159" height="20" isRemoveLineWhenBlank="true" uuid="ccddc4f4-9ba3-4ae7-94fd-f9f99e7ce452"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="250" y="190" width="140" height="20" isRemoveLineWhenBlank="true" uuid="ccddc4f4-9ba3-4ae7-94fd-f9f99e7ce452"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{paratifico_b}==null?"":$F{paratifico_b})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="232" y="190" width="159" height="20" isRemoveLineWhenBlank="true" uuid="1d4fe732-9135-4d29-bc1a-34a77ed69b0f"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="251" y="210" width="140" height="20" isRemoveLineWhenBlank="true" uuid="1d4fe732-9135-4d29-bc1a-34a77ed69b0f"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{tifico_o}==null?"":$F{tifico_o})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="231" y="210" width="159" height="20" isRemoveLineWhenBlank="true" uuid="4cea570e-6e85-4553-8380-fca02a2db722"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="250" y="230" width="140" height="20" isRemoveLineWhenBlank="true" uuid="4cea570e-6e85-4553-8380-fca02a2db722"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{tifico_h}==null?"":$F{tifico_h})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="230" y="230" width="159" height="20" isRemoveLineWhenBlank="true" uuid="9b868e10-b977-4964-8819-6eaa10e5bd4c"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="249" y="250" width="140" height="20" isRemoveLineWhenBlank="true" uuid="9b868e10-b977-4964-8819-6eaa10e5bd4c"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{brucella_abortus}==null?"":$F{brucella_abortus})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="231" y="250" width="159" height="20" isRemoveLineWhenBlank="true" uuid="fb39796d-6f77-465b-8f62-c3f0bf72d268"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="250" y="270" width="140" height="20" isRemoveLineWhenBlank="true" uuid="fb39796d-6f77-465b-8f62-c3f0bf72d268"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{proteus_ox19}==null?"":$F{proteus_ox19})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="230" y="270" width="159" height="20" isRemoveLineWhenBlank="true" uuid="67ec4dfc-532b-4d14-98c8-13281b47e969"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="249" y="290" width="140" height="20" isRemoveLineWhenBlank="true" uuid="67ec4dfc-532b-4d14-98c8-13281b47e969"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(new Boolean($F{waller_rose}.equals(""))?"":$F{waller_rose})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="290" width="151" height="20" isRemoveLineWhenBlank="true" uuid="64a7e8e7-05f1-4870-a912-6f3b03dd1fcb">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="310" width="161" height="20" isRemoveLineWhenBlank="true" uuid="64a7e8e7-05f1-4870-a912-6f3b03dd1fcb">
 					<printWhenExpression><![CDATA[!(new Boolean($F{mucoproteinas}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[MUCOPROTEINAS:]]></text>
 			</staticText>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="230" y="290" width="159" height="20" isRemoveLineWhenBlank="true" uuid="69017a3a-11a1-4a13-9315-5a86310cb3d6"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="249" y="310" width="140" height="20" isRemoveLineWhenBlank="true" uuid="69017a3a-11a1-4a13-9315-5a86310cb3d6"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(new Boolean($F{mucoproteinas}.equals("''"))?"":$F{mucoproteinas})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="310" width="151" height="20" isRemoveLineWhenBlank="true" uuid="c1b655df-fbf9-4a40-937b-2341f69b67e1">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="79" y="330" width="161" height="20" isRemoveLineWhenBlank="true" uuid="c1b655df-fbf9-4a40-937b-2341f69b67e1">
 					<printWhenExpression><![CDATA[!(new Boolean($F{brucellosis}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[BRUCELLOSIS:]]></text>
 			</staticText>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="230" y="310" width="159" height="20" isRemoveLineWhenBlank="true" uuid="7020c54b-bf84-46bc-a4d5-26d47aee6ef2"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="249" y="330" width="140" height="20" isRemoveLineWhenBlank="true" uuid="7020c54b-bf84-46bc-a4d5-26d47aee6ef2"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{brucellosis}==null?"":$F{brucellosis})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="390" y="270" width="111" height="20" isRemoveLineWhenBlank="true" uuid="7df0ebb6-03b7-4622-bf1e-1c300be820cb">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="390" y="290" width="120" height="20" isRemoveLineWhenBlank="true" uuid="7df0ebb6-03b7-4622-bf1e-1c300be820cb">
 					<printWhenExpression><![CDATA[!(new Boolean($F{waller_rose}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[0 - 10 U/ml]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="390" y="290" width="111" height="20" isRemoveLineWhenBlank="true" uuid="7c3b8f33-86f9-4862-b449-6270083bfce1">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="390" y="310" width="120" height="20" isRemoveLineWhenBlank="true" uuid="7c3b8f33-86f9-4862-b449-6270083bfce1">
 					<printWhenExpression><![CDATA[!(new Boolean($F{mucoproteinas}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[45 - 117 mg/dl]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" mode="Transparent" x="80" y="30" width="151" height="20" isRemoveLineWhenBlank="true" uuid="4ff6da2a-47f9-40f0-964c-af6cd04d9d46">
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" mode="Transparent" x="80" y="30" width="161" height="20" isRemoveLineWhenBlank="true" uuid="4ff6da2a-47f9-40f0-964c-af6cd04d9d46">
 					<printWhenExpression><![CDATA[!(new Boolean($F{asto_cuantitativo}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Left">
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[ASTO CUANTITATIVO:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="390" y="30" width="111" height="20" isRemoveLineWhenBlank="true" uuid="c52ffd12-e467-4587-8578-c48048b6231f">
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="390" y="30" width="120" height="20" isRemoveLineWhenBlank="true" uuid="c52ffd12-e467-4587-8578-c48048b6231f">
 					<printWhenExpression><![CDATA[!(new Boolean($F{asto_cuantitativo}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[0 - 200 UI/ml]]></text>
 			</staticText>
 			<textField>
-				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="231" y="30" width="159" height="20" isRemoveLineWhenBlank="true" uuid="c9730029-46a1-424c-8aeb-94fc28fef4b4"/>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="250" y="30" width="140" height="20" isRemoveLineWhenBlank="true" uuid="c9730029-46a1-424c-8aeb-94fc28fef4b4"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(new Boolean($F{asto_cuantitativo}.equals(""))?"":$F{asto_cuantitativo})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="231" y="129" width="159" height="20" isRemoveLineWhenBlank="true" uuid="8315f2f0-8e1b-4bb1-b846-884d097f5e14"/>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="250" y="129" width="140" height="20" isRemoveLineWhenBlank="true" uuid="8315f2f0-8e1b-4bb1-b846-884d097f5e14"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{aglutinaciones}==null?"":$F{aglutinaciones})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="389" y="10" width="120" height="20" uuid="26d1c2d2-1b2c-48f7-ac3e-2b720206e522"/>
+				<reportElement stretchType="ElementGroupBottom" x="389" y="10" width="120" height="20" uuid="26d1c2d2-1b2c-48f7-ac3e-2b720206e522"/>
 				<textElement markup="styled">
-					<font size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
-				<text><![CDATA[Valores Normales
-]]></text>
+				<text><![CDATA[Valores Normales]]></text>
 			</staticText>
 		</band>
 	</detail>
@@ -424,7 +423,7 @@ order by id_serologia desc limit 1]]>
 			<textField pattern="dd/MM/yyyy">
 				<reportElement x="110" y="30" width="100" height="20" uuid="0cf797d5-2f75-4d13-abae-ff5d0a33db06"/>
 				<textElement>
-					<font size="12"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
