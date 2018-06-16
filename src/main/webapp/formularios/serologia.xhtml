@@ -70,6 +70,11 @@
 
 				<table class="formulario" border="0">
 					<tr>
+						<td />
+						<td />
+						<td align="right"><p:outputLabel style="font-weight: bold">Valores normales</p:outputLabel></td>
+					</tr>
+					<tr>
 						<td><p:outputLabel style="font-weight: bold">ASTO CUANTITATIVO : </p:outputLabel></td>
 						<td><p:inputText
 								value="#{serologiaController.serologia.astoCuantitativo}"></p:inputText></td>
@@ -97,19 +102,28 @@
 						<td><p:outputLabel style="font-weight: bold">VDRL : </p:outputLabel></td>
 						<td><p:selectOneMenu
 								value="#{serologiaController.serologia.vdrl}">
-								<f:selectItem itemValue="NULL" itemLabel="N/A" />
+								<f:selectItem itemValue="" itemLabel="N/A" />
 								<f:selectItem itemValue="REACTIVO" itemLabel="REACTIVO" />
 								<f:selectItem itemValue="NO REACTIVO" itemLabel="NO REACTIVO" />
 							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">AGLUTINACIONES FEBRILES : </p:outputLabel></td>
+						<td><p:selectOneMenu
+								value="#{serologiaController.serologia.aglutinaciones}">
+								<f:selectItem itemValue="" itemLabel="N/A" />
+								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
+								<f:selectItem itemValue="1/40" itemLabel="1/40" />
+								<f:selectItem itemValue="1/80" itemLabel="1/80" />
+								<f:selectItem itemValue="1/160" itemLabel="1/160" />
+								<f:selectItem itemValue="1/320" itemLabel="1/320" />
+							</p:selectOneMenu></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">PARATIFICO A : </p:outputLabel></td>
 						<td><p:selectOneMenu
 								value="#{serologiaController.serologia.paratificoA}">
-								<f:selectItem itemValue="NULL" itemLabel="N/A" />
+								<f:selectItem itemValue="" itemLabel="N/A" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 								<f:selectItem itemValue="1/40" itemLabel="1/40" />
 								<f:selectItem itemValue="1/80" itemLabel="1/80" />
@@ -121,7 +135,7 @@
 						<td><p:outputLabel style="font-weight: bold">PARATIFICO B : </p:outputLabel></td>
 						<td><p:selectOneMenu
 								value="#{serologiaController.serologia.paratificoB}">
-								<f:selectItem itemValue="NULL" itemLabel="N/A" />
+								<f:selectItem itemValue="" itemLabel="N/A" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 								<f:selectItem itemValue="1/40" itemLabel="1/40" />
 								<f:selectItem itemValue="1/80" itemLabel="1/80" />
@@ -133,7 +147,7 @@
 						<td><p:outputLabel style="font-weight: bold">TIFICO O : </p:outputLabel></td>
 						<td><p:selectOneMenu
 								value="#{serologiaController.serologia.tificoO}">
-								<f:selectItem itemValue="NULL" itemLabel="N/A" />
+								<f:selectItem itemValue="" itemLabel="N/A" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 								<f:selectItem itemValue="1/40" itemLabel="1/40" />
 								<f:selectItem itemValue="1/80" itemLabel="1/80" />
@@ -145,7 +159,7 @@
 						<td><p:outputLabel style="font-weight: bold">TIFICO H : </p:outputLabel></td>
 						<td><p:selectOneMenu
 								value="#{serologiaController.serologia.tificoH}">
-								<f:selectItem itemValue="NULL" itemLabel="N/A" />
+								<f:selectItem itemValue="" itemLabel="N/A" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 								<f:selectItem itemValue="1/40" itemLabel="1/40" />
 								<f:selectItem itemValue="1/80" itemLabel="1/80" />
@@ -157,7 +171,7 @@
 						<td><p:outputLabel style="font-weight: bold">BRUCELLA ABORTUS : </p:outputLabel></td>
 						<td><p:selectOneMenu
 								value="#{serologiaController.serologia.brucellaAbortus}">
-								<f:selectItem itemValue="NULL" itemLabel="N/A" />
+								<f:selectItem itemValue="" itemLabel="N/A" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 								<f:selectItem itemValue="1/40" itemLabel="1/40" />
 								<f:selectItem itemValue="1/80" itemLabel="1/80" />
@@ -169,7 +183,7 @@
 						<td><p:outputLabel style="font-weight: bold">PROTEUS OX19 : </p:outputLabel></td>
 						<td><p:selectOneMenu
 								value="#{serologiaController.serologia.proteusOx19}">
-								<f:selectItem itemValue="NULL" itemLabel="N/A" />
+								<f:selectItem itemValue="" itemLabel="N/A" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 								<f:selectItem itemValue="1/40" itemLabel="1/40" />
 								<f:selectItem itemValue="1/80" itemLabel="1/80" />
@@ -193,7 +207,7 @@
 						<td><p:outputLabel style="font-weight: bold">BRUCELLOSIS : </p:outputLabel></td>
 						<td><p:selectOneMenu
 								value="#{serologiaController.serologia.brucellosis}">
-								<f:selectItem itemValue="NULL" itemLabel="N/A" />
+								<f:selectItem itemValue="" itemLabel="N/A" />
 								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
 								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
 							</p:selectOneMenu></td>
@@ -204,7 +218,8 @@
 
 				<p:commandLink
 					actionListener="#{serologiaController.registrar(pacienteController.paciente.id_paciente)}"
-					update=":idFormPaciente:mensaje , serologia, botonPdf" disabled="#{!serologiaController.desabilitado}">
+					update=":idFormPaciente:mensaje , serologia, botonPdf"
+					disabled="#{!serologiaController.desabilitado}">
 					<h:graphicImage value="/resources/images/grabar.png" border="0"
 						width="75" height="75" />
 				</p:commandLink>
@@ -215,15 +230,16 @@
 					<h:graphicImage value="/resources/images/pdf.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>
-				
+
 				<p:commandLink id="botonPdf_backup"
 					action="#{reportesLaboratorio.exportarSerologiaPDF(pacienteController.paciente)}"
-					ajax="false" >
+					ajax="false">
 					<h:graphicImage value="/resources/images/pdf_backup.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>
-				
-				<p:commandLink action="#{serologiaController.regresar(pacienteController.paciente)}">
+
+				<p:commandLink
+					action="#{serologiaController.regresar(pacienteController.paciente)}">
 					<h:graphicImage value="/resources/images/regresar.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>

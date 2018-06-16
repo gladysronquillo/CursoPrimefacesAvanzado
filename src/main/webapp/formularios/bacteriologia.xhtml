@@ -70,6 +70,11 @@
 
 				<table class="formulario" border="0">
 					<tr>
+						<td />
+						<td />
+						<td align="right"><p:outputLabel style="font-weight: bold">Valores normales</p:outputLabel></td>
+					</tr>
+					<tr>
 						<td><p:outputLabel style="font-weight: bold">SECRECIÓN : </p:outputLabel></td>
 						<td><p:inputText
 								value="#{bacteriologiaController.bacteriologia.secrecion}" /></td>
@@ -106,7 +111,8 @@
 
 				<p:commandLink
 					actionListener="#{bacteriologiaController.registrar(pacienteController.paciente.id_paciente)}"
-					update=":idFormPaciente:mensaje , bacteriologia, botonPdf" disabled="#{!bacteriologiaController.desabilitado}">
+					update=":idFormPaciente:mensaje , bacteriologia, botonPdf"
+					disabled="#{!bacteriologiaController.desabilitado}">
 					<h:graphicImage value="/resources/images/grabar.png" border="0"
 						width="75" height="75" />
 				</p:commandLink>
@@ -117,10 +123,10 @@
 					<h:graphicImage value="/resources/images/pdf.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>
-				
+
 				<p:commandLink id="botonPdf_backup"
 					action="#{reportesLaboratorio.exportarBacteriologiaPDF(pacienteController.paciente)}"
-					ajax="false" >
+					ajax="false">
 					<h:graphicImage value="/resources/images/pdf_backup.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>

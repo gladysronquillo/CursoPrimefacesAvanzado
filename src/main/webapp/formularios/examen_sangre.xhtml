@@ -63,6 +63,11 @@
 
 				<table class="formulario" border="0">
 					<tr>
+						<td />
+						<td />
+						<td align="right"><p:outputLabel style="font-weight: bold">Valores normales</p:outputLabel></td>
+					</tr>
+					<tr>
 						<td colspan="3"><p:outputLabel
 								style="font-weight: bold; text-align:center">BIOMETRIA HEMÁTICA</p:outputLabel></td>
 					</tr>
@@ -70,31 +75,31 @@
 						<td><p:outputLabel style="font-weight: bold">Hematocrito : </p:outputLabel></td>
 						<td><p:inputText
 								value="#{examen_sangreController.examen_sangre.hematocrito}" /></td>
-						<td><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
+						<td align="right"><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Hemoglobina : </p:outputLabel></td>
 						<td><p:inputText
 								value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
-						<td><p:outputLabel style="font-weight: bold">gr%</p:outputLabel></td>
+						<td align="right"><p:outputLabel style="font-weight: bold">gr%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Glóbulos Blancos : </p:outputLabel></td>
 						<td><p:inputText
 								value="#{examen_sangreController.examen_sangre.globulosBlancos}" /></td>
-						<td><p:outputLabel style="font-weight: bold">/mm3</p:outputLabel></td>
+						<td align="right"><p:outputLabel style="font-weight: bold">/mm3</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Glóbulos Rojos : </p:outputLabel></td>
 						<td><p:inputText
 								value="#{examen_sangreController.examen_sangre.globulosRojos}" /></td>
-						<td><p:outputLabel style="font-weight: bold">/mm3</p:outputLabel></td>
+						<td align="right"><p:outputLabel style="font-weight: bold">/mm3</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Sedimentación : </p:outputLabel></td>
 						<td><p:inputText
 								value="#{examen_sangreController.examen_sangre.sedimentacion}" /></td>
-						<td><p:outputLabel style="font-weight: bold">mm/h</p:outputLabel></td>
+						<td align="right"><p:outputLabel style="font-weight: bold">mm/h</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td colspan="3"><p:outputLabel
@@ -104,25 +109,25 @@
 						<td><p:outputLabel style="font-weight: bold">Segmentación : </p:outputLabel></td>
 						<td><p:inputText
 								value="#{examen_sangreController.examen_sangre.sedimentacion}" /></td>
-						<td><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
+						<td align="right"><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Linfocitos : </p:outputLabel></td>
 						<td><p:inputText
 								value="#{examen_sangreController.examen_sangre.linfocitos}" /></td>
-						<td><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
+						<td align="right"><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Monocitos : </p:outputLabel></td>
 						<td><p:inputText
 								value="#{examen_sangreController.examen_sangre.monocitos}" /></td>
-						<td><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
+						<td align="right" ><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Eosinofilos : </p:outputLabel></td>
 						<td><p:inputText
 								value="#{examen_sangreController.examen_sangre.eosinofilos}" /></td>
-						<td><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
+						<td align="right"><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Hipocromia : </p:outputLabel></td>
@@ -148,19 +153,19 @@
 						<td><p:outputLabel style="font-weight: bold">VCM : </p:outputLabel></td>
 						<td><p:inputText
 								value="#{examen_sangreController.examen_sangre.vcm}" /></td>
-						<td><p:outputLabel style="font-weight: bold">V.N.: 80-95u3</p:outputLabel></td>
+						<td align="right"><p:outputLabel style="font-weight: bold">V.N.: 80-95u3</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">HCM : </p:outputLabel></td>
 						<td><p:inputText
 								value="#{examen_sangreController.examen_sangre.hcm}" /></td>
-						<td><p:outputLabel style="font-weight: bold">25-31 pg</p:outputLabel></td>
+						<td align="right"><p:outputLabel style="font-weight: bold">25-31 pg</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">CHCM : </p:outputLabel></td>
 						<td><p:inputText
 								value="#{examen_sangreController.examen_sangre.chcm}" /></td>
-						<td><p:outputLabel style="font-weight: bold">30-35 %</p:outputLabel></td>
+						<td align="right"><p:outputLabel style="font-weight: bold">30-35 %</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">GRUPO SANGUÍNEO : </p:outputLabel></td>
@@ -222,13 +227,13 @@
 						<td><p:outputLabel style="font-weight: bold">RETICULOCITOS : </p:outputLabel></td>
 						<td><p:inputText
 								value="#{examen_sangreController.examen_sangre.reticulocitos}" /></td>
-						<td><p:outputLabel>V.N.: hasta 2%</p:outputLabel></td>
+						<td align="right"><p:outputLabel>V.N.: hasta 2%</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">PLAQUETAS : </p:outputLabel></td>
 						<td><p:inputText
 								value="#{examen_sangreController.examen_sangre.plaquetas}"></p:inputText></td>
-						<td><p:outputLabel>150000-300000/mm3</p:outputLabel></td>
+						<td align="right"><p:outputLabel>150000-300000/mm3</p:outputLabel></td>
 					</tr>
 				</table>
 				<br></br>
@@ -247,10 +252,10 @@
 					<h:graphicImage value="/resources/images/pdf.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>
-				
+
 				<p:commandLink id="botonPdf_backup"
 					action="#{reportesLaboratorio.exportarExamenSangrePDF(pacienteController.paciente)}"
-					ajax="false" >
+					ajax="false">
 					<h:graphicImage value="/resources/images/pdf_backup.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>

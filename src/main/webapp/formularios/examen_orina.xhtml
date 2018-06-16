@@ -68,6 +68,13 @@
 				<h1>EXAMEN DE ORINA</h1>
 
 				<table class="formulario" border="0">
+				<tr>
+						<td />
+						<td />
+						<td />
+						<td />
+						<td align="right"><p:outputLabel style="font-weight: bold">Valores normales</p:outputLabel></td>
+					</tr>
 					<tr>
 						<td colspan="2"><p:outputLabel style="font-weight: bold">FÍSICO</p:outputLabel></td>
 						<td colspan="2"><p:outputLabel style="font-weight: bold">QUÍMICO</p:outputLabel></td>
@@ -104,7 +111,7 @@
 								<f:selectItem itemValue="60" itemLabel="60" />
 								<f:selectItem itemValue="100" itemLabel="100" />
 							</p:selectOneMenu></td>
-						<td><p:outputLabel>mg/dl</p:outputLabel></td>
+						<td align="right"><p:outputLabel>mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">DENSIDAD : </p:outputLabel></td>
@@ -119,7 +126,7 @@
 								<f:selectItem itemValue="++" itemLabel="++" />
 								<f:selectItem itemValue="+++" itemLabel="+++" />
 							</p:selectOneMenu></td>
-						<td><p:outputLabel>mg/dl</p:outputLabel></td>
+						<td align="right"><p:outputLabel>mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">PH : </p:outputLabel></td>
@@ -157,7 +164,7 @@
 								<f:selectItem itemValue="4" itemLabel="4" />
 								<f:selectItem itemValue="8" itemLabel="8" />
 							</p:selectOneMenu></td>
-						<td><p:outputLabel>mg/dl</p:outputLabel></td>
+						<td align="right"><p:outputLabel>mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td colspan="2"><p:outputLabel></p:outputLabel></td>
@@ -293,25 +300,29 @@
 						<td colspan="2"><p:outputLabel style="font-weight: bold">PROTEINURIA 24 HORAS : </p:outputLabel></td>
 						<td><p:inputText
 								value="#{examen_orinaController.examen_orina.proteinuria24}" /></td>
-						<td><p:outputLabel>V.N.: hasta 150 mg/24H</p:outputLabel></td>
+								<td/>
+						<td align="right"><p:outputLabel>V.N.: hasta 150 mg/24H</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td colspan="2"><p:outputLabel style="font-weight: bold">PROTEINURIA MICCIONAL : </p:outputLabel></td>
 						<td><p:inputText
 								value="#{examen_orinaController.examen_orina.proteinuriaMiccional}" /></td>
-						<td><p:outputLabel>hasta 12 mg/dl</p:outputLabel></td>
+								<td/>
+						<td align="right"><p:outputLabel>hasta 12 mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td colspan="2"><p:outputLabel style="font-weight: bold">MICROALBUMINURIA : </p:outputLabel></td>
 						<td><p:inputText
 								value="#{examen_orinaController.examen_orina.microalbuminuria}" /></td>
-						<td><p:outputLabel>0 - 20 mg/dl</p:outputLabel></td>
+								<td/>
+						<td align="right"><p:outputLabel>0 - 20 mg/dl</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td colspan="2"><p:outputLabel style="font-weight: bold">CLEARANCE DE CREATININA : </p:outputLabel></td>
 						<td><p:inputText
 								value="#{examen_orinaController.examen_orina.clearanceCreatinina}" /></td>
-						<td><p:outputLabel>80 - 120 mil/min</p:outputLabel></td>
+								<td/>
+						<td align="right"><p:outputLabel>80 - 120 mil/min</p:outputLabel></td>
 					</tr>
 					<tr>
 						<td colspan="2"><p:outputLabel style="font-weight: bold">BAAR EN : </p:outputLabel></td>

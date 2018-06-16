@@ -385,7 +385,7 @@ order by id_coagulacion desc limit 1]]>
 	</detail>
 	<lastPageFooter>
 		<band height="39">
-			<textField pattern="MM/dd/yyyy">
+			<textField pattern="dd/MM/yyyy">
 				<reportElement x="110" y="19" width="100" height="20" uuid="79008dc6-6bdb-4879-8d11-0d9625c6d2b3"/>
 				<textElement>
 					<font size="12"/>
