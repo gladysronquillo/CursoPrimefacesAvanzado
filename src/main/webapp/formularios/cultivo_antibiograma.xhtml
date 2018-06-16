@@ -75,22 +75,22 @@
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Cultivo de : </p:outputLabel></td>
-						<td><p:inputTextarea
+						<td><p:inputTextarea rows="4" cols="70"
 								value="#{cultivo_antibiogramaController.cultivo_antibiograma.nombreCultivo}" /></td>
 					</tr>
 					<tr>
 						<td><p:outputLabel style="font-weight: bold">Germen Identificado : </p:outputLabel></td>
-						<td><p:inputTextarea
+						<td><p:inputTextarea rows="4" cols="70"
 								value="#{cultivo_antibiogramaController.cultivo_antibiograma.germenIdentificado}" /></td>
 					</tr>
 					<tr>
 						<td colspan="2"><p:outputLabel style="font-weight: bold">ANTIBIOGRAMA</p:outputLabel></td>
 					</tr>
 					<tr>
-						<td><p:separator style="width:700px;height:1px" /></td>
+						<td colspan="2"><p:separator style="width:700px;height:1px" /></td>
 					</tr>
 					<tr>
-						<td><p:accordionPanel>
+						<td colspan="2"><p:accordionPanel>
 								<p:tab title="Muy Sensible :">
 									<h:panelGrid columns="2" cellpadding="10">
 										<p:selectManyCheckbox

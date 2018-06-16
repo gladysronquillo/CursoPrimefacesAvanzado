@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" whenResourceMissingType="Empty" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="397"/>
@@ -74,15 +74,17 @@ order by id_drogas desc limit 1]]>
 	<pageHeader>
 		<band height="100" splitType="Stretch">
 			<staticText>
-				<reportElement x="197" y="80" width="160" height="20" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
+				<reportElement x="184" y="70" width="193" height="30" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
 				<textElement textAlignment="Center">
-					<font fontName="Arial" size="17" isBold="true"/>
+					<font fontName="Arial" size="20" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[DROGAS]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="130" y="40" width="159" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
-				<textElement textAlignment="Left"/>
+				<reportElement x="110" y="30" width="361" height="20" uuid="b3338e13-780c-4388-9022-416fa95f6ccd"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="15"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{paciente}.toUpperCase()]]></textFieldExpression>
 			</textField>
 		</band>
@@ -90,191 +92,209 @@ order by id_drogas desc limit 1]]>
 	<detail>
 		<band height="210" splitType="Stretch">
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="30" width="120" height="20" isRemoveLineWhenBlank="true" uuid="4ff6da2a-47f9-40f0-964c-af6cd04d9d46">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="30" width="149" height="20" isRemoveLineWhenBlank="true" uuid="4ff6da2a-47f9-40f0-964c-af6cd04d9d46">
 					<printWhenExpression><![CDATA[!(new Boolean($F{acido_valproico}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[ÁCIDO VALPROICO:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="50" width="120" height="20" isRemoveLineWhenBlank="true" uuid="3043e070-2074-48f0-a726-e06177cdc520">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="50" width="149" height="20" isRemoveLineWhenBlank="true" uuid="3043e070-2074-48f0-a726-e06177cdc520">
 					<printWhenExpression><![CDATA[!(new Boolean($F{carbamazepina}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[CARBAMAZEPINA:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="70" width="120" height="20" isRemoveLineWhenBlank="true" uuid="4f426558-7c7a-43f1-a8f3-70d81e03c5fa">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="70" width="149" height="20" isRemoveLineWhenBlank="true" uuid="4f426558-7c7a-43f1-a8f3-70d81e03c5fa">
 					<printWhenExpression><![CDATA[!(new Boolean($F{difenilhidantoina}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[DIFENILHIDANTOINA:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="90" width="120" height="20" isRemoveLineWhenBlank="true" uuid="a23e6df5-07f7-40f9-a70d-b7d9a422b2fe">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="90" width="149" height="20" isRemoveLineWhenBlank="true" uuid="a23e6df5-07f7-40f9-a70d-b7d9a422b2fe">
 					<printWhenExpression><![CDATA[!(new Boolean($F{digoxina}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[DIGOXINA:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="110" width="120" height="20" isRemoveLineWhenBlank="true" uuid="a04ab28c-4c1d-493e-9846-4561b2301452">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="110" width="149" height="20" isRemoveLineWhenBlank="true" uuid="a04ab28c-4c1d-493e-9846-4561b2301452">
 					<printWhenExpression><![CDATA[!(new Boolean($F{fenobarbital}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[FENOBARBITAL:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="130" width="120" height="20" isRemoveLineWhenBlank="true" uuid="553e2fd1-5d52-49ed-8c4c-96ea92099878">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="130" width="149" height="20" isRemoveLineWhenBlank="true" uuid="553e2fd1-5d52-49ed-8c4c-96ea92099878">
 					<printWhenExpression><![CDATA[!(new Boolean($F{cocaina}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[COCAÍNA:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="150" width="120" height="20" isRemoveLineWhenBlank="true" uuid="52c7c907-c690-44ea-b1f2-a63bcff08930">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="81" y="150" width="149" height="20" isRemoveLineWhenBlank="true" uuid="52c7c907-c690-44ea-b1f2-a63bcff08930">
 					<printWhenExpression><![CDATA[!(new Boolean($F{marihuana}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[MARIHUANA:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="170" width="120" height="20" isRemoveLineWhenBlank="true" uuid="5d364772-fc40-4aa0-9e81-96b7468e320e">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="170" width="149" height="20" isRemoveLineWhenBlank="true" uuid="5d364772-fc40-4aa0-9e81-96b7468e320e">
 					<printWhenExpression><![CDATA[!(new Boolean($F{alcohol_serico}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Alcohol sérico:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="190" width="120" height="20" isRemoveLineWhenBlank="true" uuid="1754cc67-4851-43b8-94f0-a4e4ea0f2133">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="80" y="190" width="149" height="20" isRemoveLineWhenBlank="true" uuid="1754cc67-4851-43b8-94f0-a4e4ea0f2133">
 					<printWhenExpression><![CDATA[!(new Boolean($F{anfetaminas}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[ANFETAMINAS:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupBottom" x="361" y="10" width="130" height="20" uuid="3c21e086-0f8d-4859-92b8-7a5d0eec2527"/>
+				<reportElement stretchType="ElementGroupBottom" x="380" y="10" width="130" height="20" uuid="3c21e086-0f8d-4859-92b8-7a5d0eec2527"/>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Valores normales]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="361" y="30" width="130" height="20" isRemoveLineWhenBlank="true" uuid="c52ffd12-e467-4587-8578-c48048b6231f">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="380" y="30" width="130" height="20" isRemoveLineWhenBlank="true" uuid="c52ffd12-e467-4587-8578-c48048b6231f">
 					<printWhenExpression><![CDATA[!(new Boolean($F{acido_valproico}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[50 - 100 ug/ml]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="360" y="50" width="130" height="20" isRemoveLineWhenBlank="true" uuid="d20dca65-e705-407f-9156-3f354ebd4e18">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="379" y="50" width="130" height="20" isRemoveLineWhenBlank="true" uuid="d20dca65-e705-407f-9156-3f354ebd4e18">
 					<printWhenExpression><![CDATA[!(new Boolean($F{carbamazepina}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[4 - 12 ug/ml]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="360" y="70" width="130" height="20" isRemoveLineWhenBlank="true" uuid="116e2f39-6dc6-4ce0-a645-835031579139">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="379" y="70" width="130" height="20" isRemoveLineWhenBlank="true" uuid="116e2f39-6dc6-4ce0-a645-835031579139">
 					<printWhenExpression><![CDATA[!(new Boolean($F{difenilhidantoina}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[10 - 20 ug/ml]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="361" y="90" width="130" height="20" isRemoveLineWhenBlank="true" uuid="bc7f1563-9683-4902-bc22-8ca2bd829b24">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="380" y="90" width="130" height="20" isRemoveLineWhenBlank="true" uuid="bc7f1563-9683-4902-bc22-8ca2bd829b24">
 					<printWhenExpression><![CDATA[!(new Boolean($F{digoxina}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[0.5 - 2.0 ng/ml]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="360" y="110" width="130" height="20" isRemoveLineWhenBlank="true" uuid="ac1896de-b391-4380-a5a6-76f686bc2809">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="379" y="110" width="130" height="20" isRemoveLineWhenBlank="true" uuid="ac1896de-b391-4380-a5a6-76f686bc2809">
 					<printWhenExpression><![CDATA[!(new Boolean($F{fenobarbital}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[15 - 45 ng/ml]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="360" y="170" width="130" height="20" isRemoveLineWhenBlank="true" uuid="8c82c179-98f6-456d-b418-ddab42853a27">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="379" y="170" width="130" height="20" isRemoveLineWhenBlank="true" uuid="8c82c179-98f6-456d-b418-ddab42853a27">
 					<printWhenExpression><![CDATA[!(new Boolean($F{alcohol_serico}.equals("")))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[0 - 10 mg/dl]]></text>
 			</staticText>
 			<textField>
-				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="201" y="30" width="159" height="20" isRemoveLineWhenBlank="true" uuid="c9730029-46a1-424c-8aeb-94fc28fef4b4"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[new Boolean($F{acido_valproico}.equals(""))]]></textFieldExpression>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="230" y="30" width="146" height="20" isRemoveLineWhenBlank="true" uuid="c9730029-46a1-424c-8aeb-94fc28fef4b4"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{acido_valproico}.equals("")) ?"":$F{acido_valproico})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="202" y="50" width="159" height="20" isRemoveLineWhenBlank="true" uuid="c74c62b3-646d-4623-8932-3391c26ae9af"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[new Boolean($F{carbamazepina}.equals(""))]]></textFieldExpression>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="231" y="50" width="146" height="20" isRemoveLineWhenBlank="true" uuid="c74c62b3-646d-4623-8932-3391c26ae9af"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{carbamazepina}.equals("")) ?"":$F{carbamazepina})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="201" y="70" width="159" height="20" isRemoveLineWhenBlank="true" uuid="1d8e05ae-7452-4ba6-a552-7232e59b722e"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[new Boolean($F{difenilhidantoina}.equals(""))]]></textFieldExpression>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="230" y="70" width="146" height="20" isRemoveLineWhenBlank="true" uuid="1d8e05ae-7452-4ba6-a552-7232e59b722e"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{difenilhidantoina}.equals("")) ?"":$F{difenilhidantoina})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="202" y="90" width="159" height="20" isRemoveLineWhenBlank="true" uuid="ab9f10bd-bae5-42f9-8b51-a3404b366947"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[new Boolean($F{digoxina}.equals(""))]]></textFieldExpression>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="231" y="90" width="146" height="20" isRemoveLineWhenBlank="true" uuid="ab9f10bd-bae5-42f9-8b51-a3404b366947"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{digoxina}.equals("")) ?"":$F{digoxina})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="201" y="110" width="159" height="20" isRemoveLineWhenBlank="true" uuid="117f5c76-824c-49dc-8320-d80abfc356ef"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[new Boolean($F{fenobarbital}.equals(""))]]></textFieldExpression>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="230" y="110" width="146" height="20" isRemoveLineWhenBlank="true" uuid="117f5c76-824c-49dc-8320-d80abfc356ef"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{fenobarbital}.equals("")) ?"":$F{fenobarbital})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="202" y="130" width="159" height="20" isRemoveLineWhenBlank="true" uuid="fc88ac40-b75f-45f4-b7cd-69be07cb5fb4"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[new Boolean($F{cocaina}.equals(""))]]></textFieldExpression>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="231" y="130" width="146" height="20" isRemoveLineWhenBlank="true" uuid="fc88ac40-b75f-45f4-b7cd-69be07cb5fb4"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{cocaina}==null  ?"":$F{cocaina})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="203" y="150" width="159" height="20" isRemoveLineWhenBlank="true" uuid="f01a479a-960d-487b-961e-b5dd15b5daf2"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[new Boolean($F{marihuana}.equals(""))]]></textFieldExpression>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="232" y="150" width="146" height="20" isRemoveLineWhenBlank="true" uuid="f01a479a-960d-487b-961e-b5dd15b5daf2"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{marihuana}==null  ?"":$F{marihuana})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="202" y="170" width="159" height="20" isRemoveLineWhenBlank="true" uuid="ccddc4f4-9ba3-4ae7-94fd-f9f99e7ce452"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[new Boolean($F{alcohol_serico}.equals(""))]]></textFieldExpression>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="231" y="170" width="146" height="20" isRemoveLineWhenBlank="true" uuid="ccddc4f4-9ba3-4ae7-94fd-f9f99e7ce452"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( new Boolean($F{alcohol_serico}.equals("")) ?"":$F{alcohol_serico})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="203" y="190" width="159" height="20" isRemoveLineWhenBlank="true" uuid="1d4fe732-9135-4d29-bc1a-34a77ed69b0f"/>
-				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[new Boolean($F{anfetaminas}.equals(""))]]></textFieldExpression>
+				<reportElement key="" positionType="Float" isPrintRepeatedValues="false" x="232" y="190" width="146" height="20" isRemoveLineWhenBlank="true" uuid="1d4fe732-9135-4d29-bc1a-34a77ed69b0f"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{anfetaminas}==null  ?"":$F{anfetaminas})]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -282,6 +302,9 @@ order by id_drogas desc limit 1]]>
 		<band height="50">
 			<textField pattern="dd/MM/yyyy">
 				<reportElement x="110" y="30" width="100" height="20" uuid="79008dc6-6bdb-4879-8d11-0d9625c6d2b3"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 		</band>

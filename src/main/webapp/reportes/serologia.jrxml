@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sanguinea" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9fb797c7-002d-4428-a03e-6fee7b5343f8">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
@@ -98,7 +98,7 @@ order by id_serologia desc limit 1]]>
 	<pageHeader>
 		<band height="100" splitType="Stretch">
 			<staticText>
-				<reportElement x="190" y="80" width="193" height="20" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
+				<reportElement x="190" y="70" width="193" height="20" uuid="1c655d5d-9733-47d1-87f3-f7f0dfedfb7a"/>
 				<textElement textAlignment="Center" markup="styled">
 					<font fontName="Arial" size="17" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
@@ -410,7 +410,7 @@ order by id_serologia desc limit 1]]>
 				<textFieldExpression><![CDATA[($F{aglutinaciones}==null?"":$F{aglutinaciones})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="390" y="0" width="120" height="20" uuid="26d1c2d2-1b2c-48f7-ac3e-2b720206e522"/>
+				<reportElement x="389" y="10" width="120" height="20" uuid="26d1c2d2-1b2c-48f7-ac3e-2b720206e522"/>
 				<textElement markup="styled">
 					<font size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
