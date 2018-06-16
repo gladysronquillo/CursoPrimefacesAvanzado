@@ -38,6 +38,11 @@ public class Paciente implements Serializable {
 	@Column(name = "fechaNacimiento")
 	private Date fechaNacimiento;
 	
+	@Column(name = "edad")
+	private String edad;
+	
+	@Column(name = "telefono")
+	private String telefono;
 	
 	public String getNombres() {
 		return nombres;
@@ -117,5 +122,20 @@ public class Paciente implements Serializable {
 		return "Paciente [id_paciente=" + id_paciente + "]";
 	}
 
-	
+	public String getEdad() {
+		return edad;
+	}
+
+	public void setEdad(String edad) {
+		this.edad = edad;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
 }

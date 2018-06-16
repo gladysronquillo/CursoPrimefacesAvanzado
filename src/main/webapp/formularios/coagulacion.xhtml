@@ -52,12 +52,18 @@
 						</p:selectOneRadio>
 						<p:message for="rdbSexo" />
 
-						<p:outputLabel style="font-weight:bold" for="txtFechaNacimiento"
-							value="Fec. Nacimiento" />
-						<p:outputLabel id="txtFechaNacimiento"
-							value="#{pacienteController.paciente.fechaNacimiento}"
-							locale="es" disabled="true" />
-						<p:message for="txtFechaNacimiento" />
+						<p:outputLabel style="font-weight:bold" for="txtEdad" value="Edad" />
+						<p:outputLabel id="txtEdad"
+							value="#{pacienteController.paciente.edad}" required="true"
+							disabled="true" />
+						<p:message for="txtEdad" />
+
+						<p:outputLabel style="font-weight:bold" for="txtTelefono"
+							value="Teléfono" />
+						<p:outputLabel id="txtTelefono"
+							value="#{pacienteController.paciente.telefono}" required="true"
+							disabled="true" />
+						<p:message for="txtTelefono" />
 
 					</h:panelGrid>
 				</p:fieldset>

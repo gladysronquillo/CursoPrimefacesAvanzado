@@ -165,5 +165,12 @@ public class ReportesLaboratorio implements Serializable {
 		String filename = "examen_heces_1";
 		this.exportarPDF(paciente, filename);
 	}
+	
+	// Reporte PDF de Examen de heces llamado desde la vista
+		public void exportarInmunologiaPDF(Paciente paciente) {
+			// Nombre del archivo jrxml con el template del reporte
+			String filename = "inmunologia";
+			this.exportarPDF(paciente, filename);
+		}
 
 }
