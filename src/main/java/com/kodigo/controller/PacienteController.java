@@ -58,7 +58,7 @@ public class PacienteController implements Serializable {
 			if (temp != null) {
 				this.paciente = temp;
 				this.accion = "Modificar";
-				desabilitado = false;
+				this.desabilitado = false;
 
 				FacesContext context = FacesContext.getCurrentInstance();
 				Paciente_TipoExamenController bean = context.getApplication().evaluateExpressionGet(context,
@@ -100,6 +100,7 @@ public class PacienteController implements Serializable {
 	public void modificar() {
 		try {
 			pacienteEjb.edit(paciente);
+			this.desabilitado = true;
 			this.listar();
 		} catch (Exception e) {
 			System.out.println("Error al modificar paciente" + e);
@@ -110,6 +111,7 @@ public class PacienteController implements Serializable {
 		try {
 			pacienteEjb.create(paciente);
 			paciente = new Paciente();
+			this.desabilitado = true;
 			this.listar();
 		} catch (Exception e) {
 			System.out.println("Error al registrar paciente :" + e);
