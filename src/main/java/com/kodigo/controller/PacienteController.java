@@ -33,6 +33,10 @@ public class PacienteController implements Serializable {
 	public void init() {
 		paciente = new Paciente(); // probar quitando esta instanciacion
 	}
+	
+	public void instaciarPaciente() {
+		paciente = new Paciente(); // probar quitando esta instanciacion
+	}
 
 	public String linkPaciente() {
 		return "/protegido/paciente?faces-redirect=true";
@@ -86,6 +90,9 @@ public class PacienteController implements Serializable {
 		this.paciente.setCedula("");
 		this.paciente.setNombres("");
 		this.paciente.setSexo("");
+		this.paciente.setEdad("");
+		this.paciente.setTelefono("");
+		this.paciente.setId_paciente(0);
 		Date date = null;
 		this.paciente.setFechaNacimiento(date);
 	}

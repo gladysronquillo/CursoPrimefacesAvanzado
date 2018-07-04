@@ -5,8 +5,6 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -15,11 +13,10 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "paciente")
 public class Paciente implements Serializable {
-	private static final long serialVersionUID = 5144753165733729922L;
+	private static final long serialVersionUID = 3951357366278879307L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_paciente", nullable = false)
+	@Column(name = "id_paciente")
 	private Integer id_paciente;
 	
 	@Column(name = "nombres")
@@ -90,36 +87,6 @@ public class Paciente implements Serializable {
 
 	public void setId_paciente(Integer id_paciente) {
 		this.id_paciente = id_paciente;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id_paciente == null) ? 0 : id_paciente.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Paciente other = (Paciente) obj;
-		if (id_paciente == null) {
-			if (other.id_paciente != null)
-				return false;
-		} else if (!id_paciente.equals(other.id_paciente))
-			return false;
-		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "Paciente [id_paciente=" + id_paciente + "]";
 	}
 
 	public String getEdad() {

@@ -13,7 +13,7 @@ public class AgendarController implements Serializable {
 	public String linkAgendar() {
 		return "/protegido/agendar?faces-redirect=true";
 	}
-	
+
 	public String linkContacto() {
 		return "/protegido/contacto?faces-redirect=true";
 	}

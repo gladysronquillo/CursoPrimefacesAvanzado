@@ -31,11 +31,8 @@
 							requiredMessage="Campo Requerido" />
 						<p:message for="txtCedula" />
 
-						<p:outputLabel style="font-weight:bold" for="txtNombres"
-							value="Nombres" />
-						<p:outputLabel id="txtNombres"
-							value="#{pacienteController.paciente.nombres}" disabled="true"
-							requiredMessage="Campo Requerido" />
+						<p:outputLabel style="font-weight:bold" for="txtNombres" value="Nombres" />
+						<p:outputLabel id="txtNombres" value="#{pacienteController.paciente.nombres}" disabled="true" requiredMessage="Campo Requerido" />
 						<p:message for="txtNombres" />
 
 						<p:outputLabel style="font-weight:bold" for="txtApellidos"
@@ -53,9 +50,7 @@
 						<p:message for="rdbSexo" />
 
 						<p:outputLabel style="font-weight:bold" for="txtEdad" value="Edad" />
-						<p:outputLabel id="txtEdad"
-							value="#{pacienteController.paciente.edad}" required="true"
-							disabled="true" />
+						<p:outputLabel id="txtEdad" value="#{pacienteController.paciente.edad}" disabled="true" requiredMessage="Campo Requerido"	/>
 						<p:message for="txtEdad" />
 
 						<p:outputLabel style="font-weight:bold" for="txtTelefono"
