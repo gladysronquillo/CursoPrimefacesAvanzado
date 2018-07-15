@@ -12,354 +12,354 @@
 </h:head>
 
 <body>
-	<ui:composition template="./../WEB-INF/template/plantilla.xhtml">
+	<ui:composition template="./../WEB-INF/template/plantillaExamen.xhtml">
 		<ui:define name="content">
-
-			<h:form id="idFormPaciente">
-				<p:growl id="mensaje" autoUpdate="false" severity="info, fatal"
-					showSummary="true" showDetail="true" />
-				<h1></h1>
-
-				<p:fieldset legend="Datos Personales">
-					<h:panelGrid id="pgDatos" columns="3">
-
-						<p:outputLabel style="font-weight:bold" for="txtCedula"
-							value="Número Cédula" />
-						<p:outputLabel id="txtCedula" disabled="true"
-							value="#{pacienteController.paciente.cedula}"
-							requiredMessage="Campo Requerido" />
-						<p:message for="txtCedula" />
-
-						<p:outputLabel style="font-weight:bold" for="txtNombres"
-							value="Nombres" />
-						<p:outputLabel id="txtNombres" disabled="true"
-							value="#{pacienteController.paciente.nombres}"
-							requiredMessage="Campo Requerido" />
-						<p:message for="txtNombres" />
-
-						<p:outputLabel style="font-weight:bold" for="txtApellidos"
-							value="Apellidos" />
-						<p:outputLabel id="txtApellidos" disabled="true"
-							value="#{pacienteController.paciente.apellidos}" />
-						<p:message for="txtApellidos" />
-
-						<p:outputLabel style="font-weight:bold" for="rdbSexo" value="Sexo" />
-						<p:selectOneRadio id="rdbSexo" disabled="true"
-							value="#{pacienteController.paciente.sexo}">
-							<f:selectItem itemValue="M" itemLabel="Masculino" />
-							<f:selectItem itemValue="F" itemLabel="Femenino" />
-						</p:selectOneRadio>
-						<p:message for="rdbSexo" />
-
-						<p:outputLabel style="font-weight:bold" for="txtEdad" value="Edad" />
-						<p:outputLabel id="txtEdad"
-							value="#{pacienteController.paciente.edad}" required="true"
-							disabled="true" />
-						<p:message for="txtEdad" />
-
-						<p:outputLabel style="font-weight:bold" for="txtTelefono"
-							value="Teléfono" />
-						<p:outputLabel id="txtTelefono"
-							value="#{pacienteController.paciente.telefono}" required="true"
-							disabled="true" />
-						<p:message for="txtTelefono" />
-
-					</h:panelGrid>
-				</p:fieldset>
-			</h:form>
-
 
 			<h:form id="examen_orina">
 				<p:clock></p:clock>
-				<h1>EXAMEN DE ORINA</h1>
+				<h1>UROANÁLISIS</h1>
 
-				<table class="formulario" border="0">
-				<tr>
-						<td />
-						<td />
-						<td />
-						<td />
-						<td align="right"><p:outputLabel style="font-weight: bold">Valores normales</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">FÍSICO</p:outputLabel></td>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">QUÍMICO</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">COLOR : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_orinaController.examen_orina.fisicoColor}" /></td>
-						<td><p:outputLabel style="font-weight: bold">NITRITOS : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_orinaController.examen_orina.quimicoNitritos}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">ASPECTO : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_orinaController.examen_orina.fisicoAspecto}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="LIGERAMENTE TURBIO"
-									itemLabel="LIGERAMENTE TURBIO" />
-								<f:selectItem itemValue="TRANSPARENTE" itemLabel="TRANSPARENTE" />
-								<f:selectItem itemValue="TURBIO" itemLabel="TURBIO" />
-							</p:selectOneMenu></td>
-						<td><p:outputLabel style="font-weight: bold">PROTEINAS : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_orinaController.examen_orina.quimicoProteinas}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-								<f:selectItem itemValue="0" itemLabel="0" />
-								<f:selectItem itemValue="30" itemLabel="30" />
-								<f:selectItem itemValue="60" itemLabel="60" />
-								<f:selectItem itemValue="100" itemLabel="100" />
-							</p:selectOneMenu></td>
-						<td align="right"><p:outputLabel>mg/dl</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">DENSIDAD : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_orinaController.examen_orina.fisicoDensidad}" /></td>
-						<td><p:outputLabel style="font-weight: bold">GLUCOSA : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_orinaController.examen_orina.quimicoGlucosa}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="NORMAL" itemLabel="NORMAL" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-						<td align="right"><p:outputLabel>mg/dl</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">PH : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_orinaController.examen_orina.fisicoPh}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="5.0" itemLabel="5.0" />
-								<f:selectItem itemValue="5.5" itemLabel="5.5" />
-								<f:selectItem itemValue="6.0" itemLabel="6.0" />
-								<f:selectItem itemValue="6.5" itemLabel="6.5" />
-								<f:selectItem itemValue="7.0" itemLabel="7.0" />
-								<f:selectItem itemValue="7.5" itemLabel="7.5" />
-								<f:selectItem itemValue="8.0" itemLabel="8.0" />
-								<f:selectItem itemValue="8.5" itemLabel="8.5" />
-							</p:selectOneMenu></td>
-						<td><p:outputLabel style="font-weight: bold">C. CETONICO : </p:outputLabel></td>
-						<td colspan="2"><p:selectOneMenu
-								value="#{examen_orinaController.examen_orina.quimicoCetonico}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="NORMAL" itemLabel="NORMAL" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel></p:outputLabel></td>
-						<td><p:outputLabel style="font-weight: bold">UROBILINOGENO : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_orinaController.examen_orina.quimicoUrobilinogeno}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="NORMAL" itemLabel="NORMAL" />
-								<f:selectItem itemValue="0" itemLabel="0" />
-								<f:selectItem itemValue="2" itemLabel="2" />
-								<f:selectItem itemValue="4" itemLabel="4" />
-								<f:selectItem itemValue="8" itemLabel="8" />
-							</p:selectOneMenu></td>
-						<td align="right"><p:outputLabel>mg/dl</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel></p:outputLabel></td>
-						<td><p:outputLabel style="font-weight: bold">BILIRUBINAS : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_orinaController.examen_orina.quimicoBilirubinas}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="NORMAL" itemLabel="NORMAL" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel></p:outputLabel></td>
-						<td><p:outputLabel style="font-weight: bold">SANGRE : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_orinaController.examen_orina.quimicoSangre}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="NORMAL" itemLabel="NORMAL" />
-								<f:selectItem itemValue="TRAZAS" itemLabel="TRAZAS" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel></p:outputLabel></td>
-						<td><p:outputLabel style="font-weight: bold">LEUCOCITOS : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_orinaController.examen_orina.quimicoLeucocitos}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="NORMAL" itemLabel="NORMAL" />
-								<f:selectItem itemValue="TRAZAS" itemLabel="TRAZAS" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td colspan="4"><p:outputLabel>MICROSCÓPICO</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">Células epiteliales : </p:outputLabel></td>
-						<td colspan="2"><p:inputText
-								value="#{examen_orinaController.examen_orina.celulasEpiteliales}" /></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">Células redondas : </p:outputLabel></td>
-						<td colspan="2"><p:inputText
-								value="#{examen_orinaController.examen_orina.celulasRedondas}" /></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">Bacterias : </p:outputLabel></td>
-						<td colspan="2"><p:selectOneMenu
-								value="#{examen_orinaController.examen_orina.bacterias}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="ESCASOS" itemLabel="ESCASOS" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">Piocitos : </p:outputLabel></td>
-						<td colspan="2"><p:inputText
-								value="#{examen_orinaController.examen_orina.piocitos}" /></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">Hematíes : </p:outputLabel></td>
-						<td colspan="2"><p:inputText
-								value="#{examen_orinaController.examen_orina.hematies}" /></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">Filamentos mucosos : </p:outputLabel></td>
-						<td colspan="2"><p:selectOneMenu
-								value="#{examen_orinaController.examen_orina.filamentosMucosos}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">Cristales : </p:outputLabel></td>
-						<td colspan="2"><p:inputText
-								value="#{examen_orinaController.examen_orina.cristales}" /></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">Cilindros : </p:outputLabel></td>
-						<td colspan="2"><p:inputText
-								value="#{examen_orinaController.examen_orina.cilindros}" /></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">Esporas de hongos : </p:outputLabel></td>
-						<td colspan="2"><p:selectOneMenu
-								value="#{examen_orinaController.examen_orina.esporasHongos}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="ESCASOS" itemLabel="ESCASOS" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">Miscelios de hongos : </p:outputLabel></td>
-						<td colspan="2"><p:selectOneMenu
-								value="#{examen_orinaController.examen_orina.misceliosHongos}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="ESCASOS" itemLabel="ESCASOS" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">Trichomonas : </p:outputLabel></td>
-						<td colspan="2"><p:selectOneMenu
-								value="#{examen_orinaController.examen_orina.trichomonas}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="ESCASOS" itemLabel="ESCASOS" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">GOTA RFRESCA: </p:outputLabel></td>
-						<td colspan="2"><p:inputText
-								value="#{examen_orinaController.examen_orina.gotaFresca}" /></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">PROTEINURIA 24 HORAS : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_orinaController.examen_orina.proteinuria24}" /></td>
-								<td/>
-						<td align="right"><p:outputLabel>V.N.: hasta 150 mg/24H</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">PROTEINURIA MICCIONAL : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_orinaController.examen_orina.proteinuriaMiccional}" /></td>
-								<td/>
-						<td align="right"><p:outputLabel>hasta 12 mg/dl</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">MICROALBUMINURIA : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_orinaController.examen_orina.microalbuminuria}" /></td>
-								<td/>
-						<td align="right"><p:outputLabel>0 - 20 mg/dl</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">CLEARANCE DE CREATININA : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_orinaController.examen_orina.clearanceCreatinina}" /></td>
-								<td/>
-						<td align="right"><p:outputLabel>80 - 120 mil/min</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">BAAR EN : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_orinaController.examen_orina.baar}" /></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">PRUEBA DE EMBARAZO(HCGB) : </p:outputLabel></td>
-						<td colspan="2"><p:selectOneMenu
-								value="#{examen_orinaController.examen_orina.pruebaEmbarazo}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p:outputLabel style="font-weight: bold">MUESTRAS : </p:outputLabel></td>
-						<td colspan="2"><p:selectOneMenu
-								value="#{examen_orinaController.examen_orina.muestras}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-				</table>
+				<p:tabView dynamic="true" cache="true" effect="fold">
+					<p:tab title="Elemental y Microscópico">
+
+						<table class="formulario" border="0">
+
+							<tr>
+								<td />
+								<td />
+								<td align="right"><p:outputLabel style="font-weight: bold">Unidades</p:outputLabel></td>
+							</tr>
+
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">Examen Físico : </p:outputLabel></td>
+							</tr>
+
+							<tr>
+								<td><p:outputLabel>COLOR : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_hecesController.examen_heces.unoColor}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="AMARILLO" itemLabel="AMARILLO" />
+										<f:selectItem itemValue="ROJO" itemLabel="ROJO" />
+										<f:selectItem itemValue="AMBAR" itemLabel="AMBAR" />
+										<f:selectItem itemValue="NARANJA" itemLabel="NARANJA" />
+									</p:selectOneMenu></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>ASPECTO : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_hecesController.examen_heces.unoColor}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="TRANSPARENTE"
+											itemLabel="TRANSPARENTE" />
+										<f:selectItem itemValue="TURBIO" itemLabel="TURBIO" />
+										<f:selectItem itemValue="LIGERAMENTE TURBIO"
+											itemLabel="LIGERAMENTE TURBIO" />
+									</p:selectOneMenu></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">Examen Químico : </p:outputLabel></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>DENSIDAD : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_hecesController.examen_heces.unoColor}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="1.000" itemLabel="1.000" />
+										<f:selectItem itemValue="1.005" itemLabel="1.005" />
+										<f:selectItem itemValue="1.010" itemLabel="1.010" />
+										<f:selectItem itemValue="1.015" itemLabel="1.015" />
+										<f:selectItem itemValue="1.020" itemLabel="1.020" />
+										<f:selectItem itemValue="1.025" itemLabel="1.025" />
+										<f:selectItem itemValue="1.030" itemLabel="1.030" />
+									</p:selectOneMenu></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>pH : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_hecesController.examen_heces.unoColor}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="5" itemLabel="5" />
+										<f:selectItem itemValue="5.5" itemLabel="5.5" />
+										<f:selectItem itemValue="6" itemLabel="6" />
+										<f:selectItem itemValue="6.5" itemLabel="6.5" />
+										<f:selectItem itemValue="7" itemLabel="7" />
+										<f:selectItem itemValue="7.5" itemLabel="7.5" />
+										<f:selectItem itemValue="8" itemLabel="8" />
+										<f:selectItem itemValue="8.5" itemLabel="8.5" />
+										<f:selectItem itemValue="9" itemLabel="9" />
+									</p:selectOneMenu></td>
+							</tr>
+
+							<tr>
+								<td><p:outputLabel>LEUCOCITOS : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.esporasHongos}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="+" itemLabel="+" />
+										<f:selectItem itemValue="++" itemLabel="++" />
+										<f:selectItem itemValue="+++" itemLabel="+++" />
+										<f:selectItem itemValue="ESCASOS" itemLabel="ESCASOS" />
+										<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
+									</p:selectOneMenu></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>NITRITOS : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.esporasHongos}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
+										<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
+									</p:selectOneMenu></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>PROTEINAS : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.esporasHongos}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="30" itemLabel="30" />
+										<f:selectItem itemValue="100" itemLabel="100" />
+										<f:selectItem itemValue="500" itemLabel="500" />
+										<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
+									</p:selectOneMenu></td>
+								<td align="right"><p:outputLabel>mg / dl</p:outputLabel><br />
+								</td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>GLUCOSA : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.esporasHongos}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="50" itemLabel="50" />
+										<f:selectItem itemValue="100" itemLabel="100" />
+										<f:selectItem itemValue="300" itemLabel="300" />
+										<f:selectItem itemValue="1000" itemLabel="1000" />
+										<f:selectItem itemValue="NORMAL" itemLabel="NORMAL" />
+									</p:selectOneMenu></td>
+								<td align="right"><p:outputLabel>mg / dl</p:outputLabel><br />
+								</td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>CUERPOS CETÓNICOS : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.esporasHongos}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="+" itemLabel="+" />
+										<f:selectItem itemValue="++" itemLabel="++" />
+										<f:selectItem itemValue="+++" itemLabel="+++" />
+										<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
+									</p:selectOneMenu></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>UROBILINÓGENO : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.esporasHongos}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="1" itemLabel="1" />
+										<f:selectItem itemValue="4" itemLabel="4" />
+										<f:selectItem itemValue="8" itemLabel="8" />
+										<f:selectItem itemValue="12" itemLabel="12" />
+										<f:selectItem itemValue="NORMAL" itemLabel="NORMAL" />
+									</p:selectOneMenu></td>
+								<td align="right"><p:outputLabel>mg / dl</p:outputLabel><br />
+								</td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>BILIRRUBINAS : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.esporasHongos}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="+" itemLabel="+" />
+										<f:selectItem itemValue="++" itemLabel="++" />
+										<f:selectItem itemValue="+++" itemLabel="+++" />
+										<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
+									</p:selectOneMenu></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>SANGRE : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.esporasHongos}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="+" itemLabel="+" />
+										<f:selectItem itemValue="++" itemLabel="++" />
+										<f:selectItem itemValue="+++" itemLabel="+++" />
+										<f:selectItem itemValue="++++" itemLabel="++++" />
+										<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
+									</p:selectOneMenu></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>HEMOGLOBINA : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.esporasHongos}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="+" itemLabel="+" />
+										<f:selectItem itemValue="++" itemLabel="++" />
+										<f:selectItem itemValue="+++" itemLabel="+++" />
+										<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
+									</p:selectOneMenu></td>
+							</tr>
+
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">Examen Microscopico : </p:outputLabel></td>
+							</tr>
+							
+							<tr>
+								<td><p:outputLabel>Piocitos: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Hematices: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Células Epiteliales bajas: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Células Epiteliales altas: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Moco : </p:outputLabel></td>
+								<td ><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.esporasHongos}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="+" itemLabel="+" />
+										<f:selectItem itemValue="++" itemLabel="++" />
+										<f:selectItem itemValue="+++" itemLabel="+++" />
+										<f:selectItem itemValue="ESCASO" itemLabel="ESCASO" />
+										<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
+									</p:selectOneMenu></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Bacterias : </p:outputLabel></td>
+								<td ><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.esporasHongos}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="+" itemLabel="+" />
+										<f:selectItem itemValue="++" itemLabel="++" />
+										<f:selectItem itemValue="+++" itemLabel="+++" />
+										<f:selectItem itemValue="ESCASAS" itemLabel="ESCASAS" />
+										<f:selectItem itemValue="OCASIONALES" itemLabel="OCASIONALES" />
+										<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
+									</p:selectOneMenu></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Cristales: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Cilindros: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Parásitos: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Hongos: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Observaciones: </p:outputLabel></td>
+								<td><p:inputTextarea
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+
+
+
+						</table>
+
+					</p:tab>
+					<p:tab title="Otros Exámenes">
+
+						<table class="formulario" border="0">
+
+							<tr>
+								<td><p:outputLabel>Gram de Gota Fresca : </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Proteinas orina miccionar : </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Proteinas orina 24 horas : </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Microalbuminuria : </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Clearance de creatinina : </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Volumen orina 24 horas : </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Creatinina en orina: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+
+
+
+						</table>
+					</p:tab>
+				</p:tabView>
 				<br></br>
 
 
 				<p:commandLink
 					actionListener="#{examen_orinaController.registrar(pacienteController.paciente.id_paciente)}"
-					update=":idFormPaciente:mensaje , examen_orina, botonPdf"
+					update="examen_orina, botonPdf"
 					disabled="#{!examen_orinaController.desabilitado}">
 					<h:graphicImage value="/resources/images/grabar.png" border="0"
 						width="75" height="75" />
@@ -371,10 +371,10 @@
 					<h:graphicImage value="/resources/images/pdf.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>
-				
+
 				<p:commandLink id="botonPdf_backup"
 					action="#{reportesLaboratorio.exportarExamenOrinaPDF(pacienteController.paciente)}"
-					ajax="false" >
+					ajax="false">
 					<h:graphicImage value="/resources/images/pdf_backup.png" border="0"
 						width="90" height="75" />
 				</p:commandLink>

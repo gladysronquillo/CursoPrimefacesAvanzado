@@ -14,1163 +14,237 @@
 </h:head>
 
 <body>
-	<ui:composition template="./../WEB-INF/template/plantilla.xhtml">
+	<ui:composition template="./../WEB-INF/template/plantillaExamen.xhtml">
 		<ui:define name="content">
-
-			<h:form id="idFormPaciente">
-				<p:growl id="mensaje" autoUpdate="false" severity="info, fatal"
-					showSummary="true" showDetail="true" />
-				<h1></h1>
-
-				<p:fieldset legend="Datos Personales">
-					<h:panelGrid id="pgDatos" columns="3">
-
-						<p:outputLabel style="font-weight:bold" for="txtCedula"
-							value="Número Cédula" />
-						<p:outputLabel id="txtCedula" disabled="true"
-							value="#{pacienteController.paciente.cedula}"
-							requiredMessage="Campo Requerido" />
-						<p:message for="txtCedula" />
-
-						<p:outputLabel style="font-weight:bold" for="txtNombres"
-							value="Nombres" />
-						<p:outputLabel id="txtNombres" disabled="true"
-							value="#{pacienteController.paciente.nombres}"
-							requiredMessage="Campo Requerido" />
-						<p:message for="txtNombres" />
-
-						<p:outputLabel style="font-weight:bold" for="txtApellidos"
-							value="Apellidos" />
-						<p:outputLabel id="txtApellidos" disabled="true"
-							value="#{pacienteController.paciente.apellidos}" />
-						<p:message for="txtApellidos" />
-
-						<p:outputLabel style="font-weight:bold" for="rdbSexo" value="Sexo" />
-						<p:selectOneRadio id="rdbSexo" disabled="true"
-							value="#{pacienteController.paciente.sexo}">
-							<f:selectItem itemValue="M" itemLabel="Masculino" />
-							<f:selectItem itemValue="F" itemLabel="Femenino" />
-						</p:selectOneRadio>
-						<p:message for="rdbSexo" />
-
-						<p:outputLabel style="font-weight:bold" for="txtEdad" value="Edad" />
-						<p:outputLabel id="txtEdad"
-							value="#{pacienteController.paciente.edad}" required="true"
-							disabled="true" />
-						<p:message for="txtEdad" />
-
-						<p:outputLabel style="font-weight:bold" for="txtTelefono"
-							value="Teléfono" />
-						<p:outputLabel id="txtTelefono"
-							value="#{pacienteController.paciente.telefono}" required="true"
-							disabled="true" />
-						<p:message for="txtTelefono" />
-
-					</h:panelGrid>
-				</p:fieldset>
-			</h:form>
-
 
 			<h:form id="examen_heces">
 				<p:clock></p:clock>
-				<h1>EXAMEN DE HECES</h1>
+				<h1>Coproanálisis</h1>
+
+				<p:tabView dynamic="true" cache="true" effect="fold">
+					<p:tab title="Coproparasitario">
+
+						<table class="formulario" border="0">
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">Examen Físico : </p:outputLabel></td>
+							</tr>
+
+							<tr>
+								<td><p:outputLabel>COLOR : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_hecesController.examen_heces.unoColor}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="AMARILLO" itemLabel="AMARILLO" />
+										<f:selectItem itemValue="CAFÉ" itemLabel="CAFÉ" />
+										<f:selectItem itemValue="ROJO" itemLabel="ROJO" />
+										<f:selectItem itemValue="BLANCO" itemLabel="BLANCO" />
+										<f:selectItem itemValue="VERDE" itemLabel="VERDE" />
+										<f:selectItem itemValue="NEGRO" itemLabel="NEGRO" />
+									</p:selectOneMenu></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>CONSISTENCIA : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_hecesController.examen_heces.unoCosistencia}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="DURA" itemLabel="DURA" />
+										<f:selectItem itemValue="BLANDA" itemLabel="BLANDA" />
+										<f:selectItem itemValue="MUCOIDE" itemLabel="MUCOIDE" />
+										<f:selectItem itemValue="LÍQUIDA" itemLabel="LÍQUIDA" />
+										<f:selectItem itemValue="SEMI LÍQUIDA"
+											itemLabel="SEMI LÍQUIDA" />
+									</p:selectOneMenu></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Aspecto : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_hecesController.examen_heces.unoCosistencia}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="HETEROGENEO" itemLabel="HETEROGENEO" />
+										<f:selectItem itemValue="HOMOGENEO" itemLabel="HOMOGENEO" />
+									</p:selectOneMenu></td>
+							</tr>
+
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">Examen Micróscopico : </p:outputLabel></td>
+							</tr>
+
+							<tr>
+								<td><p:outputLabel>Restos Alimenticios : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.esporasHongos}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="+" itemLabel="+" />
+										<f:selectItem itemValue="++" itemLabel="++" />
+										<f:selectItem itemValue="+++" itemLabel="+++" />
+										<f:selectItem itemValue="ESCASOS" itemLabel="ESCASOS" />
+									</p:selectOneMenu></td>
+							</tr>
+
+							<tr>
+								<td><p:outputLabel>Grasas : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.esporasHongos}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="+" itemLabel="+" />
+										<f:selectItem itemValue="++" itemLabel="++" />
+										<f:selectItem itemValue="+++" itemLabel="+++" />
+										<f:selectItem itemValue="ESCASAS" itemLabel="ESCASAS" />
+									</p:selectOneMenu></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Almidones : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.esporasHongos}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="+" itemLabel="+" />
+										<f:selectItem itemValue="++" itemLabel="++" />
+										<f:selectItem itemValue="+++" itemLabel="+++" />
+										<f:selectItem itemValue="ESCASOS" itemLabel="ESCASOS" />
+									</p:selectOneMenu></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Levaduras : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.esporasHongos}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="+" itemLabel="+" />
+										<f:selectItem itemValue="++" itemLabel="++" />
+										<f:selectItem itemValue="+++" itemLabel="+++" />
+										<f:selectItem itemValue="ESCASAS" itemLabel="ESCASAS" />
+									</p:selectOneMenu></td>
+							</tr>
+
+							<tr>
+								<td><p:outputLabel>Flora Bacteriana : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.esporasHongos}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="NORMAL" itemLabel="NORMAL" />
+										<f:selectItem itemValue="DISMINUIDA" itemLabel="DISMINUIDA" />
+										<f:selectItem itemValue="AUMENTADA" itemLabel="AUMENTADA" />
+										<f:selectItem itemValue="LIGERAMENTE AUMENTADA"
+											itemLabel="LIGERAMENTE AUMENTADA" />
+									</p:selectOneMenu></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Moco : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.esporasHongos}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="+" itemLabel="+" />
+										<f:selectItem itemValue="++" itemLabel="++" />
+										<f:selectItem itemValue="+++" itemLabel="+++" />
+										<f:selectItem itemValue="ESCASO" itemLabel="ESCASO" />
+										<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
+									</p:selectOneMenu></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Piocitos : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.esporasHongos}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="+" itemLabel="+" />
+										<f:selectItem itemValue="++" itemLabel="++" />
+										<f:selectItem itemValue="+++" itemLabel="+++" />
+										<f:selectItem itemValue="ESCASO" itemLabel="ESCASO" />
+										<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
+									</p:selectOneMenu></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Hematíes : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.esporasHongos}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="+" itemLabel="+" />
+										<f:selectItem itemValue="++" itemLabel="++" />
+										<f:selectItem itemValue="+++" itemLabel="+++" />
+										<f:selectItem itemValue="ESCASO" itemLabel="ESCASO" />
+										<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
+									</p:selectOneMenu></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Hifas de hongos : </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.esporasHongos}">
+										<f:selectItem itemValue="" itemLabel="N/A" />
+										<f:selectItem itemValue="+" itemLabel="+" />
+										<f:selectItem itemValue="++" itemLabel="++" />
+										<f:selectItem itemValue="+++" itemLabel="+++" />
+										<f:selectItem itemValue="ESCASO" itemLabel="ESCASO" />
+									</p:selectOneMenu></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">Parasitario : </p:outputLabel></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Parasitos : </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+
+						</table>
+
+					</p:tab>
+					<p:tab title="Otros Exámenes">
+
+						<table class="formulario" border="0">
+
+							<tr>
+								<td><p:outputLabel>Investigación de Rotavirus : </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Investigación de Adenovirus : </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Investigación de Sangre Oculta : </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Investigación de Polimorfosnucleares (PMN) : </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Investigación de Helicobacter pylori : </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
+							<tr>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
+							</tr>
 
 
+						</table>
+					</p:tab>
+				</p:tabView>
 
 
-    <p:tabView dynamic="true" cache="true" effect="fold">
-        <p:tab title="I día">
-            
-               <table class="formulario" border="0">
-               
-					<tr>
-						<td><p:outputLabel>COLOR : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoColor}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="AMARILLO" itemLabel="AMARILLO" />
-								<f:selectItem itemValue="CAFÉ" itemLabel="CAFÉ" />
-								<f:selectItem itemValue="ROJO" itemLabel="ROJO" />
-								<f:selectItem itemValue="BLANCO" itemLabel="BLANCO" />
-								<f:selectItem itemValue="VERDE" itemLabel="VERDE" />
-								<f:selectItem itemValue="NEGRO" itemLabel="NEGRO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>CONSISTENCIA : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoCosistencia}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="BLANDA" itemLabel="BLANDA" />
-								<f:selectItem itemValue="PASTOZA" itemLabel="PASTOZA" />
-								<f:selectItem itemValue="LÍQUIDA" itemLabel="LÍQUIDA" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">COPROLÓGICO : </p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Levaduras : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoLevaduras}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Almidones : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoAlmidones}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Grasas : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoGrasas}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Restos Vegetales : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoRestosVegetales}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Blastocistis hominis : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoBlastocistisHominis}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Esporas de hongos : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_hecesController.examen_heces.unoEsporasHongos}" /></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Piocitos : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoPiocitos}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Hemetíes : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoHematies}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Moco : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoMoco}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>I.P.M.N : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_hecesController.examen_heces.unoIpmn}" /></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>SANGRE OCULTA : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoSangreOculta}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>FLORA BACTERIANA : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoFloraBacteriana}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="DISMINUIDA" itemLabel="DISMINUIDA" />
-								<f:selectItem itemValue="AUMENTADA" itemLabel="AUMENTADA" />
-								<f:selectItem itemValue="NORMAL" itemLabel="NORMAL" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>ROTAVIRUS : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoRotavirus}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">PARASITARIO : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoParasitario}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Ameba Histolítica : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoAmebaHistolitica}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Ameba Coli : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoAmebaColi}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Yodameba butschlii : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoYodamebaButschlii}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Endolimax nana : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoEndolimaxNana}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Giardia lamblia : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoGiardiaLamblia}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Trichomonas hominis : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoTrichomonasHominis}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Chilomastix mesnili : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoChilomastixMesnili}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Embadomonas hominis : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoEmbadomonasHominis}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Ascaris lumbricoides : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoAscarisLumbricoides}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Tricocefalos : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoTricocefalos}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Oxiuros : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoOxiuros}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Uncinairas : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoUncinairas}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Strongiloides stercoralis : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoStrongiloidesStercoralis}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Tenias: Solium : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoTeniasSolium}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Saginata : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoSaginata}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Himenolepis Nana : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoHimenolepisNana}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Himenolepis Diminuta : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoHimenolepisDiminuta}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>CLINITEST : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoClinitest}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>SUDAN III : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoSudanIii}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>pH : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_hecesController.examen_heces.unoPh}" /></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Helicobacter pylori : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.unoHelicobacterPylori}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-				</table>
-          
-        </p:tab>
-        <p:tab title="II día">
-            
-                <table class="formulario" border="0">
-					<tr>
-						<td><p:outputLabel>COLOR : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosColor}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="AMARILLO" itemLabel="AMARILLO" />
-								<f:selectItem itemValue="CAFÉ" itemLabel="CAFÉ" />
-								<f:selectItem itemValue="ROJO" itemLabel="ROJO" />
-								<f:selectItem itemValue="BLANCO" itemLabel="BLANCO" />
-								<f:selectItem itemValue="VERDE" itemLabel="VERDE" />
-								<f:selectItem itemValue="NEGRO" itemLabel="NEGRO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>CONSISTENCIA : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosCosistencia}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="BLANDA" itemLabel="BLANDA" />
-								<f:selectItem itemValue="PASTOZA" itemLabel="PASTOZA" />
-								<f:selectItem itemValue="LÍQUIDA" itemLabel="LÍQUIDA" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">COPROLÓGICO : </p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Levaduras : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosLevaduras}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Almidones : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosAlmidones}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Grasas : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosGrasas}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Restos Vegetales : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosRestosVegetales}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Blastocistis hominis : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosBlastocistisHominis}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Esporas de hongos : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_hecesController.examen_heces.dosEsporasHongos}" /></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Piocitos : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosPiocitos}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Hemetíes : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosHematies}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Moco : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosMoco}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>I.P.M.N : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_hecesController.examen_heces.dosIpmn}" /></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>SANGRE OCULTA : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosSangreOculta}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>FLORA BACTERIANA : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosFloraBacteriana}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="DISMINUIDA" itemLabel="DISMINUIDA" />
-								<f:selectItem itemValue="AUMENTADA" itemLabel="AUMENTADA" />
-								<f:selectItem itemValue="NORMAL" itemLabel="NORMAL" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>ROTAVIRUS : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosRotavirus}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">PARASITARIO : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosParasitario}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Ameba Histolítica : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosAmebaHistolitica}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Ameba Coli : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosAmebaColi}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Yodameba butschlii : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosYodamebaButschlii}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Endolimax nana : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosEndolimaxNana}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Giardia lamblia : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosGiardiaLamblia}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Trichomonas hominis : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosTrichomonasHominis}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Chilomastix mesnili : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosChilomastixMesnili}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Embadomonas hominis : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosEmbadomonasHominis}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Ascaris lumbricoides : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosAscarisLumbricoides}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Tricocefalos : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosTricocefalos}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Oxiuros : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosOxiuros}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Uncinairas : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosUncinairas}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Strongiloides stercoralis : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosStrongiloidesStercoralis}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Tenias: Solium : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosTeniasSolium}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Saginata : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosSaginata}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Himenolepis Nana : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosHimenolepisNana}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Himenolepis Diminuta : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosHimenolepisDiminuta}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>CLINITEST : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosClinitest}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>SUDAN III : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosSudanIii}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>pH : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_hecesController.examen_heces.dosPh}" /></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Helicobacter pylori : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.dosHelicobacterPylori}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-				</table>
-           
-        </p:tab>
-        <p:tab title="III día">
-           
-                <table class="formulario" border="0">
-					<tr>
-						<td><p:outputLabel>COLOR : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresColor}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="AMARILLO" itemLabel="AMARILLO" />
-								<f:selectItem itemValue="CAFÉ" itemLabel="CAFÉ" />
-								<f:selectItem itemValue="ROJO" itemLabel="ROJO" />
-								<f:selectItem itemValue="BLANCO" itemLabel="BLANCO" />
-								<f:selectItem itemValue="VERDE" itemLabel="VERDE" />
-								<f:selectItem itemValue="NEGRO" itemLabel="NEGRO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>CONSISTENCIA : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresCosistencia}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="BLANDA" itemLabel="BLANDA" />
-								<f:selectItem itemValue="PASTOZA" itemLabel="PASTOZA" />
-								<f:selectItem itemValue="LÍQUIDA" itemLabel="LÍQUIDA" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">COPROLÓGICO : </p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Levaduras : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresLevaduras}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Almidones : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresAlmidones}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Grasas : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresGrasas}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Restos Vegetales : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresRestosVegetales}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Blastocistis hominis : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresBlastocistisHominis}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Esporas de hongos : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_hecesController.examen_heces.tresEsporasHongos}" /></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Piocitos : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresPiocitos}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Hemetíes : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresHematies}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Moco : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresMoco}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>I.P.M.N : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_hecesController.examen_heces.tresIpmn}" /></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>SANGRE OCULTA : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresSangreOculta}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>FLORA BACTERIANA : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresFloraBacteriana}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="DISMINUIDA" itemLabel="DISMINUIDA" />
-								<f:selectItem itemValue="AUMENTADA" itemLabel="AUMENTADA" />
-								<f:selectItem itemValue="NORMAL" itemLabel="NORMAL" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>ROTAVIRUS : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresRotavirus}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">PARASITARIO : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresParasitario}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Ameba Histolítica : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresAmebaHistolitica}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Ameba Coli : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresAmebaColi}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Yodameba butschlii : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresYodamebaButschlii}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Endolimax nana : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresEndolimaxNana}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Giardia lamblia : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresGiardiaLamblia}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Trichomonas hominis : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresTrichomonasHominis}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Chilomastix mesnili : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresChilomastixMesnili}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Embadomonas hominis : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresEmbadomonasHominis}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Ascaris lumbricoides : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresAscarisLumbricoides}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Tricocefalos : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresTricocefalos}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Oxiuros : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresOxiuros}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Uncinairas : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresUncinairas}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Strongiloides stercoralis : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresStrongiloidesStercoralis}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Tenias: Solium : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresTeniasSolium}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Saginata : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresSaginata}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Himenolepis Nana : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresHimenolepisNana}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Himenolepis Diminuta : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresHimenolepisDiminuta}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="+" itemLabel="+" />
-								<f:selectItem itemValue="++" itemLabel="++" />
-								<f:selectItem itemValue="+++" itemLabel="+++" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>CLINITEST : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresClinitest}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>SUDAN III : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresSudanIii}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>pH : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_hecesController.examen_heces.tresPh}" /></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel>Helicobacter pylori : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_hecesController.examen_heces.tresHelicobacterPylori}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-				</table>
-           
-        </p:tab>
-    </p:tabView>
-
-				
 				<br></br>
 
 				<p:commandLink
 					actionListener="#{examen_hecesController.registrar(pacienteController.paciente.id_paciente)}"
-					update=":idFormPaciente:mensaje, examen_heces, botonPdf"
+					update="examen_heces, botonPdf"
 					disabled="#{!examen_hecesController.desabilitado}">
 					<h:graphicImage value="/resources/images/grabar.png" border="0"
 						width="75" height="75" />

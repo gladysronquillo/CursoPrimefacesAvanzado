@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+	<style type="text/css">
+.ui-widget, .ui-widget .ui-widget {
+	font-size: 100% !important;
+}
+</style>
+	<meta http-equiv="Content-Type" content="text/xhtml; charset=UTF-8" />
+	<title>KODIGOR</title>
+	<f:event type="preRenderView"
+		listener="#{plantillaController.verificarSesion()}"></f:event>
+</h:head>
+
+<h:body>
+	<p:layout style="min-width:400px;min-height:1000px;">
+		<p:layoutUnit position="south" size="53" resizable="false"
+			closable="false" collapsible="true">
+			<h:outputText value="KODIGOR, Copyright © 2018" />
+			<br />
+			<h:outputText value="Todos los derechos reservados" />
+		</p:layoutUnit>
+
+		<p:layoutUnit position="west" size="100" resizable="true"
+			closable="true" collapsible="true">
+		</p:layoutUnit>
+
+		<p:layoutUnit position="east" size="100" resizable="false"
+			closable="false" collapsible="true" effect="drop">
+		</p:layoutUnit>
+
+		<p:layoutUnit position="center">
+
+			<div id="top">
+				<ui:insert name="top"></ui:insert>
+				<h:form>
+					
+					<p:menubar>
+						<p:submenu label="Paciente" icon="ui-icon-home">
+							<p:menuitem value="Nuevo" icon="ui-icon-document"
+								action="#{pacienteController.linkPaciente()}" />
+						</p:submenu>
+						<p:submenu label="Órdenes" icon="ui-icon-pencil">
+							<p:menuitem value="Orden"
+								action="#{agendarController.linkAgendar()}" />
+						</p:submenu>
+						<p:submenu label="Ayuda" icon="ui-icon-circle-plus">
+							<p:menuitem value="Contactos"
+								action="#{agendarController.linkContacto()}" />
+						</p:submenu>
+
+						<f:facet name="options">
+							<p:commandButton value="Salir" icon="ui-icon-extlink"
+								action="#{indexController.cerrarSesion()}" />
+						</f:facet>
+					</p:menubar>
+					
+					
+					
+					
+					
+					<h:form id="idFormPaciente">
+				<p:growl id="mensaje" autoUpdate="false" severity="info, fatal"
+					showSummary="true" showDetail="true" />
+				<h1></h1>
+
+				<p:fieldset legend="Datos Personales">
+					<h:panelGrid id="pgDatos" columns="3">
+
+						<p:outputLabel style="font-weight:bold" for="txtCedula"
+							value="Número Cédula" />
+						<p:outputLabel id="txtCedula" disabled="true"
+							value="#{pacienteController.paciente.cedula}"
+							requiredMessage="Campo Requerido" />
+						<p:message for="txtCedula" />
+
+						<p:outputLabel style="font-weight:bold" for="txtNombres"
+							value="Nombres" />
+						<p:outputLabel id="txtNombres" disabled="true"
+							value="#{pacienteController.paciente.nombres}"
+							requiredMessage="Campo Requerido" />
+						<p:message for="txtNombres" />
+
+						<p:outputLabel style="font-weight:bold" for="txtApellidos"
+							value="Apellidos" />
+						<p:outputLabel id="txtApellidos" disabled="true"
+							value="#{pacienteController.paciente.apellidos}" />
+						<p:message for="txtApellidos" />
+
+						<p:outputLabel style="font-weight:bold" for="rdbSexo" value="Sexo" />
+						<p:selectOneRadio id="rdbSexo" disabled="true"
+							value="#{pacienteController.paciente.sexo}">
+							<f:selectItem itemValue="M" itemLabel="Masculino" />
+							<f:selectItem itemValue="F" itemLabel="Femenino" />
+						</p:selectOneRadio>
+						<p:message for="rdbSexo" />
+
+						<p:outputLabel style="font-weight:bold" for="txtEdad" value="Edad" />
+						<p:outputLabel id="txtEdad"
+							value="#{pacienteController.paciente.edad}" required="true"
+							disabled="true" />
+						<p:message for="txtEdad" />
+
+						<p:outputLabel style="font-weight:bold" for="txtTelefono"
+							value="Teléfono" />
+						<p:outputLabel id="txtTelefono"
+							value="#{pacienteController.paciente.telefono}" required="true"
+							disabled="true" />
+						<p:message for="txtTelefono" />
+
+					</h:panelGrid>
+				</p:fieldset>
+			</h:form>
+					
+					
+					
+					
+				</h:form>
+			</div>
+
+			<div id="content" class="center_content">
+				<ui:insert name="content"></ui:insert>
+			</div>
+
+			<div id="bottom">
+				<ui:insert name="bottom"></ui:insert>
+			</div>
+		</p:layoutUnit>
+	</p:layout>
+</h:body>
+</html>

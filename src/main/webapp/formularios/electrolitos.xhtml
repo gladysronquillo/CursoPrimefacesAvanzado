@@ -12,7 +12,7 @@
 </h:head>
 
 <body>
-	<ui:composition template="./../WEB-INF/template/plantilla.xhtml">
+	<ui:composition template="./../WEB-INF/template/plantillaExamen.xhtml">
 		<ui:define name="content">
 
 			<h:form id="idFormPaciente">
@@ -130,7 +130,7 @@
 				
 				<p:commandLink
 					actionListener="#{electrolitosController.registrar(pacienteController.paciente.id_paciente)}"
-					update=":idFormPaciente:mensaje , electrolitos, botonPdf" disabled="#{!electrolitosController.desabilitado}">
+					update="electrolitos, botonPdf" disabled="#{!electrolitosController.desabilitado}">
 					<h:graphicImage value="/resources/images/grabar.png" border="0"
 						width="75" height="75" />
 				</p:commandLink>
