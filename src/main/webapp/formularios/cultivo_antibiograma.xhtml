@@ -15,62 +15,6 @@
 	<ui:composition template="./../WEB-INF/template/plantillaExamen.xhtml">
 		<ui:define name="content">
 
-			<h:form id="idFormPaciente">
-
-				<p:growl id="mensaje" autoUpdate="false" severity="info, fatal"
-					showSummary="true" showDetail="true" />
-
-				<h1></h1>
-
-				<p:fieldset legend="Datos Personales">
-					<h:panelGrid id="pgDatos" columns="3">
-
-						<p:outputLabel style="font-weight:bold" for="txtCedula"
-							value="Número Cédula" />
-						<p:outputLabel id="txtCedula" disabled="true"
-							value="#{pacienteController.paciente.cedula}"
-							requiredMessage="Campo Requerido" />
-						<p:message for="txtCedula" />
-
-						<p:outputLabel style="font-weight:bold" for="txtNombres"
-							value="Nombres" />
-						<p:outputLabel id="txtNombres" disabled="true"
-							value="#{pacienteController.paciente.nombres}"
-							requiredMessage="Campo Requerido" />
-						<p:message for="txtNombres" />
-
-						<p:outputLabel style="font-weight:bold" for="txtApellidos"
-							value="Apellidos" />
-						<p:outputLabel id="txtApellidos" disabled="true"
-							value="#{pacienteController.paciente.apellidos}" />
-						<p:message for="txtApellidos" />
-
-						<p:outputLabel style="font-weight:bold" for="rdbSexo" value="Sexo" />
-						<p:selectOneRadio id="rdbSexo" disabled="true"
-							value="#{pacienteController.paciente.sexo}">
-							<f:selectItem itemValue="M" itemLabel="Masculino" />
-							<f:selectItem itemValue="F" itemLabel="Femenino" />
-						</p:selectOneRadio>
-						<p:message for="rdbSexo" />
-
-						<p:outputLabel style="font-weight:bold" for="txtEdad" value="Edad" />
-						<p:outputLabel id="txtEdad"
-							value="#{pacienteController.paciente.edad}" required="true"
-							disabled="true" />
-						<p:message for="txtEdad" />
-
-						<p:outputLabel style="font-weight:bold" for="txtTelefono"
-							value="Teléfono" />
-						<p:outputLabel id="txtTelefono"
-							value="#{pacienteController.paciente.telefono}" required="true"
-							disabled="true" />
-						<p:message for="txtTelefono" />
-
-					</h:panelGrid>
-				</p:fieldset>
-			</h:form>
-
-
 			<h:form id="cultivo_antibiograma">
 				<p:clock></p:clock>
 				<h1>CULTIVO Y ANTIBIOGRAMA</h1>
