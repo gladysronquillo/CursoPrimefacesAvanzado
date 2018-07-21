@@ -15,133 +15,115 @@
 	<ui:composition template="./../WEB-INF/template/plantillaExamen.xhtml">
 		<ui:define name="content">
 
-			<h:form id="idFormPaciente">
-
-				<p:growl id="mensaje" autoUpdate="false" severity="info, fatal"
-					showSummary="true" showDetail="true" />
-				<h1></h1>
-
-				<p:fieldset legend="Datos Personales">
-					<h:panelGrid id="pgDatos" columns="3">
-
-						<p:outputLabel style="font-weight:bold" for="txtCedula"
-							value="Número Cédula" />
-						<p:outputLabel id="txtCedula" disabled="true"
-							value="#{pacienteController.paciente.cedula}"
-							requiredMessage="Campo Requerido" />
-						<p:message for="txtCedula" />
-
-						<p:outputLabel style="font-weight:bold" for="txtNombres"
-							value="Nombres" />
-						<p:outputLabel id="txtNombres" disabled="true"
-							value="#{pacienteController.paciente.nombres}"
-							requiredMessage="Campo Requerido" />
-						<p:message for="txtNombres" />
-
-						<p:outputLabel style="font-weight:bold" for="txtApellidos"
-							value="Apellidos" />
-						<p:outputLabel id="txtApellidos" disabled="true"
-							value="#{pacienteController.paciente.apellidos}" />
-						<p:message for="txtApellidos" />
-
-						<p:outputLabel style="font-weight:bold" for="rdbSexo" value="Sexo" />
-						<p:selectOneRadio id="rdbSexo" disabled="true"
-							value="#{pacienteController.paciente.sexo}">
-							<f:selectItem itemValue="M" itemLabel="Masculino" />
-							<f:selectItem itemValue="F" itemLabel="Femenino" />
-						</p:selectOneRadio>
-						<p:message for="rdbSexo" />
-
-						<p:outputLabel style="font-weight:bold" for="txtEdad" value="Edad" />
-						<p:outputLabel id="txtEdad"
-							value="#{pacienteController.paciente.edad}" required="true"
-							disabled="true" />
-						<p:message for="txtEdad" />
-
-						<p:outputLabel style="font-weight:bold" for="txtTelefono"
-							value="Teléfono" />
-						<p:outputLabel id="txtTelefono"
-							value="#{pacienteController.paciente.telefono}" required="true"
-							disabled="true" />
-						<p:message for="txtTelefono" />
-
-					</h:panelGrid>
-				</p:fieldset>
-			</h:form>
-
-
 			<h:form id="drogas">
 				<p:clock></p:clock>
-				<h1>DROGAS</h1>
+				<h1>PANEL DE DROGAS</h1>
 
 				<table class="formulario" border="0">
+
 					<tr>
-						<td />
-						<td />
-						<td align="right"><p:outputLabel style="font-weight: bold">Valores normales</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">ÁCIDO VALPROICO : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{drogasController.drogas.acidoValproico}" /></td>
-						<td align="right"><p:outputLabel>50 - 100 ug/ml</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">CARBAMAZEPINA : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{drogasController.drogas.carbamazepina}" /></td>
-						<td align="right"><p:outputLabel>4 - 12 ug/ml</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">DIFENILHIDANTOINA : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{drogasController.drogas.difenilhidantoina}" /></td>
-						<td align="right"><p:outputLabel>10 - 20 ug/ml</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">DIGOXINA : </p:outputLabel></td>
-						<td><p:inputText value="#{drogasController.drogas.digoxina}" /></td>
-						<td align="right"><p:outputLabel>0.5 - 2.0 ug/ml</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">FENOBARBITAL : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{drogasController.drogas.fenobarbital}" /></td>
-						<td align="right"><p:outputLabel>15 - 45 ug/ml</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">COCAÍNA : </p:outputLabel></td>
-						<td align="right"><p:selectOneRadio
-								value="#{drogasController.drogas.cocaina}">
+						<td><p:outputLabel>Cocaina:</p:outputLabel></td>
+						<td><p:selectOneMenu>
 								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneRadio></td>
+								<f:selectItem itemValue="Positivo" itemLabel="Positivo" />
+								<f:selectItem itemValue="Negativo" itemLabel="Negativo" />
+							</p:selectOneMenu></td>
 					</tr>
+
 					<tr>
-						<td><p:outputLabel style="font-weight: bold">MARIHUANA : </p:outputLabel></td>
-						<td align="right"><p:selectOneRadio
-								value="#{drogasController.drogas.marihuana}">
+						<td><p:outputLabel>Metadona:</p:outputLabel></td>
+						<td><p:selectOneMenu>
 								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneRadio></td>
+								<f:selectItem itemValue="Positivo" itemLabel="Positivo" />
+								<f:selectItem itemValue="Negativo" itemLabel="Negativo" />
+							</p:selectOneMenu></td>
 					</tr>
+
 					<tr>
-						<td><p:outputLabel style="font-weight: bold">ALCOHOL SÉRICO : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{drogasController.drogas.alcoholSerico}" /></td>
-						<td align="right"><p:outputLabel>0 - 10 mg/dl</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">AFETAMINAS : </p:outputLabel></td>
-						<td align="right"><p:selectOneRadio
-								value="#{drogasController.drogas.anfetaminas}">
+						<td><p:outputLabel>Metanfetamina:</p:outputLabel></td>
+						<td><p:selectOneMenu>
 								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneRadio></td>
+								<f:selectItem itemValue="Positivo" itemLabel="Positivo" />
+								<f:selectItem itemValue="Negativo" itemLabel="Negativo" />
+							</p:selectOneMenu></td>
 					</tr>
+
+					<tr>
+						<td><p:outputLabel>Opiaceos:</p:outputLabel></td>
+						<td><p:selectOneMenu>
+								<f:selectItem itemValue="" itemLabel="N/A" />
+								<f:selectItem itemValue="Positivo" itemLabel="Positivo" />
+								<f:selectItem itemValue="Negativo" itemLabel="Negativo" />
+							</p:selectOneMenu></td>
+					</tr>
+
+					<tr>
+						<td><p:outputLabel>Anfetaminas:</p:outputLabel></td>
+						<td><p:selectOneMenu>
+								<f:selectItem itemValue="" itemLabel="N/A" />
+								<f:selectItem itemValue="Positivo" itemLabel="Positivo" />
+								<f:selectItem itemValue="Negativo" itemLabel="Negativo" />
+							</p:selectOneMenu></td>
+					</tr>
+
+					<tr>
+						<td><p:outputLabel>Marihuana:</p:outputLabel></td>
+						<td><p:selectOneMenu>
+								<f:selectItem itemValue="" itemLabel="N/A" />
+								<f:selectItem itemValue="Positivo" itemLabel="Positivo" />
+								<f:selectItem itemValue="Negativo" itemLabel="Negativo" />
+							</p:selectOneMenu></td>
+					</tr>
+
+					<tr>
+						<td><p:outputLabel>Metilenedioxymetanfetaminas:</p:outputLabel></td>
+						<td><p:selectOneMenu>
+								<f:selectItem itemValue="" itemLabel="N/A" />
+								<f:selectItem itemValue="Positivo" itemLabel="Positivo" />
+								<f:selectItem itemValue="Negativo" itemLabel="Negativo" />
+							</p:selectOneMenu></td>
+					</tr>
+
+					<tr>
+						<td><p:outputLabel>Barbitúricos:</p:outputLabel></td>
+						<td><p:selectOneMenu>
+								<f:selectItem itemValue="" itemLabel="N/A" />
+								<f:selectItem itemValue="Positivo" itemLabel="Positivo" />
+								<f:selectItem itemValue="Negativo" itemLabel="Negativo" />
+							</p:selectOneMenu></td>
+					</tr>
+
+					<tr>
+						<td><p:outputLabel>Benzodiacepinas:</p:outputLabel></td>
+						<td><p:selectOneMenu>
+								<f:selectItem itemValue="" itemLabel="N/A" />
+								<f:selectItem itemValue="Positivo" itemLabel="Positivo" />
+								<f:selectItem itemValue="Negativo" itemLabel="Negativo" />
+							</p:selectOneMenu></td>
+					</tr>
+
+					<tr>
+						<td><p:outputLabel>Triciclico Antidepresivos:</p:outputLabel></td>
+						<td><p:selectOneMenu>
+								<f:selectItem itemValue="" itemLabel="N/A" />
+								<f:selectItem itemValue="Positivo" itemLabel="Positivo" />
+								<f:selectItem itemValue="Negativo" itemLabel="Negativo" />
+							</p:selectOneMenu></td>
+					</tr>
+
+					<tr>
+						<td><p:inputText /></td>
+						<td><p:inputText /></td>
+					</tr>
+					<tr>
+						<td><p:inputText /></td>
+						<td><p:inputText /></td>
+					</tr>
+					<tr>
+						<td><p:inputText /></td>
+						<td><p:inputText /></td>
+					</tr>
+
 				</table>
 				<br></br>
 

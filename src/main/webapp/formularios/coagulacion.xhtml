@@ -15,139 +15,111 @@
 	<ui:composition template="./../WEB-INF/template/plantillaExamen.xhtml">
 		<ui:define name="content">
 
-			<h:form id="idFormPaciente">
-
-				<p:growl id="mensaje" autoUpdate="false" severity="info, fatal"
-					showSummary="true" showDetail="true" />
-				<h1></h1>
-
-				<p:fieldset legend="Datos Personales">
-					<h:panelGrid id="pgDatos" columns="3">
-
-						<p:outputLabel style="font-weight:bold" for="txtCedula"
-							value="Número Cédula" />
-						<p:outputLabel id="txtCedula" disabled="true"
-							value="#{pacienteController.paciente.cedula}"
-							requiredMessage="Campo Requerido" />
-						<p:message for="txtCedula" />
-
-						<p:outputLabel style="font-weight:bold" for="txtNombres"
-							value="Nombres" />
-						<p:outputLabel id="txtNombres" disabled="true"
-							value="#{pacienteController.paciente.nombres}"
-							requiredMessage="Campo Requerido" />
-						<p:message for="txtNombres" />
-
-						<p:outputLabel style="font-weight:bold" for="txtApellidos"
-							value="Apellidos" />
-						<p:outputLabel id="txtApellidos" disabled="true"
-							value="#{pacienteController.paciente.apellidos}" />
-						<p:message for="txtApellidos" />
-
-						<p:outputLabel style="font-weight:bold" for="rdbSexo" value="Sexo" />
-						<p:selectOneRadio id="rdbSexo" disabled="true"
-							value="#{pacienteController.paciente.sexo}">
-							<f:selectItem itemValue="M" itemLabel="Masculino" />
-							<f:selectItem itemValue="F" itemLabel="Femenino" />
-						</p:selectOneRadio>
-						<p:message for="rdbSexo" />
-
-						<p:outputLabel style="font-weight:bold" for="txtEdad" value="Edad" />
-						<p:outputLabel id="txtEdad"
-							value="#{pacienteController.paciente.edad}" required="true"
-							disabled="true" />
-						<p:message for="txtEdad" />
-
-						<p:outputLabel style="font-weight:bold" for="txtTelefono"
-							value="Teléfono" />
-						<p:outputLabel id="txtTelefono"
-							value="#{pacienteController.paciente.telefono}" required="true"
-							disabled="true" />
-						<p:message for="txtTelefono" />
-
-					</h:panelGrid>
-				</p:fieldset>
-			</h:form>
-
-
 			<h:form id="coagulacion">
 				<p:clock></p:clock>
-				<h1>COAGULACIÓN</h1>
 
-				<table class="formulario" border="0">
-					<tr>
-						<td />
-						<td />
-						<td align="right"><p:outputLabel style="font-weight: bold">Valores normales</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">PLAQUETAS : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{coagulacionController.coagulacion.plaquetas}" /></td>
-						<td align="right"><p:outputLabel>150.000-300.00 / mm3</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">T. HEMORRAGIA : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{coagulacionController.coagulacion.THemorragia}" /></td>
-						<td align="right"><p:outputLabel>1 - 3 minutos</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">T. COAGULACIÓN : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{coagulacionController.coagulacion.TCoagulacion}" /></td>
-						<td align="right"><p:outputLabel>5 - 10 minutos</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">T. TROMBINA : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{coagulacionController.coagulacion.TTrombina}" /></td>
-						<td align="right"><p:outputLabel>19 - 23 segundos</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">FIBRINOGENO : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{coagulacionController.coagulacion.fibrinogeno}" /></td>
-						<td align="right"><p:outputLabel>250 - 400 mg/dl</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">RETRACCIÓN DEL COAGULO : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{coagulacionController.coagulacion.retraccion }" /></td>
-						<td align="right"><p:outputLabel>5 - 10 minutos</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">TP : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{coagulacionController.coagulacion.tp}" /></td>
-						<td align="right"><p:outputLabel>11 - 14 segundos</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">ACTIVIDAD : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{coagulacionController.coagulacion.actividad}" /></td>
-						<td align="right"><p:outputLabel>61 - 100 %</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">INR : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{coagulacionController.coagulacion.inr}" /></td>
-						<td align="right"><p:outputLabel>1.00 - 1.38</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">TTP : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{coagulacionController.coagulacion.ttp}" /></td>
-						<td align="right"><p:outputLabel>30 - 50 segundos</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">ANTICUAGU. LUPICO : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{coagulacionController.coagulacion.antiLupico}" /></td>
-						<td align="right"><p:outputLabel>31 - 44 segundos</p:outputLabel></td>
-					</tr>
+				<p:tabView dynamic="true" cache="true" effect="fold">
+					<p:tab title="TIEMPOS DE COAGULACIÓN ">
 
-				</table>
+						<table class="formulario" border="0">
+
+							<tr>
+								<td />
+								<td />
+								<td align="right"><p:outputLabel style="font-weight: bold">Unidades</p:outputLabel></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">RANGOS DE REFERENCIA</p:outputLabel></td>
+							</tr>
+
+							<tr>
+								<td><p:outputLabel>T. de Protrombina: </p:outputLabel></td>
+								<td><p:inputText /></td>
+								<td align="right"><p:outputLabel>Segundos</p:outputLabel></td>
+								<td align="right"><p:outputLabel>11.5 - 14.0</p:outputLabel></td>
+							</tr>
+
+							<tr>
+								<td><p:outputLabel>TP% (Actividad): </p:outputLabel></td>
+								<td><p:inputText /></td>
+								<td align="right"><p:outputLabel>%</p:outputLabel></td>
+								<td align="right"><p:outputLabel>70.0 - 120.0</p:outputLabel></td>
+							</tr>
+
+							<tr>
+								<td><p:outputLabel>TP INR: </p:outputLabel></td>
+								<td><p:inputText /></td>
+								<td align="right"><p:outputLabel>%</p:outputLabel></td>
+								<td align="right"><p:outputLabel>0.64 - 1.17</p:outputLabel></td>
+							</tr>
+
+							<tr>
+								<td><p:outputLabel>T. de Tromboplastina P.:</p:outputLabel></td>
+								<td><p:inputText /></td>
+								<td align="right"><p:outputLabel>Segundos </p:outputLabel></td>
+								<td align="right"><p:outputLabel>23.0 - 40.0 </p:outputLabel></td>
+							</tr>
+
+						</table>
+
+					</p:tab>
+					<p:tab title="Otros Análisis">
+
+						<table class="formulario" border="0">
+
+							<tr>
+								<td />
+								<td />
+								<td align="right"><p:outputLabel style="font-weight: bold">Unidades</p:outputLabel></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">RANGOS DE REFERENCIA</p:outputLabel></td>
+							</tr>
+
+							<tr>
+								<td><p:outputLabel>Tiempo de Hemorragia:</p:outputLabel></td>
+								<td><p:inputText /></td>
+								<td align="right"><p:outputLabel>Minutos</p:outputLabel></td>
+								<td align="right"><p:outputLabel>1.0 - 3.0 </p:outputLabel></td>
+							</tr>
+							
+							<tr>
+								<td><p:outputLabel>Tiempo de Coagulación:</p:outputLabel></td>
+								<td><p:inputText /></td>
+								<td align="right"><p:outputLabel>Minutos</p:outputLabel></td>
+								<td align="right"><p:outputLabel>5.0 - 11.0 </p:outputLabel></td>
+							</tr>
+							
+							<tr>
+								<td><p:outputLabel>Retracción del Coágulo:</p:outputLabel></td>
+								<td><p:inputText /></td>
+								<td align="right"><p:outputLabel>Minutos</p:outputLabel></td>
+								<td align="right"><p:outputLabel>5.0 - 10.0</p:outputLabel></td>
+							</tr>
+							
+							<tr>
+								<td><p:outputLabel>Tiempo de Trombina:</p:outputLabel></td>
+								<td><p:inputText /></td>
+								<td align="right"><p:outputLabel>Segundos</p:outputLabel></td>
+								<td align="right"><p:outputLabel>15.3 - 18.5</p:outputLabel></td>
+							</tr>
+
+
+							<tr>
+								<td><p:inputText /></td>
+								<td><p:inputText /></td>
+							</tr>
+							<tr>
+								<td><p:inputText /></td>
+								<td><p:inputText /></td>
+							</tr>
+							<tr>
+								<td><p:inputText /></td>
+								<td><p:inputText /></td>
+							</tr>
+
+
+						</table>
+					</p:tab>
+				</p:tabView>
+
+
 				<br></br>
 
 				<p:commandLink
