@@ -17,183 +17,231 @@
 
 			<h:form id="examen_sangre">
 				<p:clock></p:clock>
-				<h1>EXAMEN DE SANGRE</h1>
+				<h1>BIOMETRÍA HEMÁTICA</h1>
 
-				<table class="formulario" border="0">
-					<tr>
-						<td />
-						<td />
-						<td align="right"><p:outputLabel style="font-weight: bold">Valores normales</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td colspan="3"><p:outputLabel
-								style="font-weight: bold; text-align:center">BIOMETRIA HEMÁTICA</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">Hematocrito : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_sangreController.examen_sangre.hematocrito}" /></td>
-						<td align="right"><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">Hemoglobina : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
-						<td align="right"><p:outputLabel style="font-weight: bold">gr%</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">Glóbulos Blancos : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_sangreController.examen_sangre.globulosBlancos}" /></td>
-						<td align="right"><p:outputLabel style="font-weight: bold">/mm3</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">Glóbulos Rojos : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_sangreController.examen_sangre.globulosRojos}" /></td>
-						<td align="right"><p:outputLabel style="font-weight: bold">/mm3</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">Sedimentación : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_sangreController.examen_sangre.sedimentacion}" /></td>
-						<td align="right"><p:outputLabel style="font-weight: bold">mm/h</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td colspan="3"><p:outputLabel
-								style="font-weight: bold; text-align:center">FÓRMULA LEUCOCITARIA</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">Segmentación : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_sangreController.examen_sangre.segmentados}" /></td>
-						<td align="right"><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">Linfocitos : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_sangreController.examen_sangre.linfocitos}" /></td>
-						<td align="right"><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">Monocitos : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_sangreController.examen_sangre.monocitos}" /></td>
-						<td align="right" ><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">Eosinofilos : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_sangreController.examen_sangre.eosinofilos}" /></td>
-						<td align="right"><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">Hipocromia : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_sangreController.examen_sangre.hipocromia}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="LEVE" itemLabel="LEVE" />
-								<f:selectItem itemValue="MODERADO" itemLabel="MODERADO" />
-								<f:selectItem itemValue="SEVERA" itemLabel="SEVERA" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">Anisocitosis : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_sangreController.examen_sangre.anisocitosis}" /></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">Poiquilocitosis : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_sangreController.examen_sangre.poiquilocitosis}" /></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">VCM : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_sangreController.examen_sangre.vcm}" /></td>
-						<td align="right"><p:outputLabel style="font-weight: bold">V.N.: 80-95u3</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">HCM : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_sangreController.examen_sangre.hcm}" /></td>
-						<td align="right"><p:outputLabel style="font-weight: bold">25-31 pg</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">CHCM : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_sangreController.examen_sangre.chcm}" /></td>
-						<td align="right"><p:outputLabel style="font-weight: bold">30-35 %</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">GRUPO SANGUÍNEO : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_sangreController.examen_sangre.grupoSanguineo}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="A" itemLabel="A" />
-								<f:selectItem itemValue="B" itemLabel="B" />
-								<f:selectItem itemValue="O" itemLabel="O" />
-								<f:selectItem itemValue="AB" itemLabel="AB" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">FACTOR Rh : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_sangreController.examen_sangre.factorRh}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">HEMATOZOARIO : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_sangreController.examen_sangre.hematozoario}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">COOMBS DIRECTO : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_sangreController.examen_sangre.coomsDirecto}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">COOMBS INDIRECTO : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_sangreController.examen_sangre.coomsIndirecto}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">CÉLULAS L.E : </p:outputLabel></td>
-						<td><p:selectOneMenu
-								value="#{examen_sangreController.examen_sangre.celulasLe}">
-								<f:selectItem itemValue="" itemLabel="N/A" />
-								<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
-								<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
-							</p:selectOneMenu></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">RETICULOCITOS : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_sangreController.examen_sangre.reticulocitos}" /></td>
-						<td align="right"><p:outputLabel>V.N.: hasta 2%</p:outputLabel></td>
-					</tr>
-					<tr>
-						<td><p:outputLabel style="font-weight: bold">PLAQUETAS : </p:outputLabel></td>
-						<td><p:inputText
-								value="#{examen_sangreController.examen_sangre.plaquetas}"></p:inputText></td>
-						<td align="right"><p:outputLabel>150000-300000/mm3</p:outputLabel></td>
-					</tr>
-				</table>
+				<p:tabView dynamic="true" cache="true" effect="fold">
+					<p:tab title="Biometría Hemática">
+						<table class="formulario" border="0">
+							<tr>
+								<td />
+								<td />
+								<td />
+								<td align="right"><p:outputLabel style="font-weight: bold">Valores normales</p:outputLabel></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">Leucocitos: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">/mm3</p:outputLabel></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">
+						Adultos: 5.000 - 10.000<br /> Niños: 4.500 - 12.000 <br />
+									</p:outputLabel></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">Glóbulos Rojos: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">/mm3</p:outputLabel></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">
+						Mujeres: 4 200 000 - 5 300 000<br /> Hombres: 4 900 000 - 5 900
+											000<br /> Niños: 4 100 000 - 4 700 000 <br />
+
+									</p:outputLabel></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">Hemoglobina: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">g/dL.</p:outputLabel></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">
+						Hombres: 14.0 - 18.0 <br /> Mujeres: 12.0 - 16.0<br />
+												Niños: 11.8 - 15.0 <br />
+									</p:outputLabel></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">Hematocrito: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">
+						Hombres: 42.0-52.0  <br /> Mujeres: 36.0 - 46.0<br /> Niños:
+												34.0 - 49-0 <br />
+									</p:outputLabel></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">MCV: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">fL</p:outputLabel></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">
+						80,0  -  90,0
+									</p:outputLabel></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">MCH: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">pg</p:outputLabel></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">
+						27,0  -  31,0
+									</p:outputLabel></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">MCHC: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">g/dL.</p:outputLabel></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">
+						32,0  -  36,0
+									</p:outputLabel></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">Plaquetas: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">/mm3</p:outputLabel></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">
+						150.000 - 450.000
+									</p:outputLabel></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">Plaquetas: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">/mm3</p:outputLabel></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">
+						150.000 - 450.000
+									</p:outputLabel></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">V.S.G: (Wintrobe) </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">mm/h</p:outputLabel></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">
+						Hombres: 0 - 8 <br /> Mujeres: 0 - 15 <br />
+									</p:outputLabel></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">Neutrofilos: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">
+						43.0  -  65,0 
+									</p:outputLabel></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">Linfocitos: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">
+						21.0  -  45,0 
+									</p:outputLabel></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">Monocitos: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">
+						2.0   -  9,0
+									</p:outputLabel></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">Eosinófilos: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">
+						1.0  -  5,0 
+									</p:outputLabel></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">Basófilos: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">
+						0.0  -  1,0 
+									</p:outputLabel></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">Cayados: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">
+						0.0  -  1,0 
+									</p:outputLabel></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">Observaciones: </p:outputLabel></td>
+								<td colspan="3"><p:inputText
+										value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
+							</tr>
+						</table>
+					</p:tab>
+					<p:tab title="Grupo Sanguineo">
+
+						<table class="formulario" border="0">
+							<tr>
+								<td><p:outputLabel>Grupo : </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.hemoglobina}" /></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Factor Rh : </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.hemoglobina}" /></td>
+							</tr>
+						</table>
+					</p:tab>
+
+					<p:tab title="Otros Exámenes">
+
+						<table class="formulario" border="0">
+							<tr>
+								<td><p:outputLabel>Reticulocitos: </p:outputLabel></td>
+								<td><p:inputText
+										value="#{examen_hecesController.examen_heces.hemoglobina}" /></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">%</p:outputLabel></td>
+								<td align="right"><p:outputLabel style="font-weight: bold">
+						0.5 - 2.0
+									</p:outputLabel></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Coombs Directo: </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.hemoglobina}">
+										<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
+										<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
+									</p:selectOneMenu></td>
+								<td align="right"></td>
+								<td align="right"></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel>Coombs Indirecto: </p:outputLabel></td>
+								<td><p:selectOneMenu
+										value="#{examen_orinaController.examen_orina.hemoglobina}">
+										<f:selectItem itemValue="POSITIVO" itemLabel="POSITIVO" />
+										<f:selectItem itemValue="NEGATIVO" itemLabel="NEGATIVO" />
+									</p:selectOneMenu></td>
+								<td align="right"></td>
+								<td align="right"></td>
+							</tr>
+							<tr>
+								<td><p:outputLabel style="font-weight: bold">Hematozoarios: </p:outputLabel></td>
+								<td colspan="3"><p:inputText
+										value="#{examen_sangreController.examen_sangre.hemoglobina}" /></td>
+							</tr>
+						</table>
+					</p:tab>
+
+				</p:tabView>
+
+
 				<br></br>
 
 				<p:commandLink
